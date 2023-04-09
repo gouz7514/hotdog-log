@@ -3,8 +3,6 @@ import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Home() {
   return (
     <>
@@ -26,4 +24,12 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      page: 'Home'
+    }
+  }
 }
