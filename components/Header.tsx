@@ -49,20 +49,20 @@ export default function Header({ page }: HeaderProps) {
       { page === 'Home' ? 
       (
         <HomeHeader>
-          <div>
+          <div className='header-links'>
             <Link href="/">Home</Link>
           </div>
-          <div>
+          <div className='header-links'>
             <Link href="/posts">Posts</Link>
           </div>
         </HomeHeader>
       ) : 
       (
         <NormalHeader>
-          <div>
+          <div className='header-links'>
             <Link href="/">Home</Link>
           </div>
-          <div>
+          <div className='header-links'>
             <Link href="/posts">Posts</Link>
           </div>
         </NormalHeader>
