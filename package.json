@@ -6,7 +6,8 @@
     "dev": "next dev -p 7514",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "18.15.10",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
-    "babel-plugin-styled-components": "^2.1.1"
+    "babel-plugin-styled-components": "^2.1.1",
+    "husky": "^8.0.3"
   }
 }
