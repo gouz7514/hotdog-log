@@ -1,41 +1,32 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
-const HomeHeader = styled.div`
+const StickyHeader = styled.div`
+  position: sticky;
+  padding-top: 32px;
+  top: -32px;
+  background-color: #CDE4B4;
+  border-bottom: 1px black solid;
+  width: 100%;
+`
+
+const CommonHeader = styled.div`
   font-size: 1.5em;
   color: black;
   font-weight: bold;
   display: flex;
   gap: 16px;
   height: 60px;
-  border-bottom: 1px black solid;
   align-items: center;
-  background-color: #CDE4B4;
   padding: 8px;
 
   .header-links {
-    border: 1px solid black;
     padding: 8px;
-    border-radius: 12px;
-  }
-`
 
-const NormalHeader = styled.div`
-  font-size: 1.2em;
-  color: black;
-  font-weight: bold;
-  display: flex;
-  gap: 16px;
-  height: 60px;
-  border-bottom: 1px black solid;
-  align-items: center;
-  background-color: #CDE4B4;
-  padding: 8px;
-
-  .header-links {
-    border: 1px solid black;
-    padding: 8px;
-    border-radius: 12px;
+    &.active {
+      text-decoration: underline;
+    }
   }
 `
 
@@ -44,29 +35,28 @@ type HeaderProps = {
 }
 
 export default function Header({ page }: HeaderProps) {
+  const router = useRouter()
+  const currentPage = router.pathname
+  console.log(currentPage)
+
+  const conditionalClass = function(page: String) {
+    if (router.pathname === '/' + page) return 'active'
+    return ''
+  }
+
   return (
-    <div>
-      { page === 'Home' ? 
-      (
-        <HomeHeader>
-          <div className='header-links'>
-            <Link href="/">Home</Link>
-          </div>
-          <div className='header-links'>
-            <Link href="/posts">Posts</Link>
-          </div>
-        </HomeHeader>
-      ) : 
-      (
-        <NormalHeader>
-          <div className='header-links'>
-            <Link href="/">Home</Link>
-          </div>
-          <div className='header-links'>
-            <Link href="/posts">Posts</Link>
-          </div>
-        </NormalHeader>
-      )}
-    </div>
+    <StickyHeader>
+      <CommonHeader>
+        <div className={`header-links ${conditionalClass('')}`}>
+          <Link href="/">Home</Link>
+        </div>
+        <div className={`header-links ${conditionalClass('posts')}`}>
+          <Link href="/posts">Posts</Link>
+        </div>
+        <div className={`header-links ${conditionalClass('resume')}`}>
+          <Link href="/resume">Resume</Link>
+        </div>
+      </CommonHeader>
+    </StickyHeader>
   )
 }
