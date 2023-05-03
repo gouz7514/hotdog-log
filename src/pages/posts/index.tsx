@@ -3,12 +3,11 @@ import Link from 'next/link'
 export default function Posts() {
   return (
     <>
-      <h1>
-        This is posts page
-      </h1>
-      <h2>
-        <Link href="/">Back to home</Link>
-      </h2>
+      <div className='container'>
+        <h2>
+          각종 공부한 내용들을 정리할 페이지입니다. Coming Soon
+        </h2>
+      </div>
     </>
   )
 }
