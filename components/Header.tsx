@@ -70,7 +70,7 @@ export default function Header({ page }: HeaderProps) {
           </div>
         </div>
         <div className="header-external">
-          <a href="https://github.com/gouz7514">
+          <a href="https://github.com/gouz7514" target='blank'>
             <Image
               src="/images/logo-github.webp"
               height={40}
@@ -78,7 +78,7 @@ export default function Header({ page }: HeaderProps) {
               alt="github logo"
             />
           </a>
-          <a href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271">
+          <a href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271" target='blank'>
             <Image
               src="/images/logo-linkedin.webp"
               height={40}
