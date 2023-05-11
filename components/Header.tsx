@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
 
 const StickyHeader = styled.div`
   position: sticky;
@@ -13,7 +12,7 @@ const StickyHeader = styled.div`
 `
 
 const CommonHeader = styled.div`
-  font-size: 1.5em;
+  font-size: 24px;
   color: black;
   font-weight: bold;
   display: flex;
@@ -49,10 +48,9 @@ type HeaderProps = {
 export default function Header({ page }: HeaderProps) {
   const router = useRouter()
   const currentPage = router.pathname
-  console.log(currentPage)
 
   const conditionalClass = function(page: String) {
-    if (router.pathname === '/' + page) return 'active'
+    if (currentPage === '/' + page) return 'active'
     return ''
   }
 
@@ -69,24 +67,6 @@ export default function Header({ page }: HeaderProps) {
           <div className={`header-links ${conditionalClass('resume')}`}>
             <Link href="/resume">Resume</Link>
           </div>
-        </div>
-        <div className="header-external">
-          <a href="https://github.com/gouz7514">
-            <Image
-              src="/images/logo-github.webp"
-              height={40}
-              width={40}
-              alt="github logo"
-            />
-          </a>
-          <a href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271">
-            <Image
-              src="/images/logo-linkedin.webp"
-              height={40}
-              width={40}
-              alt="linkedin logo"
-            />
-          </a>
         </div>
       </CommonHeader>
     </StickyHeader>

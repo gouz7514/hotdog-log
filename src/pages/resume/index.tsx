@@ -4,11 +4,8 @@ export default function Resume() {
   return (
     <>
       <div className="container">
-        <h1>
-          This is Resume page
-        </h1>
         <h2>
-          <Link href="/">Back to home</Link>
+          이력서 페이지입니다. Coming Soon
         </h2>
       </div>
     </>
