@@ -8,8 +8,8 @@ const SkillContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(150px, auto));
   row-gap: 12px;
 
-  @media screen and (min-width: 750px) {
-    grid-template-columns: repeat(3, 250px)
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: repeat(5, 200px)
   }
 `
 
@@ -24,10 +24,6 @@ const ProjectContainer = styled.div`
 
   a {
     color: #366C2A;
-  }
-
-  .project-title {
-    font-weight: bold;
   }
 
   .project-detail {
@@ -218,16 +214,27 @@ export default function Resume() {
             Career
           </h2>
           <h3>
-            ABZ
+            ABZ 주식회사
           </h3>
-          <span>
+          <div>
             2021.06 ~ 2023.04
-          </span>
+          </div>
+          <div className="d-flex flex-column">
+            <span>
+              ・ 국내 최대 바이오링크 서비스인 &quot;인포크링크&quot; 운영
+            </span>
+            <span>
+              ・ &quot;인포크링크&quot; 서비스의 메인 프론트엔드 개발자로 근무
+            </span>
+          </div>
           <ProjectContainer>
             <div className="project-title">
               <h4>
                 노드 버전 변경
               </h4>
+              <div>
+                2023.04
+              </div>
             </div>
             <div className="project-detail">
               <div className="project-description">
@@ -264,6 +271,9 @@ export default function Resume() {
               <h4>
                 CloudFront 비용 최적화
               </h4>
+              <div>
+                2023.04
+              </div>
             </div>
             <div className="project-detail">
               <div className="project-description">
@@ -301,6 +311,9 @@ export default function Resume() {
               <h4>
                 갤러리 페이지 자동화
               </h4>
+              <div>
+                2023.03
+              </div>
             </div>
             <div className="project-detail">
               <div className="project-description">
@@ -337,6 +350,9 @@ export default function Resume() {
               <h4>
                 vue-query 도입
               </h4>
+              <div>
+                2022.12 ~ 2023.01
+              </div>
             </div>
             <div className="project-detail">
               <div className="project-description">
@@ -372,6 +388,9 @@ export default function Resume() {
               <h4>
                 미들웨어 리팩토링
               </h4>
+              <div>
+                2022.11
+              </div>
             </div>
             <div className="project-detail">
               <div className="project-description">
@@ -413,6 +432,9 @@ export default function Resume() {
               <h4>
                 블록화
               </h4>
+              <div>
+                2022.07 ~ 2022.08
+              </div>
             </div>
             <div className="project-detail">
               <div className="project-description">
@@ -447,6 +469,9 @@ export default function Resume() {
               <h4>
                 도커라이징
               </h4>
+              <div>
+                2021.12 ~ 2022.01
+              </div>
             </div>
             <div className="project-detail">
               <div className="project-description">
@@ -485,6 +510,9 @@ export default function Resume() {
               <h4>
                 디자인 시스템
               </h4>
+              <div>
+                2021.06 ~ 2021.09
+              </div>
             </div>
             <div className="project-detail">
               <div className="project-description">
