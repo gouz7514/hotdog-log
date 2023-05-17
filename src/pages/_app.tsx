@@ -10,9 +10,12 @@ export default function App({ Component, pageProps }: AppProps) {
     <AppLayout page={page}>
       <Head>
         <title>게으른 개발자, 김학재입니다</title>
+        <meta name="og:title" content="게으른 개발자, 김학재입니다" />
         <meta name="description" content="김학재의 개발 블로그" />
+        <meta name="og:description" content="김학재의 개발 블로그" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="/images/profile.webp" />
       </Head>
       <Component {...pageProps} />
     </AppLayout>
