@@ -27,6 +27,7 @@ const ProjectContainer = styled.div`
   a {
     color: #0066cc;
     font-weight: bold;
+    text-decoration: underline;
   }
 
   .project-detail {
@@ -563,6 +564,9 @@ export default function Resume() {
                   </li>
                   <li>
                     ・ 향후 프로젝트의 개발 난이도 및 개발 시간 감소
+                  </li>
+                  <li>
+                    ・ <a href="https://inpock.github.io" target="blank">스토리북</a>을 활용해 개발 및 배포
                   </li>
                 </ul>
               </div>
