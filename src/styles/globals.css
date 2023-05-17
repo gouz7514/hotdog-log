@@ -2,6 +2,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
 }
 
 html,
@@ -12,15 +14,31 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3em;
   transition: all 0.5s ease-in-out;
+  margin: 24px 0;
 }
 
-@media screen and (max-width: 450px) {
-  h1 {
-    font-size: 2.5rem;
-    transition: all 0.5s ease-in-out;
-  }
+h2 {
+  margin: 12px 0;
+  font-size: 2em
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+h5 {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
@@ -43,6 +61,30 @@ a {
 .container {
   width: 100%;
   padding: 1rem;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-blue {
+  color: #0066cc;
+}
+
+.text-orange {
+  color: #ff5b1a;
 }
 
 /* @media (prefers-color-scheme: dark) {

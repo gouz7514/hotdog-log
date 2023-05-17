@@ -40,9 +40,7 @@ export default function Home() {
           <ProfileDescription>
             <div className="d-flex flex-column align-items-center">
               <h1>
-                게으른 개발자
-              </h1>
-              <h1>
+                게으른 개발자<br />
                 김학재입니다
               </h1>
             </div>
