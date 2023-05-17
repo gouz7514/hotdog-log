@@ -21,6 +21,10 @@ const SkillTag = styled.div`
   gap: 10px;
 `
 
+const PdfContainer = styled.div`
+
+`
+
 const ProjectContainer = styled.div`
   margin-top: 30px;
 
@@ -150,17 +154,18 @@ export default function Resume() {
             게으른 개발자,<br />
             김학재입니다
           </h1>
-          <h4>
-            <div>
+          <div style={{ marginBottom: '12px' }}>
+            <h4>
               프론트엔드뿐 아니라 다양한 도메인에 관심을 갖고 고민합니다.
-            </div>
-            <div>
+            </h4>
+            <h4>
               소통의 중요성을 알고 실천하려고 노력합니다.
-            </div>
-            <div>
+            </h4>
+            <h4>
               소비자의 진심을 읽고 나도 사용하고 싶은 프로덕트를 만드는 일을 지향합니다.
-            </div>
-          </h4>
+            </h4>
+          </div>
+          <Badge content="PDF로 보기" link="https://drive.google.com/file/d/1sX61X34fI2OjknhngkN4eaqmdUos3u_e/view?usp=sharing" />
         </div>
         <Divider />
         <div>
