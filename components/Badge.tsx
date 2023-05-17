@@ -14,16 +14,16 @@ const BadgeContent = styled.div`
   }
 
   .badge-primary {
-    background-color: #366C2A;
-    color: white;
-  }
-
-  .badge-secondary {
-    background-color: #666666;
+    background-color: #0066cc;
     color: white;
   }
 
   .badge-default {
+    background-color: #33ccff;
+    color: white;
+  }
+
+  .badge-minor {
     background-color: #cccccc;
     color: white;
   }
@@ -37,7 +37,7 @@ type BadgeProps = {
 export default function Badge({ content, className }: BadgeProps) {
   return (
     <BadgeContent>
-      <div className={`content ${className ? className : 'badge-default'}`}>{ content }</div>
+      <div className={`content ${className ? className : 'badge-primary'}`}>{ content }</div>
     </BadgeContent>
   )
 }

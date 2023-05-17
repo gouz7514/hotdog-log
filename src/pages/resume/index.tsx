@@ -1,6 +1,8 @@
 import styled from "styled-components"
+import Image from 'next/image'
 import Divider from "../../../components/Divider"
 import Badge from "../../../components/Badge"
+import Tooltip from "../../../components/Tooltip"
 
 const SkillContainer = styled.div`
   margin-top: 6px;
@@ -20,10 +22,11 @@ const SkillTag = styled.div`
 `
 
 const ProjectContainer = styled.div`
-  margin-top: 24px;
+  margin-top: 30px;
 
   a {
-    color: #366C2A;
+    color: #0066cc;
+    font-weight: bold;
   }
 
   .project-detail {
@@ -44,11 +47,17 @@ const ProjectContainer = styled.div`
 const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .contact-container {
     display: flex;
     gap: 12px;
   }
+`
+
+const ProfileLogo = styled.div`
+  display: flex;
+  gap: 24px;
 `
 
 export default function Resume() {
@@ -126,9 +135,9 @@ export default function Resume() {
       case 3:
         return 'badge-primary'
       case 2:
-        return 'badge-secondary'
-      default:
         return 'badge-default'
+      default:
+        return 'badge-minor'
     }
   }
 
@@ -140,16 +149,30 @@ export default function Resume() {
             게으른 개발자,<br />
             김학재입니다
           </h1>
-          <div>
-            프론트엔드 뿐 아니라 <span className="text-bold">다양한 도메인</span>에 관심을 갖고 고민합니다. <span className="text-bold">소통</span>의 중요성을 알고 실천하려고 노력합니다.
-            소비자의 진심을 읽고 <span className="text-bold">나도 사용하고 싶은 프로덕트</span>를 만드는 일을 지향합니다.
-          </div>
+          <h4>
+            <div>
+              프론트엔드뿐 아니라 다양한 도메인에 관심을 갖고 고민합니다.
+            </div>
+            <div>
+              소통의 중요성을 알고 실천하려고 노력합니다.
+            </div>
+            <div>
+              소비자의 진심을 읽고 나도 사용하고 싶은 프로덕트를 만드는 일을 지향합니다.
+            </div>
+          </h4>
         </div>
         <Divider />
         <div>
-          <h2>
-            Skills
-          </h2>
+          <div className="d-flex align-items-center">
+            <h2>
+              Skills
+            </h2>
+            <Tooltip>
+              <div className="text-bold">3 : 다수의 개발 경험</div>
+              <div className="text-bold">2 : 간단한 개발 경험</div>
+              <div className="text-bold">1 : 기초적 개발 경험</div>
+            </Tooltip>
+          </div>
           <div className="mt-12">
             <h3>
               FE
@@ -220,12 +243,20 @@ export default function Resume() {
             2021.06 ~ 2023.04
           </div>
           <div className="d-flex flex-column">
-            <span>
-              ・ 국내 최대 바이오링크 서비스인 &quot;인포크링크&quot; 운영
-            </span>
-            <span>
-              ・ &quot;인포크링크&quot; 서비스의 메인 프론트엔드 개발자로 근무
-            </span>
+            <ul>
+              <li>
+                ・ 국내 최대 바이오링크 서비스인 <a href="https://link.inpock.co.kr" target="blank" className="text-orange text-bold">인포크링크</a> 운영
+              </li>
+              <li>
+                ・ 인포크링크 서비스의 메인 프론트엔드 개발자로 근무
+              </li>
+              <li>
+                ・ 다양한 문제 상황 파악 및 해결 능력을 기름
+              </li>
+              <li>
+                ・ 소통 능력 및 팀 리딩 능력을 기룸
+              </li>
+            </ul>
           </div>
           <ProjectContainer>
             <div className="project-title">
@@ -240,7 +271,7 @@ export default function Resume() {
               <div className="project-description">
                 <h5>설명</h5>
                 <div>
-                  인포크링크 서비스의 Node 버전 업그레이드 (12.x → 16.x)
+                  인포크링크 서비스의 Node 버전 업그레이드
                 </div>
               </div>
               <div className="project-result">
@@ -253,7 +284,7 @@ export default function Resume() {
                     ・ 최신 라이브러리 설치 가능 환경 구성
                   </li>
                   <li>
-                    ・ CI / CD 소요 시간 50% 감소
+                    ・ <span className="text-blue text-bold">CI / CD 소요 시간 50% 감소</span>
                   </li>
                 </ul>
               </div>
@@ -289,10 +320,10 @@ export default function Resume() {
                     ・ chunk 갯수 4 ~ 50% 절감
                   </li>
                   <li>
-                    ・ Cloudfront 요청 약 50% 절감
+                    ・ <span className="text-blue text-bold">Cloudfront 요청 약 50% 절감</span>
                   </li>
                   <li>
-                    ・ Cloudfront 비용 약 40% 절감
+                    ・ <span className="text-blue text-bold">Cloudfront 비용 약 40% 절감</span>
                   </li>
                 </ul>
               </div>
@@ -326,13 +357,13 @@ export default function Resume() {
                 <h5>결과</h5>
                 <ul>
                   <li>
-                    ・ Event Bridge 활용을 통한 이미지 자동 갱신
+                    ・ Event Bridge 활용 → 이미지 자동 갱신
                   </li>
                   <li>
-                    ・ Serverless 환경 활용을 통한 효율 증가
+                    ・ Serverless 환경 활용 → 업무 효율 증가
                   </li>
                   <li>
-                    ・ 캐싱 활용을 통한 렌더링 시간 단축
+                    ・ 캐싱 활용 → 렌더링 시간 단축
                   </li>
                 </ul>
               </div>
@@ -365,10 +396,13 @@ export default function Resume() {
                 <h5>결과</h5>
                 <ul>
                   <li>
-                    ・ Core Web Vital 개선 : LCP 3.1s → 0.5s
+                    ・ Core Web Vital 개선 : <span className="text-bold text-blue">LCP 3.1s → 0.5s</span>
                   </li>
                   <li>
                     ・ 캐싱 적용, API 호출 횟수 약 15% 절감
+                  </li>
+                  <li>
+                    ・ 관련 내용을 <a href="https://velog.io/@gouz7514/%EC%9A%B0%EB%8B%B9%ED%83%95%ED%83%95-vue-query-%EC%A0%81%EC%9A%A9%EA%B8%B0" target="blank">블로그</a>에 정리 
                   </li>
                 </ul>
               </div>
@@ -450,7 +484,7 @@ export default function Resume() {
                     ・ 다양한 형태의 링크에 대한 유저들의 니즈 해결
                   </li>
                   <li>
-                    ・ 주간 가입자 수 약 30% 증가
+                    ・ <span className="text-blue text-bold">주간 가입자 수 약 30% 증가</span>
                   </li>
                 </ul>
               </div>
@@ -490,7 +524,7 @@ export default function Resume() {
                     ・ 더 큰 부하를 감당 가능한 서버 구성
                   </li>
                   <li>
-                    ・ 프로젝트 내용을 회사 블로그에 기고 <a href="https://medium.com/ab-z/%EA%B8%89%EA%B2%A9%ED%95%98%EA%B2%8C-%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94-%ED%8A%B8%EB%9E%98%ED%94%BD-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8C%80%EB%B9%84%ED%95%A0%EA%B9%8C-d92f2fbf2130" target="blank">(링크)</a>
+                    ・ 프로젝트 내용을 <a href="https://medium.com/ab-z/%EA%B8%89%EA%B2%A9%ED%95%98%EA%B2%8C-%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94-%ED%8A%B8%EB%9E%98%ED%94%BD-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8C%80%EB%B9%84%ED%95%A0%EA%B9%8C-d92f2fbf2130" target="blank">회사 블로그</a>에 기고
                   </li>
                 </ul>
               </div>
@@ -544,22 +578,32 @@ export default function Resume() {
         </div>
         <Divider />
         <ProfileContainer>
-          <div>
-            <h2>
-              Contact
-            </h2>
-            <div className="contact-container">
-              <span>
-                Email
-              </span>
-              <span>
-                Blog
-              </span>
-              <span>
-                Github
-              </span>
-            </div>
-          </div>
+          <ProfileLogo>
+            <a href="https://github.com/gouz7514" target='blank'>
+              <Image
+                src="/images/logo-github.webp"
+                height={30}
+                width={30}
+                alt="github logo"
+              />
+            </a>
+            <a href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271" target='blank'>
+              <Image
+                src="/images/logo-linkedin.webp"
+                height={30}
+                width={30}
+                alt="linkedin logo"
+              />
+            </a>
+            <a href="mailto:gouz7514@gmail.com" target='blank'>
+              <Image
+                src="/images/logo-gmail.webp"
+                height={30}
+                width={30}
+                alt="gmail logo"
+              />
+            </a>
+          </ProfileLogo>
         </ProfileContainer>
       </div>
     </>
