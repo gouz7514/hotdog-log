@@ -6,7 +6,7 @@ const StickyHeader = styled.div`
   position: sticky;
   padding-top: 16px;
   top: -16px;
-  box-shadow: 2px 4px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.55);
   width: 100%;
   display: flex;
 `
