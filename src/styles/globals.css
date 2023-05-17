@@ -12,9 +12,20 @@ body {
   font-family: AppleSDGothicNeo-Regular, sans-serif;
 }
 
+body.light {
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
 h1 {
   font-size: 3em;
-  transition: all 0.5s ease-in-out;
   margin: 24px 0;
 }
 

@@ -7,7 +7,7 @@ interface TooltipProps {
 
 const TooltipContainer = styled.div`
   border-radius: 50%;
-  background-image: url('/images/icon-detail.svg');
+  background-image: url('/icon/icon-detail.svg');
   width: 24px;
   height: 24px;
   background-size: 24px 24px;
