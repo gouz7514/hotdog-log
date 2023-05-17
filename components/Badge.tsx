@@ -32,12 +32,18 @@ const BadgeContent = styled.div`
 type BadgeProps = {
   content: string | number
   className?: string | ''
+  link?: string
 }
 
-export default function Badge({ content, className }: BadgeProps) {
+export default function Badge({ content, className, link }: BadgeProps) {
   return (
     <BadgeContent>
-      <div className={`content ${className ? className : 'badge-primary'}`}>{ content }</div>
+      { link ? 
+        <a href={link} target="blank" className='content badge-primary'>{ content }</a> :
+        <div className={`content ${className ? className : 'badge-primary'}`}>
+          { content }
+        </div>
+      }
     </BadgeContent>
   )
 }
