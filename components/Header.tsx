@@ -9,11 +9,11 @@ const StickyHeader = styled.div`
   box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.55);
   width: 100%;
   display: flex;
+  background-color: #0066cc;
 `
 
 const CommonHeader = styled.div`
   font-size: 24px;
-  color: black;
   font-weight: bold;
   display: flex;
   gap: 16px;
@@ -21,6 +21,7 @@ const CommonHeader = styled.div`
   align-items: center;
   padding: 8px;
   width: 100%;
+  color: white;
 
   .header-pages {
     display: flex;
