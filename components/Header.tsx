@@ -1,14 +1,16 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
+import DarkMode from './DarkMode'
 
 const StickyHeader = styled.div`
   position: sticky;
-  padding-top: 16px;
+  padding: 16px 16px 0;
   top: -16px;
   box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.55);
   width: 100%;
   display: flex;
+  align-items: center;
   background-color: #0066cc;
 `
 
@@ -19,16 +21,18 @@ const CommonHeader = styled.div`
   gap: 16px;
   height: 60px;
   align-items: center;
-  padding: 8px;
   width: 100%;
   color: white;
 
+  @media screen and (max-width: 375px) {
+    font-size: 18px;
+  }
+
   .header-pages {
     display: flex;
+    gap: 8px;
 
-    .header-links {
-      padding: 8px;
-  
+    .header-links {  
       &.active {
         text-decoration: underline;
       }
@@ -70,6 +74,7 @@ export default function Header({ page }: HeaderProps) {
           </div>
         </div>
       </CommonHeader>
+      <DarkMode />
     </StickyHeader>
   )
 }
