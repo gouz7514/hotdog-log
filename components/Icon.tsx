@@ -1,5 +1,5 @@
-import { ReactNode, useContext } from 'react'
-import styled, { ThemeContext } from 'styled-components'
+import { ReactNode } from 'react'
+import styled from 'styled-components'
 
 type IconProps = {
   icon: ReactNode

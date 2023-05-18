@@ -1,5 +1,6 @@
-import React, { ReactNode, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import { useDarkMode } from '@/util/hooks/useDarkmode'
 
 const DarkModeBtn = styled.div`
   width: 30px;
@@ -17,16 +18,9 @@ const DarkModeBtn = styled.div`
 `
 
 export default function DarkMode() {
-  const [mode, setMode] = useState('light')
-
-  const handleMouseClick = () => {
-    const newMode = mode === 'light' ? 'dark' : 'light';
-    setMode(newMode);
-    document.body.classList.remove(mode);
-    document.body.classList.add(newMode);
-  }
+  const [mode, toggleTheme] = useDarkMode()
 
   return (
-    <DarkModeBtn onClick={handleMouseClick} className={mode}/>
+    <DarkModeBtn onClick={toggleTheme} className={mode}/>
   )
 }
