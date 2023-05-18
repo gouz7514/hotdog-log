@@ -1,13 +1,14 @@
 type IconProps = {
   fill?: string
+  isDark?: boolean
 }
 
-export const IconLinkedIn = ({ fill = '#000000' }: IconProps) => (
+export const IconLinkedIn = ({ fill = '#000000', isDark = false }: IconProps) => (
   <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
   width="1600.000000pt" height="1600.000000pt" viewBox="0 0 1600.000000 1600.000000"
   preserveAspectRatio="xMidYMid meet">
     <g transform="translate(0.000000,1600.000000) scale(0.100000,-0.100000)"
-    fill={ fill } stroke="none">
+    fill={ isDark ? '#ffffff' : fill } stroke="none">
     <path d="M2745 15993 c-596 -48 -1144 -259 -1615 -623 -114 -88 -391 -362
     -484 -480 -162 -204 -342 -513 -434 -745 -84 -212 -143 -430 -184 -680 l-23
     -140 -3 -5105 c-2 -3709 0 -5145 8 -5250 56 -724 372 -1395 894 -1898 510

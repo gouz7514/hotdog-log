@@ -3,6 +3,8 @@ import Icon from './Icon'
 import { IconGithub } from './icon/IconGIthub'
 import { IconLinkedIn } from './icon/IconLinkedin'
 import { IconGmail } from './icon/IconGmail'
+import { themeState } from '@/store/theme'
+import { useRecoilState } from 'recoil'
 
 const AppFooter = styled.footer`
   display: flex;
@@ -20,18 +22,20 @@ const ProfileLogo = styled.div`
 `
 
 export default function Footer() {
+  const [theme] = useRecoilState(themeState)
+
   return (
     <>
       <AppFooter>
         <ProfileLogo>
           <a href="https://github.com/gouz7514" target='blank'>
-            <Icon icon={<IconGithub />} />
+            <Icon icon={<IconGithub isDark={ theme.value === 'dark' } />} />
           </a>
           <a href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271" target='blank'>
-          <Icon icon={<IconLinkedIn />} />
+              <Icon icon={<IconLinkedIn isDark={ theme.value === 'dark' } />} />
           </a>
           <a href="mailto:gouz7514@gmail.com" target='blank'>
-          <Icon icon={<IconGmail />} />
+            <Icon icon={<IconGmail isDark={ theme.value === 'dark' } />} />
           </a>
         </ProfileLogo>
       </AppFooter>

@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { useDarkMode } from '@/util/hooks/useDarkmode'
 
+import { useRecoilState } from 'recoil'
+import { themeState } from '@/store/theme'
+
 const DarkModeBtn = styled.div`
   width: 30px;
   height: 30px;
@@ -18,9 +21,10 @@ const DarkModeBtn = styled.div`
 `
 
 export default function DarkMode() {
-  const [mode, toggleTheme] = useDarkMode()
+  const [_, toggleTheme] = useDarkMode()
+  const [theme] = useRecoilState(themeState)
 
   return (
-    <DarkModeBtn onClick={toggleTheme} className={mode}/>
+    <DarkModeBtn onClick={toggleTheme} className={theme.value}/>
   )
 }

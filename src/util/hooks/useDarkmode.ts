@@ -1,28 +1,36 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useRecoilState } from 'recoil'
+import { themeState } from '@/store/theme'
 
 type Theme = 'light' | 'dark'
 
-export const useDarkMode = (): [Theme, () => void] => {
-  const [theme, setTheme] = useState<Theme>('light')
+export const useDarkMode = (): [string, () => void] => {
+  const [theme, setTheme] = useRecoilState(themeState)
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme') as Theme | null
     
     if (localTheme) {
-      setTheme(localTheme)
+      setTheme({
+        value: localTheme
+      })
       document.body.dataset.theme = localTheme
     } else {
-      setTheme('light')
+      setTheme({
+        value: 'light'
+      })
       document.body.dataset.theme = 'light'
     }
-  }, [])
+  }, [setTheme])
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light'
-    setTheme(newTheme)
+    const newTheme = theme.value === 'light' ? 'dark' : 'light'
     window.localStorage.setItem('theme', newTheme)
     document.body.dataset.theme = newTheme
+    setTheme({
+      value: newTheme
+    })
   }
 
-  return [theme, toggleTheme]
-};
+  return [theme.value, toggleTheme]
+}
