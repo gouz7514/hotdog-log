@@ -1,5 +1,8 @@
-import Image from 'next/image'
 import styled from 'styled-components'
+import Icon from './Icon'
+import { IconGithub } from './icon/IconGIthub'
+import { IconLinkedIn } from './icon/IconLinkedin'
+import { IconGmail } from './icon/IconGmail'
 
 const AppFooter = styled.footer`
   display: flex;
@@ -22,28 +25,13 @@ export default function Footer() {
       <AppFooter>
         <ProfileLogo>
           <a href="https://github.com/gouz7514" target='blank'>
-            <Image
-              src="/images/logo-github.webp"
-              height={30}
-              width={30}
-              alt="github logo"
-            />
+            <Icon icon={<IconGithub />} />
           </a>
           <a href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271" target='blank'>
-            <Image
-              src="/images/logo-linkedin.webp"
-              height={30}
-              width={30}
-              alt="linkedin logo"
-            />
+          <Icon icon={<IconLinkedIn />} />
           </a>
           <a href="mailto:gouz7514@gmail.com" target='blank'>
-            <Image
-              src="/images/logo-gmail.webp"
-              height={30}
-              width={30}
-              alt="gmail logo"
-            />
+          <Icon icon={<IconGmail />} />
           </a>
         </ProfileLogo>
       </AppFooter>
