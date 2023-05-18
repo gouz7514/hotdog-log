@@ -3,11 +3,17 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import AppLayout from '../../components/layout/AppLayout'
 
+import {
+  RecoilRoot,
+  RecoilEnv
+} from 'recoil'
+
 export default function App({ Component, pageProps }: AppProps) {
   const { page } = pageProps
+  RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false
 
   return (
-    <AppLayout page={page}>
+    <>
       <Head>
         <title>게으른 개발자, 김학재입니다</title>
         <meta name="og:title" content="게으른 개발자, 김학재입니다" />
@@ -17,7 +23,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
         <meta property="og:image" content="/images/profile.webp" />
       </Head>
-      <Component {...pageProps} />
-    </AppLayout>
+      <RecoilRoot>
+        <AppLayout page={page}>
+          <Component {...pageProps} />
+        </AppLayout>
+      </RecoilRoot>
+    </>
   )
 }
