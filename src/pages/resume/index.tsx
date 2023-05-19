@@ -8,6 +8,7 @@ import Icon from "../../../components/Icon"
 import { IconGithub } from "../../../components/icon/IconGIthub"
 import { IconLinkedIn } from "../../../components/icon/IconLinkedin"
 import { IconGmail } from "../../../components/icon/IconGmail"
+import { IconVelog } from "../../../components/icon/IconVelog"
 
 import { themeState } from '@/store/theme'
 
@@ -26,10 +27,6 @@ const SkillTag = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-`
-
-const PdfContainer = styled.div`
-
 `
 
 const ProjectContainer = styled.div`
@@ -605,6 +602,9 @@ export default function Resume() {
             </a>
             <a href="mailto:gouz7514@gmail.com" target='blank'>
               <Icon icon={<IconGmail isDark={ theme.value === 'dark' } />} />
+            </a>
+            <a href="https://velog.io/@gouz7514" target='blank'>
+              <Icon icon={<IconVelog isDark={ theme.value === 'dark' } />} />
             </a>
           </ProfileLogo>
         </ProfileContainer>
