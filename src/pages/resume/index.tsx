@@ -9,6 +9,7 @@ import { IconGithub } from "../../../components/icon/IconGIthub"
 import { IconLinkedIn } from "../../../components/icon/IconLinkedin"
 import { IconGmail } from "../../../components/icon/IconGmail"
 import { IconVelog } from "../../../components/icon/IconVelog"
+import LoadingLayout from "../../../components/layout/LoadingLayout"
 
 import { themeState } from '@/store/theme'
 
@@ -153,7 +154,7 @@ export default function Resume() {
   const [theme] = useRecoilState(themeState)
 
   return (
-    <>
+    <LoadingLayout>
       <div className="container">
         <div>
           <h1>
@@ -665,6 +666,6 @@ export default function Resume() {
           </ProfileLogo>
         </ProfileContainer>
       </div>
-    </>
+    </LoadingLayout>
   )
 }
