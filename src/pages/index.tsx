@@ -1,6 +1,7 @@
 import styles from '@/styles/Home.module.css'
 import styled from 'styled-components'
 import Footer from '../../components/Footer'
+import Typed from 'react-typed'
 
 const ProfileImage = styled.div`
   overflow: hidden;
@@ -26,7 +27,17 @@ const ProfileDescription = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
+
+  .typed-text {
+    font-size: 3em;
+    font-weight: bold;
+    color: #0066cc;
+  }
+
+  h1 {
+    margin: 12px 0;
+  }
 `
 
 export default function Home() {
@@ -39,9 +50,20 @@ export default function Home() {
 
           <ProfileDescription>
             <div className="d-flex flex-column align-items-center">
+              <Typed
+                className="typed-text"
+                strings={[
+                  '소통하는 법을 아는',
+                  '끊임없이 고민하는',
+                  '소비자의 진심을 읽는',
+                  '프론트엔드'
+                ]}
+                typeSpeed={100}
+                backSpeed={100}
+                loop
+              />
               <h1>
-                게으른 개발자<br />
-                김학재입니다
+                개발자 김학재입니다
               </h1>
             </div>
           </ProfileDescription>

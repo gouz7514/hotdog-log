@@ -157,7 +157,7 @@ export default function Resume() {
       <div className="container">
         <div>
           <h1>
-            게으른 개발자,<br />
+            프론트엔드 개발자,<br />
             김학재입니다
           </h1>
           <div style={{ marginBottom: '12px' }}>
