@@ -33,10 +33,18 @@ const ProfileDescription = styled.div`
     font-size: 3em;
     font-weight: bold;
     color: #0066cc;
+
+    @media screen and (max-width: 600px) {
+      font-size: 2em;
+    }
   }
 
   h1 {
     margin: 12px 0;
+
+    @media screen and (max-width: 600px) {
+      font-size: 2em;
+    }
   }
 `
 
