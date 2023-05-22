@@ -52,7 +52,7 @@ type HeaderProps = {
 
 export default function Header({ page }: HeaderProps) {
   const router = useRouter()
-  const currentPage = router.pathname
+  const currentPage = router.pathname === '/' ? router.pathname : '/' + router.pathname.split('/')[1]
 
   const conditionalClass = function(page: String) {
     if (currentPage === '/' + page) return 'active'
