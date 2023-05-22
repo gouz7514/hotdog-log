@@ -3,6 +3,7 @@ import Icon from './Icon'
 import { IconGithub } from './icon/IconGIthub'
 import { IconLinkedIn } from './icon/IconLinkedin'
 import { IconGmail } from './icon/IconGmail'
+import { IconVelog } from './icon/IconVelog'
 import { themeState } from '@/store/theme'
 import { useRecoilState } from 'recoil'
 
@@ -36,6 +37,9 @@ export default function Footer() {
           </a>
           <a href="mailto:gouz7514@gmail.com" target='blank'>
             <Icon icon={<IconGmail isDark={ theme.value === 'dark' } />} />
+          </a>
+          <a href="https://velog.io/@gouz7514" target='blank'>
+            <Icon icon={<IconVelog isDark={ theme.value === 'dark' } />} />
           </a>
         </ProfileLogo>
       </AppFooter>

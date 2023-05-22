@@ -47,6 +47,17 @@ h5 {
   line-height: 1.5;
 }
 
+.big-paragraph {
+  font-size: 1.5rem;
+  word-break: keep-all;
+}
+
+@media screen and (max-width: 600px) {
+  .big-paragraph {
+    font-size: 1.3rem;
+  }
+}
+
 ul {
   list-style: none;
 }
@@ -72,6 +83,8 @@ a {
   width: 100%;
   padding: 1rem;
   z-index: 1;
+  max-width: 50rem;
+  margin: auto;
 }
 
 .mt-40 {

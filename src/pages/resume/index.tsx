@@ -8,17 +8,18 @@ import Icon from "../../../components/Icon"
 import { IconGithub } from "../../../components/icon/IconGIthub"
 import { IconLinkedIn } from "../../../components/icon/IconLinkedin"
 import { IconGmail } from "../../../components/icon/IconGmail"
+import { IconVelog } from "../../../components/icon/IconVelog"
 
 import { themeState } from '@/store/theme'
 
 const SkillContainer = styled.div`
   margin-top: 6px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+  grid-template-columns: repeat(auto-fill, minmax(170px, auto));
   row-gap: 12px;
 
   @media screen and (min-width: 1000px) {
-    grid-template-columns: repeat(5, 200px)
+    grid-template-columns: repeat(5, 170px)
   }
 `
 
@@ -26,10 +27,6 @@ const SkillTag = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-`
-
-const PdfContainer = styled.div`
-
 `
 
 const ProjectContainer = styled.div`
@@ -164,15 +161,12 @@ export default function Resume() {
             김학재입니다
           </h1>
           <div style={{ marginBottom: '12px' }}>
-            <h4>
-              프론트엔드뿐 아니라 다양한 도메인에 관심을 갖고 고민합니다.
-            </h4>
-            <h4>
-              소통의 중요성을 알고 실천하려고 노력합니다.
-            </h4>
-            <h4>
-              소비자의 진심을 읽고 나도 사용하고 싶은 프로덕트를 만드는 일을 지향합니다.
-            </h4>
+            <div className="big-paragraph">
+              소비자의 진심을 읽고 나도 사용하고 싶은 프로덕트의 개발을 지향합니다.
+              프론트엔드 뿐 아니라 다양한 도메인, 새로운 기술에 대해 관심을 갖고 고민합니다.
+              다양한 데이터를 기반으로 한 소통, 의사결정을 통해 목표를 달성하는 팀을 만들어 나가고 싶습니다.
+              체계적인 개발 문화, 뚜렷한 목표를 갖고 열심히 고민하는 문화를 갈망합니다.
+            </div>
           </div>
           <Badge content="PDF로 보기" link="https://drive.google.com/file/d/1sX61X34fI2OjknhngkN4eaqmdUos3u_e/view?usp=sharing" />
         </div>
@@ -273,6 +267,10 @@ export default function Resume() {
               </li>
             </ul>
           </div>
+        </div>
+        <Divider />
+        <div>
+          <h2>Projects</h2>
           <ProjectContainer>
             <div className="project-title">
               <h4>
@@ -595,6 +593,61 @@ export default function Resume() {
           </ProjectContainer>
         </div>
         <Divider />
+        <div>
+          <h2>Awards</h2>
+          <div>
+            <h4>
+              단국대 캡스톤 경진대회 금상
+            </h4>
+            <ul>
+              <li>
+                ・ 단국대 시간표를 기반으로 한 알람, 단국대 지도를 기반으로 한 네비게이션 구현
+              </li>
+              <li>
+                ・ 시중에 출시된 서비스(에브리타임, 단국대 앱)의 부족한 점을 분석하고 보완한 프로젝트
+              </li>
+              <li>
+                ・ 팀장으로서 각 구성원의 참여를 이끌어내고 협의를 통한 문제 해결
+              </li>
+              <li>
+                ・ 메일을 통해 해당 프로젝트에 대해 문의를 받고 도움을 준 경험이 있음
+              </li>
+            </ul>
+          </div>
+        </div>
+        <Divider />
+        <div>
+          <h2>Education</h2>
+          <div>
+            <h4>단국대학교</h4>
+            <ul>
+              <li>
+                ・ 응용컴퓨터공학과 학사 졸업
+              </li>
+              <li>
+                ・ 캡스톤 경진대회 금상 수상
+              </li>
+            </ul>
+          </div>
+        </div>
+        <Divider />
+        <div>
+          <h2>ETC</h2>
+          <div>
+            <h4>정보처리기사</h4>
+            <ul>
+              <li>
+                ・ 휴학 기간을 활용, 전공 지식을 바탕으로 자격증 취득
+              </li>
+            </ul>
+            <h4 style={{ "marginTop": "12px" }}>TOEIC</h4>
+            <ul>
+              <li>
+                ・ 930
+              </li>
+            </ul>
+          </div>
+        </div>
         <ProfileContainer>
           <ProfileLogo>
             <a href="https://github.com/gouz7514" target='blank'>
@@ -605,6 +658,9 @@ export default function Resume() {
             </a>
             <a href="mailto:gouz7514@gmail.com" target='blank'>
               <Icon icon={<IconGmail isDark={ theme.value === 'dark' } />} />
+            </a>
+            <a href="https://velog.io/@gouz7514" target='blank'>
+              <Icon icon={<IconVelog isDark={ theme.value === 'dark' } />} />
             </a>
           </ProfileLogo>
         </ProfileContainer>
