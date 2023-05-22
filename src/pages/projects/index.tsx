@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function Posts() {
+export default function Projects() {
   return (
     <>
       <div className='container'>
