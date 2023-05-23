@@ -10,8 +10,6 @@ interface PostsProps {
 }
 
 export default function Posts({ feed }: PostsProps) {
-  const authorName = feed[0]?.author?.name || 'Unknown author'
-
   return (
     <LoadingLayout>
       <div className='container'>
