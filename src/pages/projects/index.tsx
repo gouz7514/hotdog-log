@@ -1,9 +1,13 @@
 import { GetStaticProps } from "next"
+import Router from 'next/router'
+
 import LoadingLayout from "../../../components/layout/LoadingLayout"
+import Post from '../../../components/Post'
 import prisma from "../../lib/prisma"
 import { ProjectTypes } from '../../types/types'
-import Post from '../../../components/Post'
-import Router from 'next/router'
+
+import AnimationHotdog from '../../../public/lottie/lottie-hotdog.json'
+import LottieAnimation from "../../../components/Lottie"
 
 interface ProjectsProps {
   projects: ProjectTypes[]
@@ -13,15 +17,8 @@ export default function Projects({ projects }: ProjectsProps) {
   return (
     <LoadingLayout>
       <div className='container'>
-        <h2>
-          Projects
-        </h2>
         <div>
-          {projects?.map((project) => (
-            <div key={project.id} onClick={() => Router.push('/projects/[id]', `/projects/${project.id}`)}>
-              <Post post={project} />
-            </div>
-          ))}
+          <LottieAnimation json={AnimationHotdog} description="아직 준비중인 페이지입니다. 조금만 기다려주세요!" />
         </div>
       </div>
     </LoadingLayout>
