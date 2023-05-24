@@ -57,12 +57,6 @@ export default function Header({ page }: HeaderProps) {
     return ''
   }
 
-  const onClickDisabledLink = function() {
-    return function() {
-      alert('Coming soon!')
-    }
-  }
-
   return (
     <StickyHeader>
       <CommonHeader>
@@ -71,8 +65,7 @@ export default function Header({ page }: HeaderProps) {
             <Link href="/">Home</Link>
           </div>
           <div className={`header-links ${conditionalClass('projects')}`}>
-            <div className='disabled-link' onClick={onClickDisabledLink()}>Projects</div>
-            {/* <Link href="/projects">Projects</Link> */}
+            <Link href="/projects">Projects</Link>
           </div>
           <div className={`header-links ${conditionalClass('resume')}`}>
             <Link href="/resume">Resume</Link>
