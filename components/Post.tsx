@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { PostTypes } from '@/types/types'
+import { ProjectTypes } from '@/types/types'
 
 const PostContainer = styled.div`
   .post {
@@ -21,7 +21,7 @@ const PostContainer = styled.div`
   }
 `
 
-export default function Post({ post }: { post: PostTypes }) {
+export default function Post({ post }: { post: ProjectTypes }) {
   const authorName = post?.author?.name || 'Unknown author'
 
   return (
