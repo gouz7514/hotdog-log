@@ -1,25 +1,25 @@
 import { GetStaticProps } from "next"
 import LoadingLayout from "../../../components/layout/LoadingLayout"
 import prisma from "../../lib/prisma"
-import { PostTypes } from '../../types/types'
+import { ProjectTypes } from '../../types/types'
 import Post from '../../../components/Post'
 import Router from 'next/router'
 
-interface PostsProps {
-  feed: PostTypes[]
+interface ProjectsProps {
+  projects: ProjectTypes[]
 }
 
-export default function Posts({ feed }: PostsProps) {
+export default function Projects({ projects }: ProjectsProps) {
   return (
     <LoadingLayout>
       <div className='container'>
         <h2>
-          Posts
+          Projects
         </h2>
         <div>
-          {feed.map((post) => (
-            <div key={post.id} onClick={() => Router.push('/posts/[id]', `/posts/${post.id}`)}>
-              <Post post={post} />
+          {projects?.map((project) => (
+            <div key={project.id} onClick={() => Router.push('/projects/[id]', `/projects/${project.id}`)}>
+              <Post post={project} />
             </div>
           ))}
         </div>
@@ -29,7 +29,7 @@ export default function Posts({ feed }: PostsProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const feed = await prisma.post.findMany({
+  const projects = await prisma.project.findMany({
     where: { published: true },
     include: {
       author: {
@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps = async () => {
   })
   
   return {
-    props: { feed },
+    props: { projects },
     revalidate: 10,
   }
 }

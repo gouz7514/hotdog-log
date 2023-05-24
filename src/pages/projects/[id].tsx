@@ -1,22 +1,22 @@
 import { GetServerSideProps } from "next"
 import prisma from "../../lib/prisma"
-import { PostTypes } from "../../types/types"
+import { ProjectTypes } from "../../types/types"
 
 type SimplePostProps = {
-  post: PostTypes | null;
+  project: ProjectTypes | null;
 };
 
-export default function SimplePost({ post }: SimplePostProps) {
+export default function SingleProject({ project }: SimplePostProps) {
   return (
     <>
-      <div>{post?.title}</div>
-      <div>{post?.content}</div>
+      <div>{project?.title}</div>
+      <div>{project?.content}</div>
     </>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const post = await prisma.post.findUnique({
+  const project = await prisma.project.findUnique({
     where: {
       id: String(params?.id),
     },
@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
   return {
     props: {
-      post
+      project
     },
   }
 }
