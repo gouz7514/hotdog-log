@@ -37,7 +37,14 @@ class MyDocument extends Document {
 
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta name="og:title" content="핫재의 개발 블로그" />
+          <meta name="description" content="김학재의 개발 블로그입니다" />
+          <meta name="og:description" content="김학재의 개발 블로그입니다" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/favicon.ico" />
+          <meta property="og:image" content="/images/profile.webp" />
+        </Head>
         <body>
           <script dangerouslySetInnerHTML={{ __html: setThemeMode }} />
           <Main />

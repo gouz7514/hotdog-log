@@ -1,4 +1,4 @@
-export type PostTypes = {
+export type ProjectTypes = {
   id: string
   title: string
   content?: string | null
@@ -13,5 +13,5 @@ export type UserTypes = {
   email?: string | null
   createdAt: Date
   updatedAt: Date
-  posts: PostTypes[]
+  projects: ProjectTypes[]
 }

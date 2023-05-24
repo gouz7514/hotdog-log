@@ -12,7 +12,7 @@ datasource db {
   shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 }
 
-model Post {
+model Project {
   id        String     @default(cuid()) @id
   title     String
   content   String?
@@ -27,6 +27,6 @@ model User {
   email         String?   @unique
   createdAt     DateTime  @default(now()) @map(name: "created_at")
   updatedAt     DateTime  @updatedAt @map(name: "updated_at")
-  posts         Post[]
+  projects      Project[]
   @@map(name: "users")
 }

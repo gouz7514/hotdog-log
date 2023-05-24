@@ -36,13 +36,11 @@ const CommonHeader = styled.div`
       &.active {
         text-decoration: underline;
       }
-    }
-  }
 
-  .header-external {
-    margin-left: auto;
-    display: flex;
-    gap: 12px;
+      .disabled-link {
+        cursor: pointer;
+      }
+    }
   }
 `
 
@@ -52,10 +50,10 @@ type HeaderProps = {
 
 export default function Header({ page }: HeaderProps) {
   const router = useRouter()
-  const currentPage = router.pathname
+  const currentPage = router.pathname 
 
   const conditionalClass = function(page: String) {
-    if (currentPage === '/' + page) return 'active'
+    if (currentPage.split('/')[1] === page) return 'active'
     return ''
   }
 
@@ -66,8 +64,8 @@ export default function Header({ page }: HeaderProps) {
           <div className={`header-links ${conditionalClass('')}`}>
             <Link href="/">Home</Link>
           </div>
-          <div className={`header-links ${conditionalClass('posts')}`}>
-            <Link href="/posts">Posts</Link>
+          <div className={`header-links ${conditionalClass('projects')}`}>
+            <Link href="/projects">Projects</Link>
           </div>
           <div className={`header-links ${conditionalClass('resume')}`}>
             <Link href="/resume">Resume</Link>
