@@ -1,38 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# hotdog-log
 
-## Getting Started
+### About
+Next와 Typescript로 만드는 개발 블로그입니다.
+다양한 새로운 기술, 포트폴리오 등을 추가하는 중입니다.
 
-First, run the development server:
+### Stack
+[![Tech stacks](https://skillicons.dev/icons?i=ts,nextjs,vercel,prisma)](https://skillicons.dev)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Develop
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### 23.05.24
+- 다크모드가 업데이트되었습니다.
+- 자세한 내용은 [velog](https://velog.io/@gouz7514/NextJS-%EB%8B%A4%ED%81%AC-%EB%AA%A8%EB%93%9C-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0)에서 확인하실 수 있습니다.
+- 아이콘을 컴포넌트화해서 모드 변경 시에도 가시성을 높였습니다.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+#### 23.05.23
+- vercel storage를 활용해 postgres를 연동했습니다.
+- 현재 개발 진행중인 내용이라 production 환경에서는 확인할 수 었습니다. 조금만 기다려 주세요!
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### 23.05.25
+- [hotjae.com](https://hotjae.com) 도메인을 추가했습니다.
+- opengraph tag를 수정했습니다.
