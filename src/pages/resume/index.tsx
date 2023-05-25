@@ -169,7 +169,7 @@ export default function Resume() {
               체계적인 개발 문화, 뚜렷한 목표를 갖고 열심히 고민하는 문화를 갈망합니다.
             </div>
           </div>
-          <Badge content="PDF로 보기" link="https://drive.google.com/file/d/1sX61X34fI2OjknhngkN4eaqmdUos3u_e/view?usp=sharing" />
+          <Badge content="PDF로 보기" link="https://drive.google.com/file/d/1ZoEpNtpuxgspP8kb5P5YFdRwt5dWOa21/view?usp=sharing" />
         </div>
         <Divider />
         <div>
