@@ -12,6 +12,7 @@ const StickyHeader = styled.div`
   display: flex;
   align-items: center;
   background-color: #0066cc;
+  z-index: 10;
 `
 
 const CommonHeader = styled.div`
