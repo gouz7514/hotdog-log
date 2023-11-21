@@ -64,8 +64,8 @@ export default function Header({ page }: HeaderProps) {
           <div className={`header-links ${conditionalClass('')}`}>
             <Link href="/">Home</Link>
           </div>
-          <div className={`header-links ${conditionalClass('projects')}`}>
-            <Link href="/projects">Projects</Link>
+          <div className={`header-links ${conditionalClass('posts')}`}>
+            <Link href="/posts">Posts</Link>
           </div>
           <div className={`header-links ${conditionalClass('resume')}`}>
             <Link href="/resume">Resume</Link>
