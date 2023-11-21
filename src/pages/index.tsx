@@ -1,4 +1,3 @@
-import styles from '@/styles/Home.module.css'
 import styled from 'styled-components'
 import Footer from '../../components/Footer'
 import Typed from 'react-typed'
@@ -51,7 +50,7 @@ const ProfileDescription = styled.div`
 export default function Home() {
   return (
     <>
-      <main className={styles.main}>
+      <main className="main">
         <div className="d-flex flex-column align-items-center">
           <ProfileImage>
           </ProfileImage>
