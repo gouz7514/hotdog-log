@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import Header from '../Header'
+import Footer from '../Footer'
 
 type AppLayoutProps = {
   children: ReactNode;
@@ -9,8 +10,9 @@ type AppLayoutProps = {
 export default function AppLayout({ children, page } : AppLayoutProps) {
   return (
     <div>
-      <Header page={page}/>
+      <Header />
       { children }
+      <Footer />
     </div>
   )
 }
