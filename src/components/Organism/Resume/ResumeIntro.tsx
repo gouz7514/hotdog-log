@@ -1,23 +1,38 @@
 import { Fragment } from "react"
 
+import styled from '@emotion/styled'
+
 import Badge from "@/components/Badge"
+
+const ResumeIntroStyle = styled.div`
+  margin-bottom: 12px;
+`
 
 export default function ResumeIntro() {
   return (
     <Fragment>
-      <h1>
+      <h2>
         프론트엔드 개발자,<br />
         김학재입니다
-      </h1>
-      <div style={{ marginBottom: '12px' }}>
+      </h2>
+      <ResumeIntroStyle>
         <div className="big-paragraph">
-          소비자의 진심을 읽고 나도 사용하고 싶은 프로덕트의 개발을 지향합니다.
-          프론트엔드 뿐 아니라 다양한 도메인, 새로운 기술에 대해 관심을 갖고 고민합니다.
-          다양한 데이터를 기반으로 한 소통, 의사결정을 통해 목표를 달성하는 팀을 만들어 나가고 싶습니다.
-          체계적인 개발 문화, 뚜렷한 목표를 갖고 열심히 고민하는 문화를 갈망합니다.
+          &nbsp;스타트업에서 웹 서비스를 개발/배포/운영한 경험이 있습니다.
+          프론트엔드뿐 아니라 다양한 도메인에 걸쳐 서비스를 전반적으로 유지하고 개발했습니다.
         </div>
+        <div className="big-paragraph mt-12">
+          &nbsp;불편함을 방치하면 모두의 불편함이 될 수 있기에
+          스스로 불편함을 해결하려는 자세를 갖춰야 좋은 개발자라고 생각합니다.
+          저는 불편함을 불편해합니다. 서비스에 대한 책임감과 이해도를
+          바탕으로 항상 고민하며, 주도적으로 솔루션을 제시해 해결하기 위해 노력합니다.
+        </div>
+      </ResumeIntroStyle>
+      <div className="badge-place">
+        <Badge
+          content="PDF로 보기"
+          link="https://drive.google.com/file/d/1FQ1IfrqY1Yn7ItXUC9ieULRjAL_mZUPW/view?usp=sharing"
+        />
       </div>
-      <Badge content="PDF로 보기" link="https://drive.google.com/file/d/1ZoEpNtpuxgspP8kb5P5YFdRwt5dWOa21/view?usp=sharing" />
     </Fragment>
   )
 }

@@ -1,33 +1,9 @@
 import styled from '@emotion/styled'
-import { useRecoilState } from 'recoil'
-
-import { SKILLS } from '@/constants/constatns'
 
 import Divider from "@/components/Divider"
 import Badge from "@/components/Badge"
-import Tooltip from "@/components/Tooltip"
-
 import ResumeIntro from '@/components/Organism/Resume/ResumeIntro'
 import ResumeSkills from '@/components/Organism/Resume/ResumeSkills'
-
-import { themeState } from '@/store/theme'
-
-const SkillContainer = styled.div`
-  margin-top: 6px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, auto));
-  row-gap: 12px;
-
-  @media screen and (min-width: 1000px) {
-    grid-template-columns: repeat(5, 170px)
-  }
-`
-
-const SkillTag = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-`
 
 const ProjectContainer = styled.div`
   margin-top: 30px;
@@ -54,20 +30,6 @@ const ProjectContainer = styled.div`
 `
 
 export default function Resume() {
-
-  const SkillBadgeClass = (score: number) => {
-    switch (score) {
-      case 3:
-        return 'badge-primary'
-      case 2:
-        return 'badge-default'
-      default:
-        return 'badge-minor'
-    }
-  }
-  
-  const [theme] = useRecoilState(themeState)
-
   return (
     <div className="container">
       <ResumeIntro />
