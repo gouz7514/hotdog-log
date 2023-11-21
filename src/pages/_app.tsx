@@ -2,7 +2,7 @@ import GlobalStyle from '@/styles/GlobalStyle'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
-import AppLayout from '../../components/layout/AppLayout'
+import AppLayout from '@/components/layout/AppLayout'
 
 import {
   RecoilRoot,

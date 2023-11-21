@@ -1,9 +1,11 @@
 import styled from '@emotion/styled'
 import { useRecoilState } from 'recoil'
 
-import Divider from "../../../components/Divider"
-import Badge from "../../../components/Badge"
-import Tooltip from "../../../components/Tooltip"
+import { SKILLS } from '@/constants/constatns'
+
+import Divider from "@/components/Divider"
+import Badge from "@/components/Badge"
+import Tooltip from "@/components/Tooltip"
 
 import { themeState } from '@/store/theme'
 
@@ -48,91 +50,7 @@ const ProjectContainer = styled.div`
   }
 `
 
-const ProfileContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .contact-container {
-    display: flex;
-    gap: 12px;
-  }
-`
-
-const ProfileLogo = styled.div`
-  display: flex;
-  gap: 24px;
-`
-
 export default function Resume() {
-  const skills = {
-    FE: [
-      {
-        name: 'Vue',
-        score: 3
-      },
-      {
-        name: 'Nuxt',
-        score: 3
-      },
-      {
-        name: 'Javascript',
-        score: 3
-      },
-      {
-        name: 'React',
-        score: 2
-      },
-      {
-        name: 'Next',
-        score: 2
-      },
-      {
-        name: 'Typescript',
-        score: 2
-      },
-      {
-        name: 'Storybook',
-        score: 2
-      },
-      {
-        name: 'Webpack',
-        score: 2
-      },
-      {
-        name: 'Graphql',
-        score: 1
-      },
-    ],
-    DEVOPS: [
-      {
-        name: 'AWS',
-        score: 3
-      },
-      {
-        name: 'Git',
-        score: 3
-      },
-      {
-        name: 'Docker',
-        score: 2
-      },
-    ],
-    BE: [
-      {
-        name: 'Python',
-        score: 2
-      },
-      {
-        name: 'Nginx',
-        score: 1
-      },
-      {
-        name: 'Django',
-        score: 1
-      },
-    ],
-  }
 
   const SkillBadgeClass = (score: number) => {
     switch (score) {
@@ -183,7 +101,7 @@ export default function Resume() {
           </h3>
           <SkillContainer>
             {
-              skills.FE.map(skill => {
+              SKILLS.FE.map(skill => {
                 return (
                   <SkillTag key={ skill.name }>
                     <Badge content={skill.score} className={SkillBadgeClass(skill.score)} />
@@ -202,7 +120,7 @@ export default function Resume() {
           </h3>
           <SkillContainer>
             {
-              skills.DEVOPS.map(skill => {
+              SKILLS.DEVOPS.map(skill => {
                 return (
                   <SkillTag key={ skill.name }>
                     <Badge content={skill.score} className={SkillBadgeClass(skill.score)} />
@@ -221,7 +139,7 @@ export default function Resume() {
           </h3>
           <SkillContainer>
             {
-              skills.BE.map(skill => {
+              SKILLS.BE.map(skill => {
                 return (
                   <SkillTag key={ skill.name }>
                     <Badge content={skill.score} className={SkillBadgeClass(skill.score)} />
