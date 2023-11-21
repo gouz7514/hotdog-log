@@ -118,6 +118,6 @@ const style = css`
   }
 `
 
-const GlobalStyle = () => <Global styles={style} />
+const GlobalStyle = () => <Global styles={[style, reset]} />
 
 export default GlobalStyle
