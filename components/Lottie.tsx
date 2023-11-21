@@ -13,7 +13,7 @@ const LottieWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 200px);
 
   .lottie-description {
     text-align: center;
