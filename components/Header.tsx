@@ -44,11 +44,7 @@ const CommonHeader = styled.div`
   }
 `
 
-type HeaderProps = {
-  page: string
-}
-
-export default function Header({ page }: HeaderProps) {
+export default function Header() {
   const router = useRouter()
   const currentPage = router.pathname 
 
