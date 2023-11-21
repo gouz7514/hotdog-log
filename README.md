@@ -5,7 +5,7 @@ Next와 Typescript로 만드는 개발 블로그입니다.
 다양한 새로운 기술, 포트폴리오 등을 추가하는 중입니다.
 
 ### Stack
-[![Tech stacks](https://skillicons.dev/icons?i=ts,nextjs,vercel,prisma)](https://skillicons.dev)
+[![Tech stacks](https://skillicons.dev/icons?i=ts,nextjs,vercel)](https://skillicons.dev)
 
 ### Develop
 
