@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const DividerContainer = styled.div`
   border: 1px solid #eeeeee;

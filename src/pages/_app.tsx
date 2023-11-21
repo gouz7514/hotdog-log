@@ -1,4 +1,4 @@
-import '@/styles/globals.css'
+import GlobalStyle from '@/styles/GlobalStyle'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
@@ -17,15 +17,18 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>핫재의 개발 블로그</title>
+        <meta name="title" content="핫재의 개발 블로그" />
+        <meta name="description" content="김학재의 개발 블로그입니다" />
         <meta name="og:title" content="핫재의 개발 블로그" />
-          <meta name="description" content="김학재의 개발 블로그입니다" />
-          <meta name="og:description" content="김학재의 개발 블로그입니다" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="김학재의 개발 블로그입니다" />
+        <meta name="og:description" content="김학재의 개발 블로그입니다" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
         <meta property="og:image" content="/images/profile.webp" />
       </Head>
       <RecoilRoot>
         <AppLayout page={page}>
+          <GlobalStyle />
           <AnimatePresence mode="wait" initial={false}>
             <Component {...pageProps} />
           </AnimatePresence>
