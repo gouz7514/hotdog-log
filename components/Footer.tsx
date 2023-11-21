@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Icon from './Icon'
 import { IconGithub } from './icon/IconGIthub'
 import { IconLinkedIn } from './icon/IconLinkedin'

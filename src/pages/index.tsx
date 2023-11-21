@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import Footer from '../../components/Footer'
 import Typed from 'react-typed'
 

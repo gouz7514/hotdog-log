@@ -1,4 +1,4 @@
-import '@/styles/globals.css'
+import GlobalStyle from '@/styles/GlobalStyle'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
@@ -26,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <RecoilRoot>
         <AppLayout page={page}>
+          <GlobalStyle />
           <AnimatePresence mode="wait" initial={false}>
             <Component {...pageProps} />
           </AnimatePresence>
