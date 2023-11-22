@@ -38,7 +38,7 @@ export default function ResumeSkills() {
   return (
     <Fragment>
       <div className="d-flex align-items-center">
-        <h2>
+        <h2 className="text-blue">
           Skills
         </h2>
         <Tooltip>
@@ -47,7 +47,7 @@ export default function ResumeSkills() {
           <div className="text-bold">1 : 기초적 개발 경험</div>
         </Tooltip>
       </div>
-      <div className="mt-12">
+      <>
         <h3>
           FE
         </h3>
@@ -57,7 +57,7 @@ export default function ResumeSkills() {
               return (
                 <SkillTag key={ skill.name }>
                   <Badge content={skill.score} className={SkillBadgeClass(skill.score)} />
-                  <span>
+                  <span className="text-bold">
                     { skill.name }
                   </span>
                 </SkillTag>
@@ -65,8 +65,8 @@ export default function ResumeSkills() {
             })
           }
         </SkillContainer>
-      </div>
-      <div className="mt-12">
+      </>
+      <div className="mt-16">
         <h3>
           Devops
         </h3>
@@ -76,7 +76,7 @@ export default function ResumeSkills() {
               return (
                 <SkillTag key={ skill.name }>
                   <Badge content={skill.score} className={SkillBadgeClass(skill.score)} />
-                  <span>
+                  <span className="text-bold">
                     { skill.name }
                   </span>
                 </SkillTag>
@@ -85,7 +85,7 @@ export default function ResumeSkills() {
           }
         </SkillContainer>
       </div>
-      <div className="mt-12">
+      <div className="mt-16">
         <h3>
           BE
         </h3>
@@ -95,7 +95,7 @@ export default function ResumeSkills() {
               return (
                 <SkillTag key={ skill.name }>
                   <Badge content={skill.score} className={SkillBadgeClass(skill.score)} />
-                  <span>
+                  <span className="text-bold">
                     { skill.name }
                   </span>
                 </SkillTag>

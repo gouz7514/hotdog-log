@@ -4,6 +4,7 @@ import Divider from "@/components/Divider"
 import Badge from "@/components/Badge"
 import ResumeIntro from '@/components/Organism/Resume/ResumeIntro'
 import ResumeSkills from '@/components/Organism/Resume/ResumeSkills'
+import ResumeCareer from '@/components/Organism/Resume/ResumeCareer'
 
 const ProjectContainer = styled.div`
   margin-top: 30px;
@@ -36,33 +37,7 @@ export default function Resume() {
       <Divider />
       <ResumeSkills />
       <Divider />
-      <div>
-        <h2>
-          Career
-        </h2>
-        <h3>
-          ABZ 주식회사
-        </h3>
-        <div>
-          2021.06 ~ 2023.04
-        </div>
-        <div className="d-flex flex-column">
-          <ul>
-            <li>
-              ・ 국내 최대 바이오링크 서비스인 <a href="https://link.inpock.co.kr" target="blank" className="text-orange text-bold">인포크링크</a> 운영
-            </li>
-            <li>
-              ・ 인포크링크 서비스의 메인 프론트엔드 개발자로 근무
-            </li>
-            <li>
-              ・ 다양한 문제 상황 파악 및 해결 능력을 기름
-            </li>
-            <li>
-              ・ 소통 능력 및 팀 리딩 능력을 기룸
-            </li>
-          </ul>
-        </div>
-      </div>
+      <ResumeCareer />
       <Divider />
       <div>
         <h2>Projects</h2>
