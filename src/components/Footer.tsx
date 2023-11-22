@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import Icon from './Atom/Icon'
-// import { IconGithub } from './Icon/IconGithub'
+import { IconGithub } from './Icon/IconGithub'
 import { IconLinkedIn } from './Icon/IconLinkedin'
 import { IconGmail } from './Icon/IconGmail'
 import { IconVelog } from './Icon/IconVelog'
@@ -29,9 +29,9 @@ export default function Footer() {
   return (
     <AppFooter>
       <ProfileLogo>
-        {/* <a href="https://github.com/gouz7514" target='blank'>
+        <a href="https://github.com/gouz7514" target='blank'>
           <Icon icon={<IconGithub isDark={isDark} />} />
-        </a> */}
+        </a>
         <a href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271" target='blank'>
             <Icon icon={<IconLinkedIn isDark={isDark} />} />
         </a>
