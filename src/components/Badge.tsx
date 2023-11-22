@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 
 import { colors } from '@/styles/colors'
+import { BadgeProps } from '@/types/types'
 
 const BadgeContent = styled.div`
   display: flex;
@@ -28,12 +29,6 @@ const BadgeContent = styled.div`
     background-color: ${colors.badge.minor};
   }
 `
-
-type BadgeProps = {
-  content: string | number
-  className?: string | ''
-  link?: string
-}
 
 export default function Badge({ content, className, link }: BadgeProps) {
   return (

@@ -1,11 +1,6 @@
-import { ReactNode } from 'react'
 import styled from '@emotion/styled'
 
-type IconProps = {
-  icon: ReactNode
-  width?: number
-  height?: number
-}
+import { IconProps } from '@/types/types'
 
 const IconWrapper = styled.span<{ width: number, height: number }>`
   display: inline-block;

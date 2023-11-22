@@ -1,11 +1,7 @@
 import Lottie from 'lottie-react'
 import styled from '@emotion/styled'
 
-type LottieProps = {
-  json: Record<string, any>
-  height?: number
-  description: string
-}
+import { LottieProps } from '@/types/types'
 
 const LottieWrapper = styled.div`
   width: 100%;

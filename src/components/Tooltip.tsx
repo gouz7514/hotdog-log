@@ -1,11 +1,8 @@
-import { ReactNode, useState } from 'react'
+import { useState } from 'react'
 import styled from '@emotion/styled'
 
 import { colors } from '@/styles/colors'
-
-interface TooltipProps {
-  children: ReactNode
-}
+import { TooltipProps } from '@/types/types'
 
 const TooltipContainer = styled.div`
   border-radius: 50%;

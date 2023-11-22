@@ -1,6 +1,6 @@
 import { atom } from 'recoil'
 
-export type Theme = {
+type Theme = {
   value: string
 }
 

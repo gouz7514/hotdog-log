@@ -1,13 +1,11 @@
 import { ReactNode } from 'react'
 
+import { LayoutProps } from '@/types/types'
+
 import Header from '../Header'
 import Footer from '../Footer'
 
-type AppLayoutProps = {
-  children: ReactNode;
-}
-
-export default function AppLayout({ children } : AppLayoutProps) {
+export default function AppLayout({ children } : LayoutProps) {
   return (
     <div>
       <Header />

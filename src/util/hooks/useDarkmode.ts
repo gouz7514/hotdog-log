@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
 import { theme } from '@/store/theme'
 
-type Theme = 'light' | 'dark'
+import { Theme } from '@/types/types'
 
 export const useDarkMode = (): [string, () => void] => {
   const [currentTheme, setCurrentTheme] = useRecoilState(theme)
