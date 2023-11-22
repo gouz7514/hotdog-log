@@ -1,11 +1,7 @@
 import Lottie from 'lottie-react'
 import styled from '@emotion/styled'
 
-type LottieProps = {
-  json: Record<string, any>
-  height?: number
-  description: string
-}
+import { LottieProps } from '@/types/types'
 
 const LottieWrapper = styled.div`
   width: 100%;
@@ -13,7 +9,7 @@ const LottieWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 200px);
 
   .lottie-description {
     text-align: center;

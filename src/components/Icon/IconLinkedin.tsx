@@ -1,9 +1,6 @@
-type IconProps = {
-  fill?: string
-  isDark?: boolean
-}
+import { IconChildProps } from "@/types/types"
 
-export const IconLinkedIn = ({ fill = '#000000', isDark = false }: IconProps) => (
+export const IconLinkedIn = ({ fill = '#000000', isDark = false }: IconChildProps) => (
   <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
   width="1600.000000pt" height="1600.000000pt" viewBox="0 0 1600.000000 1600.000000"
   preserveAspectRatio="xMidYMid meet">

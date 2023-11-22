@@ -1,5 +1,7 @@
 import { Global, css } from '@emotion/react'
 import reset from './reset'
+import typo from './typo'
+import { colors } from './colors'
 
 const style = css`
   * {
@@ -8,51 +10,26 @@ const style = css`
     margin: 0;
     line-height: 1.3;
     -webkit-font-smoothing: antialiased;
+
+    --z-index-header: 10;
+    --header-height: 80px;
   }
 
   body[data-theme="dark"] {
-    background-color: black;
-    color: white;
+    background-color: ${colors.background.dark};
+    color: ${colors.white};
     transition: all 0.3s ease-in-out;
   }
 
   body[data-theme="light"] {
-    background-color: white;
-    color: black;
+    background-color: ${colors.background.light};
+    color: ${colors.black};
     transition: all 0.3s ease-in-out;
-  }
-
-  h1 {
-    font-size: 3em;
-    margin: 24px 0;
-  }
-
-  h2 {
-    margin: 12px 0;
-    font-size: 2em
-  }
-
-  h3 {
-    font-size: 1.5em;
-  }
-
-  h4 {
-    font-size: 1.3em;
-  }
-
-  h5 {
-    font-size: 1.1em;
-    line-height: 1.5;
-  }
-
-  .big-paragraph {
-    font-size: 1.5rem;
-    word-break: keep-all;
   }
 
   @media screen and (max-width: 600px) {
     .big-paragraph {
-      font-size: 1.3rem;
+      font-size: 1.15rem;
     }
   }
 
@@ -77,12 +54,21 @@ const style = css`
     align-items: center;
   }
 
+  .relative {
+    position: relative;
+  }
+
+  .justify-content-between {
+    justify-content: space-between;
+  }
+
   .container {
     width: 100%;
     padding: 1rem;
     z-index: 1;
     max-width: 50rem;
     margin: auto;
+    position: relative;
   }
 
   .mt-40 {
@@ -93,20 +79,12 @@ const style = css`
     margin-top: 12px;
   }
 
+  .mt-16 {
+    margin-top: 16px;
+  }
+
   .mt-24 {
     margin-top: 24px;
-  }
-
-  .text-bold {
-    font-weight: bold;
-  }
-
-  .text-blue {
-    color: #0066cc;
-  }
-
-  .text-orange {
-    color: #ff5b1a;
   }
 
   .main {
@@ -118,6 +96,6 @@ const style = css`
   }
 `
 
-const GlobalStyle = () => <Global styles={style} />
+const GlobalStyle = () => <Global styles={[style, reset, typo]} />
 
 export default GlobalStyle

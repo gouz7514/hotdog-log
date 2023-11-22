@@ -1,14 +1,14 @@
 import { atom } from 'recoil'
 
-export type ThemeState = {
+type Theme = {
   value: string
 }
 
-export const initialThemeState: ThemeState = {
+export const initialThemeState: Theme = {
   value: 'light'
 }
 
-export const themeState = atom({
+export const theme = atom({
   key: 'themeState',
   default: initialThemeState
 })

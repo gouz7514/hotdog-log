@@ -1,6 +1,11 @@
 import styled from '@emotion/styled'
-import Footer from '../../components/Footer'
 import Typed from 'react-typed'
+
+import { colors } from '@/styles/colors'
+
+const HomeStyle = styled.main`
+  min-height: calc(100vh - 160px);
+`
 
 const ProfileImage = styled.div`
   overflow: hidden;
@@ -8,7 +13,7 @@ const ProfileImage = styled.div`
   border-radius: 50%;
   width: 300px;
   height: 300px;
-  background-color: beige;
+  background-color: ${colors.beige};
   background-image: url('/images/profile.webp');
   background-size: 300px;
   transition: all 0.3s ease-in-out;
@@ -31,7 +36,7 @@ const ProfileDescription = styled.div`
   .typed-text {
     font-size: 3em;
     font-weight: bold;
-    color: #0066cc;
+    color: ${colors.blue};
 
     @media screen and (max-width: 600px) {
       font-size: 2em;
@@ -50,11 +55,9 @@ const ProfileDescription = styled.div`
 export default function Home() {
   return (
     <>
-      <main className="main">
+      <HomeStyle className="main">
         <div className="d-flex flex-column align-items-center">
-          <ProfileImage>
-          </ProfileImage>
-
+          <ProfileImage />
           <ProfileDescription>
             <div className="d-flex flex-column align-items-center">
               <Typed
@@ -75,8 +78,8 @@ export default function Home() {
             </div>
           </ProfileDescription>
         </div>
-      </main>
-      <Footer />
+      </HomeStyle>
+      {/* <Footer /> */}
     </>
   )
 }

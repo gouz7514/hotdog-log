@@ -1,16 +1,13 @@
-import { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 
-type LoadingProps = {
-  children: ReactNode
-}
+import { LayoutProps } from '@/types/types'
 
-export default function LoadingLayout({ children }: LoadingProps ) {
+export default function LoadingLayout({ children }: LayoutProps ) {
   return (
     <motion.div
-      initial={{ x: 300, opacity: 0 }}
+      initial={{ x: 150, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      exit={{ x: 300, opacity: 0 }}
+      exit={{ x: 150, opacity: 0 }}
       transition={{
         type: "spring",
         stiffness: 260,
