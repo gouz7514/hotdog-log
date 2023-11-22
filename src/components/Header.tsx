@@ -1,53 +1,69 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useRecoilState } from 'recoil'
 import styled from '@emotion/styled'
 
 import DarkMode from './DarkMode'
 import { colors } from '@/styles/colors'
+import { theme } from '@/store/theme'
 
 const StickyHeader = styled.div`
+  --padding: 16px;
+  --logo-size: 40px;
+
   position: sticky;
-  padding: 16px 16px 0;
-  top: -16px;
-  box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.55);
+  padding: 0 var(--padding);
+  top: 0;
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #0066cc;
-  z-index: 10;
-`
+  background-color: ${props => props.theme === 'light' ? colors.blue : colors.background.dark};
+  z-index: var(--z-index-header);
 
-const CommonHeader = styled.div`
-  font-size: 24px;
-  font-weight: bold;
-  display: flex;
-  gap: 16px;
-  height: 60px;
-  align-items: center;
-  width: 100%;
-  color: ${colors.white};
-
-  @media screen and (max-width: 375px) {
-    font-size: 18px;
+  .logo {
+    width: var(--logo-size);
+    height: var(--logo-size);
+    background-image: url('/images/logo-page.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
   }
 
-  .header-pages {
+  .common-header {
+    height: var(--header-height);
+    width: 100%;
     display: flex;
-    gap: 8px;
+    align-items: center;
+    gap: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    color: ${colors.white};
 
-    .header-links {  
-      &.active {
-        text-decoration: underline;
-      }
+    @media screen and (max-width: 375px) {
+      font-size: 18px;
+    }
 
-      .disabled-link {
-        cursor: pointer;
+    .header-pages {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      .header-links {  
+        &.active {
+          text-decoration: underline;
+        }
+
+        .disabled-link {
+          cursor: pointer;
+        }
       }
     }
   }
 `
 
 export default function Header() {
+  const [currentTheme] = useRecoilState(theme)  
   const router = useRouter()
   const currentPage = router.pathname 
 
@@ -57,11 +73,13 @@ export default function Header() {
   }
 
   return (
-    <StickyHeader>
-      <CommonHeader>
+    <StickyHeader theme={currentTheme.value}>
+      <div className="common-header">
         <div className="header-pages">
           <div className={`header-links ${conditionalClass('')}`}>
-            <Link href="/">Home</Link>
+            <Link href="/">
+              <div className="logo" />
+            </Link>
           </div>
           <div className={`header-links ${conditionalClass('posts')}`}>
             <Link href="/posts">Posts</Link>
@@ -70,7 +88,7 @@ export default function Header() {
             <Link href="/resume">Resume</Link>
           </div>
         </div>
-      </CommonHeader>
+      </div>
       <DarkMode />
     </StickyHeader>
   )

@@ -1,13 +1,13 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
+
 import Header from '../Header'
 import Footer from '../Footer'
 
 type AppLayoutProps = {
   children: ReactNode;
-  page: string;
 }
 
-export default function AppLayout({ children, page } : AppLayoutProps) {
+export default function AppLayout({ children } : AppLayoutProps) {
   return (
     <div>
       <Header />

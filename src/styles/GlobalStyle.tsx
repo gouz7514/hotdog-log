@@ -10,6 +10,10 @@ const style = css`
     margin: 0;
     line-height: 1.3;
     -webkit-font-smoothing: antialiased;
+
+    --z-index-header: 10;
+
+    --header-height: 80px;
   }
 
   body[data-theme="dark"] {
