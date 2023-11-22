@@ -5,6 +5,7 @@ import Badge from "@/components/Badge"
 import ResumeIntro from '@/components/Organism/Resume/ResumeIntro'
 import ResumeSkills from '@/components/Organism/Resume/ResumeSkills'
 import ResumeCareer from '@/components/Organism/Resume/ResumeCareer'
+import ResumeExperience from '@/components/Organism/Resume/ResumeExperience'
 
 const ProjectContainer = styled.div`
   margin-top: 30px;
@@ -363,61 +364,7 @@ export default function Resume() {
         </ProjectContainer>
       </div>
       <Divider />
-      <div>
-        <h2>Awards</h2>
-        <div>
-          <h4>
-            단국대 캡스톤 경진대회 금상
-          </h4>
-          <ul>
-            <li>
-              ・ 단국대 시간표를 기반으로 한 알람, 단국대 지도를 기반으로 한 네비게이션 구현
-            </li>
-            <li>
-              ・ 시중에 출시된 서비스(에브리타임, 단국대 앱)의 부족한 점을 분석하고 보완한 프로젝트
-            </li>
-            <li>
-              ・ 팀장으로서 각 구성원의 참여를 이끌어내고 협의를 통한 문제 해결
-            </li>
-            <li>
-              ・ 메일을 통해 해당 프로젝트에 대해 문의를 받고 도움을 준 경험이 있음
-            </li>
-          </ul>
-        </div>
-      </div>
-      <Divider />
-      <div>
-        <h2>Education</h2>
-        <div>
-          <h4>단국대학교</h4>
-          <ul>
-            <li>
-              ・ 응용컴퓨터공학과 학사 졸업
-            </li>
-            <li>
-              ・ 캡스톤 경진대회 금상 수상
-            </li>
-          </ul>
-        </div>
-      </div>
-      <Divider />
-      <div>
-        <h2>ETC</h2>
-        <div>
-          <h4>정보처리기사</h4>
-          <ul>
-            <li>
-              ・ 휴학 기간을 활용, 전공 지식을 바탕으로 자격증 취득
-            </li>
-          </ul>
-          <h4 style={{ "marginTop": "12px" }}>TOEIC</h4>
-          <ul>
-            <li>
-              ・ 930
-            </li>
-          </ul>
-        </div>
-      </div>
+      <ResumeExperience />
     </div>
   )
 }
