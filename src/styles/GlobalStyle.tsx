@@ -1,6 +1,7 @@
 import { Global, css } from '@emotion/react'
 import reset from './reset'
 import typo from './typo'
+import { colors } from './colors'
 
 const style = css`
   * {
@@ -12,14 +13,14 @@ const style = css`
   }
 
   body[data-theme="dark"] {
-    background-color: black;
-    color: white;
+    background-color: ${colors.background.dark};
+    color: ${colors.white};
     transition: all 0.3s ease-in-out;
   }
 
   body[data-theme="light"] {
-    background-color: white;
-    color: black;
+    background-color: ${colors.background.light};
+    color: ${colors.black};
     transition: all 0.3s ease-in-out;
   }
 

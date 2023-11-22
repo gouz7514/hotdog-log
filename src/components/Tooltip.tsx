@@ -1,6 +1,7 @@
-import React, { ReactNode, useState } from 'react'
+import { ReactNode, useState } from 'react'
 import styled from '@emotion/styled'
 
+import { colors } from '@/styles/colors'
 
 interface TooltipProps {
   children: ReactNode
@@ -18,8 +19,8 @@ const TooltipContainer = styled.div`
 
 const TooltipContent = styled.div`
   position: absolute;
-  background-color: #343434;
-  color: white;
+  background-color: ${colors.darkgray};
+  color: ${colors.white};
   width: 120px;
   padding: 8px;
   border-radius: 6px;

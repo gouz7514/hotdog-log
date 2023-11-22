@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 
+import { colors } from '@/styles/colors'
+
 const BadgeContent = styled.div`
   display: flex;
   align-items: center;
@@ -11,21 +13,19 @@ const BadgeContent = styled.div`
     border-radius: 8px;
     min-width: 24px;
     font-weight: 700;
+    color: ${colors.white};
   }
 
   .badge-primary {
-    background-color: #0066cc;
-    color: white;
+    background-color: ${colors.badge.primary};
   }
 
   .badge-default {
-    background-color: #33ccff;
-    color: white;
+    background-color: ${colors.badge.default};
   }
 
   .badge-minor {
-    background-color: #cccccc;
-    color: white;
+    background-color: ${colors.badge.minor};
   }
 `
 

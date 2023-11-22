@@ -1,7 +1,9 @@
 import Link from 'next/link'
-import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
+import styled from '@emotion/styled'
+
 import DarkMode from './DarkMode'
+import { colors } from '@/styles/colors'
 
 const StickyHeader = styled.div`
   position: sticky;
@@ -23,7 +25,7 @@ const CommonHeader = styled.div`
   height: 60px;
   align-items: center;
   width: 100%;
-  color: white;
+  color: ${colors.white};
 
   @media screen and (max-width: 375px) {
     font-size: 18px;
