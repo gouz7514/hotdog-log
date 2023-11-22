@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import Icon from './Atom/Icon'
-import { IconGithub } from './Icon/IconGIthub'
+import { IconGithub } from './Icon/IconGithub'
 import { IconLinkedIn } from './Icon/IconLinkedin'
 import { IconGmail } from './Icon/IconGmail'
 import { IconVelog } from './Icon/IconVelog'
