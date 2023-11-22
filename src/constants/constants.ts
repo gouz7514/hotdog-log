@@ -122,7 +122,8 @@ export const PROJECTS = [
     title: "다이노 영어",
     tags: ["React", "Next.js", "typescript", "firebase", "styled-components"],
     period: "2023.06 ~ 2023.10",
-    type: "personal"
+    type: "personal",
+    externalLink: "https://github.com/gouz7514/dyno-english"
   },
   {
     id: 7,
@@ -130,6 +131,7 @@ export const PROJECTS = [
     title: "SUBHOW",
     tags: ["React", "Next.js", "typescript", "prisma"],
     period: "2023.05 ~ 2023.16",
-    type: "personal"
+    type: "personal",
+    externalLink: "https://github.com/gouz7514/subway-website-next"
   }
 ]

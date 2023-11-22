@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import Badge from '@/components/Badge'
 
@@ -10,6 +11,7 @@ const CardStyle = styled.div`
   --image-height: 200px;
 
   width: 100%;
+  height: 100%;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 8px;
   overflow: hidden;
@@ -66,9 +68,9 @@ const CardStyle = styled.div`
   }
 `
 
-export default function Card({ image, title, tags, period }: CardProps) {
+const CardContent = ({ image, title, tags, period, externalLink }: CardProps) => {
   return (
-    <CardStyle>
+    <CardStyle className={externalLink && 'external'}>
       <div className="card-image">
         <Image
           src={image}
@@ -94,5 +96,33 @@ export default function Card({ image, title, tags, period }: CardProps) {
         <div className='card-period'>{ period }</div>
       </div>
     </CardStyle>
+  )
+}
+
+export default function Card({ image, title, tags, period, externalLink }: CardProps) {
+  return (
+    <>
+      {
+        externalLink ? (
+          <Link href={externalLink} target='blank'>
+            <CardContent
+              image={image}
+              title={title}
+              tags={tags}
+              period={period}
+              externalLink={externalLink}
+            />
+          </Link>
+        ) : (
+          <CardContent
+            image={image}
+            title={title}
+            tags={tags}
+            period={period}
+          />
+        
+        )
+      }
+    </>
   )
 }

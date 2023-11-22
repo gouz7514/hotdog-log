@@ -44,6 +44,7 @@ export interface CardProps {
   tags?: Array<string>,
   period?: string,
   type?: string,
+  externalLink?: string,
 }
 
 export type Theme = 'light' | 'dark'
