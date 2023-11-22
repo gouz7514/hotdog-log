@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { IconProps } from '@/types/types'
 
 const IconWrapper = styled.span<{ width: number, height: number }>`
-  display: inline-block;
+  display: flex;
   svg {
     width: ${(props) => props.width ? `${props.width}px` : 'auto'};
     height: ${(props) => props.height ? `${props.height}px` : 'auto'};

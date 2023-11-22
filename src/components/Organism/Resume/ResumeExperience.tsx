@@ -1,15 +1,23 @@
 import styled from '@emotion/styled'
+import Link from 'next/link'
 
+import Icon from '@/components/Atom/Icon'
+import IconYoutube from '@/components/Icon/IconYoutube'
 import ListContainer from '@/components/Molecule/ListContainer'
 
 const ResumeExperienceStyle = styled.div`
   .experience-container {
-    .experience-title {
-      margin-bottom: 8px;
+    .experience-title-container {
+      align-items: center;
+      gap: 10px;
     }
     
     & ~ .experience-container {
       margin-top: 24px;
+    }
+
+    .experience-term {
+      margin: 6px 0;
     }
   }
 `
@@ -21,9 +29,14 @@ export default function ResumeExperience() {
         EXPERIENCE
       </h2>
       <div className="experience-container">
-        <h4 className="experience-title">
-          단국대 캡스톤 경진대회 금상
-        </h4>
+        <div className="d-flex experience-title-container">
+          <h4 className="experience-title">
+            단국대 캡스톤 경진대회 금상
+          </h4>
+          <Link href="https://www.youtube.com/watch?v=RQQwxN8pxB0" target='blank'>
+            <Icon icon={<IconYoutube />} width={24} height={24} />
+          </Link>
+        </div>
         <div className="experience-term text-bold">
           2020.03 ~ 2021.02
         </div>

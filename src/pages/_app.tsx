@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
 
 import GlobalStyle from '@/styles/GlobalStyle'
-import AppLayout from '@/components/layout/AppLayout'
+import AppLayout from '@/components/Template/AppLayout'
 
 import {
   RecoilRoot,
