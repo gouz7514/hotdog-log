@@ -17,10 +17,36 @@ const CardStyle = styled.div`
   overflow: hidden;
   color: ${colors.black};
 
+  &.external {
+    position: relative;
+    overflow: hidden;
+
+    .curtain {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+    }
+
+    &:hover .curtain {
+      right: 0;
+      opacity: 1;
+    }
+  }
+
   &:hover {
     cursor: pointer;
-    transform: translateY(-4px);
-    transition: all 0.3s ease-in-out;
+    transform: scale(1.03);
+    transition: all 0.4s ease-in-out;
   }
 
   .card-image {
@@ -71,6 +97,11 @@ const CardStyle = styled.div`
 const CardContent = ({ image, title, tags, period, externalLink }: CardProps) => {
   return (
     <CardStyle className={externalLink && 'external'}>
+      {
+        externalLink && (
+          <span className="curtain">바로가기</span>
+        )
+      }
       <div className="card-image">
         <Image
           src={image}
