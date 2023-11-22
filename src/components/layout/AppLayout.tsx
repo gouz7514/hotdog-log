@@ -1,5 +1,3 @@
-import { ReactNode } from 'react'
-
 import { LayoutProps } from '@/types/types'
 
 import Header from '../Header'

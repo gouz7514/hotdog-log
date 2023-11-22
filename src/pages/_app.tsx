@@ -1,8 +1,6 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
-import { ThemeProvider } from '@emotion/react'
-import { theme } from '@/store/theme'
 
 import GlobalStyle from '@/styles/GlobalStyle'
 import AppLayout from '@/components/layout/AppLayout'
@@ -32,14 +30,12 @@ export default function App({ Component }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <RecoilRoot>
-        <ThemeProvider theme={theme}>
-          <AppLayout>
-            <GlobalStyle />
-            <AnimatePresence mode="wait" initial={false}>
-              <Component />
-            </AnimatePresence>
-          </AppLayout>
-        </ThemeProvider>
+        <AppLayout>
+          <GlobalStyle />
+          <AnimatePresence mode="wait" initial={false}>
+            <Component />
+          </AnimatePresence>
+        </AppLayout>
       </RecoilRoot>
     </>
   )
