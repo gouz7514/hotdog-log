@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import Badge from "@/components/Badge"
 import Tooltip from "@/components/Tooltip"
 
-import { SKILLS } from '@/constants/constatns'
+import { SKILLS } from '@/constants/constants'
 
 const SkillContainer = styled.div`
   margin-top: 6px;
@@ -39,7 +39,7 @@ export default function ResumeSkills() {
     <Fragment>
       <div className="d-flex align-items-center">
         <h2 className="text-blue">
-          Skills
+          SKILLS
         </h2>
         <Tooltip>
           <div className="text-bold">3 : 다수의 개발 경험</div>

@@ -13,7 +13,7 @@ export default function ResumeCareer() {
   return (
     <ResumeCareerStyle>
       <h2 className="text-blue">
-        Career
+        CAREER
       </h2>
       <h4 className="career-company">
         ABZ 주식회사

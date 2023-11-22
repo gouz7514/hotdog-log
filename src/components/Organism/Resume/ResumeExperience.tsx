@@ -18,14 +18,14 @@ export default function ResumeExperience() {
   return (
     <ResumeExperienceStyle>
       <h2 className="text-blue">
-        Experience
+        EXPERIENCE
       </h2>
       <div className="experience-container">
         <h4 className="experience-title">
           단국대 캡스톤 경진대회 금상
         </h4>
         <div className="experience-term text-bold">
-          2020-03 ~ 2021.02
+          2020.03 ~ 2021.02
         </div>
         <ListContainer>
           <li>
@@ -47,7 +47,7 @@ export default function ResumeExperience() {
           TOEIC
         </h4>
         <div className="experience-term text-bold">
-          2020-01
+          2020.01
         </div>
         <ListContainer>
           <li>

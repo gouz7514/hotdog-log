@@ -3,6 +3,7 @@ export const colors = {
   orange: '#ff5b1a',
   white: '#ffffff',
   black: '#000000',
+  lightblue: '#d7dfe9',
   darkgray: '#343434',
   beige: '#f5f5f5',
   badge: {

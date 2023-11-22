@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image"
 import { ReactNode } from "react"
 
 export interface LayoutProps {
@@ -17,6 +18,7 @@ export interface BadgeProps {
   content: string | number
   className?: string | ''
   link?: string
+  size?: 'small' | 'medium' | 'large'
 }
 
 export interface IconProps {
@@ -34,6 +36,14 @@ export interface LottieProps {
   json: Record<string, any>
   height?: number
   description: string
+}
+
+export interface CardProps {
+  image: StaticImageData,
+  title: string,
+  tags?: Array<string>,
+  period?: string,
+  type?: string,
 }
 
 export type Theme = 'light' | 'dark'

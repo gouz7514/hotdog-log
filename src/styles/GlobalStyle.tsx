@@ -12,7 +12,6 @@ const style = css`
     -webkit-font-smoothing: antialiased;
 
     --z-index-header: 10;
-
     --header-height: 80px;
   }
 
