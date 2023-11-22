@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { useDarkMode } from '@/util/hooks/useDarkmode'
 
 import { useRecoilState } from 'recoil'
-import { themeState } from '@/store/theme'
+import { theme } from '@/store/theme'
 
 const DarkModeBtn = styled.div`
   width: 30px;
@@ -23,9 +23,9 @@ const DarkModeBtn = styled.div`
 
 export default function DarkMode() {
   const [_, toggleTheme] = useDarkMode()
-  const [theme] = useRecoilState(themeState)
+  const [currentTheme] = useRecoilState(theme)
 
   return (
-    <DarkModeBtn onClick={toggleTheme} className={theme.value}/>
+    <DarkModeBtn onClick={toggleTheme} className={currentTheme.value}/>
   )
 }

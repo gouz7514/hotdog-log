@@ -4,7 +4,7 @@ import { IconGithub } from './icon/IconGIthub'
 import { IconLinkedIn } from './icon/IconLinkedin'
 import { IconGmail } from './icon/IconGmail'
 import { IconVelog } from './icon/IconVelog'
-import { themeState } from '@/store/theme'
+import { theme } from '@/store/theme'
 import { useRecoilState } from 'recoil'
 
 const AppFooter = styled.footer`
@@ -23,22 +23,23 @@ const ProfileLogo = styled.div`
 `
 
 export default function Footer() {
-  const [theme] = useRecoilState(themeState)
+  const [currentTheme] = useRecoilState(theme)
+  const isDark = currentTheme.value === 'dark'
 
   return (
     <AppFooter>
       <ProfileLogo>
         <a href="https://github.com/gouz7514" target='blank'>
-          <Icon icon={<IconGithub isDark={ theme.value === 'dark' } />} />
+          <Icon icon={<IconGithub isDark={isDark} />} />
         </a>
         <a href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271" target='blank'>
-            <Icon icon={<IconLinkedIn isDark={ theme.value === 'dark' } />} />
+            <Icon icon={<IconLinkedIn isDark={isDark} />} />
         </a>
         <a href="mailto:gouz7514@gmail.com" target='blank'>
-          <Icon icon={<IconGmail isDark={ theme.value === 'dark' } />} />
+          <Icon icon={<IconGmail isDark={isDark} />} />
         </a>
         <a href="https://velog.io/@gouz7514" target='blank'>
-          <Icon icon={<IconVelog isDark={ theme.value === 'dark' } />} />
+          <Icon icon={<IconVelog isDark={isDark} />} />
         </a>
       </ProfileLogo>
     </AppFooter>
