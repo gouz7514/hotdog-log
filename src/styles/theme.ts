@@ -2,12 +2,12 @@ import { colors } from "./colors"
 
 export const theme = {
   light: {
-    bgColor: colors.background.dark,
-    fontColor: colors.white,
+    bgColor: colors.lightTheme.background,
+    fontColor: colors.lightTheme.font,
   },
   dark: {
-    bgColor: colors.background.light,
-    fontColor: colors.black,
+    bgColor: colors.darkTheme.background,
+    fontColor: colors.darkTheme.font,
   }
 }
 
