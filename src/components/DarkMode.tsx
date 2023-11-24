@@ -1,6 +1,7 @@
+import { useContext } from 'react'
+import { ThemeContext } from '@/pages/_app'
 import styled from '@emotion/styled'
-
-import { useDarkMode } from '@/util/hooks/useDarkmode'
+import { theme } from '@/styles/theme'
 
 const DarkModeBtn = styled.div`
   width: 30px;
@@ -18,9 +19,10 @@ const DarkModeBtn = styled.div`
 `
 
 export default function DarkMode() {
-  const [currentTheme, toggleTheme] = useDarkMode()
+  const { colorTheme, toggleTheme } = useContext(ThemeContext)
+  console.log(colorTheme)
 
   return (
-    <DarkModeBtn onClick={toggleTheme} className={currentTheme}/>
+    <DarkModeBtn onClick={toggleTheme} className={colorTheme === theme.light ? 'light' : 'dark'} />
   )
 }

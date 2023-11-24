@@ -1,38 +1,9 @@
 import { Global, css } from '@emotion/react'
-import reset from './reset'
+import common from './common'
 import typo from './typo'
-import { colors } from './colors'
+import reset from './reset'
 
 const style = css`
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    line-height: 1.3;
-    -webkit-font-smoothing: antialiased;
-
-    --z-index-header: 10;
-    --header-height: 80px;
-  }
-
-  body[data-theme="dark"] {
-    background-color: ${colors.background.dark};
-    color: ${colors.white};
-    transition: all 0.3s ease-in-out;
-  }
-
-  body[data-theme="light"] {
-    background-color: ${colors.background.light};
-    color: ${colors.black};
-    transition: all 0.3s ease-in-out;
-  }
-
-  @media screen and (max-width: 600px) {
-    .big-paragraph {
-      font-size: 1.15rem;
-    }
-  }
-
   ul {
     list-style: none;
   }
@@ -86,16 +57,8 @@ const style = css`
   .mt-24 {
     margin-top: 24px;
   }
-
-  .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-  }
 `
 
-const GlobalStyle = () => <Global styles={[style, reset, typo]} />
+const GlobalStyle = () => <Global styles={[style, common, typo, reset]} />
 
 export default GlobalStyle

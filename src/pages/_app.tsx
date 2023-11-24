@@ -1,16 +1,33 @@
 import type { AppProps } from 'next/app'
+import { createContext } from 'react'
 import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
 
+import { theme, MainTheme } from '@/styles/theme'
+import { ThemeProvider } from '@emotion/react'
 import GlobalStyle from '@/styles/GlobalStyle'
 import AppLayout from '@/components/Template/AppLayout'
+import { useDarkMode } from '@/util/hooks/useDarkmode'
 
 import {
   RecoilRoot,
   RecoilEnv
 } from 'recoil'
 
+export interface ContextProps {
+  colorTheme: MainTheme | null;
+  toggleTheme: () => void;
+}
+
+export const ThemeContext = createContext<ContextProps>({
+  colorTheme: theme.light,
+  toggleTheme: () => {
+    return null;
+  },
+});
+
 export default function App({ Component }: AppProps) {
+  const { colorTheme, toggleTheme } = useDarkMode()
   RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false
 
   return (
@@ -30,12 +47,16 @@ export default function App({ Component }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <RecoilRoot>
-        <AppLayout>
-          <GlobalStyle />
-          <AnimatePresence mode="wait" initial={false}>
-            <Component />
-          </AnimatePresence>
-        </AppLayout>
+        <ThemeContext.Provider value={{ colorTheme, toggleTheme }}>
+          <ThemeProvider theme={theme}>
+            <AppLayout>
+              <GlobalStyle />
+              <AnimatePresence mode="wait" initial={false}>
+                <Component />
+              </AnimatePresence>
+            </AppLayout>
+          </ThemeProvider>
+        </ThemeContext.Provider>
       </RecoilRoot>
     </>
   )

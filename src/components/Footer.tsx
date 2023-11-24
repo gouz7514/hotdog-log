@@ -1,11 +1,13 @@
 import styled from '@emotion/styled'
+import { useContext } from 'react'
+import { ThemeContext } from '@/pages/_app'
+import { theme } from '@/styles/theme'
+
 import Icon from './Atom/Icon'
 import { IconGithub } from './Icon/IconGithub'
 import { IconLinkedIn } from './Icon/IconLinkedin'
 import { IconGmail } from './Icon/IconGmail'
 import { IconVelog } from './Icon/IconVelog'
-import { theme } from '@/store/theme'
-import { useRecoilState } from 'recoil'
 
 const AppFooter = styled.footer`
   display: flex;
@@ -23,8 +25,8 @@ const ProfileLogo = styled.div`
 `
 
 export default function Footer() {
-  const [currentTheme] = useRecoilState(theme)
-  const isDark = currentTheme.value === 'dark'
+  const { colorTheme } = useContext(ThemeContext)
+  const isDark = colorTheme === theme.dark
 
   return (
     <AppFooter>

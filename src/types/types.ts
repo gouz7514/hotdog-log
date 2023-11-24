@@ -47,4 +47,4 @@ export interface CardProps {
   externalLink?: string,
 }
 
-export type Theme = 'light' | 'dark'
+export type Theme = 'light' | 'dark' | null

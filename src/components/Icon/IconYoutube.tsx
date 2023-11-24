@@ -1,12 +1,13 @@
-import { useRecoilState } from 'recoil'
+import { useContext } from 'react'
+import { ThemeContext } from '@/pages/_app'
+import { theme } from '@/styles/theme'
 
 import { IconChildProps } from "@/types/types"
-import { theme } from '@/store/theme'
 import { colors } from '@/styles/colors'
 
 export default function IconYoutube({ fill = '#282828' }: IconChildProps) {
-  const [currentTheme] = useRecoilState(theme)
-  const isDark = currentTheme.value === 'dark'
+  const { colorTheme } = useContext(ThemeContext)
+  const isDark = colorTheme === theme.dark
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" id="Layer_1" width="71.412064" height="50" x="0" y="0" version="1.1" viewBox="0 0 71.412065 50">
