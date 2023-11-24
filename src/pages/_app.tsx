@@ -26,7 +26,7 @@ export const ThemeContext = createContext<ContextProps>({
   },
 });
 
-export default function App({ Component }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   const { colorTheme, toggleTheme } = useDarkMode()
   RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false
 
@@ -52,7 +52,7 @@ export default function App({ Component }: AppProps) {
             <AppLayout>
               <GlobalStyle />
               <AnimatePresence mode="wait" initial={false}>
-                <Component />
+                <Component {...pageProps} />
               </AnimatePresence>
             </AppLayout>
           </ThemeProvider>

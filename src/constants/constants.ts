@@ -85,7 +85,7 @@ export const PROJECTS = [
     type: "company",
     route: {
       type: "internal",
-      path: "/resume/optimize-cloud-infra"
+      path: "/projects/optimize-cloud-infra"
     }
   },
   {
@@ -97,7 +97,7 @@ export const PROJECTS = [
     type: "company",
     route: {
       type: "internal",
-      path: "/resume/automate-inpocklink-gallery"
+      path: "/projects/automate-inpocklink-gallery"
     }
   },
   {
@@ -109,7 +109,7 @@ export const PROJECTS = [
     type: "company",
     route: {
       type: "internal",
-      path: "/resume/performance-improvement-with-vue-query"
+      path: "/projects/performance-improvement-with-vue-query"
     }
   },
   {
@@ -121,7 +121,7 @@ export const PROJECTS = [
     type: "company",
     route: {
       type: "internal",
-      path: "/resume/create-server-with-docker"
+      path: "/projects/create-server-with-docker"
     }
   },
   {
@@ -133,7 +133,7 @@ export const PROJECTS = [
     type: "company",
     route: {
       type: "internal",
-      path: "/resume/ids"
+      path: "/projects/ids"
     }
   },
   {
