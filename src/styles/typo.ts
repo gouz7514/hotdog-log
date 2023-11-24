@@ -29,6 +29,10 @@ const typo = css`
     font-size: 1.2rem;
     word-break: keep-all;
     line-height: 1.5;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.15rem;
+    }
   }
 
   .text-bold {

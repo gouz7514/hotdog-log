@@ -1,11 +1,9 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useRecoilState } from 'recoil'
 import styled from '@emotion/styled'
 
 import DarkMode from './DarkMode'
 import { colors } from '@/styles/colors'
-import { theme } from '@/store/theme'
 
 const StickyHeader = styled.div`
   --padding: 16px;
@@ -17,7 +15,7 @@ const StickyHeader = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: ${props => props.theme === 'light' ? colors.blue : colors.background.dark};
+  background-color: var(--color-background-header);
   z-index: var(--z-index-header);
 
   .logo {
@@ -63,7 +61,6 @@ const StickyHeader = styled.div`
 `
 
 export default function Header() {
-  const [currentTheme] = useRecoilState(theme)  
   const router = useRouter()
   const currentPage = router.pathname 
 
@@ -73,7 +70,7 @@ export default function Header() {
   }
 
   return (
-    <StickyHeader theme={currentTheme.value}>
+    <StickyHeader>
       <div className="common-header">
         <div className="header-pages">
           <div className={`header-links ${conditionalClass('')}`}>
