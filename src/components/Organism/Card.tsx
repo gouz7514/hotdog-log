@@ -1,10 +1,9 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import Link from 'next/link'
+import { StaticImageData } from "next/image"
 
 import Badge from '@/components/Molecule/Badge'
-
-import { CardProps } from '@/types/types'
 import { colors } from '@/styles/colors'
 
 const CardStyle = styled.div`
@@ -94,66 +93,74 @@ const CardStyle = styled.div`
   }
 `
 
-const CardContent = ({ image, title, tags, period, externalLink }: CardProps) => {
+interface CardProps {
+  image: StaticImageData,
+  title: string,
+  tags?: Array<string> | undefined,
+  period?: string,
+  type?: string,
+  route?: {
+    type: string,
+    path: string
+  }
+}
+type CardImageProps = Pick<CardProps, 'image'>
+type CardDescriptionProps = Pick<CardProps, 'title' | 'tags' | 'period'>
+
+const CardImage = ({ image }: CardImageProps) => {
   return (
-    <CardStyle className={externalLink && 'external'}>
-      {
-        externalLink && (
-          <span className="curtain">바로가기</span>
-        )
-      }
-      <div className="card-image">
-        <Image
-          src={image}
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: '100%', height: 'auto' }}
-          alt={title}
-          placeholder="blur"
-        />
-      </div>
-      <div className="card-description">
-        <div className="card-info">
-          <div className="card-title">{ title }</div>
-          <div className="card-tags">
-            {
-              tags!.map((tag, idx) => {
-                return <Badge key={idx} content={tag} size="small" />
-              })
-            }
-          </div>
-        </div>
-        <div className='card-period'>{ period }</div>
-      </div>
-    </CardStyle>
+    <div className="card-image">
+      <Image
+        src={image}
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: '100%', height: 'auto' }}
+        alt="card-image"
+        placeholder="blur"
+      />
+    </div>
   )
 }
 
-export default function Card({ image, title, tags, period, externalLink }: CardProps) {
+const CardDescription = ({ title, tags, period }: CardDescriptionProps) => {
   return (
-    <>
+    <div className="card-description">
+      <div className="card-info">
+        <div className="card-title">{ title }</div>
+        <div className="card-tags">
+          {
+            tags && tags.map((tag, index) => (
+              <Badge
+                key={index}
+                content={tag}
+                className="badge-primary"
+                size="small"
+              />
+            ))
+          }
+        </div>
+      </div>
+      <div className='card-period'>{ period }</div>
+    </div>
+  )
+}
+
+export default function Card({ image, title, tags, period, route }: CardProps) {
+  const { type: routeType, path: routePath } = route!
+  const isExternal = routeType === 'external'
+
+  return (
+    <Link href={routePath} target={isExternal ? '_blank' : ''}>
+      <CardStyle className={isExternal ? 'external' : ''}>
       {
-        externalLink ? (
-          <Link href={externalLink} target='blank'>
-            <CardContent
-              image={image}
-              title={title}
-              tags={tags}
-              period={period}
-              externalLink={externalLink}
-            />
-          </Link>
-        ) : (
-          <CardContent
-            image={image}
-            title={title}
-            tags={tags}
-            period={period}
-          />
-        
+        isExternal && (
+          <span className="curtain">바로가기</span>
         )
       }
-    </>
+      <CardImage image={image} />
+      <CardDescription title={title} tags={tags} period={period} />
+    </CardStyle>
+    </Link>
   )
 }
