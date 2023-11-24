@@ -2,7 +2,7 @@ import { Fragment } from "react"
 
 import styled from '@emotion/styled'
 
-import Badge from "@/components/Badge"
+import Badge from "@/components/Molecule/Badge"
 
 const ResumeIntroStyle = styled.div`
   margin-bottom: 12px;

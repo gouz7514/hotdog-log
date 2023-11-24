@@ -1,5 +1,5 @@
 import AnimationHotdog from '../../../public/lottie/lottie-hotdog.json'
-import LottieAnimation from "@/components/Lottie"
+import LottieAnimation from "@/components/Organism/Lottie"
 
 export default function Posts() {
   return (

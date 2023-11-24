@@ -1,4 +1,4 @@
-import Divider from "@/components/Divider"
+import Divider from "@/components/Atom/Divider"
 import ResumeIntro from '@/components/Organism/Resume/ResumeIntro'
 import ResumeSkills from '@/components/Organism/Resume/ResumeSkills'
 import ResumeCareer from '@/components/Organism/Resume/ResumeCareer'

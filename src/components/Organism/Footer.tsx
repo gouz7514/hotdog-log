@@ -3,11 +3,11 @@ import { useContext } from 'react'
 import { ThemeContext } from '@/pages/_app'
 import { theme } from '@/styles/theme'
 
-import Icon from './Atom/Icon'
-import { IconGithub } from './Icon/IconGithub'
-import { IconLinkedIn } from './Icon/IconLinkedin'
-import { IconGmail } from './Icon/IconGmail'
-import { IconVelog } from './Icon/IconVelog'
+import Icon from '../Atom/Icon'
+import { IconGithub } from '../Icon/IconGithub'
+import { IconLinkedIn } from '../Icon/IconLinkedin'
+import { IconGmail } from '../Icon/IconGmail'
+import { IconVelog } from '../Icon/IconVelog'
 
 const AppFooter = styled.footer`
   display: flex;

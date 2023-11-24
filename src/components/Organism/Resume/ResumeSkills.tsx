@@ -1,8 +1,8 @@
 import { Fragment } from "react"
 import styled from '@emotion/styled'
 
-import Badge from "@/components/Badge"
-import Tooltip from "@/components/Tooltip"
+import Badge from "@/components/Molecule/Badge"
+import Tooltip from "@/components/Molecule/Tooltip"
 
 import { SKILLS } from '@/constants/constants'
 

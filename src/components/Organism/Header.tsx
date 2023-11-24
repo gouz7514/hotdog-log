@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
-import DarkMode from './DarkMode'
+import DarkMode from '../Molecule/DarkMode'
 import { colors } from '@/styles/colors'
 
 const StickyHeader = styled.div`
