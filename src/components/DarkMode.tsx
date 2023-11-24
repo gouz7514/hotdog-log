@@ -20,7 +20,6 @@ const DarkModeBtn = styled.div`
 
 export default function DarkMode() {
   const { colorTheme, toggleTheme } = useContext(ThemeContext)
-  console.log(colorTheme)
 
   return (
     <DarkModeBtn onClick={toggleTheme} className={colorTheme === theme.light ? 'light' : 'dark'} />
