@@ -6,21 +6,13 @@ import { Theme } from '@/types/types'
 
 export const useDarkMode = (): [string, () => void] => {
   const [currentTheme, setCurrentTheme] = useRecoilState(theme)
-
+  
   useEffect(() => {
-    const localTheme = window.localStorage.getItem('theme') as Theme | null
-    
-    if (localTheme) {
-      setCurrentTheme({
-        value: localTheme
-      })
-      document.body.dataset.theme = localTheme
-    } else {
-      setCurrentTheme({
-        value: 'light'
-      })
-      document.body.dataset.theme = 'light'
-    }
+    const localTheme = window.localStorage.getItem('theme') as Theme
+    setCurrentTheme({
+      value: localTheme ? localTheme : 'light'
+    })
+    document.body.dataset.theme = localTheme ? localTheme : 'light'
   }, [setCurrentTheme])
 
   const toggleTheme = () => {
