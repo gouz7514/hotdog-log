@@ -7,6 +7,10 @@ const ResumeCareerStyle = styled.div`
     font-size: 14px;
     margin: 6px 0;
   }
+
+  a {
+    text-decoration: underline;
+  }
 `
 
 export default function ResumeCareer() {

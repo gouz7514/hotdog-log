@@ -4,6 +4,10 @@ import BackButton from "@/components/Atom/BackButton";
 import { getAllProjectIds, getProjectData } from "@/lib/project"
 
 const ProjectStyle = css`
+  strong {
+    color: var(--color-blue);
+}
+
   a {
     color: var(--color-blue);
     text-decoration: underline;
@@ -12,14 +16,21 @@ const ProjectStyle = css`
 
   h3 {
     margin-top: 2rem;
+    color: var(--color-blue);
   }
 
-  h4 {
+  h4{
     margin-top: 1.5rem;
-  } 
+  }
+
+  h5 {
+    margin-top: 1.3rem;
+  }
 
   p {
-    margin: 1rem 0;
+    margin: 0.8rem 0;
+    white-space: pre-wrap;
+    line-height: 1.65;
   }
 
   li {
@@ -27,10 +38,18 @@ const ProjectStyle = css`
     line-height: 1.5;
     list-style: disc;
     margin-left: 1rem;
+    white-space: pre-wrap;
   }
 
-  strong {
-    color: var(--color-blue);
+  img {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    margin: 2rem auto 0;
+
+    @media screen and (max-width: 600px) {
+      max-width: calc(100% - 40px);
+    }
   }
 `
 

@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
+import remarkUnwrapImages from 'remark-unwrap-images'
 import html from 'remark-html'
 
 const postsDirectory = path.join(process.cwd(), 'src/projects')
@@ -26,6 +27,7 @@ export async function getProjectData(id : string) {
 
   const processedContent = await remark()
   .use(html)
+  .use(remarkUnwrapImages)
   .process(matterResult.content)
   const contentHtml = processedContent.toString()
 

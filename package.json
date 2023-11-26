@@ -38,6 +38,7 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "remark-unwrap-images": "^4.0.0"
   }
 }
