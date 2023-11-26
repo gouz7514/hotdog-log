@@ -12,6 +12,7 @@ const common = css`
     --z-index-header: 10;
     --header-height: 80px;
 
+    --color-blue: ${colors.blue};
     --color-light-background: ${colors.lightTheme.background};
     --color-light-font: ${colors.lightTheme.font};
     --color-dark-background: ${colors.darkTheme.background};
