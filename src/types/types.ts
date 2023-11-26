@@ -38,13 +38,4 @@ export interface LottieProps {
   description: string
 }
 
-export interface CardProps {
-  image: StaticImageData,
-  title: string,
-  tags?: Array<string>,
-  period?: string,
-  type?: string,
-  externalLink?: string,
-}
-
 export type Theme = 'light' | 'dark' | null

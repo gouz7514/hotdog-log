@@ -82,7 +82,11 @@ export const PROJECTS = [
     title: "클라우드 인프라 최적화",
     tags: ["Nuxt", "Webpack", "AWS"],
     period: "2023.04",
-    type: "company"
+    type: "company",
+    route: {
+      type: "internal",
+      path: "/projects/optimize-cloud-infra"
+    }
   },
   {
     id: 2,
@@ -90,7 +94,11 @@ export const PROJECTS = [
     title: "인포크링크 갤러리 자동화",
     tags: ["AWS", "typescript"],
     period: "2023.03",
-    type: "company"
+    type: "company",
+    route: {
+      type: "internal",
+      path: "/projects/automate-inpocklink-gallery"
+    }
   },
   {
     id: 3,
@@ -98,7 +106,11 @@ export const PROJECTS = [
     title: "상태 관리를 활용한 성능 개선",
     tags: ["Vue", "Nuxt", "vue-query", "javascript"],
     period: "2022.12 ~ 2023.01",
-    type: "company"
+    type: "company",
+    route: {
+      type: "internal",
+      path: "/projects/performance-improvement-with-vue-query"
+    }
   },
   {
     id: 4,
@@ -106,7 +118,11 @@ export const PROJECTS = [
     title: "도커를 활용한 서버 구축",
     tags: ["Docker", "AWS", "Nginx", "Django"],
     period: "2021.12 ~ 2022.01",
-    type: "company"
+    type: "company",
+    route: {
+      type: "internal",
+      path: "/projects/create-server-with-docker"
+    }
   },
   {
     id: 5,
@@ -114,7 +130,11 @@ export const PROJECTS = [
     title: "인포크 디자인 시스템 (ids)",
     tags: ["Vue", "Storybook", "javascript"],
     period: "2021.06 ~ 2021.09",
-    type: "company"
+    type: "company",
+    route: {
+      type: "internal",
+      path: "/projects/ids"
+    }
   },
   {
     id: 6,
@@ -123,7 +143,10 @@ export const PROJECTS = [
     tags: ["React", "Next.js", "typescript", "firebase", "styled-components"],
     period: "2023.06 ~ 2023.10",
     type: "personal",
-    externalLink: "https://github.com/gouz7514/dyno-english"
+    route: {
+      type: "external",
+      path: "https://github.com/gouz7514/dyno-english"
+    },
   },
   {
     id: 7,
@@ -132,6 +155,9 @@ export const PROJECTS = [
     tags: ["React", "Next.js", "typescript", "prisma"],
     period: "2023.05 ~ 2023.16",
     type: "personal",
-    externalLink: "https://github.com/gouz7514/subway-website-next"
+    route: {
+      type: "external",
+      path: "https://github.com/gouz7514/subway-website-next"
+    },
   }
 ]

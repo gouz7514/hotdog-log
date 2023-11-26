@@ -39,7 +39,7 @@ export default function ResumeProjects() {
                 title={project.title}
                 tags={project.tags}
                 period={project.period}
-                externalLink={project.externalLink}
+                route={project.route}
               />
             ))
           }
@@ -58,7 +58,7 @@ export default function ResumeProjects() {
                 title={project.title}
                 tags={project.tags}
                 period={project.period}
-                externalLink={project.externalLink}
+                route={project.route}
               />
             ))
           }
