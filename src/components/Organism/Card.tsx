@@ -65,10 +65,13 @@ const CardStyle = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100% - var(--image-height));
     gap: 4px;
     padding: 12px 12px 6px;
     background-color: ${colors.lightblue};
+
+    @media screen and (min-width: 600px) {
+      height: calc(100% - var(--image-height));
+    }
 
     .card-title {
       font-size: 1.1rem;
