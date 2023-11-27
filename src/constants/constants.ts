@@ -127,7 +127,7 @@ export const PROJECTS = [
   {
     id: 5,
     image: ImageStoryBook,
-    title: "인포크 디자인 시스템 (ids)",
+    title: "인포크 디자인 시스템 (IDS)",
     tags: ["Vue", "Storybook", "javascript"],
     period: "2021.06 ~ 2021.09",
     type: "company",
