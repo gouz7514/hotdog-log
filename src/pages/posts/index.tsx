@@ -1,12 +1,112 @@
-import AnimationHotdog from '../../../public/lottie/lottie-hotdog.json'
-import LottieAnimation from "@/components/Organism/Lottie"
+import Link from "next/link"
+import styled from "@emotion/styled"
+import { getAllPostData } from "@/lib/posts"
 
-export default function Posts() {
+import Badge from "@/components/Molecule/Badge"
+
+import LottieAnimation from "@/components/Organism/Lottie"
+import AnimationStudy from '../../../public/lottie/lottie-study.json'
+
+const PostStyle = styled.div`
+  margin-bottom: 40px;
+
+  .guide {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+
+    @media screen and (max-width: 600px) {
+      font-size: 1rem;
+    }
+  }
+
+  .post-item {
+    width: 100%;
+    border-radius: 12px;
+    background-color: var(--color-background-list-item);
+    list-style: none;
+    margin-bottom: 12px;
+    padding: 16px 16px 0 16px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+    @media screen and (max-width: 600px) {
+      padding: 12px 12px 0 12px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+
+    .post-title {
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media screen and (max-width: 600px) {
+        font-size: 1.1rem;
+      }
+    }
+
+    .post-summary {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media screen and (max-width: 600px) {
+        font-size: 0.8rem;
+      }
+    }
+
+    .post-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+  }
+`
+
+export default function Posts({ allPostsData }: any) {
   return (
-    <div className='container'>
-      <div>
-        <LottieAnimation json={AnimationHotdog} description="아직 준비중인 페이지입니다. 조금만 기다려주세요!" />
+    <PostStyle className='container'>
+      <div className="guide">
+        <LottieAnimation json={AnimationStudy} height={80} description="Study" />
       </div>
-    </div>
+      <ul>
+        {allPostsData.map(({ id, title, summary, tags }: any) => (
+          <li key={id} className="post-item">
+            <Link href={`/posts/${id}`}>
+              <div className="post-title">{title}</div>
+              <div className="post-summary">{ summary }</div>
+              <div className="post-tags">
+                {tags.map((tag: string) => (
+                  <Badge key={tag} content={tag} size="small" />
+                ))}
+              </div>
+            </Link>
+            <br />
+          </li>
+        ))}
+      </ul>
+    </PostStyle>
   )
+}
+
+export async function getStaticProps() {
+  const allPostsData = getAllPostData()
+  return {
+    props: {
+      allPostsData,
+    }
+  }
 }
