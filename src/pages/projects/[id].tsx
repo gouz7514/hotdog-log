@@ -23,6 +23,10 @@ const ProjectStyle = css`
     margin-top: 1.5rem;
   }
 
+  h3 ~ h4 {
+    margin-top: 1rem;
+  }
+
   h5 {
     margin-top: 1.3rem;
   }
