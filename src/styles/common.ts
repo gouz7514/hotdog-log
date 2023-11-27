@@ -12,6 +12,9 @@ const common = css`
     --z-index-header: 10;
     --header-height: 80px;
 
+    --color-black: ${colors.black};
+    --color-light-gray: ${colors.lightGray};
+    --color-dark-gray: ${colors.darkgray};
     --color-blue: ${colors.blue};
     --color-light-background: ${colors.lightTheme.background};
     --color-light-font: ${colors.lightTheme.font};
@@ -25,6 +28,8 @@ const common = css`
     transition: all 0.3s ease-in-out;
 
     --color-background-header: ${colors.darkTheme.header};
+    --color-background-pre: ${colors.lightGray};
+    --color-background-list-item: hsl(210deg, 22%, 15%);
   }
 
   body[data-theme="light"] {
@@ -33,6 +38,8 @@ const common = css`
     transition: all 0.3s ease-in-out;
 
     --color-background-header: ${colors.lightTheme.header};
+    --color-background-pre: ${colors.darkgray};
+    --color-background-list-item: #eaeaea;
   }
 `
 
