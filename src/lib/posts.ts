@@ -9,9 +9,32 @@ import remarkRehype from 'remark-rehype'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeStringify from 'rehype-stringify'
 
-const postsDirectory = path.join(process.cwd(), 'src/projects')
+const postsDirectory = path.join(process.cwd(), 'src/posts')
 
-export function getAllProjectIds() {
+export function getAllPostData() {
+  const fileNames = fs.readdirSync(postsDirectory);
+  const allPostsData = fileNames.map((fileName) => {
+    // Remove ".md" from file name to get id
+    const id = fileName.replace(/\.md$/, '');
+
+    // Read markdown file as string
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+    // Use gray-matter to parse the post metadata section
+    const matterResult = matter(fileContents);
+
+    // Combine the data with the id
+    return {
+      id,
+      ...matterResult.data,
+    };
+  });
+
+  return allPostsData;
+}
+
+export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory)
 
   return fileNames.map((fileName : string) => {
@@ -23,7 +46,7 @@ export function getAllProjectIds() {
   })
 }
 
-export async function getProjectData(id : string) {
+export async function getPostData(id : string) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)

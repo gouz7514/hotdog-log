@@ -1,6 +1,6 @@
 {
   "name": "hotdog-log",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 7514",
@@ -33,12 +33,15 @@
     "react-dom": "18.2.0",
     "react-typed": "^1.2.0",
     "recoil": "^0.7.7",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1",
     "typescript": "5.0.2"
   },
   "devDependencies": {
     "husky": "^8.0.3",
-    "remark-unwrap-images": "^4.0.0"
+    "rehype-external-links": "^3.0.0",
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.0.0",
+    "remark-unwrap-images": "^4.0.0",
+    "unified": "^11.0.4"
   }
 }
