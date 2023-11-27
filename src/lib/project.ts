@@ -1,9 +1,13 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { remark } from 'remark'
+
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
 import remarkUnwrapImages from 'remark-unwrap-images'
-import html from 'remark-html'
+import remarkRehype from 'remark-rehype'
+import rehypeExternalLinks from 'rehype-external-links'
+import rehypeStringify from 'rehype-stringify'
 
 const postsDirectory = path.join(process.cwd(), 'src/projects')
 
@@ -22,13 +26,16 @@ export function getAllProjectIds() {
 export async function getProjectData(id : string) {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-
   const matterResult = matter(fileContents)
 
-  const processedContent = await remark()
-  .use(html)
-  .use(remarkUnwrapImages)
-  .process(matterResult.content)
+  const processedContent = await unified()
+    .use(remarkParse)
+    .use(remarkUnwrapImages)
+    .use(remarkRehype)
+    .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener'] })
+    .use(rehypeStringify)
+    .process(matterResult.content)
+
   const contentHtml = processedContent.toString()
 
   return {
