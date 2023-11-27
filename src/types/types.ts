@@ -32,10 +32,4 @@ export interface IconChildProps {
   isDark?: boolean
 }
 
-export interface LottieProps {
-  json: Record<string, any>
-  height?: number
-  description: string
-}
-
 export type Theme = 'light' | 'dark' | null

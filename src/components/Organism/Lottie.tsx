@@ -1,7 +1,11 @@
 import Lottie from 'lottie-react'
 import styled from '@emotion/styled'
 
-import { LottieProps } from '@/types/types'
+interface LottieProps {
+  json: Record<string, any>
+  height?: number
+  description: string
+}
 
 const LottieWrapper = styled.div`
   width: 100%;
@@ -9,7 +13,6 @@ const LottieWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 200px);
 
   .lottie-description {
     text-align: center;
@@ -20,14 +23,11 @@ const LottieWrapper = styled.div`
   }
 `
 
-export default function LottieAnimation({ json, height = 300, description }: LottieProps) {
+export default function LottieAnimation({ json, height = 300 }: LottieProps) {
   return (
     <LottieWrapper>
       <Lottie animationData={json} style={{ height }} />
       <div className="lottie-description">
-        <h3>
-          {description}
-        </h3>
       </div>
     </LottieWrapper>
   )
