@@ -9,6 +9,7 @@ import { IconBack } from '../Icon/IconBack'
 
 const StyleBackButton = styled.div`
   cursor: pointer;
+  width: 30px;
 `
 
 export default function BackButton() {
