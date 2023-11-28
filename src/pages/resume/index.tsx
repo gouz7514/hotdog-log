@@ -1,3 +1,5 @@
+import Head from "next/head"
+
 import Divider from "@/components/Atom/Divider"
 import ResumeIntro from '@/components/Organism/Resume/ResumeIntro'
 import ResumeSkills from '@/components/Organism/Resume/ResumeSkills'
@@ -7,16 +9,26 @@ import ResumeProjects from '@/components/Organism/Resume/ResumeProjects'
 
 export default function Resume() {
   return (
-    <div className="container">
-      <ResumeIntro />
-      <Divider />
-      <ResumeSkills />
-      <Divider />
-      <ResumeCareer />
-      <Divider />
-      <ResumeProjects />
-      <Divider />
-      <ResumeExperience />
-    </div>
+    <>
+      <Head>
+        <title>핫재의 개발 블로그 | 이력서</title>
+        <meta name="title" content="핫재의 개발 블로그 | 이력서" />
+        <meta name="description" content="불편함을 불편해합니다" />
+        <meta property="og:title" content="핫재의 개발 블로그 | 이력서" />
+        <meta property="og:url" content="https://hotjae.com/resume" />
+        <meta property="og:description" content="불편함을 불편해합니다" />
+      </Head>
+      <div className="container">
+        <ResumeIntro />
+        <Divider />
+        <ResumeSkills />
+        <Divider />
+        <ResumeCareer />
+        <Divider />
+        <ResumeProjects />
+        <Divider />
+        <ResumeExperience />
+      </div>
+    </>
   )
 }
