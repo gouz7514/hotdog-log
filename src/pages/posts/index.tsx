@@ -80,7 +80,7 @@ export default function Posts({ allPostsData }: any) {
   return (
     <PostStyle className='container'>
       <div className="guide">
-        <LottieAnimation json={AnimationStudy} height={80} description="Study" />
+        <LottieAnimation json={AnimationStudy} height={80} />
       </div>
       <ul>
         {allPostsData.map(({ id, title, summary, tags }: any) => (

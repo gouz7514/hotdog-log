@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 interface LottieProps {
   json: Record<string, any>
   height?: number
-  description: string
 }
 
 const LottieWrapper = styled.div`
@@ -27,8 +26,6 @@ export default function LottieAnimation({ json, height = 300 }: LottieProps) {
   return (
     <LottieWrapper>
       <Lottie animationData={json} style={{ height }} />
-      <div className="lottie-description">
-      </div>
     </LottieWrapper>
   )
 }
