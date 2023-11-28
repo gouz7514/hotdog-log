@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Head from "next/head"
 import styled from "@emotion/styled"
 import { getAllPostData } from "@/lib/posts"
 
@@ -78,27 +79,37 @@ const PostStyle = styled.div`
 
 export default function Posts({ allPostsData }: any) {
   return (
-    <PostStyle className='container'>
-      <div className="guide">
-        <LottieAnimation json={AnimationStudy} height={80} description="Study" />
-      </div>
-      <ul>
-        {allPostsData.map(({ id, title, summary, tags }: any) => (
-          <li key={id} className="post-item">
-            <Link href={`/posts/${id}`}>
-              <div className="post-title">{title}</div>
-              <div className="post-summary">{ summary }</div>
-              <div className="post-tags">
-                {tags.map((tag: string) => (
-                  <Badge key={tag} content={tag} size="small" />
-                ))}
-              </div>
-            </Link>
-            <br />
-          </li>
-        ))}
-      </ul>
-    </PostStyle>
+    <>
+      <Head>
+        <title>핫재의 개발 블로그 | 기록</title>
+        <meta name="title" content="핫재의 개발 블로그 | 기록" />
+        <meta name="description" content="밀도를 갖춰가고 있습니다" />
+        <meta property="og:title" content="핫재의 개발 블로그 | 기록" />
+        <meta property="og:url" content="https://hotjae.com/posts" />
+        <meta property="og:description" content="밀도를 갖춰가고 있습니다" />
+      </Head>
+      <PostStyle className='container'>
+        <div className="guide">
+          <LottieAnimation json={AnimationStudy} height={80} />
+        </div>
+        <ul>
+          {allPostsData.map(({ id, title, summary, tags }: any) => (
+            <li key={id} className="post-item">
+              <Link href={`/posts/${id}`}>
+                <div className="post-title">{title}</div>
+                <div className="post-summary">{ summary }</div>
+                <div className="post-tags">
+                  {tags.map((tag: string) => (
+                    <Badge key={tag} content={tag} size="small" />
+                  ))}
+                </div>
+              </Link>
+              <br />
+            </li>
+          ))}
+        </ul>
+      </PostStyle>
+    </>
   )
 }
 
