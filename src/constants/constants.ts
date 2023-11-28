@@ -153,7 +153,7 @@ export const PROJECTS = [
     image: ImageSubhow,
     title: "SUBHOW",
     tags: ["React", "Next.js", "typescript", "prisma"],
-    period: "2023.05 ~ 2023.16",
+    period: "2023.05 ~ 2023.06",
     type: "personal",
     route: {
       type: "external",
