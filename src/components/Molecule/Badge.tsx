@@ -1,6 +1,11 @@
 import styled from '@emotion/styled'
 
-import { BadgeProps } from '@/types/types'
+interface BadgeProps {
+  content: string | number
+  className?: string | ''
+  link?: string
+  size?: 'small' | 'medium' | 'large'
+}
 
 const BadgeContent = styled.div`
   display: flex;

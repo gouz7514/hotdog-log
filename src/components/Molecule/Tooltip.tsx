@@ -1,7 +1,5 @@
-import { useState } from 'react'
+import { useState, ReactNode } from 'react'
 import styled from '@emotion/styled'
-
-import { TooltipProps } from '@/types/types'
 
 const TooltipContainer = styled.div`
   border-radius: 50%;
@@ -37,7 +35,7 @@ const TooltipContent = styled.div`
   }
 `
 
-export default function Tooltip({ children }: TooltipProps) {
+export default function Tooltip({ children }: { children: ReactNode }) {
   const [show, setShow] = useState(false)
 
   const handleMouseEnter = () => {
