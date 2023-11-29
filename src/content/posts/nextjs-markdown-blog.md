@@ -1,5 +1,5 @@
 ---
-title: '[NextJS] NextJS로 마크다운 블로그 만들기]'
+title: '[NextJS] NextJS로 마크다운 블로그 만들기'
 summary: 'NextJS로 마크다운 블로그를 만들어보자!'
 tags: ['Nextjs', 'React']
 order: 3
