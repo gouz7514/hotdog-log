@@ -3,7 +3,12 @@ import Head from "next/head"
 import MarkdownLayout from "@/components/Template/MarkdownLayout"
 import { getAllPostIds, getPostData } from "@/lib/posts"
 
-export default function Post({ post }: any) {
+interface PostProps {
+  title: string
+  contentHtml: string
+}
+
+export default function Post({ post }: { post: PostProps }) {
   return (
     <>
       <Head>
@@ -29,7 +34,7 @@ export async function getStaticPaths() {
 }
 
 // fetch necessary data for the blog post using params.id
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: { params: { id: string } }) {
   const post = await getPostData(params.id)
 
   return {
