@@ -53,10 +53,6 @@ const CardStyle = styled.div`
     justify-content: center;
     align-items: center;
     background-color: var(--color-white);
-
-    @media screen and (max-width: 600px) {
-      height: 300px;
-    }
   }
 
   .card-description {
