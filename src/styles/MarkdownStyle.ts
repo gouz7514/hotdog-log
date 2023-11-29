@@ -13,17 +13,25 @@ export const MarkdownStyle = css`
 
   blockquote {
     margin: 2rem 0;
-    padding: 0 1rem;
+    padding: 0.4rem 1rem;
     border-left: 0.25rem solid var(--color-blue);
+    background-color: var(--color-block-quote);
   }
 
   pre {
-    margin: 1rem 0;
     padding: 1rem;
-    background-color: var(--color-light-gray);
-    color: var(--color-black);
     border-radius: 0.5rem;
     overflow-x: auto;
+
+    code {
+      background: initial;
+    }
+  }
+
+  code {
+    background: var(--color-code);
+    padding: 0.2rem 0.3rem;
+    border-radius: 0.25rem;
   }
 
   h2 {
