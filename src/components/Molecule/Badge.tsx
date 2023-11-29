@@ -1,7 +1,11 @@
 import styled from '@emotion/styled'
 
-import { colors } from '@/styles/colors'
-import { BadgeProps } from '@/types/types'
+interface BadgeProps {
+  content: string | number
+  className?: string | ''
+  link?: string
+  size?: 'small' | 'medium' | 'large'
+}
 
 const BadgeContent = styled.div`
   display: flex;
@@ -15,7 +19,7 @@ const BadgeContent = styled.div`
     min-width: 24px;
     font-weight: 700;
     font-size: 1rem;
-    color: ${colors.white};
+    color: var(--color-white);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -31,15 +35,15 @@ const BadgeContent = styled.div`
   }
 
   .badge-primary {
-    background-color: ${colors.badge.primary};
+    background-color: var(--color-badge-primary);
   }
 
   .badge-default {
-    background-color: ${colors.badge.default};
+    background-color: var(--color-badge-default);
   }
 
   .badge-minor {
-    background-color: ${colors.badge.minor};
+    background-color: var(--color-badge-minor);
   }
 `
 
