@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
 import DarkMode from '../Molecule/DarkMode'
-import { colors } from '@/styles/colors'
 
 const StickyHeader = styled.div`
   --padding: 16px;
@@ -15,7 +14,7 @@ const StickyHeader = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: var(--color-background-header);
+  background-color: var(--color-header);
   z-index: var(--z-index-header);
 
   .logo {
@@ -36,7 +35,7 @@ const StickyHeader = styled.div`
     gap: 16px;
     font-size: 24px;
     font-weight: bold;
-    color: ${colors.white};
+    color: var(--color-white);
 
     @media screen and (max-width: 375px) {
       font-size: 18px;

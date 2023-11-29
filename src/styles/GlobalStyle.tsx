@@ -1,9 +1,36 @@
 import { Global, css } from '@emotion/react'
-import common from './common'
 import typo from './typo'
 import reset from './reset'
+import { colorVariables } from './colors'
+
+import { lighTheme, darkTheme } from './theme'
 
 const style = css`
+  * {
+    ${colorVariables};
+    --z-index-header: 10;
+    --header-height: 80px;
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    ${lighTheme};
+    transition: all 0.3s ease-in-out;
+  }
+
+  body[data-theme="dark"] {
+    ${darkTheme};
+  }
+
+  body[data-theme="light"] {
+    ${lighTheme};
+  }
+
   ul {
     list-style: none;
   }
@@ -59,6 +86,6 @@ const style = css`
   }
 `
 
-const GlobalStyle = () => <Global styles={[style, common, typo, reset]} />
+const GlobalStyle = () => <Global styles={[style, typo, reset]} />
 
 export default GlobalStyle

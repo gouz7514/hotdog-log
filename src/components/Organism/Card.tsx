@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { StaticImageData } from "next/image"
 
 import Badge from '@/components/Molecule/Badge'
-import { colors } from '@/styles/colors'
 
 const CardStyle = styled.div`
   --image-height: 200px;
@@ -14,7 +13,7 @@ const CardStyle = styled.div`
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 8px;
   overflow: hidden;
-  color: ${colors.black};
+  color: var(--color-black);
 
   &.external {
     position: relative;
@@ -53,7 +52,7 @@ const CardStyle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: ${colors.white};
+    background-color: var(--color-white);
 
     @media screen and (max-width: 600px) {
       height: 300px;
@@ -67,7 +66,7 @@ const CardStyle = styled.div`
     justify-content: space-between;
     gap: 4px;
     padding: 12px 12px 6px;
-    background-color: ${colors.lightblue};
+    background-color: var(--color-lightblue);
 
     @media screen and (min-width: 600px) {
       height: calc(100% - var(--image-height));

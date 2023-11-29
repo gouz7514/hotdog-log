@@ -24,7 +24,7 @@ const PostStyle = styled.div`
   .post-item {
     width: 100%;
     border-radius: 12px;
-    background-color: var(--color-background-list-item);
+    background-color: var(--color-list-background);
     list-style: none;
     margin-bottom: 12px;
     padding: 16px 16px 0 16px;
