@@ -15,7 +15,7 @@ const StickyHeader = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: var(--color-background-header);
+  background-color: var(--color-header);
   z-index: var(--z-index-header);
 
   .logo {

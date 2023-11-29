@@ -3,11 +3,14 @@ import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/do
 class MyDocument extends Document {
   render() {
     const setThemeMode = `
-      if (localStorage.theme) {
-        document.body.dataset.theme = localStorage.theme
-      } else {
-        document.body.data.set.theme = 'light'
+      const theme = localStorage.getItem('theme')
+      const getUserTheme = () => {
+        if (theme) return theme
+        return window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light'
       }
+      document.body.dataset.theme = getUserTheme()
     `;
 
     return (

@@ -12,14 +12,4 @@ export const colors = {
     default: '#33ccff',
     minor: '#cccccc'
   },
-  lightTheme: {
-    background: 'hsl(0deg, 0%, 100%)',
-    font: '#000000',
-    header: '#0066cc'
-  },
-  darkTheme: {
-    background: 'hsl(210deg, 30%, 8%)',
-    font: '#ffffff',
-    header: 'hsl(210deg, 30%, 8%)'
-  }
 }

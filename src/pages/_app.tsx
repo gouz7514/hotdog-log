@@ -29,6 +29,8 @@ export const ThemeContext = createContext<ContextProps>({
 export default function App({ Component, pageProps }: AppProps) {
   const { colorTheme, toggleTheme } = useDarkMode()
   RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false
+  // console.log('theme : ', theme)
+  console.log(colorTheme)
 
   return (
     <>
@@ -48,7 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <RecoilRoot>
         <ThemeContext.Provider value={{ colorTheme, toggleTheme }}>
-          <ThemeProvider theme={theme}>
+          <ThemeProvider theme={{ ...colorTheme }}>
             <AppLayout>
               <GlobalStyle />
               <AnimatePresence mode="wait" initial={false}>
