@@ -1,6 +1,8 @@
 import { css } from "@emotion/react"
 
 export const MarkdownStyle = css`
+  font-size: 1.05rem;
+
   strong {
     color: var(--color-blue);
   }
@@ -12,10 +14,15 @@ export const MarkdownStyle = css`
   }
 
   blockquote {
-    margin: 2rem 0;
+    margin: 1rem 0;
     padding: 0.4rem 1rem;
     border-left: 0.25rem solid var(--color-blue);
     background-color: var(--color-block-quote);
+
+    h4 {
+      margin-top: 0;
+      color: var(--color-blue);
+    }
   }
 
   pre {
@@ -37,6 +44,10 @@ export const MarkdownStyle = css`
   h2 {
     margin-top: 2rem;
     color: var(--color-blue);
+
+    & ~ h3 {
+      margin-top: 1rem;
+    }
   }
 
   h3 {
@@ -59,7 +70,7 @@ export const MarkdownStyle = css`
   p {
     margin: 0.8rem 0;
     white-space: pre-wrap;
-    line-height: 1.65;
+    line-height: 1.7;
   }
 
   li {
