@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import { colors } from './colors'
 
 const typo = css`
   h1 {
@@ -40,11 +39,11 @@ const typo = css`
   }
 
   .text-blue {
-    color: ${colors.blue};
+    color: var(--color-blue);
   }
 
   .text-orange {
-    color: ${colors.orange};
+    color: var(--color-orange);
   }
 `
 

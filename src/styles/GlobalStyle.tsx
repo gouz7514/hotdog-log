@@ -1,25 +1,21 @@
 import { Global, css } from '@emotion/react'
 import typo from './typo'
 import reset from './reset'
-import { colors } from './colors'
+import { colorVariables } from './colors'
 
 import { lighTheme, darkTheme } from './theme'
 
 const style = css`
   * {
+    ${colorVariables};
+    --z-index-header: 10;
+    --header-height: 80px;
+
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     line-height: 1.3;
     -webkit-font-smoothing: antialiased;
-
-    --z-index-header: 10;
-    --header-height: 80px;
-
-    --color-black: ${colors.black};
-    --color-light-gray: ${colors.lightGray};
-    --color-dark-gray: ${colors.darkgray};
-    --color-blue: ${colors.blue};
   }
 
   body {

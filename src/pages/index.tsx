@@ -1,8 +1,6 @@
 import styled from '@emotion/styled'
 import Typed from 'react-typed'
 
-import { colors } from '@/styles/colors'
-
 const HomeStyle = styled.main`
   display: flex;
   flex-direction: column;
@@ -18,7 +16,7 @@ const ProfileImage = styled.div`
   border-radius: 24px;
   width: 300px;
   height: 300px;
-  background-color: ${colors.beige};
+  background-color: var(--color-beige);
   background-image: url('/images/profile.png');
   background-size: 300px;
   transition: all 0.3s ease-in-out;
@@ -41,7 +39,7 @@ const ProfileDescription = styled.div`
   .typed-text {
     font-size: 3em;
     font-weight: bold;
-    color: ${colors.blue};
+    color: var(--color-blue);
 
     @media screen and (max-width: 600px) {
       font-size: 2em;
