@@ -1,12 +1,21 @@
+import Head from "next/head"
+
 import MarkdownLayout from "@/components/Template/MarkdownLayout"
 import { getAllPostIds, getPostData } from "@/lib/posts"
 
 export default function Post({ post }: any) {
   return (
-    <MarkdownLayout
-      title={post.title}
-      innerHtml={post.contentHtml}
-    />
+    <>
+      <Head>
+        <title>{post.title}</title>
+        <meta name="title" content={post.title} />
+        <meta name="og:title" content={post.title} />
+      </Head>
+      <MarkdownLayout
+        title={post.title}
+        innerHtml={post.contentHtml}
+      />
+    </>
   )
 
 }
