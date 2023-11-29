@@ -6,15 +6,19 @@ import { getAllPostIds, getPostData } from "@/lib/posts"
 interface PostProps {
   title: string
   contentHtml: string
+  summary: string
 }
 
-export default function Post({ post }: { post: PostProps }) {
+export default function Post({ post, id }: { post: PostProps, id: string }) {
   return (
     <>
       <Head>
         <title>{post.title}</title>
         <meta name="title" content={post.title} />
+        <meta name="description" content={post.summary} />
         <meta name="og:title" content={post.title} />
+        <meta name="og:url" content={`https://hotjae.com/posts/${id}`} />
+        <meta name="og:description" content={post.summary} />
       </Head>
       <MarkdownLayout
         title={post.title}
@@ -39,7 +43,8 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
 
   return {
     props: {
-      post
+      post,
+      id: params.id
     }
   }
 }
