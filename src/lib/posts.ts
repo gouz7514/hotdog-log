@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 
 import directoryToHtml from './directoryToHtml'
 
-const postsDirectory = path.join(process.cwd(), 'src/posts')
+const postsDirectory = path.join(process.cwd(), 'src/content/posts')
 
 export function getAllPostData() {
   const fileNames = fs.readdirSync(postsDirectory);
