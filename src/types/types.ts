@@ -19,3 +19,11 @@ export interface IconChildProps {
   fill?: string
   isDark?: boolean
 }
+
+export interface Post {
+  id: string,
+  title: string,
+  summary: string,
+  tags?: string[],
+  order?: number,
+}

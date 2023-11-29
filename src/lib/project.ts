@@ -3,7 +3,7 @@ import path from 'path'
 
 import directoryToHtml from './directoryToHtml'
 
-const postsDirectory = path.join(process.cwd(), 'src/projects')
+const postsDirectory = path.join(process.cwd(), 'src/content/projects')
 
 export function getAllProjectIds() {
   const fileNames = fs.readdirSync(postsDirectory)

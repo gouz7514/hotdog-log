@@ -1,7 +1,12 @@
 import MarkdownLayout from "@/components/Template/MarkdownLayout"
 import { getAllProjectIds, getProjectData } from "@/lib/project"
 
-export default function Project({ project }: any) {
+interface ProjectProps {
+  title: string
+  contentHtml: string
+}
+
+export default function Project({ project }: { project: ProjectProps }) {
   return (
     <MarkdownLayout
       title={project.title}
@@ -20,7 +25,7 @@ export async function getStaticPaths() {
 }
 
 // fetch necessary data for the blog post using params.id
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: { params: { id: string } }) {
   const project = await getProjectData(params.id)
 
   return {

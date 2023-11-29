@@ -2,6 +2,7 @@ import Link from "next/link"
 import Head from "next/head"
 import styled from "@emotion/styled"
 import { getAllPostData } from "@/lib/posts"
+import { Post } from "@/types/types"
 
 import Badge from "@/components/Molecule/Badge"
 
@@ -77,7 +78,7 @@ const PostStyle = styled.div`
   }
 `
 
-export default function Posts({ allPostsData }: any) {
+export default function Posts({ allPostsData }: { allPostsData: Post[] }) {
   return (
     <>
       <Head>
@@ -93,15 +94,19 @@ export default function Posts({ allPostsData }: any) {
           <LottieAnimation json={AnimationStudy} height={80} />
         </div>
         <ul>
-          {allPostsData.map(({ id, title, summary, tags }: any) => (
+          {allPostsData.map(({ id, title, summary, tags }) => (
             <li key={id} className="post-item">
               <Link href={`/posts/${id}`}>
                 <div className="post-title">{title}</div>
                 <div className="post-summary">{ summary }</div>
                 <div className="post-tags">
-                  {tags.map((tag: string) => (
-                    <Badge key={tag} content={tag} size="small" />
-                  ))}
+                  {
+                    tags && (
+                      tags.map((tag: string) => (
+                        <Badge key={tag} content={tag} size="small" />
+                      ))
+                    )
+                  }
                 </div>
               </Link>
               <br />
