@@ -25,5 +25,5 @@ export interface Post {
   title: string,
   summary: string,
   tags?: string[],
-  order?: number,
+  date?: number,
 }

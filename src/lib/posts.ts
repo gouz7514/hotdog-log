@@ -28,7 +28,7 @@ export function getAllPostData() {
   }) as Post[]
 
   return allPostsData.sort((a, b) => {
-    if (a.order! < b.order!) {
+    if (a.date! < b.date!) {
       return 1
     } else {
       return -1

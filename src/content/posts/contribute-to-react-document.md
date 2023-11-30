@@ -2,7 +2,7 @@
 title: '[React] React 공식 문서 기여를 통한 성장'
 summary: 'React 공식 문서에 기여하며 배운 것들을 정리한 글입니다.'
 tags: ['React', 'Open Source']
-order: 2
+date: '2023-11-27 23:00:01'
 ---
 
 > 💡 옵시디언을 활용해 리액트를 공부하는 흔적들을 보고 싶다면 [여기](https://github.com/gouz7514/second-brain/tree/main/1_Projects/React)를 확인해주세요!
