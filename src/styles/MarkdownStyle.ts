@@ -31,6 +31,11 @@ export const MarkdownStyle = css`
     code {
       background: initial;
     }
+
+    * {
+      font-size: 0.95rem;
+      font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+    }
   }
 
   code {
