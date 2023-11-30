@@ -68,6 +68,7 @@ export const MarkdownStyle = css`
   p {
     margin: 0.8rem 0;
     white-space: pre-wrap;
+    word-break: keep-all;
     line-height: 1.7;
   }
 
@@ -89,7 +90,7 @@ export const MarkdownStyle = css`
     }
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (max-width: 600px) {
     font-size: 1.05rem;
   }
 `
