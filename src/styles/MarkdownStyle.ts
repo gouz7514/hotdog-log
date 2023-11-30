@@ -1,8 +1,6 @@
 import { css } from "@emotion/react"
 
 export const MarkdownStyle = css`
-  font-size: 1.05rem;
-
   strong {
     color: var(--color-blue);
   }
@@ -89,5 +87,9 @@ export const MarkdownStyle = css`
     @media screen and (max-width: 600px) {
       max-width: calc(100% - 40px);
     }
+  }
+
+  @media screen and (min-width: 600px) {
+    font-size: 1.05rem;
   }
 `
