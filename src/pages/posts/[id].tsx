@@ -16,9 +16,9 @@ export default function Post({ post, id }: { post: PostProps, id: string }) {
         <title>{post.title}</title>
         <meta name="title" content={post.title} />
         <meta name="description" content={post.summary} />
-        <meta name="og:title" content={post.title} />
-        <meta name="og:url" content={`https://hotjae.com/posts/${id}`} />
-        <meta name="og:description" content={post.summary} />
+        <meta name="og:title" content={post.title} key="og:title" />
+        <meta name="og:url" content={`https://hotjae.com/posts/${id}`} key="og:url" />
+        <meta name="og:description" content={post.summary} key="og:description" />
       </Head>
       <MarkdownLayout
         title={post.title}
@@ -26,7 +26,6 @@ export default function Post({ post, id }: { post: PostProps, id: string }) {
       />
     </>
   )
-
 }
 
 export async function getStaticPaths() {
