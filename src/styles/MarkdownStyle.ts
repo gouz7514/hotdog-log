@@ -1,8 +1,6 @@
 import { css } from "@emotion/react"
 
 export const MarkdownStyle = css`
-  font-size: 1.05rem;
-
   strong {
     color: var(--color-blue);
   }
@@ -32,6 +30,11 @@ export const MarkdownStyle = css`
 
     code {
       background: initial;
+    }
+
+    * {
+      font-size: 0.95rem;
+      font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
     }
   }
 
@@ -70,6 +73,7 @@ export const MarkdownStyle = css`
   p {
     margin: 0.8rem 0;
     white-space: pre-wrap;
+    word-break: keep-all;
     line-height: 1.7;
   }
 
@@ -89,5 +93,9 @@ export const MarkdownStyle = css`
     @media screen and (max-width: 600px) {
       max-width: calc(100% - 40px);
     }
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.05rem;
   }
 `

@@ -8,7 +8,7 @@ const typo = css`
 
   h2 {
     margin: 12px 0;
-    font-size: 2em
+    font-size: 1.8em
   }
 
   h3 {
