@@ -28,7 +28,7 @@ export const ThemeContext = createContext<ContextProps>({
 
 export default function App({ Component, pageProps }: AppProps) {
   const { colorTheme, toggleTheme } = useDarkMode()
-  RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false  
+  RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false
 
   return (
     <>
