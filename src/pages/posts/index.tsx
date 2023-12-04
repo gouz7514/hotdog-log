@@ -25,11 +25,14 @@ const PostStyle = styled.div`
   }
 
   .post-item {
+    position: relative;
     width: 100%;
-    border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
     background-color: var(--color-list-background);
     list-style: none;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
     padding: 12px 16px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
@@ -39,6 +42,13 @@ const PostStyle = styled.div`
 
     &:hover {
       filter: brightness(0.9);
+    }
+
+    .post-date {
+      font-size: 0.8rem;
+      margin-bottom: 4px;
+      font-weight: 400;
+      font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
     }
 
     .post-title {
@@ -69,35 +79,14 @@ const PostStyle = styled.div`
     }
 
     .post-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
 
-      @media screen and (max-width: 600px) {
-        flex-direction: column;
-        align-items: flex-start;
-
-        .post-date {
-          margin-top: 8px;
-          margin-right: 0;
-          margin-left: auto;
-        }
+      .post-tags {
+        display: flex;
+        gap: 8px;
       }
-    }
-
-    .post-tags {
-      display: flex;
-      gap: 8px;
-    }
-
-    .post-date {
-      font-size: 0.8rem;
-      font-weight: 400;
-      filter: brightness(0.6);
     }
   }
 `
@@ -121,6 +110,7 @@ export default function Posts({ allPostsData }: { allPostsData: Post[] }) {
           {allPostsData.map(({ id, title, summary, tags, date }) => (
             <li key={id} className="post-item">
               <Link href={`/posts/${id}`}>
+                <div className="post-date">{parseDate(date)}</div>
                 <div className="post-title">{title}</div>
                 <div className="post-summary">{ summary }</div>
                 <div className="post-footer">
@@ -129,11 +119,10 @@ export default function Posts({ allPostsData }: { allPostsData: Post[] }) {
                       tags && (
                         tags.map((tag: string) => (
                           <Badge key={tag} content={tag} size="small" />
-                          ))
-                          )
-                        }
+                        ))
+                      )
+                    }
                   </div>
-                  <div className="post-date">{parseDate(date)}</div>
                 </div>
               </Link>
             </li>
