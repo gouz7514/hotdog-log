@@ -7,6 +7,7 @@ interface PostProps {
   title: string
   contentHtml: string
   summary: string
+  date: string
 }
 
 export default function Post({ post, id }: { post: PostProps, id: string }) {
@@ -23,6 +24,7 @@ export default function Post({ post, id }: { post: PostProps, id: string }) {
       <MarkdownLayout
         title={post.title}
         innerHtml={post.contentHtml}
+        date={post.date}
       />
     </>
   )
