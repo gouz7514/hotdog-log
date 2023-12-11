@@ -13,7 +13,7 @@ export const MarkdownStyle = css`
 
   blockquote {
     margin: 1rem 0;
-    padding: 0.4rem 1rem;
+    padding: 0.6rem 1rem;
     border-left: 0.25rem solid var(--color-blue);
     background-color: var(--color-block-quote);
 
@@ -40,21 +40,23 @@ export const MarkdownStyle = css`
 
   code {
     background: var(--color-code);
-    padding: 0.2rem 0.3rem;
-    border-radius: 0.25rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 85%;
+    font-family: "Fira Mono", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
   }
 
   h2 {
     margin-top: 2rem;
     color: var(--color-blue);
 
-    & ~ h3 {
+    & + h3 {
       margin-top: 1rem;
     }
   }
 
   h3 {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     color: var(--color-blue);
   }
 
@@ -78,7 +80,7 @@ export const MarkdownStyle = css`
   }
 
   li {
-    margin: 0.5rem 0;
+    margin: 0.3rem 0;
     line-height: 1.5;
     list-style: disc;
     margin-left: 1rem;
