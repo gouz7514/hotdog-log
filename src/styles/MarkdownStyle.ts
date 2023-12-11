@@ -47,14 +47,10 @@ export const MarkdownStyle = css`
   h2 {
     margin-top: 2rem;
     color: var(--color-blue);
-
-    & ~ h3 {
-      margin-top: 1rem;
-    }
   }
 
   h3 {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     color: var(--color-blue);
   }
 
