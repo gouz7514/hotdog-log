@@ -39,19 +39,6 @@ const TABLE_SEPARATOR = '|---|-------|------|'
 const DAYS = ['일', '월', '화', '수', '목', '금', '토'];
 const BASE_URL = 'https://hotjae.com';
 
-const getNowDate = () => {
-  // utc + 9
-  const date = new Date(Date.now() + 9 * 60 * 60 * 1000);
-  const 년 = date.getFullYear();
-  const 월 = date.getMonth() + 1;
-  const 일  = date.getDate();
-  const 요일 = date.getDay();
-  const 시 = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
-  const 분 = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
-
-  return `${년}-${월}-${일} (${DAYS[요일]}), ${시}:${분} 기준`;
-}
-
 const getPostDate = (date) => {
   const newDate = new Date(date);
   const 년 = newDate.getFullYear();
@@ -79,7 +66,7 @@ const updateReadme = () => {
     return `| ${idx + 1} | [${title}](${getPostLink(id)}) | ${getPostDate(date)} |`
   }).join('\n');
 
-  postsTable = `${POST_TITLE}\n${getNowDate()}\n${TABLE_HEADER}\n${TABLE_SEPARATOR}\n${postsTable}`
+  postsTable = `${POST_TITLE}\n${TABLE_HEADER}\n${TABLE_SEPARATOR}\n${postsTable}`
 
   // Replace README content
   if (startIdx === -1 || endIdx === -1) {
