@@ -40,7 +40,8 @@ const DAYS = ['일', '월', '화', '수', '목', '금', '토'];
 const BASE_URL = 'https://hotjae.com';
 
 const getNowDate = () => {
-  const date = new Date();
+  // utc + 9
+  const date = new Date(Date.now() + 9 * 60 * 60 * 1000);
   const 년 = date.getFullYear();
   const 월 = date.getMonth() + 1;
   const 일  = date.getDate();
