@@ -8,7 +8,7 @@ Next와 Typescript로 만든 개발 블로그입니다.
 
 <!-- START_POSTS -->
 ### Posts
-2023-12-13 (수), 09:09 기준
+2023-12-12 (화), 15:10 기준
 | # | Title | Date |
 |---|-------|------|
 | 1 | [[NextJS] 스타일링 방식 갈아타기 (emotion)](https://hotjae.com/posts/nextjs-styling-tool) | 2023-11-27 (월) |
