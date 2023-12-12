@@ -51,3 +51,12 @@ export function getAllPostIds() {
 export async function getPostData(id : string) {
   return directoryToHtml(postsDirectory, id)
 }
+
+export function getAllPostTags() {
+  const posts = getAllPostData()
+  const tags = new Set<string>()
+  posts.forEach(post => {
+    post.tags?.forEach(tag => tags.add(tag))
+  })
+  return Array.from(tags)
+}
