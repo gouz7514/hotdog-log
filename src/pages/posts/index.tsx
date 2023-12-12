@@ -1,9 +1,9 @@
-import { useContext } from "react"
-import { ThemeContext } from "@/pages/_app"
-import { theme } from '@/styles/theme'
-
+import { useContext, useState } from "react"
 import Link from "next/link"
 import Head from "next/head"
+
+import { ThemeContext } from "@/pages/_app"
+import { theme } from '@/styles/theme'
 import styled from "@emotion/styled"
 import { getAllPostData, getAllPostTags } from "@/lib/posts"
 import { Post } from "@/types/types"
@@ -111,6 +111,18 @@ export default function Posts({ allPostsData, allTags }: { allPostsData: Post[],
   const { colorTheme } = useContext(ThemeContext)
   const isDark = colorTheme === theme.dark
 
+  const [selectedTag, setSelectedTag] = useState<string>('')
+
+  const onClickTag = (tag: string) => {
+    if (selectedTag === tag) return setSelectedTag('')
+    setSelectedTag(tag)
+  }
+
+  const filteredPosts = allPostsData.filter((post: Post) => {
+    if (selectedTag === '') return allPostsData
+    return post.tags.includes(selectedTag)
+  })
+
   return (
     <>
       <Head>
@@ -130,13 +142,13 @@ export default function Posts({ allPostsData, allTags }: { allPostsData: Post[],
           {
             allTags && (
               allTags.map((tag: string) => (
-                <Badge key={tag} content={tag} size="small" />
+                <Badge key={tag} content={tag} size="small" onClick={() => onClickTag(tag)} active={tag === selectedTag} />
               ))
             )
           }
         </div>
         <ul>
-          {allPostsData.map(({ id, title, summary, tags, date }) => (
+          {filteredPosts.map(({ id, title, summary, tags, date }) => (
             <li key={id} className="post-item">
               <Link href={`/posts/${id}`}>
                 <div className="post-date">{parseDate(date)}</div>
