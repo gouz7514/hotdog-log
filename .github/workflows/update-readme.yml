@@ -1,0 +1,35 @@
+name: Update README (Posts)
+
+on:
+  push:
+    branches:
+      - posts
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Update README (Posts)
+        run: node .github/scripts/update-readme.js
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'gouz7514'
+          git config --global user.email 'gouz7514@gmail.com'
+          git add -A
+          git commit -m "auto update README.md"
+
+      - name: Push changes
+        run: git push
