@@ -24,6 +24,6 @@ export interface Post {
   id: string,
   title: string,
   summary: string,
-  tags?: string[],
+  tags: string[],
   date: string,
 }

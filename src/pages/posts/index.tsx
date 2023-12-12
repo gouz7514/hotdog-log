@@ -1,10 +1,16 @@
+import { useContext, useState } from "react"
 import Link from "next/link"
 import Head from "next/head"
+
+import { ThemeContext } from "@/pages/_app"
+import { theme } from '@/styles/theme'
 import styled from "@emotion/styled"
-import { getAllPostData } from "@/lib/posts"
+import { getAllPostData, getAllPostTags } from "@/lib/posts"
 import { Post } from "@/types/types"
 
 import Badge from "@/components/Molecule/Badge"
+import Icon from "@/components/Atom/Icon"
+import { IconTags } from "@/components/Icon/IconTags"
 
 import LottieAnimation from "@/components/Organism/Lottie"
 import AnimationStudy from '../../../public/lottie/lottie-study.json'
@@ -22,6 +28,16 @@ const PostStyle = styled.div`
     @media screen and (max-width: 600px) {
       font-size: 1rem;
     }
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+    background-color: var(--color-list-background);
+    border-radius: 12px;
+    padding: 12px 16px;
   }
 
   .post-item {
@@ -91,7 +107,22 @@ const PostStyle = styled.div`
   }
 `
 
-export default function Posts({ allPostsData }: { allPostsData: Post[] }) {
+export default function Posts({ allPostsData, allTags }: { allPostsData: Post[], allTags: string[] }) {
+  const { colorTheme } = useContext(ThemeContext)
+  const isDark = colorTheme === theme.dark
+
+  const [selectedTag, setSelectedTag] = useState<string>('')
+
+  const onClickTag = (tag: string) => {
+    if (selectedTag === tag) return setSelectedTag('')
+    setSelectedTag(tag)
+  }
+
+  const filteredPosts = allPostsData.filter((post: Post) => {
+    if (selectedTag === '') return allPostsData
+    return post.tags.includes(selectedTag)
+  })
+
   return (
     <>
       <Head>
@@ -106,8 +137,18 @@ export default function Posts({ allPostsData }: { allPostsData: Post[] }) {
         <div className="guide">
           <LottieAnimation json={AnimationStudy} height={80} />
         </div>
+        <div className="tags">
+          <Icon icon={<IconTags isDark={isDark} />} width={24} height={24} />
+          {
+            allTags && (
+              allTags.map((tag: string) => (
+                <Badge key={tag} content={tag} size="small" onClick={() => onClickTag(tag)} active={tag === selectedTag} />
+              ))
+            )
+          }
+        </div>
         <ul>
-          {allPostsData.map(({ id, title, summary, tags, date }) => (
+          {filteredPosts.map(({ id, title, summary, tags, date }) => (
             <li key={id} className="post-item">
               <Link href={`/posts/${id}`}>
                 <div className="post-date">{parseDate(date)}</div>
@@ -135,9 +176,12 @@ export default function Posts({ allPostsData }: { allPostsData: Post[] }) {
 
 export async function getStaticProps() {
   const allPostsData = getAllPostData()
+  const allTags = getAllPostTags()
+
   return {
     props: {
       allPostsData,
+      allTags
     }
   }
 }
