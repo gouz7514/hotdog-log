@@ -61,7 +61,9 @@ export const MarkdownStyle = css`
   }
 
   h4{
+    font-size: 1.2rem;
     margin-top: 1.5rem;
+    color: var(--color-blue);
   }
 
   h3 ~ h4 {
@@ -82,8 +84,13 @@ export const MarkdownStyle = css`
   li {
     margin: 0.3rem 0;
     line-height: 1.5;
-    list-style: disc;
     margin-left: 1rem;
+  }
+
+  ul {
+    li {
+      list-style: disc;
+    }
   }
 
   img {
