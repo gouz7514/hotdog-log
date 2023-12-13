@@ -54,9 +54,16 @@ export async function getPostData(id : string) {
 
 export function getAllPostTags() {
   const posts = getAllPostData()
-  const tags = new Set<string>()
+  const tags: { [key: string]: number } = {}
   posts.forEach(post => {
-    post.tags?.forEach(tag => tags.add(tag))
+    post.tags.forEach(tag => {
+      if (tags[tag]) {
+        tags[tag]++
+      } else {
+        tags[tag] = 1
+      }
+    })
   })
-  return Array.from(tags)
+  
+  return tags
 }

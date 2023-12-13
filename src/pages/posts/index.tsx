@@ -107,7 +107,7 @@ const PostStyle = styled.div`
   }
 `
 
-export default function Posts({ allPostsData, allTags }: { allPostsData: Post[], allTags: string[] }) {
+export default function Posts({ allPostsData, allTags }: { allPostsData: Post[], allTags: { [key: string]: number } }) {
   const { colorTheme } = useContext(ThemeContext)
   const isDark = colorTheme === theme.dark
 
@@ -140,11 +140,9 @@ export default function Posts({ allPostsData, allTags }: { allPostsData: Post[],
         <div className="tags">
           <Icon icon={<IconTags isDark={isDark} />} width={24} height={24} />
           {
-            allTags && (
-              allTags.map((tag: string) => (
-                <Badge key={tag} content={tag} size="small" onClick={() => onClickTag(tag)} active={tag === selectedTag} />
-              ))
-            )
+            Object.entries(allTags).map(([tag, count]) => (
+              <Badge key={tag} content={`${tag} (${count})`} size="small" onClick={() => onClickTag(tag)} active={tag === selectedTag} />
+            ))
           }
         </div>
         <ul>
@@ -157,11 +155,9 @@ export default function Posts({ allPostsData, allTags }: { allPostsData: Post[],
                 <div className="post-footer">
                   <div className="post-tags">
                     {
-                      tags && (
-                        tags.map((tag: string) => (
-                          <Badge key={tag} content={tag} size="small" />
-                        ))
-                      )
+                      tags.map((tag: string) => (
+                        <Badge key={tag} content={tag} size="small" />
+                      ))
                     }
                   </div>
                 </div>
