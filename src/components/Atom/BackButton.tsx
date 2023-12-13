@@ -1,11 +1,11 @@
 import { useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
 import { useContext } from 'react'
-import { ThemeContext } from '@/pages/_app'
+import ThemeContext from '@/context/themeContext'
 import { theme } from '@/styles/theme'
 
 import Icon from './Icon'
-import { IconBack } from '../Icon/IconBack'
+import IconBack from '../Icon/IconBack'
 
 const StyleBackButton = styled.div`
   cursor: pointer;

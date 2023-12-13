@@ -1,5 +1,5 @@
-import MarkdownLayout from "@/components/Template/MarkdownLayout"
-import { getAllProjectIds, getProjectData } from "@/lib/project"
+import MarkdownLayout from '@/components/Template/MarkdownLayout'
+import { getAllProjectIds, getProjectData } from '@/lib/project'
 
 interface ProjectProps {
   title: string
@@ -8,10 +8,7 @@ interface ProjectProps {
 
 export default function Project({ project }: { project: ProjectProps }) {
   return (
-    <MarkdownLayout
-      title={project.title}
-      innerHtml={project.contentHtml}
-    />
+    <MarkdownLayout title={project.title} innerHtml={project.contentHtml} />
   )
 }
 
@@ -20,7 +17,7 @@ export async function getStaticPaths() {
   const paths = getAllProjectIds()
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
@@ -30,7 +27,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
 
   return {
     props: {
-      project
-    }
+      project,
+    },
   }
 }

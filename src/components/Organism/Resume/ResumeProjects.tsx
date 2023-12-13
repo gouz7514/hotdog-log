@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import styled from '@emotion/styled'
 
 import Card from '@/components/Organism/Card'
@@ -18,52 +17,46 @@ const ResumeProjectsStyle = styled.div`
 `
 
 export default function ResumeProjects() {
-  const COMPANY_PROJECTS = PROJECTS.filter(project => project.type === 'company')
-  const PERSONAL_PROJECTS = PROJECTS.filter(project => project.type === 'personal')
+  const COMPANY_PROJECTS = PROJECTS.filter(
+    project => project.type === 'company',
+  )
+  const PERSONAL_PROJECTS = PROJECTS.filter(
+    project => project.type === 'personal',
+  )
 
   return (
     <ResumeProjectsStyle>
-      <h2 className="text-blue">
-        PROJECTS
-      </h2>
-      <Fragment>
-        <h3 className="text-blue">
-          ABZ 주식회사
-        </h3>
+      <h2 className="text-blue">PROJECTS</h2>
+      <>
+        <h3 className="text-blue">ABZ 주식회사</h3>
         <div className="project-container">
-          {
-            COMPANY_PROJECTS.map((project) => (
-              <Card
-                key={project.id}
-                image={project.image}
-                title={project.title}
-                tags={project.tags}
-                period={project.period}
-                route={project.route}
-              />
-            ))
-          }
+          {COMPANY_PROJECTS.map(project => (
+            <Card
+              key={project.id}
+              image={project.image}
+              title={project.title}
+              tags={project.tags}
+              period={project.period}
+              route={project.route}
+            />
+          ))}
         </div>
-      </Fragment>
-      <Fragment>
-        <h3 className="text-blue mt-24">
-          개인 프로젝트
-        </h3>
+      </>
+      <>
+        <h3 className="text-blue mt-24">개인 프로젝트</h3>
         <div className="project-container">
-          {
-            PERSONAL_PROJECTS.map((project) => (
-              <Card
-                key={project.id}
-                image={project.image}
-                title={project.title}
-                tags={project.tags}
-                period={project.period}
-                route={project.route}
-              />
-            ))
-          }
+          {PERSONAL_PROJECTS.map(project => (
+            <Card
+              key={project.id}
+              image={project.image}
+              title={project.title}
+              tags={project.tags}
+              period={project.period}
+              route={project.route}
+            />
+          ))}
         </div>
-      </Fragment>
+      </>
     </ResumeProjectsStyle>
   )
 }

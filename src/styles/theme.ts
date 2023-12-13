@@ -14,7 +14,7 @@ export const theme = {
     listBackground: 'hsl(210deg, 22%, 15%)',
     code: '#363636',
     blockQuote: 'hsl(210deg, 22%, 15%)',
-  }
+  },
 }
 
 export const lighTheme = `

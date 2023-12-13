@@ -1,8 +1,7 @@
-import { Fragment } from "react"
 import styled from '@emotion/styled'
 
-import Badge from "@/components/Molecule/Badge"
-import Tooltip from "@/components/Molecule/Tooltip"
+import Badge from '@/components/Molecule/Badge'
+import Tooltip from '@/components/Molecule/Tooltip'
 
 import { SKILLS } from '@/constants/constants'
 
@@ -13,7 +12,7 @@ const SkillContainer = styled.div`
   row-gap: 12px;
 
   @media screen and (min-width: 1000px) {
-    grid-template-columns: repeat(5, 170px)
+    grid-template-columns: repeat(5, 170px);
   }
 `
 
@@ -36,11 +35,9 @@ export default function ResumeSkills() {
   }
 
   return (
-    <Fragment>
+    <>
       <div className="d-flex align-items-center">
-        <h2 className="text-blue">
-          SKILLS
-        </h2>
+        <h2 className="text-blue">SKILLS</h2>
         <Tooltip>
           <div className="text-bold">3 : 다수의 개발 경험</div>
           <div className="text-bold">2 : 간단한 개발 경험</div>
@@ -48,62 +45,53 @@ export default function ResumeSkills() {
         </Tooltip>
       </div>
       <>
-        <h3>
-          FE
-        </h3>
+        <h3>FE</h3>
         <SkillContainer>
-          {
-            SKILLS.FE.map(skill => {
-              return (
-                <SkillTag key={ skill.name }>
-                  <Badge content={skill.score} className={SkillBadgeClass(skill.score)} />
-                  <span className="text-bold">
-                    { skill.name }
-                  </span>
-                </SkillTag>
-              )
-            })
-          }
+          {SKILLS.FE.map(skill => {
+            return (
+              <SkillTag key={skill.name}>
+                <Badge
+                  content={skill.score}
+                  className={SkillBadgeClass(skill.score)}
+                />
+                <span className="text-bold">{skill.name}</span>
+              </SkillTag>
+            )
+          })}
         </SkillContainer>
       </>
       <div className="mt-16">
-        <h3>
-          Devops
-        </h3>
+        <h3>Devops</h3>
         <SkillContainer>
-          {
-            SKILLS.DEVOPS.map(skill => {
-              return (
-                <SkillTag key={ skill.name }>
-                  <Badge content={skill.score} className={SkillBadgeClass(skill.score)} />
-                  <span className="text-bold">
-                    { skill.name }
-                  </span>
-                </SkillTag>
-              )
-            })
-          }
+          {SKILLS.DEVOPS.map(skill => {
+            return (
+              <SkillTag key={skill.name}>
+                <Badge
+                  content={skill.score}
+                  className={SkillBadgeClass(skill.score)}
+                />
+                <span className="text-bold">{skill.name}</span>
+              </SkillTag>
+            )
+          })}
         </SkillContainer>
       </div>
       <div className="mt-16">
-        <h3>
-          BE
-        </h3>
+        <h3>BE</h3>
         <SkillContainer>
-          {
-            SKILLS.BE.map(skill => {
-              return (
-                <SkillTag key={ skill.name }>
-                  <Badge content={skill.score} className={SkillBadgeClass(skill.score)} />
-                  <span className="text-bold">
-                    { skill.name }
-                  </span>
-                </SkillTag>
-              )
-            })
-          }
+          {SKILLS.BE.map(skill => {
+            return (
+              <SkillTag key={skill.name}>
+                <Badge
+                  content={skill.score}
+                  className={SkillBadgeClass(skill.score)}
+                />
+                <span className="text-bold">{skill.name}</span>
+              </SkillTag>
+            )
+          })}
         </SkillContainer>
       </div>
-    </Fragment>
+    </>
   )
 }

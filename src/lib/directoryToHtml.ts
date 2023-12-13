@@ -19,8 +19,9 @@ const directoryToHtml = async (directory: string, id: string) => {
     .use(remarkParse)
     .use(remarkUnwrapImages)
     .use(remarkRehype)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .use(rehypePrettyCode as any, {
-      theme: 'one-dark-pro'
+      theme: 'one-dark-pro',
     })
     .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener'] })
     .use(rehypeStringify)
@@ -31,7 +32,7 @@ const directoryToHtml = async (directory: string, id: string) => {
   return {
     id,
     contentHtml,
-    ...matterResult.data
+    ...matterResult.data,
   }
 }
 

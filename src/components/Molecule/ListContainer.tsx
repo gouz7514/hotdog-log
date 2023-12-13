@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { ListProps } from "@/types/types"
+import { ListProps } from '@/types/types'
 
 const ListStyle = styled.ul`
   li {
@@ -9,9 +9,5 @@ const ListStyle = styled.ul`
 `
 
 export default function ListContainer({ children, className }: ListProps) {
-  return (
-    <ListStyle className={className}>
-      {children}
-    </ListStyle>
-  )
+  return <ListStyle className={className}>{children}</ListStyle>
 }

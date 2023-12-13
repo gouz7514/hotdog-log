@@ -5,10 +5,10 @@ type Theme = {
 }
 
 export const initialThemeState: Theme = {
-  value: 'light'
+  value: 'light',
 }
 
 export const theme = atom({
   key: 'themeState',
-  default: initialThemeState
+  default: initialThemeState,
 })

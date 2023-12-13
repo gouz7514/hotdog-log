@@ -24,7 +24,7 @@ const TooltipContent = styled.div`
   top: 12px;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     left: -8px;
     top: 50%;
@@ -51,12 +51,7 @@ export default function Tooltip({ children }: { children: ReactNode }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {show && (
-        <TooltipContent
-        >
-          { children }
-        </TooltipContent>
-      )}
+      {show && <TooltipContent>{children}</TooltipContent>}
     </TooltipContainer>
   )
 }

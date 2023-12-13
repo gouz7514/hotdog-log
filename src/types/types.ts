@@ -1,12 +1,12 @@
-import { ReactNode } from "react"
+import { ReactNode } from 'react'
 
 export interface LayoutProps {
   children: ReactNode
 }
 
 export interface ListProps {
-  children: ReactNode,
-  className?: string,
+  children: ReactNode
+  className?: string
 }
 
 export interface IconProps {
@@ -21,9 +21,9 @@ export interface IconChildProps {
 }
 
 export interface Post {
-  id: string,
-  title: string,
-  summary: string,
-  tags: string[],
-  date: string,
+  id: string
+  title: string
+  summary: string
+  tags: string[]
+  date: string
 }

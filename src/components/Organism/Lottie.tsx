@@ -1,8 +1,9 @@
+import { memo } from 'react'
 import Lottie from 'lottie-react'
 import styled from '@emotion/styled'
 
 interface LottieProps {
-  json: Record<string, any>
+  json: Record<string, unknown>
   height?: number
 }
 
@@ -22,10 +23,15 @@ const LottieWrapper = styled.div`
   }
 `
 
-export default function LottieAnimation({ json, height = 300 }: LottieProps) {
+const LottieAnimation = memo(function LottieAnimation({
+  json,
+  height = 300,
+}: LottieProps) {
   return (
     <LottieWrapper>
       <Lottie animationData={json} style={{ height }} />
     </LottieWrapper>
   )
-}
+})
+
+export default LottieAnimation

@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
-import { StaticImageData } from "next/image"
 
 import Badge from '@/components/Molecule/Badge'
 
@@ -10,7 +9,9 @@ const CardStyle = styled.div`
 
   width: 100%;
   height: 100%;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow:
+    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   border-radius: 8px;
   overflow: hidden;
   color: var(--color-black);
@@ -92,20 +93,19 @@ const CardStyle = styled.div`
 `
 
 interface CardProps {
-  image: StaticImageData,
-  title: string,
-  tags?: Array<string> | undefined,
-  period?: string,
-  type?: string,
+  image: StaticImageData
+  title: string
+  tags?: Array<string> | undefined
+  period?: string
   route?: {
-    type: string,
+    type: string
     path: string
   }
 }
 type CardImageProps = Pick<CardProps, 'image'>
 type CardDescriptionProps = Pick<CardProps, 'title' | 'tags' | 'period'>
 
-const CardImage = ({ image }: CardImageProps) => {
+function CardImage({ image }: CardImageProps) {
   return (
     <div className="card-image">
       <Image
@@ -121,25 +121,24 @@ const CardImage = ({ image }: CardImageProps) => {
   )
 }
 
-const CardDescription = ({ title, tags, period }: CardDescriptionProps) => {
+function CardDescription({ title, tags, period }: CardDescriptionProps) {
   return (
     <div className="card-description">
       <div className="card-info">
-        <div className="card-title">{ title }</div>
+        <div className="card-title">{title}</div>
         <div className="card-tags">
-          {
-            tags && tags.map((tag, index) => (
+          {tags &&
+            tags.map(tag => (
               <Badge
-                key={index}
+                key={`${title}-${tag}`}
                 content={tag}
                 className="badge-primary"
                 size="small"
               />
-            ))
-          }
+            ))}
         </div>
       </div>
-      <div className='card-period'>{ period }</div>
+      <div className="card-period">{period}</div>
     </div>
   )
 }
@@ -151,14 +150,10 @@ export default function Card({ image, title, tags, period, route }: CardProps) {
   return (
     <Link href={routePath} target={isExternal ? '_blank' : ''}>
       <CardStyle className={isExternal ? 'external' : ''}>
-      {
-        isExternal && (
-          <span className="curtain">바로가기</span>
-        )
-      }
-      <CardImage image={image} />
-      <CardDescription title={title} tags={tags} period={period} />
-    </CardStyle>
+        {isExternal && <span className="curtain">바로가기</span>}
+        <CardImage image={image} />
+        <CardDescription title={title} tags={tags} period={period} />
+      </CardStyle>
     </Link>
   )
 }

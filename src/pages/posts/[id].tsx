@@ -1,7 +1,7 @@
-import Head from "next/head"
+import Head from 'next/head'
 
-import MarkdownLayout from "@/components/Template/MarkdownLayout"
-import { getAllPostIds, getPostData } from "@/lib/posts"
+import MarkdownLayout from '@/components/Template/MarkdownLayout'
+import { getAllPostIds, getPostData } from '@/lib/posts'
 
 interface PostProps {
   title: string
@@ -10,7 +10,7 @@ interface PostProps {
   date: string
 }
 
-export default function Post({ post, id }: { post: PostProps, id: string }) {
+export default function Post({ post, id }: { post: PostProps; id: string }) {
   return (
     <>
       <Head>
@@ -18,8 +18,16 @@ export default function Post({ post, id }: { post: PostProps, id: string }) {
         <meta name="title" content={post.title} />
         <meta name="description" content={post.summary} />
         <meta name="og:title" content={post.title} key="og:title" />
-        <meta name="og:url" content={`https://hotjae.com/posts/${id}`} key="og:url" />
-        <meta name="og:description" content={post.summary} key="og:description" />
+        <meta
+          name="og:url"
+          content={`https://hotjae.com/posts/${id}`}
+          key="og:url"
+        />
+        <meta
+          name="og:description"
+          content={post.summary}
+          key="og:description"
+        />
       </Head>
       <MarkdownLayout
         title={post.title}
@@ -34,7 +42,7 @@ export async function getStaticPaths() {
   const paths = getAllPostIds()
   return {
     paths,
-    fallback: false
+    fallback: false,
   }
 }
 
@@ -45,7 +53,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   return {
     props: {
       post,
-      id: params.id
-    }
+      id: params.id,
+    },
   }
 }
