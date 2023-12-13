@@ -1,8 +1,8 @@
 type Colors = {
-  [key: string]: string | Record<string, string>;
-};
+  [key: string]: string | Record<string, string>
+}
 
-const colors = {
+const colorSet = {
   blue: '#0064FF',
   orange: '#ff5b1a',
   white: '#ffffff',
@@ -14,35 +14,34 @@ const colors = {
   badge: {
     primary: '#0066cc',
     default: '#33ccff',
-    minor: '#cccccc'
+    minor: '#cccccc',
   },
 }
 
 function convertColorsToCSSVariables(
   colors: Colors,
-  prefix = '--color'
+  prefix = '--color',
 ): Record<string, string> {
-  const cssVariables: Record<string, string> = {};
+  const cssVariables: Record<string, string> = {}
 
   function processColorObject(
     colorObject: Colors,
-    currentPrefix: string[] = []
+    currentPrefix: string[] = [],
   ) {
-    for (const key in colorObject) {
-      const variableName = [...currentPrefix, key].join('-');
-      const value = colorObject[key];
+    Object.entries(colorObject).forEach(([key, value]) => {
+      const variableName = [...currentPrefix, key].join('-')
 
       if (typeof value === 'string') {
-        cssVariables[`${prefix}-${variableName}`] = value;
+        cssVariables[`${prefix}-${variableName}`] = value
       } else if (typeof value === 'object') {
-        processColorObject(value, [...currentPrefix, key]);
+        processColorObject(value, [...currentPrefix, key])
       }
-    }
+    })
   }
 
-  processColorObject(colors);
+  processColorObject(colors)
 
-  return cssVariables;
+  return cssVariables
 }
 
-export const colorVariables = convertColorsToCSSVariables(colors);
+export const colorVariables = convertColorsToCSSVariables(colorSet)

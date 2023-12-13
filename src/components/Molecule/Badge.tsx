@@ -5,14 +5,14 @@ interface BadgeProps {
   className?: string | ''
   link?: string
   size?: 'small' | 'medium' | 'large'
-  onClick?: (e: any) => void
+  onClick?: (e: unknown) => void
   active?: boolean
 }
 
 const BadgeContent = styled.div`
   display: flex;
   align-items: center;
-  cursor: ${(props) => props.onClick ? 'pointer' : 'default'};
+  cursor: ${props => (props.onClick ? 'pointer' : 'default')};
 
   &.active {
     filter: brightness(0.75);
@@ -56,15 +56,25 @@ const BadgeContent = styled.div`
   }
 `
 
-export default function Badge({ content, className, link, size = 'medium', onClick, active = false }: BadgeProps) {
+export default function Badge({
+  content,
+  className,
+  link,
+  size = 'medium',
+  onClick,
+  active = false,
+}: BadgeProps) {
   return (
     <BadgeContent onClick={onClick} className={active ? 'active' : ''}>
-      { link ? 
-        <a href={link} target="blank" className='content badge-primary'>{ content }</a> :
-        <div className={`content ${className ? className : 'badge-primary'} size-${size}`}>
-          { content }
+      {link ? (
+        <a href={link} target="blank" className="content badge-primary">
+          {content}
+        </a>
+      ) : (
+        <div className={`content ${className || 'badge-primary'} size-${size}`}>
+          {content}
         </div>
-      }
+      )}
     </BadgeContent>
   )
 }

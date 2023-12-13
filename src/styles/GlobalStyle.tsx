@@ -23,11 +23,11 @@ const style = css`
     transition: all 0.3s ease-in-out;
   }
 
-  body[data-theme="dark"] {
+  body[data-theme='dark'] {
     ${darkTheme};
   }
 
-  body[data-theme="light"] {
+  body[data-theme='light'] {
     ${lighTheme};
   }
 
@@ -86,6 +86,8 @@ const style = css`
   }
 `
 
-const GlobalStyle = () => <Global styles={[style, typo, reset]} />
+function GlobalStyle() {
+  return <Global styles={[style, typo, reset]} />
+}
 
 export default GlobalStyle

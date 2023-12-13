@@ -1,7 +1,7 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled'
 import Link from 'next/link'
 
-import LottieAnimation from "@/components/Organism/Lottie"
+import LottieAnimation from '@/components/Organism/Lottie'
 import AnimationNotFound from '../../public/lottie/lottie-not-found.json'
 
 const NotFoundStyle = styled.div`
@@ -27,10 +27,10 @@ const NotFoundStyle = styled.div`
 
 export default function Custom404() {
   return (
-    <NotFoundStyle className='conatiner'>
+    <NotFoundStyle className="conatiner">
       <LottieAnimation json={AnimationNotFound} height={300} />
       <h3 className="guide">존재하지 않는 페이지입니다</h3>
-      <Link href='/'>
+      <Link href="/">
         <div>메인으로 돌아가기</div>
       </Link>
     </NotFoundStyle>

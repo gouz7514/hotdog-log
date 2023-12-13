@@ -1,13 +1,13 @@
 import styled from '@emotion/styled'
 import { useContext } from 'react'
-import { ThemeContext } from '@/pages/_app'
+import ThemeContext from '@/context/themeContext'
 import { theme } from '@/styles/theme'
 
 import Icon from '../Atom/Icon'
-import { IconGithub } from '../Icon/IconGithub'
-import { IconLinkedIn } from '../Icon/IconLinkedin'
-import { IconGmail } from '../Icon/IconGmail'
-import { IconVelog } from '../Icon/IconVelog'
+import IconGithub from '../Icon/IconGithub'
+import IconLinkedIn from '../Icon/IconLinkedin'
+import IconGmail from '../Icon/IconGmail'
+import IconVelog from '../Icon/IconVelog'
 
 const AppFooter = styled.footer`
   display: flex;
@@ -31,16 +31,19 @@ export default function Footer() {
   return (
     <AppFooter>
       <ProfileLogo>
-        <a href="https://github.com/gouz7514" target='blank'>
+        <a href="https://github.com/gouz7514" target="blank">
           <Icon icon={<IconGithub isDark={isDark} />} />
         </a>
-        <a href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271" target='blank'>
-            <Icon icon={<IconLinkedIn isDark={isDark} />} />
+        <a
+          href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271"
+          target="blank"
+        >
+          <Icon icon={<IconLinkedIn isDark={isDark} />} />
         </a>
-        <a href="mailto:gouz7514@gmail.com" target='blank'>
+        <a href="mailto:gouz7514@gmail.com" target="blank">
           <Icon icon={<IconGmail isDark={isDark} />} />
         </a>
-        <a href="https://velog.io/@gouz7514" target='blank'>
+        <a href="https://velog.io/@gouz7514" target="blank">
           <Icon icon={<IconVelog isDark={isDark} />} />
         </a>
       </ProfileLogo>

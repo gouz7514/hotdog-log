@@ -1,6 +1,6 @@
-import { css } from "@emotion/react"
+import { css } from '@emotion/react'
 
-export const MarkdownStyle = css`
+const MarkdownStyle = css`
   strong {
     color: var(--color-blue);
   }
@@ -34,7 +34,14 @@ export const MarkdownStyle = css`
 
     * {
       font-size: 0.95rem;
-      font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
+      font-family:
+        Consolas,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New;
     }
   }
 
@@ -43,7 +50,8 @@ export const MarkdownStyle = css`
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-size: 85%;
-    font-family: "Fira Mono", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+    font-family: 'Fira Mono', source-code-pro, Menlo, Monaco, Consolas,
+      'Courier New', monospace;
   }
 
   h2 {
@@ -60,7 +68,7 @@ export const MarkdownStyle = css`
     color: var(--color-blue);
   }
 
-  h4{
+  h4 {
     font-size: 1.2rem;
     margin-top: 1.5rem;
     color: var(--color-blue);
@@ -108,3 +116,5 @@ export const MarkdownStyle = css`
     font-size: 1.05rem;
   }
 `
+
+export default MarkdownStyle

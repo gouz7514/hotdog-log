@@ -46,7 +46,7 @@ const StickyHeader = styled.div`
       align-items: center;
       gap: 24px;
 
-      .header-links {  
+      .header-links {
         &.active {
           text-decoration: underline;
         }
@@ -61,9 +61,9 @@ const StickyHeader = styled.div`
 
 export default function Header() {
   const router = useRouter()
-  const currentPage = router.pathname 
+  const currentPage = router.pathname
 
-  const conditionalClass = function(page: String) {
+  const conditionalClass = (page: string) => {
     if (currentPage.split('/')[1] === page) return 'active'
     return ''
   }

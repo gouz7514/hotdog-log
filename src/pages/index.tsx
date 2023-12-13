@@ -68,15 +68,13 @@ export default function Home() {
                 '소통하는 법을 아는',
                 '끊임없이 고민하는',
                 '소비자의 진심을 읽는',
-                '프론트엔드'
+                '프론트엔드',
               ]}
               typeSpeed={100}
               backSpeed={100}
               loop
             />
-            <h1>
-              개발자 김학재입니다
-            </h1>
+            <h1>개발자 김학재입니다</h1>
           </div>
         </ProfileDescription>
       </div>
@@ -87,7 +85,7 @@ export default function Home() {
 export async function getStaticProps() {
   return {
     props: {
-      page: 'Home'
-    }
+      page: 'Home',
+    },
   }
 }
