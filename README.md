@@ -15,4 +15,5 @@ Next와 Typescript로 만든 개발 블로그입니다.
 | 3 | [[NextJS] NextJS로 마크다운 블로그 만들기](https://hotjae.com/posts/nextjs-markdown-blog) | 2023-11-29 (수) |
 | 4 | [[React] 리액트 톺아보기 (1)](https://hotjae.com/posts/react-deep-dive-1) | 2023-12-11 (월) |
 | 5 | [[React] 리액트 톺아보기 (2)](https://hotjae.com/posts/react-deep-dive-2) | 2023-12-12 (화) |
+| 6 | [[React] 리액트 톺아보기 (3) - 심화 학습 (1)](https://hotjae.com/posts/react-deep-dive-3) | 2023-12-19 (화) |
 <!-- END_POSTS -->
