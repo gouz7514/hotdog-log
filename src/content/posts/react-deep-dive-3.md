@@ -1,6 +1,6 @@
 ---
 title: '[React] 리액트 톺아보기 (3) - 심화 학습 (1)'
-summary: '리액트 심화 학습 (1)'
+summary: 'Fragment, Portal, Ref에 대해 알아보자'
 tags: ['React']
 date: '2023-12-19 16:00:00'
 ---
@@ -77,7 +77,9 @@ const ref = useRef(0);
 
 ---
 > **이번 포스팅을 통해 배운 점**
-> - Fragment, Portal, Ref에 대해 학습했다.
+> - `Fragment`를 통해 불필요한 엘리먼트를 렌더링하지 않을 수 있다.
+> - `Portal`을 통해 DOM 트리의 어디에서나 자식 엘리먼트를 렌더링할 수 있다.
+> - `Ref`를 통해 컴포넌트로 하여금 일부 정보를 기억하면서 렌더링을 유발하지 않을 수 있다.
 
 
 To be continued...
