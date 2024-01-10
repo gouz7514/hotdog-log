@@ -17,4 +17,5 @@ Next와 Typescript로 만든 개발 블로그입니다.
 | 5 | [[React] 리액트 톺아보기 (2)](https://hotjae.com/posts/react-deep-dive-2) | 2023-12-12 (화) |
 | 6 | [[React] 리액트 톺아보기 (3) - 심화 학습 (1)](https://hotjae.com/posts/react-deep-dive-3) | 2023-12-19 (화) |
 | 7 | [[React] 리액트 톺아보기 (4) - 심화 학습 (2)](https://hotjae.com/posts/react-deep-dive-4) | 2023-12-21 (목) |
+| 8 | [[Redux] Redux 파헤치기](https://hotjae.com/posts/redux-deep-dive) | 2024-1-10 (수) |
 <!-- END_POSTS -->
