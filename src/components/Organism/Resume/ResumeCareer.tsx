@@ -19,7 +19,7 @@ export default function ResumeCareer() {
       <h2 className="text-blue">CAREER</h2>
       <h4 className="career-company">ABZ 주식회사</h4>
       <div className="career-term text-bold">
-        2021.06 ~ 2023.04 (1년 11개월)
+        2021.06 ~ 2023.04 / 2024.01 ~ (2년 0개월 ~ )
       </div>
       <ListContainer className="career-detail">
         <li>
@@ -40,6 +40,10 @@ export default function ResumeCareer() {
         <li>
           ・ 직접 고객 응대를 통해 고객이 원하는 바를 파악하고 서비스의 품질
           향상에 기여
+        </li>
+        <li>
+          ・ 개발팀 문화 개선과 더불어 시장에 존재하지 않았던 서비스에 대한 고민
+          및 개발
         </li>
       </ListContainer>
     </ResumeCareerStyle>

@@ -9,6 +9,18 @@ import ImageSubhow from '../../public/images/resume/image-subhow.webp'
 export const SKILLS = {
   FE: [
     {
+      name: 'React',
+      score: 3,
+    },
+    {
+      name: 'Next',
+      score: 3,
+    },
+    {
+      name: 'Typescript',
+      score: 3,
+    },
+    {
       name: 'Vue',
       score: 3,
     },
@@ -19,18 +31,6 @@ export const SKILLS = {
     {
       name: 'Javascript',
       score: 3,
-    },
-    {
-      name: 'React',
-      score: 2,
-    },
-    {
-      name: 'Next',
-      score: 2,
-    },
-    {
-      name: 'Typescript',
-      score: 2,
     },
     {
       name: 'Storybook',
