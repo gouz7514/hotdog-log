@@ -3,15 +3,35 @@ import styled from '@emotion/styled'
 import Badge from '@/components/Molecule/Badge'
 
 const ResumeIntroStyle = styled.div`
-  .badge-place {
+  .resume-intro-footer {
     margin-top: 12px;
     display: flex;
-    flex-direction: row;
-    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+
+    .badge-place {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+    }
+
+    .last-updated {
+      font-weight: 500;
+      font-size: 85%;
+      font-family: 'Fira Mono', source-code-pro, Menlo, Monaco, Consolas,
+        'Courier New', monospace;
+    }
   }
 `
 
+const lastUpdated = '2024-02-14'
+
 export default function ResumeIntro() {
+  const dayFromLastUpdated = Math.floor(
+    (new Date().getTime() - new Date(lastUpdated).getTime()) /
+      (1000 * 60 * 60 * 24),
+  )
+
   return (
     <ResumeIntroStyle>
       <h2>
@@ -38,15 +58,20 @@ export default function ResumeIntro() {
           밀도있는 개발자로 성장해나가고 있습니다.
         </div>
       </>
-      <div className="badge-place">
-        <Badge
-          content="PDF로 보기"
-          link="https://drive.google.com/file/d/1qQLEBNZZ_OBjmTn8xaV8y1ZidKcd6gNV/view"
-        />
-        <Badge
-          content="경력기술서"
-          link="https://drive.google.com/file/d/1ibxaYoEZ6FYqsuNuOjTTQ2iF-ovQuTxw/view?usp=sharing"
-        />
+      <div className="resume-intro-footer">
+        <div className="badge-place">
+          <Badge
+            content="PDF로 보기"
+            link="https://drive.google.com/file/d/1RR3AklQoC2eNUI8vIBJxvVCg4tSKW5PX/view?usp=sharing"
+          />
+          <Badge
+            content="경력기술서"
+            link="https://drive.google.com/file/d/1sEv1QKz6I5Dw3VM8B-unNj70WAVRQX8k/view?usp=sharing"
+          />
+        </div>
+        <div className="last-updated">
+          Last updated: {lastUpdated} ({dayFromLastUpdated} days ago)
+        </div>
       </div>
     </ResumeIntroStyle>
   )
