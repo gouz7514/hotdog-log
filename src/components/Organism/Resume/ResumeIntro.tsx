@@ -9,6 +9,12 @@ const ResumeIntroStyle = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
     .badge-place {
       display: flex;
       flex-direction: row;
