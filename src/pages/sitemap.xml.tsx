@@ -23,7 +23,7 @@ const generateSitemap = (posts: Post[]) => {
       return `
     <url>
       <loc>${`${BASE_URL}/posts/${post.id}`}</loc>
-      <lastmod>${post.date}</lastmod>
+      <lastmod>${new Date(post.date).toISOString()}</lastmod>
     </url>
     `
     })
