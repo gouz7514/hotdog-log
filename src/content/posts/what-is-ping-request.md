@@ -2,7 +2,7 @@
 title: 'Ping Request를 사용해 더 빠른 데이터 전송을 경험해보자'
 summary: 'Ping Request를 활용한 이벤트 로직의 개선 (feat. sendBeacon)'
 tags: ['Network', 'Javascript']
-date: '2024-02-25 20:00:00'
+date: '2024-02-25 22:00:00'
 ---
 
 최근 사내 프로젝트를 진행하면서 `sendBeacon`이라는 메소드를 접하고 활용하게 되었다.
