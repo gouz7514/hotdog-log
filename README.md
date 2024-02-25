@@ -18,4 +18,5 @@ Next와 Typescript로 만든 개발 블로그입니다.
 | 6 | [[React] 리액트 톺아보기 (3) - 심화 학습 (1)](https://hotjae.com/posts/react-deep-dive-3) | 2023-12-19 (화) |
 | 7 | [[React] 리액트 톺아보기 (4) - 심화 학습 (2)](https://hotjae.com/posts/react-deep-dive-4) | 2023-12-21 (목) |
 | 8 | [[Redux] Redux 파헤치기](https://hotjae.com/posts/redux-deep-dive) | 2024-1-10 (수) |
+| 9 | [Ping Request를 사용해 더 빠른 데이터 전송을 경험해보자](https://hotjae.com/posts/what-is-ping-request) | 2024-2-25 (일) |
 <!-- END_POSTS -->
