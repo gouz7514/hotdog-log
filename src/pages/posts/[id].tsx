@@ -30,6 +30,7 @@ export default function Post({ post, id }: { post: PostProps; id: string }) {
         />
       </Head>
       <MarkdownLayout
+        id={id}
         title={post.title}
         innerHtml={post.contentHtml}
         date={post.date}
