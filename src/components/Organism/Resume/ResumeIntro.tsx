@@ -2,6 +2,8 @@ import styled from '@emotion/styled'
 
 import Badge from '@/components/Molecule/Badge'
 
+import dayjs from 'dayjs'
+
 const ResumeIntroStyle = styled.div`
   .resume-intro-footer {
     margin-top: 12px;
@@ -30,18 +32,17 @@ const ResumeIntroStyle = styled.div`
   }
 `
 
-const lastUpdated = '2024-02-14'
+const lastUpdated = '2024.03.27'
+
+const getDayFromLastUpdated = () => {
+  return dayjs().diff(dayjs(lastUpdated), 'day')
+}
 
 export default function ResumeIntro() {
-  const dayFromLastUpdated = Math.floor(
-    (new Date().getTime() - new Date(lastUpdated).getTime()) /
-      (1000 * 60 * 60 * 24),
-  )
-
   return (
     <ResumeIntroStyle>
       <h2>
-        프론트엔드 개발자,
+        2년차 프론트엔드 개발자,
         <br />
         <span className="text-blue">김학재</span>입니다
       </h2>
@@ -76,7 +77,7 @@ export default function ResumeIntro() {
           />
         </div>
         <div className="last-updated">
-          Last updated: {lastUpdated} ({dayFromLastUpdated} days ago)
+          Last updated: {lastUpdated} ({getDayFromLastUpdated()} days ago)
         </div>
       </div>
     </ResumeIntroStyle>
