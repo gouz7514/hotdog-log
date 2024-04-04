@@ -31,7 +31,7 @@ const getCareerPeriod = () => {
   EMPLOYMENT_PERIOD.forEach(period => {
     const start = dayjs(period.start)
     const end = dayjs(period.end)
-    totalMonths += Math.floor(end.diff(start, 'day') / 30)
+    totalMonths += Math.round(end.diff(start, 'day') / 30)
   })
 
   const years = Math.floor(totalMonths / 12)
