@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "write:posts": "next-remote-watch src/content/posts"
+    "write:posts": "PORT=7514 next-remote-watch src/content/posts"
   },
   "engines": {
     "npm": "please-use-yarn"

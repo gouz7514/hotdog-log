@@ -24,7 +24,13 @@ jobs:
       - name: Update README (Posts)
         run: node .github/scripts/update-readme.js
 
+      - name: Check if there are any changes
+        id: verify_diff
+        run: |
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+
       - name: Commit changes
+        if: steps.verify_diff.outputs.changed == 'true'
         run: |
           git config --global user.name 'gouz7514'
           git config --global user.email 'gouz7514@gmail.com'
