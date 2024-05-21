@@ -32,7 +32,7 @@ const ResumeIntroStyle = styled.div`
   }
 `
 
-const lastUpdated = '2024.03.27'
+const lastUpdated = '2024.05.22'
 
 const getDayFromLastUpdated = () => {
   return dayjs().diff(dayjs(lastUpdated), 'day')
@@ -54,15 +54,21 @@ export default function ResumeIntro() {
         </div>
         <div className="big-paragraph mt-12">
           불편함을 방치하면 모두의 불편함이 될 수 있기에 스스로 불편함을
-          해결하려는 자세를 갖춰야 좋은 개발자라고 생각합니다. 저는 불편함을
-          불편해합니다. 서비스에 대한 책임감과 이해도를 바탕으로 항상 고민하며,
-          주도적으로 솔루션을 제시해 해결하기 위해 노력합니다.
+          해결하려는 자세를 갖춰야 좋은 개발자라고 생각합니다.{' '}
+          <span className="text-bold text-blue">
+            저는 불편함을 불편해합니다.
+          </span>{' '}
+          서비스에 대한 책임감과 이해도를 바탕으로 항상 고민하며, 주도적으로
+          솔루션을 제시해 해결하기 위해 노력합니다.
         </div>
         <div className="big-paragraph mt-12">
           프로덕트의 개발 및 유지와 더불어 CS 응대와 같은 다양한 경험을 통해
           프론트엔드 개발자로서 성장해 왔습니다. 이와 함께 블로그, 오픈 소스
-          기여, 프로젝트를 통해 성장하려는 자세를 바탕으로 부피뿐 아니라
-          밀도있는 개발자로 성장해나가고 있습니다.
+          기여, 프로젝트를 통해 성장하려는 자세를 바탕으로{' '}
+          <span className="text-bold text-blue">
+            부피뿐 아니라 밀도있는 개발자
+          </span>
+          로 성장해나가고 있습니다.
         </div>
       </>
       <div className="resume-intro-footer">
