@@ -131,7 +131,7 @@ const [error, submitAction, isPending] = useActionState(
 > **`useActionState` 훅의 비하인드**
 > [github facebook/react PR #28491 - Add React.useActionState](https://github.com/facebook/react/pull/28491)
 > - 처음에는 `useFormState`였다
-> - useFormState는 ReactDOM 패키지에서만 export 되고, `useFormStatus`와 비슷하게 <form> actions에서만 사용되는 것을 암시한다.
+> - useFormState는 ReactDOM 패키지에서만 export 되고, `useFormStatus`와 비슷하게 `<form>` actions에서만 사용되는 것을 암시한다.
 >   - 이는 곧 ‘왜 `useFormState`는 `useFormStatus`처럼 pending 상태를 제공하지 않는가’ 하는 혼란을 야기하게 된다
 > - 주 쟁점은, `useFormState` 훅은 그 어떤 특정한 form의 상태도 반환하지 않는다는 것
 >    - 대신, 훅으로 전달된 action의 상태를 반환하고, hook을 감싸고 추적 가능한 action을 반환하여 form에 추가하고, 주어진 action의 마지막 리턴값을 반환한다. → `<form>` 안에서 쓰일 이유가 없다
@@ -157,7 +157,7 @@ Action을 활용해 자동으로 form을 제출할 수 있도록 form, input, bu
 
 
 ## React DOM : New hook : `useFormStatus`
-일반적으로, 컴포넌트에 prop을 드릴링하지 않고, <form> 의 정보에 접근해야 하는 컴포넌트를 작성해야 할 때가 있다. Context 를 사용할 수도 있지만, 좀 더 쉽게 다루도록 `useFormStatus` 훅을 추가했다.
+일반적으로, 컴포넌트에 prop을 드릴링하지 않고, `<form>`의 정보에 접근해야 하는 컴포넌트를 작성해야 할 때가 있다. Context 를 사용할 수도 있지만, 좀 더 쉽게 다루도록 `useFormStatus` 훅을 추가했다.
 ```typescript
 import {useFormStatus} from 'react-dom';
 
@@ -166,7 +166,7 @@ function DesignButton() {
   return <button type="submit" disabled={pending} />
 }
 ```
-마치 Context Provider처럼 부모의 <form> 상태를 읽는다.
+마치 Context Provider처럼 부모의 `<form>` 상태를 읽는다.
 
 ## New hook : `useOptimistic`
 낙관적 업데이트를 쉽게 지원하도록 새로운 훅이 추가되었다.
@@ -282,7 +282,7 @@ function MyInput({placeholder, ref}) {
 ![hydration-error-to-be](https://github.com/gouz7514/hotdog-log/assets/41367134/d973bb5d-ef3f-43de-bbe7-3fcb05abdb51)
 
 ## `<Context>`를 provider로 사용
-React 19부터, <Context.Provider> 대신 <Context> 를 provider로 사용할 수 있다. (!)
+React 19부터, `<Context.Provider>` 대신 `<Context>` 를 provider로 사용할 수 있다. (!)
 ```typescript
 const ThemeContext = createContext('');
 
@@ -294,7 +294,7 @@ function App({children}) {
   );  
 }
 ```
-<Context.Provider> 는 deprecate될 예정
+`<Context.Provider>` 는 deprecate될 예정
 
 ## `ref`를 위한 클린업 함수
 ```html
@@ -325,7 +325,7 @@ function App({children}) {
 ```
 원래 코드에서는 `HTMLDivElement`의 인스턴스를 반환했기 때문에 클린업 함수를 반환하려는 것인지 알 수 없었다.
 
-## `useDeferredValue`룰 위한 초깃값
+## `useDeferredValue`를 위한 초깃값
 ```typescript
 function Search({deferredValue}) {
   // On initial render the value is ''.
@@ -340,7 +340,7 @@ function Search({deferredValue}) {
 초기값이 존재하면, `useDeferredValue`는 컴포넌트 초기 렌더링 시 value를 반환하고, 이후 백그라운드에서 다시 렌더링할 때 반환된 deferredValue 를 사용한다.
 
 ## 문서 메타데이터 지원
-React에서는 메타데이터를 결정하는 컴포넌트가 <head>를 렌더링하는 위치와 매우 멀거나, React가 <head>를 렌더링하지 않을 수도 있었다. 이전에는, `react-helmet` 과 같은 라이브러리를 사용하거나 수동으로 삽입해야 했으며, 리액트 앱을 서버에서 렌더링 시 핸들링해야 했다.
+React에서는 메타데이터를 결정하는 컴포넌트가 `<head>`를 렌더링하는 위치와 매우 멀거나, React가 `<head>`를 렌더링하지 않을 수도 있었다. 이전에는, `react-helmet` 과 같은 라이브러리를 사용하거나 수동으로 삽입해야 했으며, 리액트 앱을 서버에서 렌더링 시 핸들링해야 했다.
 
 React 19에서는 컴포넌트 자체에 문서 메타데이터 태그를 렌더링하는 기능이 추가된다. (!)
 ```typescript
@@ -359,7 +359,7 @@ function BlogPost({post}) {
   );
 }
 ```
-React가 위 컴포넌트를 렌더링할 때, <title>, <link>, <meta> 태그를 <head> 섹션에 위치하도록 자동으로 호이스팅 처리한다.
+React가 위 컴포넌트를 렌더링할 때, `<title>`, `<link>`, `<meta>` 태그를 `<head>` 섹션에 위치하도록 자동으로 호이스팅 처리한다.
 
 (그럼에도 불구하고 메타데이터 라이브러리를 활용해, 라우트에 따라 특정 메타데이터로 재정의하는 등 더 우수한 기능을 제공할 수 있다)
 
