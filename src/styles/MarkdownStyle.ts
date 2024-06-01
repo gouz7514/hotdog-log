@@ -54,8 +54,14 @@ const MarkdownStyle = css`
       'Courier New', monospace;
   }
 
+  h1 {
+    font-size: 2.5rem;
+    margin: 1.8rem 0 0;
+    color: var(--color-blue);
+  }
+
   h2 {
-    margin-top: 2rem;
+    margin: 1.5rem 0 0;
     color: var(--color-blue);
 
     & + h3 {
