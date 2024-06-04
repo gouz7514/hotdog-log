@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
 
@@ -8,13 +8,12 @@ import { ThemeProvider } from '@emotion/react'
 import GlobalStyle from '@/styles/GlobalStyle'
 import AppLayout from '@/components/Template/AppLayout'
 import useDarkMode from '@/util/hooks/useDarkmode'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { RecoilRoot, RecoilEnv } from 'recoil'
 
 import ThemeContext from '@/context/themeContext'
 import * as gtag from '@/lib/gtag'
-import { useRouter } from 'next/router'
-import Script from 'next/script'
 
 export interface ContextProps {
   colorTheme: MainTheme | null
@@ -22,18 +21,6 @@ export interface ContextProps {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter()
-
-  useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      gtag.pageview(url)
-    }
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
-
   const { colorTheme, toggleTheme } = useDarkMode()
   RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false
 
@@ -64,27 +51,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <link rel="icon" href="/favicon.ico" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', '${gtag.GA_ID}', {
-              page_path: window.location.pathname,
-            });
-            `,
-          }}
-        />
       </Head>
-      <Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_ID}`}
-      />
       <RecoilRoot>
         <ThemeContext.Provider value={contextValue}>
           <ThemeProvider theme={{ ...colorTheme }}>
+            <GoogleAnalytics gaId={gtag.GA_ID as string} />
             <AppLayout>
               <GlobalStyle />
               <AnimatePresence mode="wait" initial={false}>
