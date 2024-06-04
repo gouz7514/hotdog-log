@@ -75,11 +75,11 @@ export default function ResumeIntro() {
         <div className="badge-place">
           <Badge
             content="PDF로 보기"
-            link="https://drive.google.com/file/d/1RR3AklQoC2eNUI8vIBJxvVCg4tSKW5PX/view?usp=sharing"
+            link="https://drive.google.com/file/d/1-gT6HACtBle1ZOxQwYRm9JwPiV82kSuz/view?usp=sharing"
           />
           <Badge
             content="경력기술서"
-            link="https://drive.google.com/file/d/1sEv1QKz6I5Dw3VM8B-unNj70WAVRQX8k/view?usp=sharing"
+            link="https://drive.google.com/file/d/17xhvEOBblRNDuwK6QzlF4arMiOIsuyYP/view?usp=sharing"
           />
         </div>
         <div className="last-updated">
