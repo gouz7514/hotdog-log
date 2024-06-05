@@ -32,7 +32,7 @@ const ResumeIntroStyle = styled.div`
   }
 `
 
-const lastUpdated = '2024.05.22'
+const lastUpdated = '2024.06.05'
 
 const getDayFromLastUpdated = () => {
   return dayjs().diff(dayjs(lastUpdated), 'day')
