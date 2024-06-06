@@ -20,9 +20,8 @@
   ],
   "rules": {
     "@typescript-eslint/semi": "off",
-    // 'React' must be in scope when using JSX 에러 해결 (Next.js)
+    "@typescript-eslint/no-use-before-define": "off",
     "react/react-in-jsx-scope": "off",
-    // ts파일에서 tsx구문 허용 (Next.js)
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/require-default-props": "off",
     "react/no-danger": "off",
