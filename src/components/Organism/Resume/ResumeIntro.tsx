@@ -1,8 +1,70 @@
 import styled from '@emotion/styled'
 
-import Badge from '@/components/Molecule/Badge'
-
 import dayjs from 'dayjs'
+
+const LAST_UPDATED = '2024.06.06'
+
+const getDayFromLastUpdated = () => {
+  return dayjs().diff(dayjs(LAST_UPDATED), 'day')
+}
+
+export default function ResumeIntro() {
+  return (
+    <ResumeIntroStyle>
+      <h2>
+        <span className="text-bold text-blue">불편함을 불편해하는</span> 3년차
+        FE 개발자,
+        <br />
+        <span className="text-blue">김학재</span>입니다
+      </h2>
+      <>
+        <div className="big-paragraph">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          국내 1위 바이오링크 서비스, "인포크링크"를 전반적으로 개발하고
+          운영했습니다.
+          <br />
+          단순 기능 구현을 넘어 인프라 최적화, 비용 개선 등 다양한 도메인에 대해
+          배우고 성장했습니다.
+        </div>
+        <div className="big-paragraph mt-16">
+          방치된 불편함이 모두의 불편함이 되지 않도록{' '}
+          <span className="text-bold text-blue">
+            주도적으로 해결하려는 자세
+          </span>
+          를 갖추고 있습니다.
+          <br />
+          레거시 컴포넌트의 재정의와 AWS 비용의 최적화를 진행해 스스로와 팀
+          모두의 불편함을 해결한 경험이 있습니다.
+        </div>
+        <div className="big-paragraph mt-16">
+          <span className="text-bold text-blue">
+            문제를 해결하고 비즈니스 성장에 기여하는 일을 최우선으로 합니다.
+          </span>
+          <br />
+          프로덕트에 대한 책임감과 이해를 바탕으로 시장에 없던 서비스의 개발 및
+          품질 향상에 기여했습니다.
+          <br />이 과정에서 다양한 직군의 동료들은 물론, 직접 CS 응대를 통해
+          고객과 소통하고 문제를 해결한 경험이 있습니다.
+        </div>
+        <div className="big-paragraph mt-16">
+          <span className="text-bold text-blue">
+            함께 일하고 싶은 개발 문화, 회사를 만들어 나가기 위해 노력합니다.
+          </span>
+          <br />
+          개발팀의 전체적인 문서와 온보딩 과정을 개선한 경험이 있습니다.
+          <br />
+          현재는 주도적으로 새로운 개발 문화를 정착시키는 것을 시작으로 누구나
+          한번쯤 일하고 싶은 개발팀을 만들어 나가는 중에 있습니다.
+        </div>
+      </>
+      <div className="resume-intro-footer">
+        <div className="last-updated">
+          Last updated: {LAST_UPDATED} ({getDayFromLastUpdated()} days ago)
+        </div>
+      </div>
+    </ResumeIntroStyle>
+  )
+}
 
 const ResumeIntroStyle = styled.div`
   .resume-intro-footer {
@@ -31,61 +93,3 @@ const ResumeIntroStyle = styled.div`
     }
   }
 `
-
-const lastUpdated = '2024.06.05'
-
-const getDayFromLastUpdated = () => {
-  return dayjs().diff(dayjs(lastUpdated), 'day')
-}
-
-export default function ResumeIntro() {
-  return (
-    <ResumeIntroStyle>
-      <h2>
-        2년차 프론트엔드 개발자,
-        <br />
-        <span className="text-blue">김학재</span>입니다
-      </h2>
-      <>
-        <div className="big-paragraph">
-          스타트업에서 웹 서비스를 개발/배포/운영한 경험이 있습니다.
-          프론트엔드뿐 아니라 다양한 도메인에 걸쳐 서비스를 전반적으로 유지하고
-          개발했습니다.
-        </div>
-        <div className="big-paragraph mt-12">
-          불편함을 방치하면 모두의 불편함이 될 수 있기에 스스로 불편함을
-          해결하려는 자세를 갖춰야 좋은 개발자라고 생각합니다.{' '}
-          <span className="text-bold text-blue">
-            저는 불편함을 불편해합니다.
-          </span>{' '}
-          서비스에 대한 책임감과 이해도를 바탕으로 항상 고민하며, 주도적으로
-          솔루션을 제시해 해결하기 위해 노력합니다.
-        </div>
-        <div className="big-paragraph mt-12">
-          프로덕트의 개발 및 유지와 더불어 CS 응대와 같은 다양한 경험을 통해
-          프론트엔드 개발자로서 성장해 왔습니다. 이와 함께 블로그, 오픈 소스
-          기여, 프로젝트를 통해 성장하려는 자세를 바탕으로{' '}
-          <span className="text-bold text-blue">
-            부피뿐 아니라 밀도있는 개발자
-          </span>
-          로 성장해나가고 있습니다.
-        </div>
-      </>
-      <div className="resume-intro-footer">
-        <div className="badge-place">
-          <Badge
-            content="PDF로 보기"
-            link="https://drive.google.com/file/d/1-gT6HACtBle1ZOxQwYRm9JwPiV82kSuz/view?usp=sharing"
-          />
-          <Badge
-            content="경력기술서"
-            link="https://drive.google.com/file/d/17xhvEOBblRNDuwK6QzlF4arMiOIsuyYP/view?usp=sharing"
-          />
-        </div>
-        <div className="last-updated">
-          Last updated: {lastUpdated} ({getDayFromLastUpdated()} days ago)
-        </div>
-      </div>
-    </ResumeIntroStyle>
-  )
-}
