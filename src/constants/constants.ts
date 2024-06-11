@@ -3,8 +3,6 @@ import ImageGallery from '../../public/images/resume/image-gallery.webp'
 import IamgeVueQuery from '../../public/images/resume/image-vue-query.webp'
 import ImageDocker from '../../public/images/resume/image-docker.webp'
 import ImageStoryBook from '../../public/images/resume/image-storybook.webp'
-import ImageDynoEnglish from '../../public/images/resume/image-dyno-english.webp'
-import ImageSubhow from '../../public/images/resume/image-subhow.webp'
 
 export const SKILLS = {
   FE: [
@@ -39,10 +37,6 @@ export const SKILLS = {
     {
       name: 'Webpack',
       score: 2,
-    },
-    {
-      name: 'Graphql',
-      score: 1,
     },
   ],
   DEVOPS: [
@@ -134,30 +128,6 @@ export const PROJECTS = [
     route: {
       type: 'internal',
       path: '/projects/ids',
-    },
-  },
-  {
-    id: 6,
-    image: ImageDynoEnglish,
-    title: '다이노 영어',
-    tags: ['React', 'Next.js', 'typescript', 'firebase', 'styled-components'],
-    period: '2023.06 ~ 2023.10',
-    type: 'personal',
-    route: {
-      type: 'external',
-      path: 'https://github.com/gouz7514/dyno-english',
-    },
-  },
-  {
-    id: 7,
-    image: ImageSubhow,
-    title: 'SUBHOW',
-    tags: ['React', 'Next.js', 'typescript', 'prisma'],
-    period: '2023.05 ~ 2023.06',
-    type: 'personal',
-    route: {
-      type: 'external',
-      path: 'https://github.com/gouz7514/subway-website-next',
     },
   },
 ]
