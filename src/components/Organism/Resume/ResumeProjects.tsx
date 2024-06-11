@@ -20,9 +20,6 @@ export default function ResumeProjects() {
   const COMPANY_PROJECTS = PROJECTS.filter(
     project => project.type === 'company',
   )
-  const PERSONAL_PROJECTS = PROJECTS.filter(
-    project => project.type === 'personal',
-  )
 
   return (
     <ResumeProjectsStyle>
@@ -31,21 +28,6 @@ export default function ResumeProjects() {
         <h3 className="text-blue">ABZ 주식회사</h3>
         <div className="project-container">
           {COMPANY_PROJECTS.map(project => (
-            <Card
-              key={project.id}
-              image={project.image}
-              title={project.title}
-              tags={project.tags}
-              period={project.period}
-              route={project.route}
-            />
-          ))}
-        </div>
-      </>
-      <>
-        <h3 className="text-blue mt-24">개인 프로젝트</h3>
-        <div className="project-container">
-          {PERSONAL_PROJECTS.map(project => (
             <Card
               key={project.id}
               image={project.image}
