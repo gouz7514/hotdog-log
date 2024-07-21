@@ -55,11 +55,11 @@ export default function ResumeExperience() {
         </ListContainer>
       </div>
       <div className="experience-container">
-        <h4 className="experience-title">TOEIC</h4>
-        <div className="experience-term text-bold">2020.01</div>
+        <h4 className="experience-title">카투사로 군 복무</h4>
+        <div className="experience-term text-bold">2015.03 ~ 2016.12</div>
         <ListContainer>
-          <li>・ 930점</li>
-          <li>・ 카투사로 복무하며 영어로 원활한 의사소통 경험</li>
+          <li>・ 영어로 원활한 의사소통 가능</li>
+          <li>・ 2016년 올해의 카투사 수상</li>
         </ListContainer>
       </div>
     </ResumeExperienceStyle>

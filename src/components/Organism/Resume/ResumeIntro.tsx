@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 import dayjs from 'dayjs'
 
-const LAST_UPDATED = '2024.06.12'
+const LAST_UPDATED = '2024.07.22'
 
 const getDayFromLastUpdated = () => {
   return dayjs().diff(dayjs(LAST_UPDATED), 'day')
@@ -21,17 +21,15 @@ export default function ResumeIntro() {
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           국내 1위 바이오링크 서비스, "인포크링크"를 전반적으로 개발하고
           운영했습니다.
-          <br />
-          단순 기능 구현을 넘어 인프라 최적화, 비용 개선 등 다양한 도메인에 대해
-          배우고 성장했습니다.
+          <br />이 과정에서 단순 기능 구현을 넘어 인프라 최적화, 비용 개선 등
+          다양한 도메인에 대해 배우고 성장했습니다.
         </div>
         <div className="big-paragraph mt-16">
-          방치된 불편함이 모두의 불편함이 되지 않도록{' '}
-          <span className="text-bold">주도적으로 해결하려는 자세</span>
-          를 갖추고 있습니다.
+          <span className="text-bold">불편함을 불편해하는 개발자입니다.</span>
           <br />
-          레거시 컴포넌트의 재정의와 AWS 비용의 최적화를 진행해 스스로와 팀
-          모두의 불편함을 해결한 경험이 있습니다.
+          레거시 컴포넌트의 재정의와 AWS 아키텍쳐 및 비용의 최적화를 통해 팀의
+          불편함을 해결한 경험이 있으며, 이 모든 과정을 주도적으로 진행해 방치된
+          불편함이 모두의 불편함이 되지 않도록 노력했습니다.
         </div>
         <div className="big-paragraph mt-16">
           <span className="text-bold">
@@ -49,9 +47,11 @@ export default function ResumeIntro() {
             함께 일하고 싶은 개발 문화, 회사를 만들어 나가기 위해 노력합니다.
           </span>
           <br />
-          개발팀의 전체적인 문서와 온보딩 과정을 개선한 경험이 있습니다. 현재는
-          주도적으로 새로운 개발 문화를 정착시키는 것을 시작으로 누구나 한번쯤
-          일하고 싶은 개발팀을 만들어 나가는 중에 있습니다.
+          개발팀의 전체적인 문서와 온보딩 과정을 개선하고 이를 채용 과정에서
+          활용한 경험이 있습니다.
+          <br />
+          현재는 주도적으로 새로운 개발 문화를 정착시키는 것을 시작으로 누구나
+          한번쯤 일하고 싶은 개발팀을 만들어 나가는 중에 있습니다.
         </div>
       </>
       <div className="resume-intro-footer">
