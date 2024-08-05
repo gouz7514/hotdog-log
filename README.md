@@ -21,4 +21,5 @@ Next와 Typescript로 만든 개발 블로그입니다.
 | 9 | [Ping Request를 사용해 더 빠른 데이터 전송을 경험해보자](https://hotjae.com/posts/what-is-ping-request) | 2024-2-25 (일) |
 | 10 | [💻 함께하고 싶은 개발팀 만들어 나가기](https://hotjae.com/posts/making-good-dev-team) | 2024-4-12 (금) |
 | 11 | [React 19 RC](https://hotjae.com/posts/react-19) | 2024-6-1 (토) |
+| 12 | [[번역] Typescript 5.5 출시](https://hotjae.com/posts/announcing-typescript-5.5) | 2024-8-6 (화) |
 <!-- END_POSTS -->
