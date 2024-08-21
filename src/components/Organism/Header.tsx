@@ -2,7 +2,38 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
-import DarkMode from '../Molecule/DarkMode'
+import { DarkMode } from '../Molecule'
+
+export function Header() {
+  const router = useRouter()
+  const currentPage = router.pathname
+
+  const conditionalClass = (page: string) => {
+    if (currentPage.split('/')[1] === page) return 'active'
+    return ''
+  }
+
+  return (
+    <StickyHeader>
+      <div className="common-header">
+        <div className="header-pages">
+          <div className={`header-links ${conditionalClass('')}`}>
+            <Link href="/">
+              <div className="logo" />
+            </Link>
+          </div>
+          <div className={`header-links ${conditionalClass('posts')}`}>
+            <Link href="/posts">Posts</Link>
+          </div>
+          <div className={`header-links ${conditionalClass('resume')}`}>
+            <Link href="/resume">Resume</Link>
+          </div>
+        </div>
+      </div>
+      <DarkMode />
+    </StickyHeader>
+  )
+}
 
 const StickyHeader = styled.div`
   --padding: 16px;
@@ -58,34 +89,3 @@ const StickyHeader = styled.div`
     }
   }
 `
-
-export default function Header() {
-  const router = useRouter()
-  const currentPage = router.pathname
-
-  const conditionalClass = (page: string) => {
-    if (currentPage.split('/')[1] === page) return 'active'
-    return ''
-  }
-
-  return (
-    <StickyHeader>
-      <div className="common-header">
-        <div className="header-pages">
-          <div className={`header-links ${conditionalClass('')}`}>
-            <Link href="/">
-              <div className="logo" />
-            </Link>
-          </div>
-          <div className={`header-links ${conditionalClass('posts')}`}>
-            <Link href="/posts">Posts</Link>
-          </div>
-          <div className={`header-links ${conditionalClass('resume')}`}>
-            <Link href="/resume">Resume</Link>
-          </div>
-        </div>
-      </div>
-      <DarkMode />
-    </StickyHeader>
-  )
-}

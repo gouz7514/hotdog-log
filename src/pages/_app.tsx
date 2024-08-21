@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion'
 import { MainTheme } from '@/styles/theme'
 import { ThemeProvider } from '@emotion/react'
 import GlobalStyle from '@/styles/GlobalStyle'
-import AppLayout from '@/components/Template/AppLayout'
+import { AppLayout } from '@/components/Template'
 import useDarkMode from '@/util/hooks/useDarkmode'
 import { GoogleAnalytics } from '@next/third-parties/google'
 

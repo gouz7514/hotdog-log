@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import MarkdownLayout from '@/components/Template/MarkdownLayout'
+import { MarkdownLayout } from '@/components/Template'
 import { getAllPostIds, getPostData } from '@/lib/posts'
 
 interface PostProps {

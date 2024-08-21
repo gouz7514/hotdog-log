@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
-import LottieAnimation from '@/components/Organism/Lottie'
+import { LottieAnimation } from '@/components/Organism'
 import AnimationNotFound from '../../public/lottie/lottie-not-found.json'
 
 const NotFoundStyle = styled.div`

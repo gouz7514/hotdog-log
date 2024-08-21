@@ -2,13 +2,15 @@ import styled from '@emotion/styled'
 
 import dayjs from 'dayjs'
 
-const LAST_UPDATED = '2024.07.22'
+import { Badge } from '@/components/Molecule'
+
+const LAST_UPDATED = '2024.08.22'
 
 const getDayFromLastUpdated = () => {
   return dayjs().diff(dayjs(LAST_UPDATED), 'day')
 }
 
-export default function ResumeIntro() {
+export function ResumeIntro() {
   return (
     <ResumeIntroStyle>
       <h2>
@@ -19,17 +21,17 @@ export default function ResumeIntro() {
       <>
         <div className="big-paragraph">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          국내 1위 바이오링크 서비스, "인포크링크"를 전반적으로 개발하고
-          운영했습니다.
+          3년차 프론트엔드 개발자로 국내 1위 바이오링크 서비스, "인포크링크"를
+          전반적으로 개발하고 운영했습니다.
           <br />이 과정에서 단순 기능 구현을 넘어 인프라 최적화, 비용 개선 등
           다양한 도메인에 대해 배우고 성장했습니다.
         </div>
         <div className="big-paragraph mt-16">
           <span className="text-bold">불편함을 불편해하는 개발자입니다.</span>
           <br />
-          레거시 컴포넌트의 재정의와 AWS 아키텍쳐 및 비용의 최적화를 통해 팀의
-          불편함을 해결한 경험이 있으며, 이 모든 과정을 주도적으로 진행해 방치된
-          불편함이 모두의 불편함이 되지 않도록 노력했습니다.
+          인증 로직 개선을 통해 고객의 불편함을, AWS 아키텍처 및 비용의 최적화를
+          통해 개발팀의 불편함을 해소한 경험이 있으며, 이 모든 과정을 주도적으로
+          진행해 방치된 불편함이 모두의 불편함이 되지 않도록 노력했습니다.
         </div>
         <div className="big-paragraph mt-16">
           <span className="text-bold">
@@ -37,10 +39,10 @@ export default function ResumeIntro() {
             합니다.
           </span>
           <br />
-          프로덕트에 대한 책임감과 이해를 바탕으로 시장에 없던 서비스의 개발 및
-          품질 향상에 기여했습니다.
+          프로덕트에 대한 책임감과 이해를 바탕으로 시장에 없던 서비스를 고민하고
+          개발한 경험이 있습니다.
           <br />이 과정에서 다양한 직군의 동료들은 물론, 직접 CS 응대를 통해
-          고객과 소통하고 문제를 해결한 경험이 있습니다.
+          고객과 소통하고 문제를 해결해 더 나은 프로덕트를 만든 경험이 있습니다.
         </div>
         <div className="big-paragraph mt-16">
           <span className="text-bold">
@@ -55,6 +57,10 @@ export default function ResumeIntro() {
         </div>
       </>
       <div className="resume-intro-footer">
+        <Badge
+          content="더 자세한 내용이 궁금하다면?"
+          link="https://drive.google.com/file/d/1hz6h_tbd2CvGkED2_6M1bMTsCwJ7VEzX/view?usp=sharing"
+        />
         <div className="last-updated">
           Last updated: {LAST_UPDATED} ({getDayFromLastUpdated()} days ago)
         </div>

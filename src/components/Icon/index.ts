@@ -1,0 +1,7 @@
+export * from './IconBack'
+export * from './IconGithub'
+export * from './IconLinkedin'
+export * from './IconGmail'
+export * from './IconVelog'
+export * from './IconTags'
+export * from './IconYoutube'

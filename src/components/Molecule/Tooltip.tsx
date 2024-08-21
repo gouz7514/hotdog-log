@@ -1,6 +1,27 @@
 import { useState, ReactNode } from 'react'
 import styled from '@emotion/styled'
 
+export function Tooltip({ children }: { children: ReactNode }) {
+  const [show, setShow] = useState(false)
+
+  const handleMouseEnter = () => {
+    setShow(true)
+  }
+
+  const handleMouseLeave = () => {
+    setShow(false)
+  }
+
+  return (
+    <TooltipContainer
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {show && <TooltipContent>{children}</TooltipContent>}
+    </TooltipContainer>
+  )
+}
+
 const TooltipContainer = styled.div`
   border-radius: 50%;
   background-image: url('/icon/icon-detail.svg');
@@ -34,24 +55,3 @@ const TooltipContent = styled.div`
     border-right: 8px solid #343434;
   }
 `
-
-export default function Tooltip({ children }: { children: ReactNode }) {
-  const [show, setShow] = useState(false)
-
-  const handleMouseEnter = () => {
-    setShow(true)
-  }
-
-  const handleMouseLeave = () => {
-    setShow(false)
-  }
-
-  return (
-    <TooltipContainer
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {show && <TooltipContent>{children}</TooltipContent>}
-    </TooltipContainer>
-  )
-}

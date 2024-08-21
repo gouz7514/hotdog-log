@@ -4,7 +4,7 @@ import { theme } from '@/styles/theme'
 
 import { IconChildProps } from '@/types/types'
 
-function IconYoutube({ fill = '#282828' }: IconChildProps) {
+export function IconYoutube({ fill = '#282828' }: IconChildProps) {
   const { colorTheme } = useContext(ThemeContext)
   const isDark = colorTheme === theme.dark
   const white = '#ffffff'
@@ -37,5 +37,3 @@ function IconYoutube({ fill = '#282828' }: IconChildProps) {
     </svg>
   )
 }
-
-export default IconYoutube

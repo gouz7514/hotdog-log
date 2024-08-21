@@ -1,9 +1,8 @@
 import { LayoutProps } from '@/types/types'
 
-import Header from '../Organism/Header'
-import Footer from '../Organism/Footer'
+import { Header, Footer } from '@/components/Organism'
 
-export default function AppLayout({ children }: LayoutProps) {
+export function AppLayout({ children }: LayoutProps) {
   return (
     <div>
       <Header />

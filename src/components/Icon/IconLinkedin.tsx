@@ -1,6 +1,9 @@
 import { IconChildProps } from '@/types/types'
 
-function IconLinkedIn({ fill = '#000000', isDark = false }: IconChildProps) {
+export function IconLinkedIn({
+  fill = '#000000',
+  isDark = false,
+}: IconChildProps) {
   return (
     <svg
       version="1.0"
@@ -40,5 +43,3 @@ function IconLinkedIn({ fill = '#000000', isDark = false }: IconChildProps) {
     </svg>
   )
 }
-
-export default IconLinkedIn

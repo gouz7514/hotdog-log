@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 import { LayoutProps } from '@/types/types'
 
-export default function LoadingLayout({ children }: LayoutProps) {
+export function LoadingLayout({ children }: LayoutProps) {
   return (
     <motion.div
       initial={{ x: 150, opacity: 0 }}

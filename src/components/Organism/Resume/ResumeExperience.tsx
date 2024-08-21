@@ -1,31 +1,61 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
-import Icon from '@/components/Atom/Icon'
-import IconYoutube from '@/components/Icon/IconYoutube'
-import ListContainer from '@/components/Molecule/ListContainer'
+import { Icon } from '@/components/Atom'
+import { IconYoutube } from '@/components/Icon/IconYoutube'
+import { ListContainer } from '@/components/Molecule'
 
-const ResumeExperienceStyle = styled.div`
-  .experience-container {
-    .experience-title-container {
-      align-items: center;
-      gap: 10px;
-    }
-
-    & ~ .experience-container {
-      margin-top: 24px;
-    }
-
-    .experience-term {
-      margin: 6px 0;
-    }
-  }
-`
-
-export default function ResumeExperience() {
+export function ResumeExperience() {
   return (
     <ResumeExperienceStyle>
       <h2 className="text-blue">EXPERIENCE</h2>
+      <div className="experience-container">
+        <h4 className="experience-title">오픈소스 기여</h4>
+        <ListContainer>
+          <li>
+            ・ 리액트 공식문서 한글 번역 ({' '}
+            <a
+              href="https://github.com/reactjs/ko.react.dev/pull/790"
+              target="blank"
+              className="text-blue"
+            >
+              PR #790 - Translate: Versioning Policy
+            </a>{' '}
+            )
+          </li>
+          <li>
+            ・ 리액트 공식 문서 한글 번역 프로젝트의 CI 오류 해결 ({' '}
+            <a
+              href="https://github.com/reactjs/ko.react.dev/pull/830"
+              target="blank"
+              className="text-blue"
+            >
+              PR #830
+            </a>{' '}
+            )
+          </li>
+          <li>
+            ・ Next.js 한글 번역 ({' '}
+            <a
+              href="https://github.com/reactjs/ko.react.dev/pull/790"
+              target="blank"
+              className="text-blue"
+            >
+              PR #59 - static-site-generation
+            </a>{' '}
+            )
+          </li>
+          <li>
+            ・ 오픈 소스 기여를 통해 배운 내용을{' '}
+            <Link
+              href="/posts/contribute-to-react-document"
+              className="text-blue"
+            >
+              개인 블로그에 기록
+            </Link>
+          </li>
+        </ListContainer>
+      </div>
       <div className="experience-container">
         <div className="d-flex experience-title-container">
           <h4 className="experience-title">단국대 캡스톤 경진대회 금상</h4>
@@ -65,3 +95,24 @@ export default function ResumeExperience() {
     </ResumeExperienceStyle>
   )
 }
+
+const ResumeExperienceStyle = styled.div`
+  .experience-container {
+    .experience-title-container {
+      align-items: center;
+      gap: 10px;
+    }
+
+    & ~ .experience-container {
+      margin-top: 32px;
+    }
+
+    .experience-term {
+      margin: 6px 0;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+`

@@ -9,6 +9,29 @@ interface BadgeProps {
   active?: boolean
 }
 
+export function Badge({
+  content,
+  className,
+  link,
+  size = 'medium',
+  onClick,
+  active = false,
+}: BadgeProps) {
+  return (
+    <BadgeContent onClick={onClick} className={active ? 'active' : ''}>
+      {link ? (
+        <a href={link} target="blank" className="content badge-primary">
+          {content}
+        </a>
+      ) : (
+        <div className={`content ${className || 'badge-primary'} size-${size}`}>
+          {content}
+        </div>
+      )}
+    </BadgeContent>
+  )
+}
+
 const BadgeContent = styled.div`
   display: flex;
   align-items: center;
@@ -55,26 +78,3 @@ const BadgeContent = styled.div`
     background-color: var(--color-badge-minor);
   }
 `
-
-export default function Badge({
-  content,
-  className,
-  link,
-  size = 'medium',
-  onClick,
-  active = false,
-}: BadgeProps) {
-  return (
-    <BadgeContent onClick={onClick} className={active ? 'active' : ''}>
-      {link ? (
-        <a href={link} target="blank" className="content badge-primary">
-          {content}
-        </a>
-      ) : (
-        <div className={`content ${className || 'badge-primary'} size-${size}`}>
-          {content}
-        </div>
-      )}
-    </BadgeContent>
-  )
-}
