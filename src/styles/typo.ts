@@ -27,10 +27,10 @@ const typo = css`
   .big-paragraph {
     font-size: 1.1rem;
     word-break: keep-all;
-    line-height: 1.6;
+    line-height: 1.7;
 
     @media screen and (max-width: 768px) {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
     }
   }
 
