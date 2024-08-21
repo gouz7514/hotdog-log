@@ -1,7 +1,8 @@
-import Badge from '@/components/Molecule/Badge'
 import styled from '@emotion/styled'
 
 import dayjs from 'dayjs'
+
+import { Badge } from '@/components/Molecule'
 
 const LAST_UPDATED = '2024.08.22'
 
@@ -9,7 +10,7 @@ const getDayFromLastUpdated = () => {
   return dayjs().diff(dayjs(LAST_UPDATED), 'day')
 }
 
-export default function ResumeIntro() {
+export function ResumeIntro() {
   return (
     <ResumeIntroStyle>
       <h2>

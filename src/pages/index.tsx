@@ -1,6 +1,41 @@
 import styled from '@emotion/styled'
 import Typed from 'react-typed'
 
+export default function Home() {
+  return (
+    <HomeStyle>
+      <div className="d-flex flex-column align-items-center">
+        <ProfileImage />
+        <ProfileDescription>
+          <div className="d-flex flex-column align-items-center">
+            <Typed
+              className="typed-text"
+              strings={[
+                '소통하는 법을 아는',
+                '끊임없이 고민하는',
+                '소비자의 진심을 읽는',
+                '프론트엔드',
+              ]}
+              typeSpeed={100}
+              backSpeed={100}
+              loop
+            />
+            <h1>개발자 김학재입니다</h1>
+          </div>
+        </ProfileDescription>
+      </div>
+    </HomeStyle>
+  )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      page: 'Home',
+    },
+  }
+}
+
 const HomeStyle = styled.main`
   display: flex;
   flex-direction: column;
@@ -54,38 +89,3 @@ const ProfileDescription = styled.div`
     }
   }
 `
-
-export default function Home() {
-  return (
-    <HomeStyle>
-      <div className="d-flex flex-column align-items-center">
-        <ProfileImage />
-        <ProfileDescription>
-          <div className="d-flex flex-column align-items-center">
-            <Typed
-              className="typed-text"
-              strings={[
-                '소통하는 법을 아는',
-                '끊임없이 고민하는',
-                '소비자의 진심을 읽는',
-                '프론트엔드',
-              ]}
-              typeSpeed={100}
-              backSpeed={100}
-              loop
-            />
-            <h1>개발자 김학재입니다</h1>
-          </div>
-        </ProfileDescription>
-      </div>
-    </HomeStyle>
-  )
-}
-
-export async function getStaticProps() {
-  return {
-    props: {
-      page: 'Home',
-    },
-  }
-}

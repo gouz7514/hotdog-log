@@ -1,6 +1,6 @@
-import ListContainer from '@/components/Molecule/ListContainer'
+import { ListContainer } from '@/components/Molecule'
 
-export default function ResumeSkills() {
+export function ResumeSkills() {
   return (
     <div>
       <h2 className="text-blue">SKILLS</h2>

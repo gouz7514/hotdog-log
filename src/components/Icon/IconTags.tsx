@@ -1,6 +1,6 @@
 import { IconChildProps } from '@/types/types'
 
-function IconTags({ fill = '#000000', isDark = false }: IconChildProps) {
+export function IconTags({ fill = '#000000', isDark = false }: IconChildProps) {
   return (
     <svg
       width="73.3"
@@ -15,5 +15,3 @@ function IconTags({ fill = '#000000', isDark = false }: IconChildProps) {
     </svg>
   )
 }
-
-export default IconTags

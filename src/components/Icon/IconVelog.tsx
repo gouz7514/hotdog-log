@@ -1,6 +1,9 @@
 import { IconChildProps } from '@/types/types'
 
-function IconVelog({ fill = '#000000', isDark = false }: IconChildProps) {
+export function IconVelog({
+  fill = '#000000',
+  isDark = false,
+}: IconChildProps) {
   return (
     <svg
       width="192"
@@ -18,5 +21,3 @@ function IconVelog({ fill = '#000000', isDark = false }: IconChildProps) {
     </svg>
   )
 }
-
-export default IconVelog

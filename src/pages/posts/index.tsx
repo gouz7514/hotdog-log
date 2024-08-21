@@ -8,11 +8,10 @@ import styled from '@emotion/styled'
 import { getAllPostData, getAllPostTags } from '@/lib/posts'
 import { Post } from '@/types/types'
 
-import Badge from '@/components/Molecule/Badge'
-import Icon from '@/components/Atom/Icon'
-import IconTags from '@/components/Icon/IconTags'
-
-import LottieAnimation from '@/components/Organism/Lottie'
+import { Badge } from '@/components/Molecule'
+import { Icon } from '@/components/Atom'
+import { IconTags } from '@/components/Icon'
+import { LottieAnimation } from '@/components/Organism'
 import parseDate from '@/lib/util/date'
 import AnimationStudy from '../../../public/lottie/lottie-study.json'
 

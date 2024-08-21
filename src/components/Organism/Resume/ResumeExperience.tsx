@@ -1,32 +1,11 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
-import Icon from '@/components/Atom/Icon'
-import IconYoutube from '@/components/Icon/IconYoutube'
-import ListContainer from '@/components/Molecule/ListContainer'
+import { Icon } from '@/components/Atom'
+import { IconYoutube } from '@/components/Icon/IconYoutube'
+import { ListContainer } from '@/components/Molecule'
 
-const ResumeExperienceStyle = styled.div`
-  .experience-container {
-    .experience-title-container {
-      align-items: center;
-      gap: 10px;
-    }
-
-    & ~ .experience-container {
-      margin-top: 32px;
-    }
-
-    .experience-term {
-      margin: 6px 0;
-    }
-
-    a {
-      text-decoration: underline;
-    }
-  }
-`
-
-export default function ResumeExperience() {
+export function ResumeExperience() {
   return (
     <ResumeExperienceStyle>
       <h2 className="text-blue">EXPERIENCE</h2>
@@ -116,3 +95,24 @@ export default function ResumeExperience() {
     </ResumeExperienceStyle>
   )
 }
+
+const ResumeExperienceStyle = styled.div`
+  .experience-container {
+    .experience-title-container {
+      align-items: center;
+      gap: 10px;
+    }
+
+    & ~ .experience-container {
+      margin-top: 32px;
+    }
+
+    .experience-term {
+      margin: 6px 0;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+`

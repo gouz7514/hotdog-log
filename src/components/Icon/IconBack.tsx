@@ -1,6 +1,6 @@
 import { IconChildProps } from '@/types/types'
 
-function IconBack({ fill = '#000000', isDark = false }: IconChildProps) {
+export function IconBack({ fill = '#000000', isDark = false }: IconChildProps) {
   return (
     <svg
       width="128"
@@ -19,5 +19,3 @@ function IconBack({ fill = '#000000', isDark = false }: IconChildProps) {
     </svg>
   )
 }
-
-export default IconBack

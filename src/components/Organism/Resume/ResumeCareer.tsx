@@ -1,19 +1,8 @@
 import styled from '@emotion/styled'
 
-import ListContainer from '@/components/Molecule/ListContainer'
+import { ListContainer } from '@/components/Molecule'
 
 import dayjs from 'dayjs'
-
-const ResumeCareerStyle = styled.div`
-  .career-term {
-    font-size: 14px;
-    margin: 6px 0;
-  }
-
-  a {
-    text-decoration: underline;
-  }
-`
 
 const EMPLOYMENT_PERIOD = [
   {
@@ -40,7 +29,7 @@ const getCareerPeriod = () => {
   return `${years}년 ${months}개월`
 }
 
-export default function ResumeCareer() {
+export function ResumeCareer() {
   return (
     <ResumeCareerStyle>
       <h2 className="text-blue">CAREER</h2>
@@ -71,3 +60,14 @@ export default function ResumeCareer() {
     </ResumeCareerStyle>
   )
 }
+
+const ResumeCareerStyle = styled.div`
+  .career-term {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+`

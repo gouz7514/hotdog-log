@@ -1,22 +1,9 @@
 import styled from '@emotion/styled'
 
-import Card from '@/components/Organism/Card'
+import { Card } from '@/components/Organism'
 import { PROJECTS } from '@/constants/constants'
 
-const ResumeProjectsStyle = styled.div`
-  .project-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    margin-top: 12px;
-
-    @media screen and (max-width: 600px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
-`
-
-export default function ResumeProjects() {
+export function ResumeProjects() {
   const COMPANY_PROJECTS = PROJECTS.filter(
     project => project.type === 'company',
   )
@@ -42,3 +29,16 @@ export default function ResumeProjects() {
     </ResumeProjectsStyle>
   )
 }
+
+const ResumeProjectsStyle = styled.div`
+  .project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 12px;
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+`

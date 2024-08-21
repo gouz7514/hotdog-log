@@ -3,11 +3,9 @@ import { useContext } from 'react'
 import ThemeContext from '@/context/themeContext'
 import { theme } from '@/styles/theme'
 
-import Icon from '../Atom/Icon'
-import IconGithub from '../Icon/IconGithub'
-import IconLinkedIn from '../Icon/IconLinkedin'
-import IconGmail from '../Icon/IconGmail'
-import IconVelog from '../Icon/IconVelog'
+import { Icon } from '../Atom'
+
+import { IconGithub, IconLinkedIn, IconGmail, IconVelog } from '../Icon'
 
 const AppFooter = styled.footer`
   display: flex;
@@ -24,7 +22,7 @@ const ProfileLogo = styled.div`
   gap: 24px;
 `
 
-export default function Footer() {
+export function Footer() {
   const { colorTheme } = useContext(ThemeContext)
   const isDark = colorTheme === theme.dark
 

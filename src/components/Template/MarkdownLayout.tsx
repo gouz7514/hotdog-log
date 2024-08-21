@@ -1,29 +1,9 @@
 import styled from '@emotion/styled'
 
 import MarkdownStyle from '@/styles/MarkdownStyle'
-import BackButton from '@/components/Atom/BackButton'
-import Hits from '@/components/Atom/Hits'
+import { BackButton, Hits } from '@/components/Atom'
 
 import parseDate from '@/lib/util/date'
-
-const MarkdownLayoutStyle = styled.div`
-  .markdown-date {
-    font-size: 0.9rem;
-    font-weight: 400;
-    filter: brightness(0.6);
-  }
-
-  .markdown-info-header {
-    margin-top: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .markdown-title {
-    margin-top: 4px;
-  }
-`
 
 interface MarkdownLayoutProps {
   id?: string
@@ -32,7 +12,7 @@ interface MarkdownLayoutProps {
   date?: string
 }
 
-export default function MarkdownLayout({
+export function MarkdownLayout({
   id,
   title,
   innerHtml,
@@ -53,3 +33,22 @@ export default function MarkdownLayout({
     </MarkdownLayoutStyle>
   )
 }
+
+const MarkdownLayoutStyle = styled.div`
+  .markdown-date {
+    font-size: 0.9rem;
+    font-weight: 400;
+    filter: brightness(0.6);
+  }
+
+  .markdown-info-header {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .markdown-title {
+    margin-top: 4px;
+  }
+`

@@ -1,6 +1,9 @@
 import { IconChildProps } from '@/types/types'
 
-function IconGithub({ fill = '#24292f', isDark = false }: IconChildProps) {
+export function IconGithub({
+  fill = '#24292f',
+  isDark = false,
+}: IconChildProps) {
   return (
     <svg
       viewBox="0 0 98 96"
@@ -17,5 +20,3 @@ function IconGithub({ fill = '#24292f', isDark = false }: IconChildProps) {
     </svg>
   )
 }
-
-export default IconGithub

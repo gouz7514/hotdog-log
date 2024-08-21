@@ -2,7 +2,73 @@ import styled from '@emotion/styled'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 
-import Badge from '@/components/Molecule/Badge'
+import { Badge } from '@/components/Molecule'
+
+interface CardProps {
+  image: StaticImageData
+  title: string
+  tags?: Array<string> | undefined
+  period?: string
+  route?: {
+    type: string
+    path: string
+  }
+}
+type CardImageProps = Pick<CardProps, 'image'>
+type CardDescriptionProps = Pick<CardProps, 'title' | 'tags' | 'period'>
+
+function CardImage({ image }: CardImageProps) {
+  return (
+    <div className="card-image">
+      <Image
+        src={image}
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: '100%', height: 'auto' }}
+        alt="card-image"
+        placeholder="blur"
+      />
+    </div>
+  )
+}
+
+function CardDescription({ title, tags, period }: CardDescriptionProps) {
+  return (
+    <div className="card-description">
+      <div className="card-info">
+        <div className="card-title">{title}</div>
+        <div className="card-tags">
+          {tags &&
+            tags.map(tag => (
+              <Badge
+                key={`${title}-${tag}`}
+                content={tag}
+                className="badge-primary"
+                size="small"
+              />
+            ))}
+        </div>
+      </div>
+      <div className="card-period">{period}</div>
+    </div>
+  )
+}
+
+export function Card({ image, title, tags, period, route }: CardProps) {
+  const { type: routeType, path: routePath } = route!
+  const isExternal = routeType === 'external'
+
+  return (
+    <Link href={routePath} target={isExternal ? '_blank' : ''}>
+      <CardStyle className={isExternal ? 'external' : ''}>
+        {isExternal && <span className="curtain">바로가기</span>}
+        <CardImage image={image} />
+        <CardDescription title={title} tags={tags} period={period} />
+      </CardStyle>
+    </Link>
+  )
+}
 
 const CardStyle = styled.div`
   --image-height: 200px;
@@ -91,69 +157,3 @@ const CardStyle = styled.div`
     }
   }
 `
-
-interface CardProps {
-  image: StaticImageData
-  title: string
-  tags?: Array<string> | undefined
-  period?: string
-  route?: {
-    type: string
-    path: string
-  }
-}
-type CardImageProps = Pick<CardProps, 'image'>
-type CardDescriptionProps = Pick<CardProps, 'title' | 'tags' | 'period'>
-
-function CardImage({ image }: CardImageProps) {
-  return (
-    <div className="card-image">
-      <Image
-        src={image}
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{ width: '100%', height: 'auto' }}
-        alt="card-image"
-        placeholder="blur"
-      />
-    </div>
-  )
-}
-
-function CardDescription({ title, tags, period }: CardDescriptionProps) {
-  return (
-    <div className="card-description">
-      <div className="card-info">
-        <div className="card-title">{title}</div>
-        <div className="card-tags">
-          {tags &&
-            tags.map(tag => (
-              <Badge
-                key={`${title}-${tag}`}
-                content={tag}
-                className="badge-primary"
-                size="small"
-              />
-            ))}
-        </div>
-      </div>
-      <div className="card-period">{period}</div>
-    </div>
-  )
-}
-
-export default function Card({ image, title, tags, period, route }: CardProps) {
-  const { type: routeType, path: routePath } = route!
-  const isExternal = routeType === 'external'
-
-  return (
-    <Link href={routePath} target={isExternal ? '_blank' : ''}>
-      <CardStyle className={isExternal ? 'external' : ''}>
-        {isExternal && <span className="curtain">바로가기</span>}
-        <CardImage image={image} />
-        <CardDescription title={title} tags={tags} period={period} />
-      </CardStyle>
-    </Link>
-  )
-}

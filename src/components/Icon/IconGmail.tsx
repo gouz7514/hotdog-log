@@ -1,6 +1,9 @@
 import { IconChildProps } from '@/types/types'
 
-function IconGmail({ fill = '#000000', isDark = false }: IconChildProps) {
+export function IconGmail({
+  fill = '#000000',
+  isDark = false,
+}: IconChildProps) {
   return (
     <svg
       version="1.0"
@@ -29,5 +32,3 @@ function IconGmail({ fill = '#000000', isDark = false }: IconChildProps) {
     </svg>
   )
 }
-
-export default IconGmail

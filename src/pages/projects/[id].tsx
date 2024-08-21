@@ -1,4 +1,4 @@
-import MarkdownLayout from '@/components/Template/MarkdownLayout'
+import { MarkdownLayout } from '@/components/Template'
 import { getAllProjectIds, getProjectData } from '@/lib/project'
 
 interface ProjectProps {

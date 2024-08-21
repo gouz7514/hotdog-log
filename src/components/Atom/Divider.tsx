@@ -6,6 +6,6 @@ const DividerContainer = styled.div`
   margin: 24px 0;
 `
 
-export default function Divider() {
+export function Divider() {
   return <DividerContainer />
 }
