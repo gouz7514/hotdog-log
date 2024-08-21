@@ -20,8 +20,8 @@ export default function ResumeIntro() {
       <>
         <div className="big-paragraph">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          국내 1위 바이오링크 서비스, "인포크링크"를 전반적으로 개발하고
-          운영했습니다.
+          3년차 프론트엔드 개발자로 국내 1위 바이오링크 서비스, "인포크링크"를
+          전반적으로 개발하고 운영했습니다.
           <br />이 과정에서 단순 기능 구현을 넘어 인프라 최적화, 비용 개선 등
           다양한 도메인에 대해 배우고 성장했습니다.
         </div>
