@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { ListContainer } from '@/components/Molecule'
 
 import dayjs from 'dayjs'
+import Link from 'next/link'
 
 const EMPLOYMENT_PERIOD = [
   {
@@ -55,7 +56,13 @@ export function ResumeCareer() {
         </li>
         <li>・ 시장에 존재하지 않는 서비스에 대한 고민 및 개발</li>
         <li>・ 공동구매 시장을 정복하기 위한 서비스 개발</li>
-        <li>・ 일하고 싶은 개발팀을 만들어나가기 위한 다양한 시도 및 노력</li>
+        <li>
+          ・{' '}
+          <Link href="/posts/making-good-dev-team" className="text-blue">
+            일하고 싶은 개발팀
+          </Link>
+          을 만들어나가기 위한 다양한 시도 및 노력
+        </li>
       </ListContainer>
     </ResumeCareerStyle>
   )
