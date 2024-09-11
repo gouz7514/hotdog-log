@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 
 import { Badge } from '@/components/Molecule'
 
-const LAST_UPDATED = '2024.08.22'
+const LAST_UPDATED = '2024.09.11'
 
 const getDayFromLastUpdated = () => {
   return dayjs().diff(dayjs(LAST_UPDATED), 'day')
@@ -59,7 +59,7 @@ export function ResumeIntro() {
       <div className="resume-intro-footer">
         <Badge
           content="더 자세한 내용이 궁금하다면?"
-          link="https://drive.google.com/file/d/1hz6h_tbd2CvGkED2_6M1bMTsCwJ7VEzX/view?usp=sharing"
+          link="https://www.canva.com/design/DAGLlKxYoag/P7IJPAsbTxGKeahTCL5CDQ/view#1"
         />
         <div className="last-updated">
           Last updated: {LAST_UPDATED} ({getDayFromLastUpdated()} days ago)
