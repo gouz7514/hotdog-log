@@ -37,7 +37,7 @@ export function ResumeExperience() {
           <li>
             ・ Next.js 한글 번역 ({' '}
             <a
-              href="https://github.com/reactjs/ko.react.dev/pull/790"
+              href="https://github.com/luciancah/nextjs-ko/pull/59"
               target="blank"
               className="text-blue"
             >
