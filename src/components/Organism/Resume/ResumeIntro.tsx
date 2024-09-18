@@ -58,7 +58,7 @@ export function ResumeIntro() {
       </>
       <div className="resume-intro-footer">
         <Badge
-          content="더 자세한 내용이 궁금하다면?"
+          content="더 자세한 내용이 궁금하다면? 👋"
           link="https://www.canva.com/design/DAGLlKxYoag/P7IJPAsbTxGKeahTCL5CDQ/view#1"
         />
         <div className="last-updated">

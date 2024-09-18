@@ -4,8 +4,7 @@ import { Divider } from '@/components/Atom'
 import {
   ResumeIntro,
   ResumeSkills,
-  ResumeCareer,
-  ResumeProjects,
+  ResumeWorkExperience,
   ResumeExperience,
 } from '@/components/Organism/Resume'
 
@@ -35,11 +34,9 @@ export default function Resume() {
       <div className="container">
         <ResumeIntro />
         <Divider />
+        <ResumeWorkExperience />
+        <Divider />
         <ResumeSkills />
-        <Divider />
-        <ResumeCareer />
-        <Divider />
-        <ResumeProjects />
         <Divider />
         <ResumeExperience />
       </div>

@@ -1,5 +1,4 @@
-export * from './ResumeCareer'
+export * from './ResumeWorkExperience'
 export * from './ResumeExperience'
 export * from './ResumeIntro'
-export * from './ResumeProjects'
 export * from './ResumeSkills'
