@@ -7,14 +7,21 @@ export function ListContainer({ children, className }: ListProps) {
 }
 
 const ListStyle = styled.ul`
-  margin-top: 8px;
-  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 6px;
 
   li {
-    font-size: 1.1em;
+    position: relative;
+    padding: 0.1rem 0 0.1rem 1rem;
 
-    &:not(:last-child) {
-      margin-bottom: 8px;
+    &::before {
+      position: absolute;
+      left: 0;
+      content: '•';
+      color: var(--color-blue);
+      font-size: 1rem;
     }
   }
 `
