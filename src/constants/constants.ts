@@ -69,7 +69,7 @@ export const SKILLS = {
   ],
 }
 
-export const PROJECTS = [
+export const TEMP_PROEJCTS = [
   {
     id: 1,
     image: ImageCloudFront,
