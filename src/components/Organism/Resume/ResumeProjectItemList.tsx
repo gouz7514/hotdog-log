@@ -87,7 +87,10 @@ const PROJECTS: Array<Project> = [
           경험 보유
         </li>
         <li>
-          <Link className="text-blue" href="/posts/automate-inpocklink-gallery">
+          <Link
+            className="text-blue"
+            href="/projects/automate-inpocklink-gallery"
+          >
             인포크링크 갤러리 자동화
           </Link>
           ,{' '}
