@@ -546,6 +546,7 @@ class Derived extends Base {
 ```
 
 ---
+
 번역이 자연스럽지 않은 문장들이 많아 정리하고 이해하는데 시간이 꽤 소요됐다.
 
 5.6 버전에서 인상깊었던 부분으로는 다음과 같다.
@@ -555,6 +556,8 @@ class Derived extends Base {
 iterator의 사용에 있어 더 안전하고 가독성 높은 코드를 작성할 수 있을 것 같다.
 
 - `--noCheck` 옵션의 도입
+
 이름은 noCheck지만, 실제로는 더 빠르게 타입 체크를 수행하도록 도와주는 신기한 옵션이다.
 
-번역을 하다보니 모르는 내용이 많아서 굉장히 두근두근하다. Typescript의 다양한 플래그에 대해서도 공부하고 싶고, 중간에 언급된 ECMAScript module과 CommonJS module에 대해서도 궁금해졌다. [토스에서 작성한 블로그도](https://toss.tech/article/commonjs-esm-exports-field) 읽어보고 나만의 언어로 정리해서 포스팅을 해볼 예정이다.
+번역을 하다보니 공부하고 싶은 내용이 많아서 굉장히 두근두근하다.  
+Typescript의 다양한 플래그에 대해서도 공부하고 싶고, 중간에 언급된 ECMAScript module과 CommonJS module에 대해서도 궁금해졌다. [토스에서 작성한 블로그도](https://toss.tech/article/commonjs-esm-exports-field) 읽어보고 나만의 언어로 정리해서 포스팅을 해볼 예정이다.
