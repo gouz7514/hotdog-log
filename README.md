@@ -28,4 +28,5 @@ Next와 Typescript로 만든 개발 블로그입니다.
 | 16 | [React 19 RC](https://hotjae.com/posts/react-19) | 2024-6-1 (토) |
 | 17 | [[번역] Typescript 5.5 출시](https://hotjae.com/posts/announcing-typescript-5.5) | 2024-8-6 (화) |
 | 18 | [[번역] Typescript 5.6 출시](https://hotjae.com/posts/announcing-typescript-5.6) | 2024-10-12 (토) |
+| 19 | [👊 패키지 매니저 뿌시기](https://hotjae.com/posts/패키지-매니저-뿌시기) | 2024-10-27 (일) |
 <!-- END_POSTS -->
