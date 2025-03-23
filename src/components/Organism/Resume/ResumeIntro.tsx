@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 
 import { Badge } from '@/components/Molecule'
 
-const LAST_UPDATED = '2024.09.18'
+const LAST_UPDATED = '2025.03.24'
 
 const getDayFromLastUpdated = () => {
   return dayjs().diff(dayjs(LAST_UPDATED), 'day')
