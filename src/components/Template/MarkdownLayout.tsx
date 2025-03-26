@@ -1,19 +1,17 @@
 import styled from '@emotion/styled'
 
 import MarkdownStyle from '@/styles/MarkdownStyle'
-import { BackButton, Hits } from '@/components/Atom'
+import { BackButton } from '@/components/Atom'
 
 import parseDate from '@/lib/util/date'
 
 interface MarkdownLayoutProps {
-  id?: string
   title: string
   innerHtml: string
   date?: string
 }
 
 export function MarkdownLayout({
-  id,
   title,
   innerHtml,
   date,
@@ -23,7 +21,6 @@ export function MarkdownLayout({
       <BackButton />
       <div className="markdown-info-header">
         {date && <div className="markdown-date">{parseDate(date)}</div>}
-        {id && <Hits id={id} />}
       </div>
       <h2 className="markdown-title">{title}</h2>
       <div
