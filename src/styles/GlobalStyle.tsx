@@ -81,6 +81,10 @@ const style = css`
     margin-top: 16px;
   }
 
+  .mt-20 {
+    margin-top: 20px;
+  }
+
   .mt-24 {
     margin-top: 24px;
   }
