@@ -7,21 +7,21 @@ import Link from 'next/link'
 const PROJECTS: Array<Project> = [
   {
     title: '인포크마켓',
-    term: '2024.01 ~ 2024.08',
-    tldr: '크리에이터를 위한 공동구매 맞춤형 자사몰',
+    term: '2024.01 ~ 2024.11',
+    tldr: '크리에이터와 브랜드가 다양한 판매 채널에서 협업하며 느꼈던 불편함과 어려움을 해결하기 위한 솔루션',
     description: (
       <ListContainer>
         <li>
-          크리에이터와 구매자를 위한 기능 개발 (주문관리, 상품관리, 주문내역
-          확인, 주문 취소 등)
+          크리에이터, 판매자, 구매자를 위한 기능 개발 (주문관리, 상품관리,
+          주문내역 확인, 주문 취소 등)
         </li>
         <li>
           컴파운드 컴포넌트 패턴, 고차 컴포넌트를 활용한 유연하고 재사용 가능한
           구조 설계
         </li>
         <li>
-          SEO 최적화가 어려운 S3 배포 환경에서 cloudfront function을 활용해 SEO
-          최적화 및 메타데이터 제공
+          커스텀 훅과 React Context API를 활용해 비즈니스 로직 개발 난이도 및
+          시간 단축
         </li>
         <li>에러 바운더리, 결제 과정 모니터링 구축을 통한 더 나은 UX 제공</li>
       </ListContainer>
