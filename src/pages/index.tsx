@@ -11,15 +11,15 @@ export default function Home() {
             <Typed
               className="typed-text"
               strings={[
-                '불편함을 불편해하는',
-                '끊임없이 고민하는',
+                '고객 경험에 미쳐있는',
+                '제품을 최우선으로 생각하는',
                 '팀을 만들어 나가는',
-                '프론트엔드',
+                '프로덕트 엔지니어',
               ]}
-              typeSpeed={150}
+              typeSpeed={100}
               backSpeed={50}
             />
-            <h1>개발자 김학재입니다</h1>
+            <h1>김학재입니다</h1>
           </div>
         </ProfileDescription>
       </div>

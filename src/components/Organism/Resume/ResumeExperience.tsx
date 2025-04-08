@@ -1,122 +1,96 @@
 import styled from '@emotion/styled'
+
+import { ListContainer } from '@/components/Molecule'
+
+import dayjs from 'dayjs'
 import Link from 'next/link'
 
-import { Icon } from '@/components/Atom'
-import { IconYoutube } from '@/components/Icon/IconYoutube'
-import { ListContainer } from '@/components/Molecule'
+const EMPLOYMENT_PERIOD = [
+  {
+    start: '2021.06.01',
+    end: '2023.04.30',
+  },
+  {
+    start: '2024.01.15',
+    end: dayjs().format('YYYY.MM.DD'),
+  },
+]
+
+const getCareerPeriod = () => {
+  let totalMonths = 0
+  EMPLOYMENT_PERIOD.forEach(period => {
+    const start = dayjs(period.start)
+    const end = dayjs(period.end)
+    totalMonths += Math.round(end.diff(start, 'day') / 30)
+  })
+
+  const years = Math.floor(totalMonths / 12)
+  const months = totalMonths % 12
+
+  return `${years}년 ${months}개월`
+}
 
 export function ResumeExperience() {
   return (
-    <ResumeExperienceStyle>
-      <h2 className="text-blue">EXPERIENCE</h2>
-      <div className="experience-container">
-        <div className="d-flex experience-title-container">
-          <h4 className="experience-title">오픈소스 기여</h4>
-        </div>
-        <ListContainer>
-          <li>
-            리액트 공식문서 한글 번역 (
-            <a
-              href="https://github.com/reactjs/ko.react.dev/pull/790"
-              target="blank"
-              className="text-blue"
-            >
-              PR #790 - Translate: Versioning Policy
-            </a>
-            )
-          </li>
-          <li>
-            리액트 공식 문서 한글 번역 프로젝트의 CI 오류 해결 (
-            <a
-              href="https://github.com/reactjs/ko.react.dev/pull/830"
-              target="blank"
-              className="text-blue"
-            >
-              PR #830
-            </a>
-            )
-          </li>
-          <li>
-            Next.js 한글 번역 (
-            <a
-              href="https://github.com/luciancah/nextjs-ko/pull/59"
-              target="blank"
-              className="text-blue"
-            >
-              PR #59 - static-site-generation
-            </a>
-            )
-          </li>
-          <li>
-            오픈 소스 기여를 통해 배운 내용을{' '}
-            <Link
-              href="/posts/contribute-to-react-document"
-              className="text-blue"
-            >
-              개인 블로그에 기록
-            </Link>
-          </li>
-        </ListContainer>
+    <WrapperStyle>
+      <h2 className="text-blue">Experience</h2>
+      <h3>ABZ 주식회사</h3>
+      <div className="experience-term">
+        2021.06 ~ 2023.04 / 2024.01 ~ ({getCareerPeriod()})
       </div>
-      <div className="experience-container">
-        <div className="d-flex experience-title-container">
-          <h4 className="experience-title">단국대 캡스톤 경진대회 금상</h4>
-          <Link
-            href="https://www.youtube.com/watch?v=RQQwxN8pxB0"
+      <ListContainer>
+        <li>
+          30만 유저, 2,000만 MAU를 지닌{' '}
+          <a
+            href="https://link.inpock.co.kr"
             target="blank"
+            className="text-blue"
           >
-            <Icon icon={<IconYoutube />} width={24} height={24} />
+            인포크링크
+          </a>
+          의 프론트엔드 개발/유지/보수
+        </li>
+        <li style={{ lineHeight: '1.6' }}>
+          유저 경험을 해칠 수 있는 문제를 주도적으로 찾아서 개선 : 서버 상태
+          캐싱을 통한 성능 개선 (api 호출 횟수 15%, LCP 80% 개선), 인증 로직
+          개선을 통한 인증 관련 CS 인입 100% 감소
+        </li>
+        <li style={{ lineHeight: '1.6' }}>
+          비즈니스 로직 개선 및 개발자들의 생산성 향상 :{' '}
+          <Link href="/posts/what-is-ping-request" className="text-blue">
+            ping request를 활용한 데이터 전송 로직 개선,
+          </Link>{' '}
+          <Link
+            href="/posts/모노레포-환경에서-docker-활용하기"
+            className="text-blue"
+          >
+            nextjs standalone을 활용한 docker 경량화,
+          </Link>{' '}
+          <Link
+            href="/posts/refactoring-with-declarative-code"
+            className="text-blue"
+          >
+            선언적 코드를 활용한 생산성 향상
           </Link>
-        </div>
-        <div className="experience-term">2020.03 ~ 2021.02</div>
-        <ListContainer>
-          <li>
-            단국대 시간표를 기반으로 한 알람, 단국대 지도를 기반으로 한
-            내비게이션 애플리케이션
-          </li>
-          <li>
-            시중에 출시된 서비스(에브리타임, 단국대 공식 앱)의 부족한 점을
-            분석하고 보완
-          </li>
-          <li>
-            팀장으로서 각 구성원의 참여를 이끌어내고 협의를 통한 문제 해결
-          </li>
-          <li>메일을 통해 해당 프로젝트에 대해 문의받고 도움을 준 경험 보유</li>
-        </ListContainer>
-      </div>
-      <div className="experience-container">
-        <div className="d-flex experience-title-container">
-          <h4 className="experience-title">카투사로 군 복무</h4>
-        </div>
-        <div className="experience-term">2015.03 ~ 2016.12</div>
-        <ListContainer>
-          <li>영어로 원활한 의사소통 가능</li>
-          <li>2016년 올해의 카투사 수상</li>
-        </ListContainer>
-      </div>
-    </ResumeExperienceStyle>
+        </li>
+        <li>
+          <Link href="/posts/making-good-dev-team" className="text-blue">
+            누구나 일하고 싶은 팀
+          </Link>
+          을 만들어나가기 위한 다양한 시도 및 노력
+        </li>
+      </ListContainer>
+    </WrapperStyle>
   )
 }
 
-const ResumeExperienceStyle = styled.div`
-  .experience-container {
-    .experience-title-container {
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 0.3rem;
-    }
+const WrapperStyle = styled.div`
+  .experience-term {
+    font-size: 14px;
+    margin: 0.3rem 0;
+  }
 
-    & ~ .experience-container {
-      margin-top: 32px;
-    }
-
-    .experience-term {
-      font-size: 14px;
-      margin-bottom: 0.3rem;
-    }
-
-    a {
-      text-decoration: underline;
-    }
+  a {
+    text-decoration: underline;
   }
 `
