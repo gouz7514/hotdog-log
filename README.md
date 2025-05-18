@@ -31,4 +31,5 @@ Next와 Typescript로 만든 개발 블로그입니다.
 | 19 | [👊 패키지 매니저 뿌시기](https://hotjae.com/posts/패키지-매니저-뿌시기) | 2024-10-27 (일) |
 | 20 | [🐳 모노레포 환경에서 docker 활용하기](https://hotjae.com/posts/모노레포-환경에서-docker-활용하기) | 2024-11-8 (금) |
 | 21 | [모달 선언적으로 사용하기 (feat. useOverlay)](https://hotjae.com/posts/refactoring-with-declarative-code) | 2025-3-24 (월) |
+| 22 | [Cursor 0.50 changelog](https://hotjae.com/posts/cursor-changelog-0-50) | 2025-5-18 (일) |
 <!-- END_POSTS -->
