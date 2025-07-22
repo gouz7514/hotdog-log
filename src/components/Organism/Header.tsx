@@ -25,8 +25,8 @@ export function Header() {
           <div className={`header-links ${conditionalClass('posts')}`}>
             <Link href="/posts">Posts</Link>
           </div>
-          <div className={`header-links ${conditionalClass('resume')}`}>
-            <Link href="/resume">Resume</Link>
+          <div className={`header-links ${conditionalClass('intro')}`}>
+            <Link href="/intro">Intro</Link>
           </div>
         </div>
       </div>

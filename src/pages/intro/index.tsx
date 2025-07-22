@@ -2,27 +2,27 @@ import Head from 'next/head'
 
 import { Divider } from '@/components/Atom'
 import {
-  ResumeIntro,
-  ResumeSkills,
-  ResumeExperience,
-  ResumeActivities,
-} from '@/components/Organism/Resume'
+  Summary,
+  Skills,
+  Experience,
+  Activities,
+} from '@/components/Organism/Intro'
 
-export default function Resume() {
+export default function Intro() {
   return (
     <>
       <Head>
-        <title>핫재의 개발 블로그 | 이력서</title>
-        <meta name="title" content="핫재의 개발 블로그 | 이력서" />
+        <title>핫재의 개발 블로그 | 소개</title>
+        <meta name="title" content="핫재의 개발 블로그 | 소개" />
         <meta name="description" content="불편함을 불편해합니다" />
         <meta
           property="og:title"
-          content="핫재의 개발 블로그 | 이력서"
+          content="핫재의 개발 블로그 | 소개"
           key="og:title"
         />
         <meta
           property="og:url"
-          content="https://hotjae.com/resume"
+          content="https://hotjae.com/intro"
           key="og:url"
         />
         <meta
@@ -32,13 +32,13 @@ export default function Resume() {
         />
       </Head>
       <div className="container">
-        <ResumeIntro />
+        <Summary />
         <Divider />
-        <ResumeExperience />
+        <Experience />
         <Divider />
-        <ResumeSkills />
+        <Skills />
         <Divider />
-        <ResumeActivities />
+        <Activities />
       </div>
     </>
   )

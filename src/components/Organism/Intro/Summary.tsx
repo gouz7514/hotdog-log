@@ -4,15 +4,15 @@ import dayjs from 'dayjs'
 
 // import { Badge } from '@/components/Molecule'
 
-const LAST_UPDATED = '2025.04.09'
+const LAST_UPDATED = '2025.07.23'
 
 const getDayFromLastUpdated = () => {
   return dayjs().diff(dayjs(LAST_UPDATED), 'day')
 }
 
-export function ResumeIntro() {
+export function Summary() {
   return (
-    <ResumeIntroStyle>
+    <SummaryStyle>
       <h2>
         3년 차, 프로덕트 엔지니어
         <br />
@@ -38,7 +38,7 @@ export function ResumeIntro() {
           있으며, 인프라, 비용 개선 등을 진행한 경험이 있습니다.
         </div>
       </>
-      <div className="resume-intro-footer">
+      <div className="summary-footer">
         {/* <Badge
           content="더 자세한 내용이 궁금하다면? 👋"
           link="https://www.canva.com/design/DAGLlKxYoag/P7IJPAsbTxGKeahTCL5CDQ/view#1"
@@ -47,12 +47,12 @@ export function ResumeIntro() {
           Last updated: {LAST_UPDATED} ({getDayFromLastUpdated()} days ago)
         </div>
       </div>
-    </ResumeIntroStyle>
+    </SummaryStyle>
   )
 }
 
-const ResumeIntroStyle = styled.div`
-  .resume-intro-footer {
+const SummaryStyle = styled.div`
+  .summary-footer {
     margin-top: 16px;
     display: flex;
     align-items: center;
