@@ -17,8 +17,14 @@ export function DarkMode() {
 const DarkModeBtn = styled.div`
   width: 30px;
   height: 30px;
-  background-size: 26px 26px;
+  background-size: 30px 30px;
   background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   &.light {
     background-image: url('/icon/icon-sun.svg');

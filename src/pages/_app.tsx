@@ -29,6 +29,11 @@ export default function App({ Component, pageProps }: AppProps) {
     [colorTheme, toggleTheme],
   )
 
+  const getLayout =
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (Component as any).getLayout ||
+    ((page: React.ReactNode) => <AppLayout>{page}</AppLayout>)
+
   return (
     <>
       <Head>
@@ -56,13 +61,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <ThemeContext.Provider value={contextValue}>
           <ThemeProvider theme={{ ...colorTheme }}>
             <GoogleAnalytics gaId={gtag.GA_ID as string} />
-            <AppLayout>
-              <GlobalStyle />
-              <AnimatePresence mode="wait" initial={false}>
-                {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-                <Component {...pageProps} />
-              </AnimatePresence>
-            </AppLayout>
+            <GlobalStyle />
+            <AnimatePresence mode="wait" initial={false}>
+              {getLayout(<Component {...pageProps} />)}
+            </AnimatePresence>
           </ThemeProvider>
         </ThemeContext.Provider>
       </RecoilRoot>

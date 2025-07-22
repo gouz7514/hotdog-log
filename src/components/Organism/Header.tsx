@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
+import { ResumeButton } from '@/domain/global'
 import { DarkMode } from '../Molecule'
 
 export function Header() {
@@ -30,7 +31,10 @@ export function Header() {
           </div>
         </div>
       </div>
-      <DarkMode />
+      <div className="d-flex align-items-center" style={{ gap: '16px' }}>
+        <ResumeButton />
+        <DarkMode />
+      </div>
     </StickyHeader>
   )
 }
@@ -63,7 +67,6 @@ const StickyHeader = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 16px;
     font-size: 24px;
     font-weight: bold;
     color: var(--color-white);
@@ -75,7 +78,7 @@ const StickyHeader = styled.div`
     .header-pages {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 16px;
 
       .header-links {
         &.active {
