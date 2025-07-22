@@ -1,6 +1,6 @@
 import { ListContainer } from '@/components/Molecule'
 
-export function ResumeSkills() {
+export function Skills() {
   return (
     <div>
       <h2 className="text-blue">SKILLS</h2>

@@ -30,7 +30,7 @@ const getCareerPeriod = () => {
   return `${years}년 ${months}개월`
 }
 
-export function ResumeExperience() {
+export function Experience() {
   return (
     <WrapperStyle>
       <h2 className="text-blue">Experience</h2>

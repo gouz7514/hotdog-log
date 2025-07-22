@@ -5,9 +5,9 @@ import { Icon } from '@/components/Atom'
 import { IconYoutube } from '@/components/Icon/IconYoutube'
 import { ListContainer } from '@/components/Molecule'
 
-export function ResumeActivities() {
+export function Activities() {
   return (
-    <ResumeExperienceStyle>
+    <ActivitiesStyle>
       <h2 className="text-blue">Activities</h2>
       <div className="experience-container">
         <div className="d-flex experience-title-container">
@@ -87,11 +87,11 @@ export function ResumeActivities() {
           <li>커뮤니케이션 스킬 및 리더십 향상</li>
         </ListContainer>
       </div>
-    </ResumeExperienceStyle>
+    </ActivitiesStyle>
   )
 }
 
-const ResumeExperienceStyle = styled.div`
+const ActivitiesStyle = styled.div`
   .experience-container {
     .experience-title-container {
       align-items: center;
