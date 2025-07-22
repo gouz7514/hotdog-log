@@ -1,0 +1,26 @@
+name: title of issue
+description: simple description of issue
+title: '[Feature] '
+assignees:
+  - 
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **tl;dr**
+  - type: textarea
+    attributes:
+      label: TL;DR
+      description: tl;dr
+      placeholder: tl;dr
+      value: |
+        <!-- tl;dr -->
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: tasks
+      description: tasks
+      placeholder: tasks
+      value: |
+        <!-- tasks -->
