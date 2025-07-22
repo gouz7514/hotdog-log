@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           property="og:image"
-          content="https://hotjae.com/images/og_image.png"
+          content="https://hotjae.com/images/og_image.webp"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />

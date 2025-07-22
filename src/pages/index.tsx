@@ -39,11 +39,11 @@ const HomeStyle = styled.main`
 const ProfileImage = styled.div`
   overflow: hidden;
   display: block;
-  border-radius: 24px;
+  border-radius: 12px;
   width: 300px;
   height: 300px;
   background-color: var(--color-beige);
-  background-image: url('/images/profile.png');
+  background-image: url('/images/profile.webp');
   background-size: 300px;
   transition: all 0.3s ease-in-out;
 
