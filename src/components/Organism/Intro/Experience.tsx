@@ -7,12 +7,12 @@ import Link from 'next/link'
 
 const EMPLOYMENT_PERIOD = [
   {
-    start: '2021.06.01',
-    end: '2023.04.30',
+    start: '2021-06-01',
+    end: '2023-04-30',
   },
   {
-    start: '2024.01.15',
-    end: dayjs().format('YYYY.MM.DD'),
+    start: '2024-01-15',
+    end: dayjs().format('YYYY-MM-DD'),
   },
 ]
 
