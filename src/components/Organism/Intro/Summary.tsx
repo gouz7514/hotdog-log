@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 
 // import { Badge } from '@/components/Molecule'
 
-const LAST_UPDATED = '2025.07.23'
+const LAST_UPDATED = '2025-07-23'
 
 const getDayFromLastUpdated = () => {
   return dayjs().diff(dayjs(LAST_UPDATED), 'day')
@@ -44,7 +44,8 @@ export function Summary() {
           link="https://www.canva.com/design/DAGLlKxYoag/P7IJPAsbTxGKeahTCL5CDQ/view#1"
         /> */}
         <div className="last-updated">
-          Last updated: {LAST_UPDATED} ({getDayFromLastUpdated()} days ago)
+          Last updated: {dayjs(LAST_UPDATED).format('YYYY.MM.DD')} (
+          {getDayFromLastUpdated()} days ago)
         </div>
       </div>
     </SummaryStyle>
