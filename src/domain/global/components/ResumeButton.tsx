@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export function ResumeButton() {
   const handleClick = () => {
-    window.open('/resume.pdf', '_blank')
+    window.open('/resume', '_blank')
   }
 
   return <ResumeButtonStyle onClick={handleClick} />
