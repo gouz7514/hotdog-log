@@ -15,22 +15,52 @@ export function DarkMode() {
 }
 
 const DarkModeBtn = styled.div`
-  width: 30px;
-  height: 30px;
-  background-size: 30px 30px;
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
   background-repeat: no-repeat;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: scale 0.2s ease-in-out;
 
   &:hover {
-    transform: scale(1.1);
+    // transform: scale(1.1);
+    scale: 1.1;
   }
 
   &.light {
-    background-image: url('/icon/icon-sun.svg');
+    background-image: url('/icon/icon-sun.png');
+    animation: rotate 10s linear infinite;
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
   }
 
   &.dark {
-    background-image: url('/icon/icon-moon.svg');
+    background-image: url('/icon/icon-moon.png');
+    animation: swing 5s linear infinite;
+
+    @keyframes swing {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      30% {
+        transform: rotate(-10deg);
+      }
+
+      70% {
+        transform: rotate(10deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
   }
 `

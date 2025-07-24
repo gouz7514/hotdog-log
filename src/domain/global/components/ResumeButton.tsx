@@ -13,7 +13,7 @@ const ResumeButtonStyle = styled.div`
   height: 30px;
   background-size: 30px 30px;
   background-repeat: no-repeat;
-  background-image: url('/icon/icon-resume.svg');
+  background-image: url('/images/icon-resume.png');
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
 

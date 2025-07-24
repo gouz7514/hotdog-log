@@ -9,7 +9,7 @@ const style = css`
   * {
     ${colorVariables};
     --z-index-header: 10;
-    --header-height: 80px;
+    --header-height: 60px;
 
     box-sizing: border-box;
     padding: 0;

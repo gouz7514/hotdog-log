@@ -2,7 +2,7 @@ export const theme = {
   light: {
     background: 'hsl(0deg, 0%, 100%)',
     font: '#000000',
-    header: '#0066cc',
+    header: '#e3f2fd',
     listBackground: '#eaeaea',
     code: '#e9ecef',
     blockQuote: 'hsl(225deg, 25%, 95%)',
