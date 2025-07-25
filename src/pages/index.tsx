@@ -1,82 +1,52 @@
 import styled from '@emotion/styled'
-import Typed from 'react-typed'
+import Image from 'next/image'
 
 export default function Home() {
   return (
     <HomeStyle>
-      <div className="d-flex flex-column align-items-center">
-        <ProfileImage />
-        <ProfileDescription>
-          <div className="d-flex flex-column align-items-center">
-            <Typed
-              className="typed-text"
-              strings={[
-                '고객 경험에 미쳐있는',
-                '제품을 최우선으로 생각하는',
-                '팀을 만들어 나가는',
-                '프로덕트 엔지니어',
-              ]}
-              typeSpeed={100}
-              backSpeed={50}
-            />
-            <h1>김학재입니다</h1>
-          </div>
-        </ProfileDescription>
-      </div>
+      <Image
+        src="/images/profile.webp"
+        alt="profile"
+        width={300}
+        height={300}
+        style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          flex: 1,
+        }}
+      />
+      <ProfileDescription>
+        <div className="d-flex align-items-center" style={{ gap: '8px' }}>
+          <p className="text-bold">김학재</p>
+          <p>프론트엔드 개발자</p>
+        </div>
+        <div className="big-paragraph mt-16">
+          최대한의 사용자에게 최고의 경험을 제공하는데 관심이 있습니다.
+          프로덕트의 A부터 Z까지 개발해본 경험이 있습니다. 누구나 일하고 싶은
+          팀을 만들어 나가는 것을 좋아합니다.
+        </div>
+      </ProfileDescription>
     </HomeStyle>
   )
 }
 
 const HomeStyle = styled.main`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  min-height: calc(100vh - 160px);
+  min-height: calc(100vh - 180px);
+  margin: 0 auto;
+  gap: 20px;
+  max-width: 1200px;
   padding: 2rem;
-`
 
-const ProfileImage = styled.div`
-  overflow: hidden;
-  display: block;
-  border-radius: 12px;
-  width: 300px;
-  height: 300px;
-  background-color: var(--color-beige);
-  background-image: url('/images/profile.webp');
-  background-size: 300px;
-  transition: all 0.3s ease-in-out;
-
-  @media screen and (max-width: 450px) {
-    width: 200px;
-    height: 200px;
-    background-size: 200px;
-    transition: all 0.3s ease-in-out;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
   }
 `
 
 const ProfileDescription = styled.div`
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-
-  .typed-text {
-    font-size: 3em;
-    font-weight: bold;
-    color: var(--color-blue);
-
-    @media screen and (max-width: 600px) {
-      font-size: 2em;
-    }
-  }
-
-  h1 {
-    margin: 12px 0;
-
-    @media screen and (max-width: 600px) {
-      font-size: 2em;
-    }
-  }
+  width: 100%;
+  height: 0;
+  flex: 1;
+  padding-bottom: 50%;
 `

@@ -15,7 +15,7 @@ export function Header() {
   }
 
   return (
-    <StickyHeader className="container">
+    <StickyHeader>
       <FloatingHeader>
         <div className="common-header">
           <div className="header-pages">
@@ -29,11 +29,11 @@ export function Header() {
             >
               <Link href="/posts">Posts</Link>
             </div>
-            <div
+            {/* <div
               className={`header-links link-intro ${conditionalClass('intro')}`}
             >
               <Link href="/intro">Intro</Link>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="d-flex align-items-center" style={{ gap: '8px' }}>
