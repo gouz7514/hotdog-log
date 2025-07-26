@@ -1,7 +1,7 @@
-import { useContext } from 'react'
 import ThemeContext from '@/context/themeContext'
-import styled from '@emotion/styled'
 import { theme } from '@/styles/theme'
+import styled from '@emotion/styled'
+import { useContext } from 'react'
 
 export function DarkMode() {
   const { colorTheme, toggleTheme } = useContext(ThemeContext)
@@ -20,12 +20,6 @@ const DarkModeBtn = styled.div`
   background-size: 32px 32px;
   background-repeat: no-repeat;
   cursor: pointer;
-  transition: scale 0.2s ease-in-out;
-
-  &:hover {
-    // transform: scale(1.1);
-    scale: 1.1;
-  }
 
   &.light {
     background-image: url('/icon/icon-sun.png');

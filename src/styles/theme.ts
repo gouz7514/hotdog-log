@@ -18,6 +18,8 @@ export const theme = {
 }
 
 export const lighTheme = `
+  --color-background: ${theme.light.background};
+  --color-font: ${theme.light.font};
   --color-header: ${theme.light.header};
   --color-list-background: ${theme.light.listBackground};
   --color-code: ${theme.light.code};
@@ -28,6 +30,8 @@ export const lighTheme = `
 `
 
 export const darkTheme = `
+  --color-background: ${theme.dark.background};
+  --color-font: ${theme.dark.font};
   --color-header: ${theme.dark.header};
   --color-list-background: ${theme.dark.listBackground};
   --color-code: ${theme.dark.code};

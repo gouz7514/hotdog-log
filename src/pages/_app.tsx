@@ -1,16 +1,16 @@
-import type { AppProps } from 'next/app'
-import { useMemo } from 'react'
-import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
+import { useMemo } from 'react'
 
-import { MainTheme } from '@/styles/theme'
-import { ThemeProvider } from '@emotion/react'
-import GlobalStyle from '@/styles/GlobalStyle'
 import { AppLayout } from '@/components/Template'
+import GlobalStyle from '@/styles/GlobalStyle'
+import { MainTheme } from '@/styles/theme'
 import useDarkMode from '@/util/hooks/useDarkmode'
+import { ThemeProvider } from '@emotion/react'
 import { GoogleAnalytics } from '@next/third-parties/google'
 
-import { RecoilRoot, RecoilEnv } from 'recoil'
+import { RecoilEnv, RecoilRoot } from 'recoil'
 
 import ThemeContext from '@/context/themeContext'
 import * as gtag from '@/lib/gtag'
@@ -62,7 +62,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <ThemeProvider theme={{ ...colorTheme }}>
             <GoogleAnalytics gaId={gtag.GA_ID as string} />
             <GlobalStyle />
-            <AnimatePresence mode="wait" initial={false}>
+            <AnimatePresence initial={false}>
               {getLayout(<Component {...pageProps} />)}
             </AnimatePresence>
           </ThemeProvider>
