@@ -3,9 +3,9 @@ import { IconChildProps } from '@/types/types'
 export function IconBack({ fill = '#000000', isDark = false }: IconChildProps) {
   return (
     <svg
-      width="128"
-      height="128"
-      viewBox="0 0 512 512"
+      width="256"
+      height="256"
+      viewBox="0 0 768 768"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
