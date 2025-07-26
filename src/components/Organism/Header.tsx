@@ -11,7 +11,7 @@ export function Header() {
       </Link>
       <div className="d-flex align-items-center" style={{ gap: '12px' }}>
         <Link href="/posts">
-          <p className="big-paragraph">TIL</p>
+          <h5>TIL</h5>
         </Link>
         <DarkMode />
       </div>
