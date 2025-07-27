@@ -1,9 +1,10 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
+import { LottieAnimation } from '@/components/Organism'
+
 import AnimationNotFound from '../../public/lottie/lottie-not-found.json'
 
-import { LottieAnimation } from '@/components/Organism'
 
 const NotFoundStyle = styled.div`
   display: flex;

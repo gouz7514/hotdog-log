@@ -15,7 +15,7 @@ const MarkdownStyle = css`
     margin: 1rem 0;
     padding: 0.6rem 1rem;
     border-left: 0.25rem solid var(--color-blue);
-    background-color: var(--color-block-quote);
+    background-color: var(--color-blockquote);
 
     h4 {
       margin-top: 0;
@@ -50,8 +50,9 @@ const MarkdownStyle = css`
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-size: 85%;
-    font-family: 'Fira Mono', source-code-pro, Menlo, Monaco, Consolas,
-      'Courier New', monospace;
+    font-family:
+      'Fira Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
   }
 
   h1 {
