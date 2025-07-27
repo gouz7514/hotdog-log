@@ -1,9 +1,9 @@
 import { Global, css } from '@emotion/react'
-import typo from './typo'
-import reset from './reset'
-import { colorVariables } from './colors'
 
+import { colorVariables } from './colors'
+import reset from './reset'
 import { lighTheme, darkTheme } from './theme'
+import typo from './typo'
 
 const style = css`
   * {

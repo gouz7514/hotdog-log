@@ -1,14 +1,14 @@
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
 
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
-import remarkUnwrapImages from 'remark-unwrap-images'
-import remarkRehype from 'remark-rehype'
+import matter from 'gray-matter'
 import rehypeExternalLinks from 'rehype-external-links'
-import rehypeStringify from 'rehype-stringify'
 import rehypePrettyCode from 'rehype-pretty-code'
+import rehypeStringify from 'rehype-stringify'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import remarkUnwrapImages from 'remark-unwrap-images'
+import { unified } from 'unified'
 
 const directoryToHtml = async (directory: string, id: string) => {
   const fullPath = path.join(directory, `${id}.md`)

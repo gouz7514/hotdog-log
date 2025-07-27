@@ -1,35 +1,90 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
-  "env": {
-    "node": true,
-    "browser": true
-  },
-  "ignorePatterns": ["node_modules"],
   "extends": [
-    "airbnb",
-    "airbnb-typescript",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
     "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "import",
+    "unused-imports",
     "prettier"
   ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
   "rules": {
-    "@typescript-eslint/semi": "off",
-    "@typescript-eslint/no-use-before-define": "off",
+    /** ✅ Prettier 실행 */
+    "prettier/prettier": "error",
+
+    /** ✅ React 19 관련 */
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
-    "react/require-default-props": "off",
-    "react/no-danger": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "import/prefer-default-export": "off",
-    "@next/next/no-img-element": "off",
-    "react/jsx-props-no-spreading": "off",
-    "react/jsx-no-bind": "off",
-    "no-console": "off"
+    "react/prop-types": "off",
+
+    /** ✅ Import 순서 규칙 */
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin", // Node 내장 모듈
+          "external", // npm 외부 패키지
+          "internal", // src 내부 alias
+          ["parent", "sibling", "index"] // 상대 경로
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        },
+        "newlines-between": "always"
+      }
+    ],
+
+    /** ✅ Unused imports 제거 */
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+
+    /** ✅ TypeScript 규칙 */
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

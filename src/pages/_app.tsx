@@ -1,19 +1,19 @@
+import { ThemeProvider } from '@emotion/react'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { AnimatePresence } from 'framer-motion'
-import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useMemo } from 'react'
+import { RecoilEnv, RecoilRoot } from 'recoil'
+
+import type { AppProps } from 'next/app'
 
 import { AppLayout } from '@/components/Template'
+import ThemeContext from '@/context/themeContext'
+import * as gtag from '@/lib/gtag'
 import GlobalStyle from '@/styles/GlobalStyle'
 import { MainTheme } from '@/styles/theme'
 import useDarkMode from '@/util/hooks/useDarkmode'
-import { ThemeProvider } from '@emotion/react'
-import { GoogleAnalytics } from '@next/third-parties/google'
 
-import { RecoilEnv, RecoilRoot } from 'recoil'
-
-import ThemeContext from '@/context/themeContext'
-import * as gtag from '@/lib/gtag'
 
 export interface ContextProps {
   colorTheme: MainTheme | null

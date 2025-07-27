@@ -1,19 +1,19 @@
-import { useContext, useState } from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
-
-import ThemeContext from '@/context/themeContext'
-import { theme } from '@/styles/theme'
 import styled from '@emotion/styled'
-import { getAllPostData, getAllPostTags } from '@/lib/posts'
-import { Post } from '@/types/types'
+import Head from 'next/head'
+import Link from 'next/link'
+import { useContext, useState } from 'react'
 
-import { Badge } from '@/components/Molecule'
+import AnimationStudy from '../../../public/lottie/lottie-study.json'
+
 import { Icon } from '@/components/Atom'
 import { IconTags } from '@/components/Icon'
+import { Badge } from '@/components/Molecule'
 import { LottieAnimation } from '@/components/Organism'
+import ThemeContext from '@/context/themeContext'
+import { getAllPostData, getAllPostTags } from '@/lib/posts'
 import parseDate from '@/lib/util/date'
-import AnimationStudy from '../../../public/lottie/lottie-study.json'
+import { theme } from '@/styles/theme'
+import { Post } from '@/types/types'
 
 const PostStyle = styled.div`
   margin-bottom: 40px;

@@ -1,5 +1,5 @@
-import Lottie from 'lottie-react'
 import styled from '@emotion/styled'
+import Lottie from 'lottie-react'
 
 interface LottieProps {
   json: Record<string, unknown>

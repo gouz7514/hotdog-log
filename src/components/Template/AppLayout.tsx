@@ -1,6 +1,6 @@
+import { Header, Footer } from '@/components/Organism'
 import { LayoutProps } from '@/types/types'
 
-import { Header, Footer } from '@/components/Organism'
 
 export function AppLayout({ children }: LayoutProps) {
   return (

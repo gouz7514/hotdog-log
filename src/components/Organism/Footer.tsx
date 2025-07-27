@@ -1,11 +1,11 @@
-import ThemeContext from '@/context/themeContext'
-import { theme } from '@/styles/theme'
 import styled from '@emotion/styled'
 import { useContext } from 'react'
 
 import { Icon } from '../Atom'
-
 import { IconGithub, IconGmail, IconLinkedIn, IconX } from '../Icon'
+
+import ThemeContext from '@/context/themeContext'
+import { theme } from '@/styles/theme'
 
 export function Footer() {
   const { colorTheme } = useContext(ThemeContext)

@@ -1,8 +1,10 @@
 import fs from 'fs'
 import path from 'path'
+
 import matter from 'gray-matter'
 
 import { Post } from '../types/types'
+
 import directoryToHtml from './directoryToHtml'
 
 const postsDirectory = path.join(process.cwd(), 'src/content/posts')

@@ -1,9 +1,8 @@
 import styled from '@emotion/styled'
 
-import MarkdownStyle from '@/styles/MarkdownStyle'
 import { BackButton } from '@/components/Atom'
-
 import parseDate from '@/lib/util/date'
+import MarkdownStyle from '@/styles/MarkdownStyle'
 
 interface MarkdownLayoutProps {
   title: string

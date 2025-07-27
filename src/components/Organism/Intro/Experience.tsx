@@ -1,9 +1,8 @@
 import styled from '@emotion/styled'
-
-import { ListContainer } from '@/components/Molecule'
-
 import dayjs from 'dayjs'
 import Link from 'next/link'
+
+import { ListContainer } from '@/components/Molecule'
 
 const EMPLOYMENT_PERIOD = [
   {

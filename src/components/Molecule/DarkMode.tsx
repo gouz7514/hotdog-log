@@ -1,7 +1,8 @@
-import ThemeContext from '@/context/themeContext'
-import { theme } from '@/styles/theme'
 import styled from '@emotion/styled'
 import { useContext } from 'react'
+
+import ThemeContext from '@/context/themeContext'
+import { theme } from '@/styles/theme'
 
 export function DarkMode() {
   const { colorTheme, toggleTheme } = useContext(ThemeContext)
