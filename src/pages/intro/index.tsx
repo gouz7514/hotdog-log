@@ -1,12 +1,12 @@
 import Head from 'next/head'
 
-import { Divider } from '@/components/Atom'
 import {
   Summary,
   Skills,
   Experience,
   Activities,
 } from '@/components/Organism/Intro'
+import { Divider } from '@/domain/global'
 
 export default function Intro() {
   return (
