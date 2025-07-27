@@ -3343,6 +3343,11 @@ optionator@^0.9.3:
     type-check "^0.4.0"
     word-wrap "^1.2.5"
 
+overlay-kit@^1.8.4:
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/overlay-kit/-/overlay-kit-1.8.4.tgz#6649336f1659942146dcfebc51aa9fab64476c1b"
+  integrity sha512-CqFrMWStiLDqW6jr8Zj9O/n8eSBAnrHe2w6M77cFiEn724xmigk56sPcYtQXCYDcbvwV47oJjoKQQvfutL5yFw==
+
 own-keys@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/own-keys/-/own-keys-1.0.1.tgz#e4006910a2bf913585289676eebd6f390cf51358"
