@@ -2,13 +2,12 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/navigation'
 import { useContext } from 'react'
 
-import { IconBack } from '../Icon'
-
-import { Icon } from './Icon'
-
 import ThemeContext from '@/context/themeContext'
 import { theme } from '@/styles/theme'
 
+import { IconBack } from '../Icon'
+
+import { Icon } from './Icon'
 
 const StyleBackButton = styled.div`
   cursor: pointer;

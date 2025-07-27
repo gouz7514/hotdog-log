@@ -6,7 +6,6 @@ import { OverlayProvider } from 'overlay-kit'
 import { useMemo } from 'react'
 import { RecoilEnv, RecoilRoot } from 'recoil'
 
-import type { AppProps } from 'next/app'
 
 import { AppLayout } from '@/components/Template'
 import ThemeContext from '@/context/themeContext'
@@ -14,6 +13,8 @@ import * as gtag from '@/lib/gtag'
 import GlobalStyle from '@/styles/GlobalStyle'
 import { MainTheme } from '@/styles/theme'
 import useDarkMode from '@/util/hooks/useDarkmode'
+
+import type { AppProps } from 'next/app'
 
 export interface ContextProps {
   colorTheme: MainTheme | null

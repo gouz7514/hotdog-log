@@ -1,8 +1,17 @@
-// @ts-check
+import path from 'path'
+import { fileURLToPath } from 'url'
 
+import { FlatCompat } from '@eslint/eslintrc'
 import eslint from '@eslint/js'
 import importPlugin from 'eslint-plugin-import'
 import tseslint from 'typescript-eslint'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+})
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -34,4 +43,7 @@ export default tseslint.config(
       ],
     },
   },
+  ...compat.config({
+    extends: ['next', 'next/core-web-vitals', 'plugin:@next/next/recommended'],
+  }),
 )
