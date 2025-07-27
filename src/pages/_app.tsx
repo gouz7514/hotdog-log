@@ -2,6 +2,7 @@ import { ThemeProvider } from '@emotion/react'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'
+import { OverlayProvider } from 'overlay-kit'
 import { useMemo } from 'react'
 import { RecoilEnv, RecoilRoot } from 'recoil'
 
@@ -13,7 +14,6 @@ import * as gtag from '@/lib/gtag'
 import GlobalStyle from '@/styles/GlobalStyle'
 import { MainTheme } from '@/styles/theme'
 import useDarkMode from '@/util/hooks/useDarkmode'
-
 
 export interface ContextProps {
   colorTheme: MainTheme | null
@@ -63,7 +63,9 @@ export default function App({ Component, pageProps }: AppProps) {
             <GoogleAnalytics gaId={gtag.GA_ID as string} />
             <GlobalStyle />
             <AnimatePresence initial={false}>
-              {getLayout(<Component {...pageProps} />)}
+              <OverlayProvider>
+                {getLayout(<Component {...pageProps} />)}
+              </OverlayProvider>
             </AnimatePresence>
           </ThemeProvider>
         </ThemeContext.Provider>
