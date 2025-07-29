@@ -1,8 +1,10 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { overlay } from 'overlay-kit'
 
 import { Button, Modal, ModalProps } from '@/domain/global'
+import { t } from '@/lib/translations'
 
 function ResumeDialog({ isOpen, onClose }: ModalProps) {
   const handleKoreanResume = () => {
@@ -31,6 +33,9 @@ function ResumeDialog({ isOpen, onClose }: ModalProps) {
 }
 
 export default function Home() {
+  const router = useRouter()
+  const locale = router.locale as 'ko' | 'en'
+
   const onClickResumeButton = () => {
     overlay.open(({ isOpen, close }) => (
       <ResumeDialog isOpen={isOpen} onClose={close} />
@@ -54,17 +59,15 @@ export default function Home() {
       <ProfileDescription>
         <div className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center" style={{ gap: '8px' }}>
-            <p className="text-bold">김학재</p>
-            <p>프론트엔드 개발자</p>
+            <p className="text-bold">{t(locale, 'home.title')}</p>
+            <p>{t(locale, 'home.subtitle')}</p>
           </div>
           <Button size="small" variant="primary" onClick={onClickResumeButton}>
-            <span>더 알아보기</span>
+            <span>{t(locale, 'home.learnMore')}</span>
           </Button>
         </div>
         <div className="big-paragraph mt-16">
-          최대한의 사용자에게 최고의 경험을 제공하는데 관심이 있습니다.
-          프로덕트의 A부터 Z까지 개발해본 경험이 있습니다. 누구나 일하고 싶은
-          팀을 만들어 나가는 것을 좋아합니다.
+          {t(locale, 'home.description')}
         </div>
       </ProfileDescription>
     </HomeStyle>

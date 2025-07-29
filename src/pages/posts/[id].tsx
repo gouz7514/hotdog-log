@@ -40,8 +40,13 @@ export default function Post({ post, id }: { post: PostProps; id: string }) {
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
+  const pathsWithLocale = paths.map(path => ({
+    ...path,
+    locale: 'en',
+  }))
+
   return {
-    paths,
+    paths: [...paths, ...pathsWithLocale],
     fallback: false,
   }
 }
