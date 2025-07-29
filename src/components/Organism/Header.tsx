@@ -1,6 +1,8 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
+import { LanguageToggler } from '@/domain/global/components'
+
 import { DarkMode } from '../Molecule'
 
 export function Header() {
@@ -10,6 +12,7 @@ export function Header() {
         <Logo className="icon-logo" />
       </Link>
       <div className="d-flex align-items-center" style={{ gap: '12px' }}>
+        <LanguageToggler />
         <Link href="/posts">
           <h5>TIL</h5>
         </Link>
