@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useContext, useState } from 'react'
 
-
 import { Icon } from '@/components/Atom'
 import { IconTags } from '@/components/Icon'
 import { Badge } from '@/components/Molecule'
@@ -15,6 +14,101 @@ import { theme } from '@/styles/theme'
 import { Post } from '@/types/types'
 
 import AnimationStudy from '../../../public/lottie/lottie-study.json'
+
+export default function Posts({
+  allPostsData,
+  allTags,
+}: {
+  allPostsData: Post[]
+  allTags: { [key: string]: number }
+}) {
+  const { colorTheme } = useContext(ThemeContext)
+  const isDark = colorTheme === theme.dark
+
+  const [selectedTag, setSelectedTag] = useState<string>('')
+
+  const onClickTag = (tag: string) => {
+    if (selectedTag === tag) return setSelectedTag('')
+    return setSelectedTag(tag)
+  }
+
+  const filteredPosts = allPostsData.filter((post: Post) => {
+    if (selectedTag === '') return allPostsData
+    return post.tags.includes(selectedTag)
+  })
+
+  return (
+    <>
+      <Head>
+        <title>핫재의 개발 블로그 | 기록</title>
+        <meta name="title" content="핫재의 개발 블로그 | 기록" />
+        <meta name="description" content="밀도를 갖춰가고 있습니다" />
+        <meta
+          property="og:title"
+          content="핫재의 개발 블로그 | 기록"
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          content="https://hotjae.com/posts"
+          key="og:url"
+        />
+        <meta
+          property="og:description"
+          content="밀도를 갖춰가고 있습니다"
+          key="og:description"
+        />
+      </Head>
+      <PostStyle className="container">
+        <div className="guide">
+          <LottieAnimation json={AnimationStudy} height={80} />
+        </div>
+        <div className="tags">
+          <Icon icon={<IconTags isDark={isDark} />} width={24} height={24} />
+          {Object.entries(allTags).map(([tag, count]) => (
+            <Badge
+              key={tag}
+              content={`${tag} (${count})`}
+              size="small"
+              onClick={() => onClickTag(tag)}
+              active={tag === selectedTag}
+            />
+          ))}
+        </div>
+        <ul>
+          {filteredPosts.map(({ id, title, summary, tags, date }) => (
+            <li key={id} className="post-item">
+              <Link href={`/posts/${id}`}>
+                <div className="post-date">{parseDate(date)}</div>
+                <div className="post-title">{title}</div>
+                <div className="post-summary">{summary}</div>
+                <div className="post-footer">
+                  <div className="post-tags">
+                    {tags.map((tag: string) => (
+                      <Badge key={tag} content={tag} size="small" />
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </PostStyle>
+    </>
+  )
+}
+
+export async function getStaticProps() {
+  const allPostsData = getAllPostData()
+  const allTags = getAllPostTags()
+
+  return {
+    props: {
+      allPostsData,
+      allTags,
+    },
+  }
+}
 
 const PostStyle = styled.div`
   margin-bottom: 40px;
@@ -114,98 +208,3 @@ const PostStyle = styled.div`
     }
   }
 `
-
-export default function Posts({
-  allPostsData,
-  allTags,
-}: {
-  allPostsData: Post[]
-  allTags: { [key: string]: number }
-}) {
-  const { colorTheme } = useContext(ThemeContext)
-  const isDark = colorTheme === theme.dark
-
-  const [selectedTag, setSelectedTag] = useState<string>('')
-
-  const onClickTag = (tag: string) => {
-    if (selectedTag === tag) return setSelectedTag('')
-    return setSelectedTag(tag)
-  }
-
-  const filteredPosts = allPostsData.filter((post: Post) => {
-    if (selectedTag === '') return allPostsData
-    return post.tags.includes(selectedTag)
-  })
-
-  return (
-    <>
-      <Head>
-        <title>핫재의 개발 블로그 | 기록</title>
-        <meta name="title" content="핫재의 개발 블로그 | 기록" />
-        <meta name="description" content="밀도를 갖춰가고 있습니다" />
-        <meta
-          property="og:title"
-          content="핫재의 개발 블로그 | 기록"
-          key="og:title"
-        />
-        <meta
-          property="og:url"
-          content="https://hotjae.com/posts"
-          key="og:url"
-        />
-        <meta
-          property="og:description"
-          content="밀도를 갖춰가고 있습니다"
-          key="og:description"
-        />
-      </Head>
-      <PostStyle className="container">
-        <div className="guide">
-          <LottieAnimation json={AnimationStudy} height={80} />
-        </div>
-        <div className="tags">
-          <Icon icon={<IconTags isDark={isDark} />} width={24} height={24} />
-          {Object.entries(allTags).map(([tag, count]) => (
-            <Badge
-              key={tag}
-              content={`${tag} (${count})`}
-              size="small"
-              onClick={() => onClickTag(tag)}
-              active={tag === selectedTag}
-            />
-          ))}
-        </div>
-        <ul>
-          {filteredPosts.map(({ id, title, summary, tags, date }) => (
-            <li key={id} className="post-item">
-              <Link href={`/posts/${id}`}>
-                <div className="post-date">{parseDate(date)}</div>
-                <div className="post-title">{title}</div>
-                <div className="post-summary">{summary}</div>
-                <div className="post-footer">
-                  <div className="post-tags">
-                    {tags.map((tag: string) => (
-                      <Badge key={tag} content={tag} size="small" />
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </PostStyle>
-    </>
-  )
-}
-
-export async function getStaticProps() {
-  const allPostsData = getAllPostData()
-  const allTags = getAllPostTags()
-
-  return {
-    props: {
-      allPostsData,
-      allTags,
-    },
-  }
-}
