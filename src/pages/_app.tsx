@@ -38,16 +38,16 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>핫재의 개발 블로그</title>
-        <meta name="title" content="핫재의 개발 블로그" />
-        <meta name="description" content="김학재의 개발 블로그입니다" />
+        <title>Hakjae Kim</title>
+        <meta name="title" content="Hakjae's Dev Blog" />
+        <meta name="description" content="Hakjae's Dev Blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="핫재의 개발 블로그" key="og:title" />
+        <meta property="og:title" content="Hakjae's Dev Blog" key="og:title" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hotjae.com" key="og:url" />
         <meta
           property="og:description"
-          content="김학재의 개발 블로그입니다"
+          content="Hakjae's Dev Blog"
           key="og:description"
         />
         <meta
