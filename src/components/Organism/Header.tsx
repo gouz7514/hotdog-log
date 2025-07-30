@@ -11,11 +11,11 @@ export function Header() {
       <Link href="/">
         <Logo className="icon-logo" />
       </Link>
-      <div className="d-flex align-items-center" style={{ gap: '12px' }}>
-        <LanguageToggler />
+      <div className="d-flex align-items-center" style={{ gap: '16px' }}>
         <Link href="/posts">
-          <h5>TIL</h5>
+          <h4>TIL</h4>
         </Link>
+        <LanguageToggler />
         <DarkMode />
       </div>
     </StickyHeader>
