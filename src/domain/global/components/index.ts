@@ -1,4 +1,5 @@
 export * from './Button'
 export * from './Divider'
+export * from './LanguageToggler'
 export * from './Modal'
 export * from './Portal'

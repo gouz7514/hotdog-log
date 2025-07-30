@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useContext, useState } from 'react'
-
 
 import { Icon } from '@/components/Atom'
 import { IconTags } from '@/components/Icon'
@@ -10,11 +10,97 @@ import { Badge } from '@/components/Molecule'
 import { LottieAnimation } from '@/components/Organism'
 import ThemeContext from '@/context/themeContext'
 import { getAllPostData, getAllPostTags } from '@/lib/posts'
+import { t } from '@/lib/translations'
 import parseDate from '@/lib/util/date'
 import { theme } from '@/styles/theme'
 import { Post } from '@/types/types'
 
 import AnimationStudy from '../../../public/lottie/lottie-study.json'
+
+export default function Posts({
+  allPostsData,
+  allTags,
+}: {
+  allPostsData: Post[]
+  allTags: { [key: string]: number }
+}) {
+  const router = useRouter()
+  const locale = router.locale as 'ko' | 'en'
+  const { colorTheme } = useContext(ThemeContext)
+  const isDark = colorTheme === theme.dark
+
+  const [selectedTag, setSelectedTag] = useState<string>('')
+
+  const onClickTag = (tag: string) => {
+    if (selectedTag === tag) return setSelectedTag('')
+    return setSelectedTag(tag)
+  }
+
+  const filteredPosts = allPostsData.filter((post: Post) => {
+    if (selectedTag === '') return allPostsData
+    return post.tags.includes(selectedTag)
+  })
+
+  return (
+    <>
+      <Head>
+        <title>{t(locale, 'posts.title')}</title>
+        <meta name="title" content={t(locale, 'posts.title')} />
+        <meta name="description" content={t(locale, 'posts.description')} />
+        <meta
+          property="og:title"
+          content={t(locale, 'posts.ogTitle')}
+          key="og:title"
+        />
+        <meta
+          property="og:url"
+          content={t(locale, 'posts.ogUrl')}
+          key="og:url"
+        />
+        <meta
+          property="og:description"
+          content={t(locale, 'posts.ogDescription')}
+          key="og:description"
+        />
+      </Head>
+      <PostStyle className="container">
+        <div className="guide">
+          <LottieAnimation json={AnimationStudy} height={80} />
+        </div>
+        <div className="tags">
+          <Icon icon={<IconTags isDark={isDark} />} width={24} height={24} />
+          {Object.entries(allTags).map(([tag, count]) => (
+            <Badge
+              key={tag}
+              content={`${tag} (${count})`}
+              size="small"
+              onClick={() => onClickTag(tag)}
+              active={tag === selectedTag}
+            />
+          ))}
+        </div>
+        <ul>
+          {filteredPosts.map(({ id, title, summary, tags, date }) => (
+            <li key={id} className="post-item">
+              <Link href={`/posts/${id}`}>
+                <div className="post-date">{parseDate(date)}</div>
+                <div className="post-title">{title}</div>
+                <div className="post-summary">{summary}</div>
+                <div className="post-footer">
+                  <div className="post-tags">
+                    {tags.map((tag: string) => (
+                      <Badge key={tag} content={tag} size="small" />
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </PostStyle>
+    </>
+  )
+}
 
 const PostStyle = styled.div`
   margin-bottom: 40px;
@@ -115,92 +201,9 @@ const PostStyle = styled.div`
   }
 `
 
-export default function Posts({
-  allPostsData,
-  allTags,
-}: {
-  allPostsData: Post[]
-  allTags: { [key: string]: number }
-}) {
-  const { colorTheme } = useContext(ThemeContext)
-  const isDark = colorTheme === theme.dark
-
-  const [selectedTag, setSelectedTag] = useState<string>('')
-
-  const onClickTag = (tag: string) => {
-    if (selectedTag === tag) return setSelectedTag('')
-    return setSelectedTag(tag)
-  }
-
-  const filteredPosts = allPostsData.filter((post: Post) => {
-    if (selectedTag === '') return allPostsData
-    return post.tags.includes(selectedTag)
-  })
-
-  return (
-    <>
-      <Head>
-        <title>핫재의 개발 블로그 | 기록</title>
-        <meta name="title" content="핫재의 개발 블로그 | 기록" />
-        <meta name="description" content="밀도를 갖춰가고 있습니다" />
-        <meta
-          property="og:title"
-          content="핫재의 개발 블로그 | 기록"
-          key="og:title"
-        />
-        <meta
-          property="og:url"
-          content="https://hotjae.com/posts"
-          key="og:url"
-        />
-        <meta
-          property="og:description"
-          content="밀도를 갖춰가고 있습니다"
-          key="og:description"
-        />
-      </Head>
-      <PostStyle className="container">
-        <div className="guide">
-          <LottieAnimation json={AnimationStudy} height={80} />
-        </div>
-        <div className="tags">
-          <Icon icon={<IconTags isDark={isDark} />} width={24} height={24} />
-          {Object.entries(allTags).map(([tag, count]) => (
-            <Badge
-              key={tag}
-              content={`${tag} (${count})`}
-              size="small"
-              onClick={() => onClickTag(tag)}
-              active={tag === selectedTag}
-            />
-          ))}
-        </div>
-        <ul>
-          {filteredPosts.map(({ id, title, summary, tags, date }) => (
-            <li key={id} className="post-item">
-              <Link href={`/posts/${id}`}>
-                <div className="post-date">{parseDate(date)}</div>
-                <div className="post-title">{title}</div>
-                <div className="post-summary">{summary}</div>
-                <div className="post-footer">
-                  <div className="post-tags">
-                    {tags.map((tag: string) => (
-                      <Badge key={tag} content={tag} size="small" />
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </PostStyle>
-    </>
-  )
-}
-
-export async function getStaticProps() {
-  const allPostsData = getAllPostData()
-  const allTags = getAllPostTags()
+export async function getStaticProps({ locale }: { locale: string }) {
+  const allPostsData = getAllPostData(locale as 'ko' | 'en')
+  const allTags = getAllPostTags(locale as 'ko' | 'en')
 
   return {
     props: {

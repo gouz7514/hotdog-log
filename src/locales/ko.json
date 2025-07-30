@@ -1,0 +1,19 @@
+{
+  "home": {
+    "title": "김학재",
+    "subtitle": "프론트엔드 개발자",
+    "learnMore": "더 알아보기",
+    "description": "최대한의 사용자에게 최고의 경험을 제공하는데 관심이 있습니다.\n 프로덕트의 A부터 Z까지 개발해본 경험이 있습니다.\n 누구나 일하고 싶은 팀을 만들어 나가는 것을 좋아합니다.",
+    "resume": {
+      "korean": "한국어 📄",
+      "english": "English 📄"
+    }
+  },
+  "posts": {
+    "title": "핫재의 개발 블로그 | 기록",
+    "description": "밀도를 갖춰가고 있습니다",
+    "ogTitle": "핫재의 개발 블로그 | 기록",
+    "ogUrl": "https://hotjae.com/posts",
+    "ogDescription": "밀도를 갖춰가고 있습니다"
+  }
+}

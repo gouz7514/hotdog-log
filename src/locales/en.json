@@ -1,0 +1,19 @@
+{
+  "home": {
+    "title": "Hakjae Kim",
+    "subtitle": "Frontend Developer",
+    "learnMore": "More about me",
+    "description": "I'm driven to deliver the best products to as many users as possible.\n I have experience developing products from A to Z.\n I enjoy building teams that everyone wants to work with.",
+    "resume": {
+      "korean": "Korean 📄",
+      "english": "English 📄"
+    }
+  },
+  "posts": {
+    "title": "Hakjae's Dev Blog | Posts",
+    "description": "Building density",
+    "ogTitle": "Hakjae's Dev Blog | Posts",
+    "ogUrl": "https://hotjae.com/posts",
+    "ogDescription": "Building density"
+  }
+}
