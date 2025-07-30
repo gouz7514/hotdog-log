@@ -3,6 +3,17 @@
     "title": "Hakjae Kim",
     "subtitle": "Frontend Developer",
     "learnMore": "Learn More",
-    "description": "I'm interested in providing the best experience to as many users as possible. I have experience developing products from A to Z. I enjoy building teams that everyone wants to work with."
+    "description": "I'm interested in providing the best experience to as many users as possible. I have experience developing products from A to Z. I enjoy building teams that everyone wants to work with.",
+    "resume": {
+      "korean": "Korean 📄",
+      "english": "English 📄"
+    }
+  },
+  "posts": {
+    "title": "Hakjae's Dev Blog | Posts",
+    "description": "Building density",
+    "ogTitle": "Hakjae's Dev Blog | Posts",
+    "ogUrl": "https://hotjae.com/posts",
+    "ogDescription": "Building density"
   }
 }

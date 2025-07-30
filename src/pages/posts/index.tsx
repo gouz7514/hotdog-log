@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useContext, useState } from 'react'
 
 import { Icon } from '@/components/Atom'
@@ -9,6 +10,7 @@ import { Badge } from '@/components/Molecule'
 import { LottieAnimation } from '@/components/Organism'
 import ThemeContext from '@/context/themeContext'
 import { getAllPostData, getAllPostTags } from '@/lib/posts'
+import { t } from '@/lib/translations'
 import parseDate from '@/lib/util/date'
 import { theme } from '@/styles/theme'
 import { Post } from '@/types/types'
@@ -22,6 +24,8 @@ export default function Posts({
   allPostsData: Post[]
   allTags: { [key: string]: number }
 }) {
+  const router = useRouter()
+  const locale = router.locale as 'ko' | 'en'
   const { colorTheme } = useContext(ThemeContext)
   const isDark = colorTheme === theme.dark
 
@@ -40,22 +44,22 @@ export default function Posts({
   return (
     <>
       <Head>
-        <title>핫재의 개발 블로그 | 기록</title>
-        <meta name="title" content="핫재의 개발 블로그 | 기록" />
-        <meta name="description" content="밀도를 갖춰가고 있습니다" />
+        <title>{t(locale, 'posts.title')}</title>
+        <meta name="title" content={t(locale, 'posts.title')} />
+        <meta name="description" content={t(locale, 'posts.description')} />
         <meta
           property="og:title"
-          content="핫재의 개발 블로그 | 기록"
+          content={t(locale, 'posts.ogTitle')}
           key="og:title"
         />
         <meta
           property="og:url"
-          content="https://hotjae.com/posts"
+          content={t(locale, 'posts.ogUrl')}
           key="og:url"
         />
         <meta
           property="og:description"
-          content="밀도를 갖춰가고 있습니다"
+          content={t(locale, 'posts.ogDescription')}
           key="og:description"
         />
       </Head>
@@ -96,18 +100,6 @@ export default function Posts({
       </PostStyle>
     </>
   )
-}
-
-export async function getStaticProps() {
-  const allPostsData = getAllPostData()
-  const allTags = getAllPostTags()
-
-  return {
-    props: {
-      allPostsData,
-      allTags,
-    },
-  }
 }
 
 const PostStyle = styled.div`
@@ -208,3 +200,15 @@ const PostStyle = styled.div`
     }
   }
 `
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  const allPostsData = getAllPostData(locale as 'ko' | 'en')
+  const allTags = getAllPostTags(locale as 'ko' | 'en')
+
+  return {
+    props: {
+      allPostsData,
+      allTags,
+    },
+  }
+}

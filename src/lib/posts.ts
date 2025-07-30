@@ -6,28 +6,38 @@ import matter from 'gray-matter'
 import { Post } from '../types/types'
 
 import directoryToHtml from './directoryToHtml'
+import { Locale } from './translations'
 
 const postsDirectory = path.join(process.cwd(), 'src/content/posts')
 
-export function getAllPostData() {
-  const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = fileNames.map(fileName => {
-    // Remove ".md" from file name to get id
+export function getAllPostData(locale: Locale = 'ko') {
+  const koDirectory = path.join(postsDirectory, 'ko')
+  const enDirectory = path.join(postsDirectory, 'en')
+
+  // 한국어 디렉토리의 모든 마크다운 파일을 가져옴
+  const koFileNames = fs.existsSync(koDirectory)
+    ? fs.readdirSync(koDirectory).filter(fileName => fileName.endsWith('.md'))
+    : []
+
+  const allPostsData: Post[] = []
+
+  koFileNames.forEach(fileName => {
     const id = fileName.replace(/\.md$/, '')
+    const koFilePath = path.join(koDirectory, fileName)
+    const enFilePath = path.join(enDirectory, fileName)
 
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
+    // 영어 버전이 있으면 영어 버전을, 없으면 한국어 버전을 사용
+    const targetFilePath =
+      locale === 'en' && fs.existsSync(enFilePath) ? enFilePath : koFilePath
 
-    // Use gray-matter to parse the post metadata section
+    const fileContents = fs.readFileSync(targetFilePath, 'utf8')
     const matterResult = matter(fileContents)
 
-    // Combine the data with the id
-    return {
+    allPostsData.push({
       id,
       ...matterResult.data,
-    }
-  }) as Post[]
+    } as Post)
+  })
 
   return allPostsData.sort((a, b) => {
     if (a.date! < b.date!) {
@@ -37,24 +47,21 @@ export function getAllPostData() {
   })
 }
 
-export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory)
+export async function getPostData(id: string, locale: Locale = 'ko') {
+  const koDirectory = path.join(postsDirectory, 'ko')
+  const enDirectory = path.join(postsDirectory, 'en')
 
-  return fileNames.map((fileName: string) => {
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, ''),
-      },
-    }
-  })
+  const enFilePath = path.join(enDirectory, `${id}.md`)
+
+  // 영어 버전이 있으면 영어 버전을, 없으면 한국어 버전을 사용
+  const targetDirectory =
+    locale === 'en' && fs.existsSync(enFilePath) ? enDirectory : koDirectory
+
+  return directoryToHtml(targetDirectory, id)
 }
 
-export async function getPostData(id: string) {
-  return directoryToHtml(postsDirectory, id)
-}
-
-export function getAllPostTags() {
-  const posts = getAllPostData()
+export function getAllPostTags(locale: Locale = 'ko') {
+  const posts = getAllPostData(locale)
   const tags: { [key: string]: number } = {}
   posts.forEach(post => {
     post.tags.forEach(tag => {
