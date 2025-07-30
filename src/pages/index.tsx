@@ -59,14 +59,14 @@ export default function Home() {
       <ProfileDescription>
         <div className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center" style={{ gap: '8px' }}>
-            <p className="text-bold">{t(locale, 'home.title')}</p>
+            <h4 className="text-bold">{t(locale, 'home.title')}</h4>
             <p>{t(locale, 'home.subtitle')}</p>
           </div>
           <Button size="small" variant="primary" onClick={onClickResumeButton}>
             <span>{t(locale, 'home.learnMore')}</span>
           </Button>
         </div>
-        <div className="big-paragraph mt-16">
+        <div className="big-paragraph mt-16" style={{ whiteSpace: 'pre-line' }}>
           {t(locale, 'home.description')}
         </div>
       </ProfileDescription>
