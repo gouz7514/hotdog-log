@@ -1,9 +1,11 @@
+# !!DEPRECATED!!
+# This workflow was used to update the README.md file with the latest posts.
 name: Update README (Posts)
 
 on:
   push:
     branches:
-      - posts
+      - deprecated
 
 jobs:
   update-readme:
