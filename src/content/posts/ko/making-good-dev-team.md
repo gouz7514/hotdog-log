@@ -164,4 +164,4 @@ date: '2024-04-12 01:00:00'
 - #3 [ABZ Team Blog](https://medium.com/ab-z)
 - #4 [오늘의 집 - Engineering팀 문화](https://bucketplace-eng.oopy.io/culture)
 - #5 [토스 프론트엔드 챕터의 모든 것](https://tosspublic.notion.site/cc9367e44ff6424181899f3cf250f5d2#e6b1d26a88934da998176789ad030787)
-- #6 [Ping Request를 사용해 더 빠른 데이터 전송을 경험해보자](https://hotjae.com/posts/what-is-ping-request)
+- #6 [Ping Request를 사용해 더 빠른 데이터 전송을 경험해보자](https://hakjae.dev/posts/what-is-ping-request)

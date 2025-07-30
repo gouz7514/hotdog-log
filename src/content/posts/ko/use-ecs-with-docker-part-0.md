@@ -27,6 +27,6 @@ AWS의 다양한 스택 사용을 염두에 두고 계시거나, 더 나은 서�
 기존에 사용하던 **외부 API의 사용에도 문제가 없어야** 합니다.
 
 프로젝트는 약 4주동안 진행됐으며 주요 과정은 크게 다음과 같이 나뉩니다.
-**[1부](https://hotjae.com/posts/use-ecs-with-docker-part-1),** Docker를 활용해 장고 서버 및 nginx의 이미지를 생성하고 ECR에 push합니다.
-**[2부](https://hotjae.com/posts/use-ecs-with-docker-part-2),** 태스크, 클러스터, 서브넷, Route 53 등 빌드된 이미지를 통해 배포 과정을 거칩니다.
-**[3부](https://hotjae.com/posts/use-ecs-with-docker-part-3),** github action을 활용한 CI/CD, CDK를 통한 stack deploy 를 통해 AWS console을 통하지 않고 배포 및 수정을 가능하도록 합니다.
+**[1부](https://hakjae.dev/posts/use-ecs-with-docker-part-1),** Docker를 활용해 장고 서버 및 nginx의 이미지를 생성하고 ECR에 push합니다.
+**[2부](https://hakjae.dev/posts/use-ecs-with-docker-part-2),** 태스크, 클러스터, 서브넷, Route 53 등 빌드된 이미지를 통해 배포 과정을 거칩니다.
+**[3부](https://hakjae.dev/posts/use-ecs-with-docker-part-3),** github action을 활용한 CI/CD, CDK를 통한 stack deploy 를 통해 AWS console을 통하지 않고 배포 및 수정을 가능하도록 합니다.

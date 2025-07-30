@@ -5,7 +5,7 @@ tags: ['AWS', 'Docker', 'ABZ Inc.']
 date: '2022-01-26 00:00:02'
 ---
 
-[1부](https://hotjae.com/posts/use-ecs-with-docker-part-1)에서 설명했듯 저희는 AWS의 fargate를 ECS와 연동해 사용하기로 결정했습니다.
+[1부](https://hakjae.dev/posts/use-ecs-with-docker-part-1)에서 설명했듯 저희는 AWS의 fargate를 ECS와 연동해 사용하기로 결정했습니다.
 
 2부에서는 클러스터, 태스크를 만들고 나아가 Security Group, Subnet 등의 설정까지 마치도록 하겠습니다. 
 ***

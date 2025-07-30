@@ -153,6 +153,6 @@ docker buildx build --platform linux/amd64 (-t 태그) . (--no-cache) (-f Docker
 ***
 이 과정들을 통해 서버 이미지와 nginx 이미지를 빌드하고 ECR에 성공적으로 푸쉬할 수 있었습니다.
 
-[2부](https://hotjae.com/posts/use-ecs-with-docker-part-2)에서는 생성된 이미지를 통해 태스크 및 서비스를 생성하고 최종적으로 Codedeploy까지 진행해보도록 하겠습니다!
+[2부](https://hakjae.dev/posts/use-ecs-with-docker-part-2)에서는 생성된 이미지를 통해 태스크 및 서비스를 생성하고 최종적으로 Codedeploy까지 진행해보도록 하겠습니다!
 ***
 보다 상세한 내용 및 시행착오에 대해서는 [여기](https://medium.com/ab-z/%EA%B8%89%EA%B2%A9%ED%95%98%EA%B2%8C-%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94-%ED%8A%B8%EB%9E%98%ED%94%BD-%EC%96%B4%EB%96%BB%EA%B2%8C-%EB%8C%80%EB%B9%84%ED%95%A0%EA%B9%8C-d92f2fbf2130)서도 확인할 수 있습니다!

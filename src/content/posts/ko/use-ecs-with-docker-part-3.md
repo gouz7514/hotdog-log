@@ -5,7 +5,7 @@ tags: ['AWS', 'Docker', 'ABZ Inc.']
 date: '2022-01-26 00:00:03'
 ---
 본 글에서는 배포된 서버 환경에서의 테스트 그리고 CDK를 통한 서버 관리에 대해서 다룹니다.
-앞선 내용이 궁금하시다면 [1부](https://hotjae.com/posts/use-ecs-with-docker-part-1), [2부](https://hotjae.com/posts/use-ecs-with-docker-part-2)를 참고하세요!
+앞선 내용이 궁금하시다면 [1부](https://hakjae.dev/posts/use-ecs-with-docker-part-1), [2부](https://hakjae.dev/posts/use-ecs-with-docker-part-2)를 참고하세요!
 ***
 ### Stress test
 실제 request 수와 비슷하게 재현한 로컬 환경에서의 스트레스 테스트도 문제 없이 진행되는 것을 확인할 수 있었습니다.

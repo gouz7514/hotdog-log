@@ -1,7 +1,7 @@
 import { getAllPostData } from '@/lib/posts'
 import { Post } from '@/types/types'
 
-const BASE_URL = 'https://hotjae.com'
+const BASE_URL = 'https://hakjae.dev'
 
 const generateSitemap = (posts: Post[]) => {
   return `<?xml version="1.0" encoding="UTF-8"?>

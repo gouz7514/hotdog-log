@@ -6,7 +6,6 @@ import { OverlayProvider } from 'overlay-kit'
 import { useMemo } from 'react'
 import { RecoilEnv, RecoilRoot } from 'recoil'
 
-
 import { AppLayout } from '@/components/Template'
 import ThemeContext from '@/context/themeContext'
 import * as gtag from '@/lib/gtag'
@@ -44,7 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Hakjae's Dev Blog" key="og:title" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hotjae.com" key="og:url" />
+        <meta property="og:url" content="https://hakjae.dev" key="og:url" />
         <meta
           property="og:description"
           content="Hakjae's Dev Blog"
@@ -52,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           property="og:image"
-          content="https://hotjae.com/images/og_image.webp"
+          content="https://hakjae.dev/images/og_image.webp"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />

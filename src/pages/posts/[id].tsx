@@ -23,7 +23,7 @@ export default function Post({ post, id }: { post: PostProps; id: string }) {
         <meta name="og:title" content={post.title} key="og:title" />
         <meta
           name="og:url"
-          content={`https://hotjae.com/posts/${id}`}
+          content={`https://hakjae.dev/posts/${id}`}
           key="og:url"
         />
         <meta
