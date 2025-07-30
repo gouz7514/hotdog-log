@@ -1,7 +1,5 @@
 import styled from '@emotion/styled'
-import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { useContext, useState } from 'react'
 
 import { Icon } from '@/components/Atom'
@@ -10,7 +8,6 @@ import { Badge } from '@/components/Molecule'
 import { LottieAnimation } from '@/components/Organism'
 import ThemeContext from '@/context/themeContext'
 import { getAllPostData, getAllPostTags } from '@/lib/posts'
-import { t } from '@/lib/translations'
 import parseDate from '@/lib/util/date'
 import { theme } from '@/styles/theme'
 import { Post } from '@/types/types'
@@ -24,8 +21,6 @@ export default function Posts({
   allPostsData: Post[]
   allTags: { [key: string]: number }
 }) {
-  const router = useRouter()
-  const locale = router.locale as 'ko' | 'en'
   const { colorTheme } = useContext(ThemeContext)
   const isDark = colorTheme === theme.dark
 
@@ -43,26 +38,6 @@ export default function Posts({
 
   return (
     <>
-      <Head>
-        <title>{t(locale, 'posts.title')}</title>
-        <meta name="title" content={t(locale, 'posts.title')} />
-        <meta name="description" content={t(locale, 'posts.description')} />
-        <meta
-          property="og:title"
-          content={t(locale, 'posts.ogTitle')}
-          key="og:title"
-        />
-        <meta
-          property="og:url"
-          content={t(locale, 'posts.ogUrl')}
-          key="og:url"
-        />
-        <meta
-          property="og:description"
-          content={t(locale, 'posts.ogDescription')}
-          key="og:description"
-        />
-      </Head>
       <PostStyle className="container">
         <div className="guide">
           <LottieAnimation json={AnimationStudy} height={80} />
