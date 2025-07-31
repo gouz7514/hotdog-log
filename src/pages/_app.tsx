@@ -39,14 +39,14 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Hakjae Kim</title>
         <meta name="title" content="Hakjae's Dev Blog" />
-        <meta name="description" content="Hakjae's Dev Blog" />
+        <meta name="description" content="Inspire, Record, Code" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Hakjae's Dev Blog" key="og:title" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hakjae.dev" key="og:url" />
         <meta
           property="og:description"
-          content="Hakjae's Dev Blog"
+          content="Inspire, Record, Code"
           key="og:description"
         />
         <meta
