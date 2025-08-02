@@ -1,6 +1,6 @@
 ---
-title: 'ECS와 Docker 사용기 - 1부 : ECS & Docker 박치기'
-summary: 'ECS와 Docker 사용기 - 1부 : ECS & Docker 박치기'
+title: 'ECS와 Docker 사용기 - 1부'
+summary: 'ECS & Docker 박치기'
 tags: ['AWS', 'Docker', 'ABZ Inc.']
 date: '2022-01-26 00:00:01'
 ---
@@ -146,10 +146,10 @@ docker buildx build --platform linux/amd64 (-t 태그) . (--no-cache) (-f Docker
 ```
 
 참고 링크 (수많은 고수분들 너무 감사합니다ㅠㅠ)
-[stackoverflow - standard_init_linux.go:178: exec user process caused "exec format error"](https://stackoverflow.com/questions/42494853/standard-init-linux-go178-exec-user-process-caused-exec-format-error)
-[Docker Buildx로 Multi-Archtecture Image 빌드하기](https://meetup.toast.com/posts/255)
-[M1 맥북 사용자의 EKS 배포 오류에 대하여](https://appleg1226.tistory.com/35)
-[[Devops] Docker buildx build(at M1 Macbook)](https://velog.io/@inyong_pang/Devops-Docker-buildx-at-M1-Macbook)
+- [stackoverflow - standard_init_linux.go:178: exec user process caused "exec format error"](https://stackoverflow.com/questions/42494853/standard-init-linux-go178-exec-user-process-caused-exec-format-error)
+- [Docker Buildx로 Multi-Archtecture Image 빌드하기](https://meetup.toast.com/posts/255)
+- [M1 맥북 사용자의 EKS 배포 오류에 대하여](https://appleg1226.tistory.com/35)
+- [[Devops] Docker buildx build(at M1 Macbook)](https://velog.io/@inyong_pang/Devops-Docker-buildx-at-M1-Macbook)
 ***
 이 과정들을 통해 서버 이미지와 nginx 이미지를 빌드하고 ECR에 성공적으로 푸쉬할 수 있었습니다.
 

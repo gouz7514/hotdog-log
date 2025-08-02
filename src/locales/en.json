@@ -8,12 +8,5 @@
       "korean": "Korean 📄",
       "english": "English 📄"
     }
-  },
-  "posts": {
-    "title": "Hakjae's Dev Blog | Posts",
-    "description": "Building density",
-    "ogTitle": "Hakjae's Dev Blog | Posts",
-    "ogUrl": "https://hakjae.dev/posts",
-    "ogDescription": "Building density"
   }
 }

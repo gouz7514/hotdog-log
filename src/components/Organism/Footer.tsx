@@ -26,10 +26,10 @@ export function Footer() {
         >
           <Icon icon={<IconLinkedIn isDark={isDark} />} />
         </a>
-        <a href="mailto:gouz7514@gmail.com" target="blank">
+        <a href="mailto:hakjae.dev@gmail.com" target="blank">
           <Icon icon={<IconGmail isDark={isDark} />} />
         </a>
-        <a href="https://x.com/gouz7514" target="blank">
+        <a href="https://x.com/helloHakjae" target="blank">
           <Icon width={24} height={24} icon={<IconX isDark={isDark} />} />
         </a>
       </ProfileLogo>

@@ -1,6 +1,6 @@
 ---
 title: '우당탕탕 vue-query 적용기'
-summary: 'vue-query 적용을 통한 서비스의 성능 개선! (feat. react-query)'
+summary: 'vue-query를 활용한 서비스의 성능 개선!'
 tags: ['Vue', 'Vue-Query', 'ABZ Inc.']
 date: '2023-01-04 00:00:00'
 ---
@@ -64,7 +64,7 @@ vue2에서는 `asyncData`, `mounted` 와 같은 생명주기에서 데이터를 
 **AS_IS**
 ```javascript
 export default {
-  ...
+  // ...
   async asyncData(context) {
     const { $axios } = context // nuxt의 context에서 axios를 호출
 
@@ -77,7 +77,7 @@ export default {
         result: aData.results
       }
     }
-  ...
+  // ...
 }
 ```
 
