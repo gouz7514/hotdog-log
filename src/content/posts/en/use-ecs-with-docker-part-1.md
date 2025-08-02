@@ -1,6 +1,6 @@
 ---
-title: 'ECS and Docker Experience - Part 1: ECS & Docker Head-Butting'
-summary: 'ECS and Docker Experience - Part 1: ECS & Docker Head-Butting'
+title: 'ECS and Docker Experience - Part 1'
+summary: 'Getting Hands-on with ECS & Docker'
 tags: ['AWS', 'Docker', 'ABZ Inc.']
 date: '2022-01-26 00:00:01'
 ---
@@ -160,11 +160,11 @@ You can specify the desired architecture using the `--platform` option.
 docker buildx build --platform linux/amd64 (-t tag) . (--no-cache) (-f Dockerfile name)
 ```
 
-Reference links (Thank you so much to all the experts! ㅠㅠ)
-[stackoverflow - standard_init_linux.go:178: exec user process caused "exec format error"](https://stackoverflow.com/questions/42494853/standard-init-linux-go178-exec-user-process-caused-exec-format-error)
-[Building Multi-Architecture Images with Docker Buildx](https://meetup.toast.com/posts/255)
-[About EKS Deployment Errors for M1 MacBook Users](https://appleg1226.tistory.com/35)
-[[Devops] Docker buildx build(at M1 Macbook)](https://velog.io/@inyong_pang/Devops-Docker-buildx-at-M1-Macbook)
+Reference links (Thank you so much to all the experts!)
+- [stackoverflow - standard_init_linux.go:178: exec user process caused "exec format error"](https://stackoverflow.com/questions/42494853/standard-init-linux-go178-exec-user-process-caused-exec-format-error)
+- [Building Multi-Architecture Images with Docker Buildx](https://meetup.toast.com/posts/255)
+- [About EKS Deployment Errors for M1 MacBook Users](https://appleg1226.tistory.com/35)
+- [[Devops] Docker buildx build(at M1 Macbook)](https://velog.io/@inyong_pang/Devops-Docker-buildx-at-M1-Macbook)
 
 ***
 

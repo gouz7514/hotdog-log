@@ -5,7 +5,7 @@ tags: ['AI']
 date: '2025-05-18 19:00:00'
 ---
 
-### We are goint to be AI first
+### We are going to be AI first
 
 평소 가장 즐겨 사용하는 앱 중 하나인 듀오링고의 CEO가 전사 이메일을 통해 밝힌 내용이다. ([링크](https://www.linkedin.com/posts/duolingo_below-is-an-all-hands-email-from-our-activity-7322560534824865792-l9vh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKLTvsB-PmtVOClCaU8HcMHmXT-4d8leSw))
 회사는 “AI-first” 조직으로 전환될 것이며, AI 활용이 채용과 평가 기준에 포함될 예정이라는 것.

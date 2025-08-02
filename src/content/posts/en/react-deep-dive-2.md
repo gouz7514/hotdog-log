@@ -1,6 +1,6 @@
 ---
 title: '[React] Deep Dive into React (2)'
-summary: ' State in React'
+summary: 'State in React'
 tags: ['React']
 date: '2023-12-12 16:00:00'
 ---

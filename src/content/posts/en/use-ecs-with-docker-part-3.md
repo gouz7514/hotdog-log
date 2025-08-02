@@ -1,6 +1,6 @@
 ---
-title: 'ECS and Docker Experience - Part 3: Server Management through CDK'
-summary: 'ECS and Docker Experience - Part 3: Server Management through CDK'
+title: 'ECS and Docker Experience - Part 3'
+summary: 'Server Management through CDK'
 tags: ['AWS', 'Docker', 'ABZ Inc.']
 date: '2022-01-26 00:00:03'
 ---

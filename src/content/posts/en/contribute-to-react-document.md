@@ -1,6 +1,6 @@
 ---
-title: '[React] Growth Through Contributing to React Official Documentation'
-summary: 'A post summarizing what I learned while contributing to React official documentation.'
+title: '[React] Contributing to React Official Documentation'
+summary: 'What I learned while contributing to React official documentation.'
 tags: ['React', 'Open Source']
 date: '2023-11-27 23:00:01'
 ---

@@ -1,6 +1,6 @@
 ---
 title: 'Using Modals Declaratively (feat. useOverlay)'
-summary: 'Recording how I improved modal components through declarative code writing and what I learned'
+summary: 'Improving components with declarative code'
 tags: ['React', 'FE']
 date: '2025-03-24 01:00:00'
 ---

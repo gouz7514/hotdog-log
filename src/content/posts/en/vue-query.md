@@ -1,6 +1,6 @@
 ---
-title: 'A Chaotic vue-query Implementation Story'
-summary: 'Service performance improvement through vue-query implementation! (feat. react-query)'
+title: 'A Vue-Query implementation story'
+summary: 'Service performance improvement with vue-query!'
 tags: ['Vue', 'Vue-Query', 'ABZ Inc.']
 date: '2023-01-04 00:00:00'
 ---
@@ -64,7 +64,7 @@ While in Vue 2 we fetched data in lifecycles like `asyncData` and `mounted`, in 
 **AS_IS**
 ```javascript
 export default {
-  ...
+  // ...
   async asyncData(context) {
     const { $axios } = context // Call axios from nuxt's context
 

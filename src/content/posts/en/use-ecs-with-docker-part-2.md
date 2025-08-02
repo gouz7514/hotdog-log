@@ -1,6 +1,6 @@
 ---
-title: 'ECS and Docker Experience - Part 2: From Task to Deploy...'
-summary: 'ECS and Docker Experience - Part 2: From Task to Deploy...'
+title: 'ECS and Docker Experience - Part 2'
+summary: 'From Task definition to Deploy'
 tags: ['AWS', 'Docker', 'ABZ Inc.']
 date: '2022-01-26 00:00:02'
 ---

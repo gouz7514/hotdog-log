@@ -7,13 +7,9 @@ date: '2025-05-18 19:00:00'
 
 ### We are going to be AI first
 
-This was revealed by the CEO of Duolingo, one of my most frequently used apps, through a company-wide email. ([Link](https://www.linkedin.com/posts/duolingo_below-is-an-all-hands-email-from-our-activity-7322560534824865792-l9vh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKLTvsB-PmtVOClCaU8HcMHmXT-4d8leSw))
-The company will transition to an "AI-first" organization, and AI utilization will be included in hiring and evaluation criteria.
+This was revealed by the CEO of Duolingo, one of my most frequently used apps, through a company-wide email. ([Link](https://www.linkedin.com/posts/duolingo_below-is-an-all-hands-email-from-our-activity-7322560534824865792-l9vh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEKLTvsB-PmtVOClCaU8HcMHmXT-4d8leSw)) The company will transition to an "AI-first" organization, and AI utilization will be included in hiring and evaluation criteria.
 
-When I first used AI tools that help me as a developer (github copilot, cursor, etc.), my feeling was literally "this can help me."
-
-However, in just a few years, these tools have given me the feeling of "this can do work instead of me."
-And for good reason - I just throw some context and a few lines of code, go to the bathroom, and come back to find it has implemented everything on its own..
+When I first used AI tools that help me as a developer (github copilot, cursor, etc.), my feeling was literally "this can help me." However, in just a few years, these tools have given me the feeling of "this can do work instead of me." And for good reason - I just throw some context and a few lines of code, go to the bathroom, and come back to find it has implemented everything on its own..
 
 While I'm not without fear that AI might replace me, more than that, **I want to become a better developer who is needed by my team by utilizing AI better**, so I plan to research with more interest than I currently do.
 

@@ -1,6 +1,6 @@
 ---
-title: 'ECS와 Docker 사용기 - 3부 : CDK를 통한 서버 관리'
-summary: 'ECS와 Docker 사용기 - 3부 : CDK를 통한 서버 관리'
+title: 'ECS와 Docker 사용기 - 3부'
+summary: 'CDK를 통한 서버 관리'
 tags: ['AWS', 'Docker', 'ABZ Inc.']
 date: '2022-01-26 00:00:03'
 ---

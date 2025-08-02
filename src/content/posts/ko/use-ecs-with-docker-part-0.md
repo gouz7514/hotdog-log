@@ -1,6 +1,6 @@
 ---
-title: 'ECS와 Docker 사용기 - 0부 : 서론'
-summary: 'ECS와 Docker 사용기 - 0부 : 서론'
+title: 'ECS와 Docker 사용기 - 0부'
+summary: '서론'
 tags: ['AWS', 'Docker', 'ABZ Inc.']
 date: '2022-01-26 00:00:00'
 ---
