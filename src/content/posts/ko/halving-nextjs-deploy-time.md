@@ -85,11 +85,11 @@ yarn set version berry
 이후 해당 프로젝트에서 PnP 사용을 위해 [`.yarnrc.yml` 설정](https://yarnpkg.com/configuration/yarnrc)을 진행합니다.
 
 ```yaml
-nodeLinker: pnp # node package가 어떤 방식으로 설치될지 결정
-pnpEnableEsmLoader: true # Node.js ESM loader를 생성할지 말지
-enableGlobalCache: false # 로컬 프로젝트 간에 캐시를 공유할지. true로 설정되면 캐시가 cacheFolder가 아닌 globalFolder에 생성됨. false로 해놓아야 .yarn/cache 생성
-checksumBehavior: update # 캐시된 파일의 무결성을 확인할 때, 파일 내용이 원래와 다르면 어떻게 해결할지
-enableStrictSsl: true # SSL 인증서 검증을 엄격하게 할지 말지 (프라이빗 레포 접근 시 보다 유연한 옵션 제공)
+nodeLinker: pnp
+pnpEnableEsmLoader: true
+enableGlobalCache: false
+checksumBehavior: update
+enableStrictSsl: true
 yarnPath: .yarn/releases/yarn-4.9.2.cjs
 ```
 
@@ -181,8 +181,8 @@ standalone 옵션은 이름 그대로 (독립적, 독립형) 추가적인 종속
 
 **Next.js의 standalone + PnP** 라는 조합을 완성하고 싶었지만 Docker 환경에서는 결국 `node_modules`를 채택하게 되었습니다.
 
+`.yarnrc.docker.yml` : docker 환경에서 `.yarnrc.yml` 대신 사용
 ```yaml
-# .yarnrc.docker.yml (Dockerfile에서 .yarnrc.yml 대신 사용)
 nodeLinker: node-modules
 enableGlobalCache: false
 checksumBehavior: update

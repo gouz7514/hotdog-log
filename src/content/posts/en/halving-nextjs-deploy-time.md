@@ -85,11 +85,11 @@ After execution, a `.pnp.cjs` file that records dependency information is create
 Then proceed with [`.yarnrc.yml` configuration](https://yarnpkg.com/configuration/yarnrc) to use PnP in the project.
 
 ```yaml
-nodeLinker: pnp # Determines how node packages will be installed
-pnpEnableEsmLoader: true # Whether to generate Node.js ESM loader
-enableGlobalCache: false # Whether to share cache between local projects. If set to true, cache is created in globalFolder instead of cacheFolder. Should be false to generate .yarn/cache
-checksumBehavior: update # When verifying integrity of cached files, how to resolve if file contents differ from original
-enableStrictSsl: true # Whether to strictly verify SSL certificates (provides more flexible options when accessing private repos)
+nodeLinker: pnp
+pnpEnableEsmLoader: true
+enableGlobalCache: false
+checksumBehavior: update
+enableStrictSsl: true
 yarnPath: .yarn/releases/yarn-4.9.2.cjs
 ```
 
@@ -181,8 +181,8 @@ The standalone option, as its name suggests (independent, standalone), allows ap
 
 I wanted to complete the **Next.js standalone + PnP** combination, but eventually adopted `node_modules` in the Docker environment.
 
+`.yarnrc.docker.yml` : used instead of `.yarnrc.yml` in Dockerfile
 ```yaml
-# .yarnrc.docker.yml (used instead of .yarnrc.yml in Dockerfile)
 nodeLinker: node-modules
 enableGlobalCache: false
 checksumBehavior: update

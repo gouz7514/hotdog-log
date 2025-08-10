@@ -57,7 +57,6 @@ export default function Posts({
         <ul>
           {filteredPosts.map(({ id, title, summary, tags, date }) => {
             const isNew = dayjs(date).isAfter(dayjs().subtract(7, 'day'))
-            console.log(isNew)
             return (
               <li key={id} className="post-item">
                 <Link href={`/posts/${id}`}>
