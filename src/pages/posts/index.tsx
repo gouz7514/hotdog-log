@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import dayjs from 'dayjs'
 import Link from 'next/link'
 import { useContext, useState } from 'react'
 
@@ -8,7 +9,6 @@ import { Badge } from '@/components/Molecule'
 import { LottieAnimation } from '@/components/Organism'
 import ThemeContext from '@/context/themeContext'
 import { getAllPostData, getAllPostTags } from '@/lib/posts'
-import parseDate from '@/lib/util/date'
 import { theme } from '@/styles/theme'
 import { Post } from '@/types/types'
 
@@ -55,22 +55,31 @@ export default function Posts({
           ))}
         </div>
         <ul>
-          {filteredPosts.map(({ id, title, summary, tags, date }) => (
-            <li key={id} className="post-item">
-              <Link href={`/posts/${id}`}>
-                <div className="post-date">{parseDate(date)}</div>
-                <div className="post-title">{title}</div>
-                <div className="post-summary">{summary}</div>
-                <div className="post-footer">
-                  <div className="post-tags">
-                    {tags.map((tag: string) => (
-                      <Badge key={tag} content={tag} size="small" />
-                    ))}
+          {filteredPosts.map(({ id, title, summary, tags, date }) => {
+            const isNew = dayjs(date).isAfter(dayjs().subtract(7, 'day'))
+            console.log(isNew)
+            return (
+              <li key={id} className="post-item">
+                <Link href={`/posts/${id}`}>
+                  <div className="d-flex justify-content-between">
+                    <div className="post-date">
+                      {dayjs(date).format('YYYY.MM.DD')}
+                    </div>
+                    {isNew && <NewBadge>New</NewBadge>}
                   </div>
-                </div>
-              </Link>
-            </li>
-          ))}
+                  <div className="post-title">{title}</div>
+                  <div className="post-summary">{summary}</div>
+                  <div className="post-footer">
+                    <div className="post-tags">
+                      {tags.map((tag: string) => (
+                        <Badge key={tag} content={tag} size="small" />
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </PostStyle>
     </>
@@ -174,6 +183,15 @@ const PostStyle = styled.div`
       }
     }
   }
+`
+
+const NewBadge = styled.div`
+  padding: 4px 8px 2px;
+  border-radius: 4px;
+  background-color: var(--color-yellow);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-black);
 `
 
 export async function getStaticProps({ locale }: { locale: string }) {
