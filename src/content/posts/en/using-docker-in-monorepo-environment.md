@@ -1,7 +1,7 @@
 ---
 title: '🐳 Using Docker in Monorepo Environment'
 summary: 'Using nextjs (feat. standalone) and docker in a monorepo utilizing turbo'
-tags: ['Docker', 'NextJS']
+tags: ['Docker', 'Next.JS']
 date: '2024-11-08 09:00:00'
 ---
 > - For each of our growth, we recently decided to have internal developers write blog posts on their chosen topics. This post is one I wrote, covering docker and nextjs.

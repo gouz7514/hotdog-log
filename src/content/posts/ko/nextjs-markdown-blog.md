@@ -1,7 +1,7 @@
 ---
 title: '[NextJS] NextJS로 마크다운 블로그 만들기'
 summary: 'NextJS로 마크다운 블로그를 만들어보자!'
-tags: ['NextJS', 'React']
+tags: ['Next.JS', 'React']
 date: '2023-11-29 23:00:00'
 ---
 
