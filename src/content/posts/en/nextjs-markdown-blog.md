@@ -1,7 +1,7 @@
 ---
 title: '[NextJS] Creating a Markdown Blog with NextJS'
 summary: 'Build a markdown blog with NextJS!'
-tags: ['NextJS', 'React']
+tags: ['Next.JS', 'React']
 date: '2023-11-29 23:00:00'
 ---
 

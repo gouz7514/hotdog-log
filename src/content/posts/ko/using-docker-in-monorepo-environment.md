@@ -1,7 +1,7 @@
 ---
 title: '🐳 모노레포 환경에서 docker 활용하기'
 summary: 'turbo를 활용한 모노레포, nextjs(feat. standalone) 그리고 docker 활용하기'
-tags: ['Docker', 'NextJS']
+tags: ['Docker', 'Next.JS']
 date: '2024-11-08 09:00:00'
 ---
 > - 각자의 성장을 위해 최근 사내 개발자들에게 각자 주제를 정해 블로그 글을 작성해보기로 결정했어요. 이번 포스팅은 그 중 제가 작성한 글로 docker와 nextjs에 대해 다뤄봅니다.
