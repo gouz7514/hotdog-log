@@ -21,7 +21,7 @@ To solve this problem quickly, I decided to start by reducing the deployment tim
 > - Addresses considerations in Docker and ECS environments
 
 ---
-## 0. Current Situation Diagnosis
+## 0. Diagnose current situation
 The first action needed is to understand the current architecture and deployment pipeline.
 
 Simply illustrated, it looks like this:
@@ -73,7 +73,7 @@ At the same time, it records "dependency → storage location" mapping informati
 ## 2. Applying Yarn Berry
 Now that we understand what Yarn Berry and PnP are, it's time to actually apply them.
 
-### 2-1. yarn berry initialization
+### 2-1. Initialization
 To initialize yarn berry, execute the following command:
 
 ```bash
@@ -144,7 +144,7 @@ In PnP mode, packages are managed in zip format, so you need to configure settin
 yarn dlx @yarnpkg/sdks vscode
 ```
 
-## 3. Zero Install Strategy, and why we didn't adopt it
+## 3. Zero Install strategy, and why we didn't adopt it
 
 The zero install strategy mentioned briefly above refers to using version control like git instead of installing dependencies every time. In a well-configured zero install environment, any developer can run the project with just a git pull without any separate installation process.
 
