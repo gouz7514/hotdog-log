@@ -10,7 +10,7 @@ date: '2025-08-10 23:00:00'
 
 여느 날과 마찬가지로 배포를 열심히 돌리던 와중 아무 이상이 없음에도 **github action이 돌지 않는 현상**이 발생했습니다. 원인이 무엇인가 하고 찾아보니, github action에 할당되어 있는 budget이 초과해서 더 이상 action을 돌릴 수가 없는 상황이었습니다. budget은 매 달 초기화되는데 이 이슈가 발생한 게 25일이었으니 꽤나 심각한 이슈…
 
-다행히 기존에 그리 높지 않은 budget이 할당되어 있어서 이를 늘리는 것으로 해결했지만, 하루빨리 이 이슈를 해결해야 하는 상황이었습니다. 적게는 3분, 많게는 5분 넘게 걸리는 배포(github action만, codedeploy까지 포함하면 거의 10분)시간도 문제인데 배포를 할 수조차 없는 상황이라면..?
+다행히 기존에 그리 높지 않은 budget이 할당되어 있어서 이를 늘리는 것으로 해결했지만, 하루빨리 이 이슈를 해결해야 하는 상황이었습니다. 적게는 3분, 많게는 5분 넘게 걸리는 배포(github action만, codedeploy까지 포함하면 거의 10분)시간도 문제인데 배포를 할 수조차 없는 상황이라면...?
 
 하루빨리 이 문제를 해결하기 위해 최근 가장 활발하게 개발 & 배포가 이루어지는 Next.js 서비스부터 배포 시간을 줄여나가기로 결정했습니다. **이번 글에서는 Next.js와 Docker 그리고 codedeploy 환경에서 배포 시간을 줄여 나가는 과정을 기록해보려고 해요.**
 
@@ -50,8 +50,8 @@ Yarn Berry는 기존 패키지 관리 생태계(npm, yarn v1)를 개선하기 �
 
 긴 말이 필요없을 듯 해요.
 
-프로젝트마다 같은 패키지가 중복 설치되고, 패키지를 찾기 위해 상위 디렉토리의 `node_modules`를 탐색하고..
-특정 패키지를 찾지 못할수록 readdir, stat과 같은 I/O 호출이 반복되고..
+프로젝트마다 같은 패키지가 중복 설치되고, 패키지를 찾기 위해 상위 디렉토리의 `node_modules`를 탐색하고.
+특정 패키지를 찾지 못할수록 readdir, stat과 같은 I/O 호출이 반복되고...
 
 심지어 패키지를 찾는 과정에서 상위 디렉토리의 환경이 달라지면 어쩔 때는 의존성을 불러올 수 있고, 어쩔 때는 불러올 수 없는 난감한 상황이 종종 발생하기도 합니다. 이런 상황을 해결하기 위해 Yarn Berry는 PnP라는 전략을 활용합니다.
 
@@ -146,7 +146,7 @@ yarn dlx @yarnpkg/sdks vscode
 
 ## 3. zero install 전략, 그리고 채택하지 않은 이유
 
-위에서 잠깐 언급한 zero install 전략은 의존성을 매번 설치하는 방식이 아닌, git 등을 활용해 버전 관리를 하는 전략을 말합니다.. 잘 구성된 zero install 환경에서는 어떤 개발자라도 git pull 만 수행하면 별도의 설치 과정 없이 프로젝트를 실행할 수 있게 되는 거죠.
+위에서 잠깐 언급한 zero install 전략은 의존성을 매번 설치하는 방식이 아닌, git 등을 활용해 버전 관리를 하는 전략을 말합니다. 잘 구성된 zero install 환경에서는 어떤 개발자라도 git pull 만 수행하면 별도의 설치 과정 없이 프로젝트를 실행할 수 있게 되는 거죠.
 
 이런 이점을 적용하고 싶어서 zero install 설정, 즉 모든 의존성 압축 파일을 git에 올리는 방식을 검토했으나 크게 다음과 같은 이유로 채택하지 않게 되었어요.
 
@@ -190,7 +190,7 @@ enableStrictSsl: false
 yarnPath: .yarn/releases/yarn-4.9.2.cjs
 ```
 
-standalone 옵션은 실제 파일 경로를 추적하며 필요한 것만 복사하는데, PnP는 ZipFS 위의 가상 경로를 추적하기 때문에 런타임에서 의존성 추적에 실패하는 이슈가 발생했습니다. 즉 standalone 옵션은 PnP와 함께 동작할 수 없는 옵션인 셈이죠. ([Github Discussions: outputStandalone not working with Yarn PnP](https://github.com/vercel/next.js/discussions/34600?utm_source=chatgpt.com))**
+standalone 옵션은 실제 파일 경로를 추적하며 필요한 것만 복사하는데, PnP는 ZipFS 위의 가상 경로를 추적하기 때문에 런타임에서 의존성 추적에 실패하는 이슈가 발생했습니다. 즉 standalone 옵션은 PnP와 함께 동작할 수 없는 옵션인 셈이죠. ([Github Discussions: outputStandalone not working with Yarn PnP](https://github.com/vercel/next.js/discussions/34600?utm_source=chatgpt.com))
 
 Next.js의 차세대 빌드 시스템인 [Turbopack 문서](https://nextjs.org/docs/app/api-reference/turbopack#unsupported-and-unplanned-features)에도 Yarn PnP는 지원 계획이 없다고 하니 두 옵션을 한번에 활용하기는 힘들어 보입니다.
 
