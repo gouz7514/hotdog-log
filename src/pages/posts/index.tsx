@@ -14,6 +14,8 @@ import { Post } from '@/types/types'
 
 import AnimationStudy from '../../../public/lottie/lottie-study.json'
 
+const TWO_WEEKS = 14
+
 export default function Posts({
   allPostsData,
   allTags,
@@ -56,7 +58,7 @@ export default function Posts({
         </div>
         <ul>
           {filteredPosts.map(({ id, title, summary, tags, date }) => {
-            const isNew = dayjs(date).isAfter(dayjs().subtract(7, 'day'))
+            const isNew = dayjs(date).isAfter(dayjs().subtract(TWO_WEEKS, 'day'))
             return (
               <li key={id} className="post-item">
                 <Link href={`/posts/${id}`}>
