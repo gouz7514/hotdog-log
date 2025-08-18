@@ -55,6 +55,20 @@ const MarkdownStyle = css`
       monospace;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    scroll-margin-top: 80px; /* 헤더 높이 + 여유 공간 */
+
+    &:hover .anchor-link {
+      opacity: 1;
+    }
+  }
+
   h1 {
     font-size: 2.5rem;
     margin: 1.8rem 0 0;
@@ -87,6 +101,23 @@ const MarkdownStyle = css`
 
   h5 {
     margin-top: 1.3rem;
+  }
+
+  .anchor-link {
+    opacity: 0;
+    margin-left: 0.5rem;
+    color: var(--color-blue);
+    text-decoration: none;
+    font-size: 0.9em;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    &::before {
+      content: '#';
+    }
   }
 
   p {
