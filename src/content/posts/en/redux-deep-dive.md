@@ -16,7 +16,7 @@ In this post, I want to explore `Redux`, which is one of the most popular librar
 
 ![redux npm trend](https://github.com/gouz7514/hotdog-log/assets/41367134/6db7a270-93ea-4769-887e-3b372dfa402d)
 
-> #### TL;DR
+> **TL;DR**
 > - Understand how redux works.
 > - Learn how to use redux better.
 

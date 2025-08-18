@@ -10,7 +10,7 @@ Of course, I know how to use React, but I felt that I need a deeper understandin
 
 Starting with this post, I want to leave traces of my exploration and contemplation about React.
 
-> #### TL;DR
+> **TL;DR**
 > - Let's understand what React is
 > - Let's learn about React's core concepts
 

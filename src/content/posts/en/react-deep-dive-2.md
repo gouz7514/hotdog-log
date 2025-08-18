@@ -4,7 +4,7 @@ summary: 'State in React'
 tags: ['React']
 date: '2023-12-12 16:00:00'
 ---
-> #### TL;DR
+> **TL;DR**
 > - Let's understand what State is.
 > - Understand the process of State updates.
 > - Understand the useState hook.

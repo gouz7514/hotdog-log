@@ -4,7 +4,7 @@ summary: '리액트의 State에 대해 알아보자'
 tags: ['React']
 date: '2023-12-12 16:00:00'
 ---
-> #### Tl;DR
+> **TL;DR**
 > - State가 무엇인지 알아보자.
 > - State가 업데이트되는 과정을 이해한다.
 > - useState 훅에 대해 이해한다.

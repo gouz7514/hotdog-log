@@ -10,7 +10,7 @@ date: '2024-08-6 01:00:00'
 
 링크드인에서 토스의 ios 개발자이신 조수환님이 작성하신 [포스트](https://www.linkedin.com/posts/soohwan-cho-60468a19b_wwdc-%EC%A0%95%EB%A6%AC%EB%85%B8%ED%8A%B8-notion-activity-7207724207458123776-yeX3?utm_source=share&utm_medium=member_desktop)를 읽고, 나도 밀도를 갖춘 개발자가 되고 싶다고 마음 먹어 번역을 하게 되었다.
 
-> #### TL;DR
+> **TL;DR**
 > - Typescript 블로그 번역을 통해 넓은 Typescript 세계를 이해하고 더 섹시한 Typescript 개발자가 되는 것을 목표로 합니다.
 > - 번역 과정에서 추가 학습이 필요한 내용이 있더라도 번역 글에는 최대한 포함하지 않으려고 노력했습니다.
 

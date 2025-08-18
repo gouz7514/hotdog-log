@@ -10,7 +10,7 @@ As a developer, I believe one way to understand a language or framework is to lo
 
 After reading a [post](https://www.linkedin.com/posts/soohwan-cho-60468a19b_wwdc-%EC%A0%95%EB%A6%AC%EB%85%B8%ED%8A%B8-notion-activity-7207724207458123776-yeX3?utm_source=share&utm_medium=member_desktop) written by Soo-hwan Cho, an iOS developer at Toss on LinkedIn, I decided to translate this to become a developer with substance.
 
-> #### TL;DR
+> **TL;DR**
 > - The goal is to understand the broader TypeScript world and become a sexier TypeScript developer through TypeScript blog translation.
 > - I tried not to include content that requires additional learning in the translation article as much as possible during the translation process.
 

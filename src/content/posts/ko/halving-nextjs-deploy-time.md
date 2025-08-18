@@ -14,7 +14,7 @@ date: '2025-08-10 23:00:00'
 
 하루빨리 이 문제를 해결하기 위해 최근 가장 활발하게 개발 & 배포가 이루어지는 Next.js 서비스부터 배포 시간을 줄여나가기로 결정했습니다. **이번 글에서는 Next.js와 Docker 그리고 codedeploy 환경에서 배포 시간을 줄여 나가는 과정을 기록해보려고 해요.**
 
-> #### TL;DR
+> **TL;DR**
 > - Next.js와 Yarn 환경에서 진행했어요
 > - Yarn Berry와 Zero Install을 어떻게 활용했는지에 대해 다루고 있어요
 > - Next.js의 standalone 옵션에 대해 다루고 있어요

@@ -16,7 +16,7 @@ date: '2024-01-10 16:00:00'
 
 ![redux npm trend](https://github.com/gouz7514/hotdog-log/assets/41367134/6db7a270-93ea-4769-887e-3b372dfa402d)
 
-> #### TL;DR
+> **TL;DR**
 > - redux의 작동 방식에 대해 이해한다.
 > - redux를 더 잘 사용하는 방법을 알아본다.
 

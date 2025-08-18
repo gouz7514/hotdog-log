@@ -5,7 +5,7 @@ tags: ['Next.JS', 'React']
 date: '2023-11-29 23:00:00'
 ---
 
-> #### TL;DR
+> **TL;DR**
 > - Let's learn about Next.js Static Generation
 > - Let's learn how to render markdown files to pages
 

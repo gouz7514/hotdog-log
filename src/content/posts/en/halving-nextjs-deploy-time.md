@@ -14,7 +14,7 @@ Fortunately, we had a relatively low budget allocated, so we resolved it by incr
 
 To solve this problem quickly, I decided to start by reducing the deployment time for the Next.js service that has been most actively developed and deployed recently. **In this post, I want to record the process of reducing deployment time in a Next.js, Docker, and CodeDeploy environment.**
 
-> #### TL;DR
+> **TL;DR**
 > - Conducted in Next.js and Yarn environment
 > - Covers how Yarn Berry and Zero Install were utilized
 > - Discusses Next.js's standalone option

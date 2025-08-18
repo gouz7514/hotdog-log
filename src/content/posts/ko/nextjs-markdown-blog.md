@@ -5,7 +5,7 @@ tags: ['Next.JS', 'React']
 date: '2023-11-29 23:00:00'
 ---
 
-> #### TL;DR
+> **TL;DR**
 > - Next.js의 Static Generation을 알아보자
 > - 마크다운 파일을 페이지에 렌더링하는 법을 알아보자
 

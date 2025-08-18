@@ -8,7 +8,7 @@ date: '2024-02-25 22:00:00'
 Recently, while working on a company project, I encountered and utilized a method called `sendBeacon`.
 Through this process, I was able to improve our business logic, and I'd like to share that journey in this post.
 
-> #### TL;DR
+> **TL;DR**
 > - What is a Ping Request?
 > - Utilizing the `sendBeacon` method
 > - Understanding what `OPTIONS` requests are and how to skip them
