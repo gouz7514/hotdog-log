@@ -11,6 +11,7 @@ interface PostProps {
   contentHtml: string
   summary: string
   date: string
+  headings?: Array<{ level: number; text: string; id: string }>
 }
 
 export default function Post({ post, id }: { post: PostProps; id: string }) {
@@ -36,6 +37,7 @@ export default function Post({ post, id }: { post: PostProps; id: string }) {
         title={post.title}
         innerHtml={post.contentHtml}
         date={post.date}
+        headings={post.headings}
       />
     </>
   )

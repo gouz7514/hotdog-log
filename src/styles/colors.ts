@@ -12,6 +12,7 @@ const colorSet = {
   darkgray: '#343434',
   beige: '#f5f5f5',
   yellow: '#eebc06',
+  gray: '#808080',
   badge: {
     primary: '#0066cc',
     default: '#33ccff',

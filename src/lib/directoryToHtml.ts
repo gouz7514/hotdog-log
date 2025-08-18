@@ -12,6 +12,33 @@ import remarkRehype from 'remark-rehype'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import { unified } from 'unified'
 
+interface Heading {
+  level: number
+  text: string
+  id: string
+}
+
+// HTML에서 heading 정보를 추출하는 함수
+function extractHeadingsFromHtml(html: string): Heading[] {
+  const headingRegex = /<h([1-6])[^>]*id="([^"]*)"[^>]*>(.*?)<\/h[1-6]>/g
+  const headings: Heading[] = []
+
+  let match
+  while ((match = headingRegex.exec(html)) !== null) {
+    const level = parseInt(match[1], 10)
+    const id = match[2]
+    const text = match[3].replace(/<[^>]*>/g, '') // HTML 태그 제거
+
+    headings.push({
+      level,
+      text,
+      id,
+    })
+  }
+
+  return headings
+}
+
 const directoryToHtml = async (directory: string, id: string) => {
   const fullPath = path.join(directory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -40,9 +67,13 @@ const directoryToHtml = async (directory: string, id: string) => {
 
   const contentHtml = processedContent.toString()
 
+  // HTML에서 heading 정보 추출
+  const headings = extractHeadingsFromHtml(contentHtml)
+
   return {
     id,
     contentHtml,
+    headings, // 목차 데이터 추가
     ...matterResult.data,
   }
 }
