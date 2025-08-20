@@ -73,5 +73,14 @@ export function getAllPostTags(locale: Locale = 'ko') {
     })
   })
 
-  return tags
+  const sortedTags = Object.keys(tags).sort()
+  const sortedTagsObject = sortedTags.reduce(
+    (acc, tag) => {
+      acc[tag] = tags[tag]
+      return acc
+    },
+    {} as { [key: string]: number },
+  )
+
+  return sortedTagsObject
 }
