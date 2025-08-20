@@ -1,7 +1,7 @@
 ---
 title: '[Redux] Deep Dive into Redux'
 summary: 'Learn how to use Redux a bit better'
-tags: ['React', 'Redux']
+tags: ['FE', 'React', 'Productivity']
 date: '2024-01-10 16:00:00'
 ---
 In React, we use `Context` to share the same information across multiple components.

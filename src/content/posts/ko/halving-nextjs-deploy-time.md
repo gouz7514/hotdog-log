@@ -1,7 +1,7 @@
 ---
 title: 'Next.js 배포 시간 깎기'
 summary: 'yarn berry와 standalone을 활용해 배포 시간 단축시키기'
-tags: ['Next.Js', 'Docker', 'ABZ Inc.']
+tags: ['FE', 'Next.Js', 'Docker', 'Productivity']
 date: '2025-08-10 23:00:00'
 ---
 **“방금 수정했고, n분 뒤에 실서버 반영 예정입니다!”**

@@ -1,7 +1,7 @@
 ---
 title: 'How I cut nextjs deploy time by 50%'
 summary: 'Reducing deployment time using Yarn Berry and standalone'
-tags: ['Next.Js', 'Docker', 'ABZ Inc.']
+tags: ['FE', 'Next.Js', 'Docker', 'Productivity']
 date: '2025-08-10 23:00:00'
 ---
 **"Just made the fix, will be reflected on production in n minutes!"**

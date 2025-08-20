@@ -1,7 +1,7 @@
 ---
 title: 'ECS and Docker Experience - Part 1'
 summary: 'Getting Hands-on with ECS & Docker'
-tags: ['AWS', 'Docker', 'ABZ Inc.']
+tags: ['AWS', 'Docker']
 date: '2022-01-26 00:00:01'
 ---
 

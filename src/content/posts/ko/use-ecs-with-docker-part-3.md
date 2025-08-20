@@ -1,7 +1,7 @@
 ---
 title: 'ECS와 Docker 사용기 - 3부'
 summary: 'CDK를 통한 서버 관리'
-tags: ['AWS', 'Docker', 'ABZ Inc.']
+tags: ['AWS', 'Docker']
 date: '2022-01-26 00:00:03'
 ---
 본 글에서는 배포된 서버 환경에서의 테스트 그리고 CDK를 통한 서버 관리에 대해서 다룹니다.

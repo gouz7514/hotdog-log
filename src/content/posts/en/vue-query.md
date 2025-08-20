@@ -1,7 +1,7 @@
 ---
 title: 'A Vue-Query implementation story'
 summary: 'Service performance improvement with vue-query!'
-tags: ['Vue', 'Vue-Query', 'ABZ Inc.']
+tags: ['FE', 'Vue', 'Productivity']
 date: '2023-01-04 00:00:00'
 ---
 

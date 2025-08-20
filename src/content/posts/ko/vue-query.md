@@ -1,7 +1,7 @@
 ---
 title: '우당탕탕 vue-query 적용기'
 summary: 'vue-query를 활용한 서비스의 성능 개선!'
-tags: ['Vue', 'Vue-Query', 'ABZ Inc.']
+tags: ['FE', 'Vue', 'Productivity']
 date: '2023-01-04 00:00:00'
 ---
 

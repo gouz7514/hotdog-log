@@ -1,7 +1,7 @@
 ---
 title: 'ECS와 Docker 사용기 - 1부'
 summary: 'ECS & Docker 박치기'
-tags: ['AWS', 'Docker', 'ABZ Inc.']
+tags: ['AWS', 'Docker']
 date: '2022-01-26 00:00:01'
 ---
 ### Dockerizing

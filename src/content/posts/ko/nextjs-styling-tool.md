@@ -1,7 +1,7 @@
 ---
 title: '[NextJS] 스타일링 방식 갈아타기 (emotion)'
 summary: 'styled-components에서 emotion으로 교체하는 과정을 정리한 글입니다.'
-tags: ['Next.JS', 'emotion', 'styled-components']
+tags: ['FE', 'Next.JS']
 date: '2023-11-27 23:00:00'
 ---
 

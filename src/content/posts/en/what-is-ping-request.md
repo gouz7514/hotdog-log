@@ -1,7 +1,7 @@
 ---
 title: 'Experience Faster Data Transfer Using Ping Requests'
 summary: 'Improving event logic with Ping Requests (feat. sendBeacon)'
-tags: ['Network', 'Javascript']
+tags: ['FE', 'Network', 'Javascript']
 date: '2024-02-25 22:00:00'
 ---
 

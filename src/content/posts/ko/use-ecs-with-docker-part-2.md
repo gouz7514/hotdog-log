@@ -1,7 +1,7 @@
 ---
 title: 'ECS와 Docker 사용기 - 2부'
 summary: 'Task definition부터 Deploy까지'
-tags: ['AWS', 'Docker', 'ABZ Inc.']
+tags: ['AWS', 'Docker']
 date: '2022-01-26 00:00:02'
 ---
 

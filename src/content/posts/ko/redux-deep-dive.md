@@ -1,7 +1,7 @@
 ---
 title: '[Redux] Redux 파헤치기'
 summary: 'Redux를 조금 더 잘 쓰는 방법을 알아보자'
-tags: ['React', 'Redux']
+tags: ['FE', 'React', 'Productivity']
 date: '2024-01-10 16:00:00'
 ---
 리액트에서는 여러 컴포넌트에서 동일한 정보를 사용하기 위해 `Context`를 사용한다.

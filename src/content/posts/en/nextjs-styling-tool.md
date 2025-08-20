@@ -1,7 +1,7 @@
 ---
 title: '[NextJS] Switching Styling Tools'
 summary: 'Switching from styled-components to emotion.'
-tags: ['Next.JS', 'emotion', 'styled-components']
+tags: ['Fe', 'Next.JS']
 date: '2023-11-27 23:00:00'
 ---
 

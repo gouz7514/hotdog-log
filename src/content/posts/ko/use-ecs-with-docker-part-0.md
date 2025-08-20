@@ -1,7 +1,7 @@
 ---
 title: 'ECS와 Docker 사용기 - 0부'
 summary: '서론'
-tags: ['AWS', 'Docker', 'ABZ Inc.']
+tags: ['AWS', 'Docker']
 date: '2022-01-26 00:00:00'
 ---
 작년 6월 첫 직장에 입사한지 벌써 8개월이라는 시간이 흘렀습니다.
