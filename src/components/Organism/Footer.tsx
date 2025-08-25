@@ -21,7 +21,7 @@ export function Footer() {
           <Icon icon={<IconGithub isDark={isDark} />} />
         </a>
         <a
-          href="https://www.linkedin.com/in/%ED%95%99%EC%9E%AC-%EA%B9%80-a23a7b271"
+          href="https://www.linkedin.com/in/hakjae"
           target="blank"
         >
           <Icon icon={<IconLinkedIn isDark={isDark} />} />
