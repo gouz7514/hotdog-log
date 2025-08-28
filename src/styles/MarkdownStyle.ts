@@ -21,6 +21,10 @@ const MarkdownStyle = css`
       margin-top: 0;
       color: var(--color-blue);
     }
+
+    p {
+      margin: 0.3rem 0;
+    }
   }
 
   pre {
