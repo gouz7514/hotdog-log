@@ -1,7 +1,7 @@
 ---
 title: '💻 Building a Development Team We Want to Work For'
 summary: "A startup 2nd-year developer's growth story"
-tags: ['Career']
+tags: ['Culture']
 date: '2024-04-12 01:00:00'
 ---
 

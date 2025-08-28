@@ -1,7 +1,7 @@
 ---
 title: '👊 Crushing Package Managers'
 summary: 'npm, yarn, and pnpm!'
-tags: ['Career', 'Javascript']
+tags: ['FE', 'Productivity']
 date: '2024-10-27 21:00:00'
 ---
 **TL;DR**
