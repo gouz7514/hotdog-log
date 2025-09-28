@@ -47,7 +47,7 @@ const directoryToHtml = async (directory: string, id: string) => {
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkUnwrapImages)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .use(rehypePrettyCode as any, {
       theme: 'one-dark-pro',
@@ -62,7 +62,7 @@ const directoryToHtml = async (directory: string, id: string) => {
       },
     })
     .use(rehypeExternalLinks, { target: '_blank', rel: ['noopener'] })
-    .use(rehypeStringify)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(matterResult.content)
 
   const contentHtml = processedContent.toString()
