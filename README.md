@@ -1,7 +1,5 @@
 # hotdog-log
 
 ## ☄️ About Me
+- I love 🍔, 🎹, 🎥, 📚
 - [Linkedin](https://www.linkedin.com/in/hakjae)
-- [X (twitter)](https://x.com/helloHakjae)
-
-## 📈 TIL
