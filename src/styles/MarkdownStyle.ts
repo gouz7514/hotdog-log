@@ -143,6 +143,31 @@ const MarkdownStyle = css`
     }
   }
 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    overflow-x: auto;
+    display: block;
+
+    th,
+    td {
+      border: 1px solid var(--color-border, #444);
+      padding: 0.6rem 1rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--color-blockquote, rgba(255, 255, 255, 0.05));
+      font-weight: 600;
+    }
+
+    tr:nth-of-type(even) {
+      background-color: var(--color-blockquote, rgba(255, 255, 255, 0.02));
+    }
+  }
+
   img {
     display: block;
     width: 100%;
@@ -152,6 +177,12 @@ const MarkdownStyle = css`
     @media screen and (max-width: 600px) {
       max-width: calc(100% - 40px);
     }
+  }
+
+  figcaption {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-style: italic;
   }
 
   @media screen and (max-width: 600px) {
