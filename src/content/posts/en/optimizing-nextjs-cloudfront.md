@@ -7,12 +7,12 @@ date: '2026-01-25 23:00:00'
 
 Recently, we rolled out the biggest update for Inpocklink, the service we're running at my current company.
 The design customization feature update!
-![inpocklink update](/images/blog/optimizing-cloudfront/inpocklink-design-edit-update.png)
+![inpocklink update](/images/blog/optimizing-nextjs-cloudfront/inpocklink-design-edit-update.png)
 
 From a product perspective, we provided various features and improved user convenience, and technically, we also went through a tech stack migration (Vue -> React), which meant dealing with everything from deployment processes to various issues, hotfixes, and stability work.
 
 A few days later, a message popped up on Slack...
-![cloudfront cost spike](/images/blog/optimizing-cloudfront/cloudfront-cost-spike.png)
+![cloudfront cost spike](/images/blog/optimizing-nextjs-cloudfront/cloudfront-cost-spike.png)
 
 I can't share the exact numbers, but basically, all metrics had increased by at least 2x, and up to 4x.
 **The daily CloudFront (CF) costs had skyrocketed by 2.5x...**
@@ -30,7 +30,7 @@ First, to identify exactly which CF was incurring the most costs, I created a Cl
 - Next.js static asset CF (post-migration)
 - CF connected to ELB and S3 running in production
 
-![cloudfront dashboard](/images/blog/optimizing-cloudfront/cloudfront-cloudwatch-dashboard.png)
+![cloudfront dashboard](/images/blog/optimizing-nextjs-cloudfront/cloudfront-cloudwatch-dashboard.png)
 
 As you can see in the image above, the Nuxt CF costs naturally decreased after migration (top 2 graphs), so I dug into the Next.js CF and the ELB-connected CF one by one.
 
@@ -39,12 +39,12 @@ As you can see in the image above, the Nuxt CF costs naturally decreased after m
 ### 1.1 Root Cause Analysis - Chunk Analysis, Network Coverage Analysis
 To figure out how many Requests and Data Transfer were actually happening in the service, I used `@next/bundle-analyzer` to analyze chunks. Since our service naturally concentrates traffic on specific pages (each creator's profile page), I focused the analysis on those pages.
 
-![chunk asis](/images/blog/optimizing-cloudfront/chunk-asis.png)
+![chunk asis](/images/blog/optimizing-nextjs-cloudfront/chunk-asis.png)
 - 194.71kb (gzipped)
 - Includes unnecessary chunks like admin and design-editor
 
 Along with chunk analysis, I used Chrome DevTools to check the size of chunk files coming from CF and their coverage.
-![network coverage asis](/images/blog/optimizing-cloudfront/network-coverage-asis.png)
+![network coverage asis](/images/blog/optimizing-nextjs-cloudfront/network-coverage-asis.png)
 - 34% coverage out of total 1.9MB
 
 [Next.js supports code splitting based on routes by default](https://nextjs.org/learn/dashboard-app/navigating-between-pages#automatic-code-splitting-and-prefetching), so why was this happening (requesting unused chunks)?
@@ -127,7 +127,7 @@ async headers() {
 },
 ```
 <figure>
-  <img src="/images/blog/optimizing-cloudfront/cached-font.png" alt="cached font">
+  <img src="/images/blog/optimizing-nextjs-cloudfront/cached-font.png" alt="cached font">
   <figcaption>Font headers with caching applied</figcaption>
 </figure>
 
@@ -164,7 +164,7 @@ export function FontLoader({ fontKey }: FontLoaderProps) {
 
 ### 2.3 Results
 <figure>
-  <img src="/images/blog/optimizing-cloudfront/cloudfront-result.png" alt="cached font">
+  <img src="/images/blog/optimizing-nextjs-cloudfront/cloudfront-result.png" alt="cached font">
   <figcaption>CF requests, BytesDownloaded improvement results (CloudWatch)</figcaption>
 </figure>
 

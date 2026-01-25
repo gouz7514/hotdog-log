@@ -6,12 +6,12 @@ date: '2026-01-25 23:00:00'
 ---
 최근 현재 회사에서 운영중인 서비스, 인포크링크의 제일 큰 업데이트가 진행됐다.
 바로 디자인 설정 기능의 업데이트!
-![inpocklink update](/images/blog/optimizing-cloudfront/inpocklink-design-edit-update.png)
+![inpocklink update](/images/blog/optimizing-nextjs-cloudfront/inpocklink-design-edit-update.png)
 
 프로덕트 면에 있어 다양한 기능 및 유저 편의성의 제공은 물론, 기술적으로도 기술 스택 migration (vue -> react)이 이루어져 배포 과정부터 다양한 이슈 해결 및 핫픽스, 안정성을 잡기 위한 작업이 진행됐다.
 
 그렇게 몇 일이 지난 날, 슬랙에 올라온 한 메시지..
-![cloudfront cost spike](/images/blog/optimizing-cloudfront/cloudfront-cost-spike.png)
+![cloudfront cost spike](/images/blog/optimizing-nextjs-cloudfront/cloudfront-cost-spike.png)
 
 구체적인 수치를 공유할 수는 없지만, 그냥 모든 수치가 최소 2배, 최대 4배 늘어난 상황이었다.
 **일 단위로 부과되는 CloudFront (이하 CF) 비용은 무려 2.5배 증가한 상황...**
@@ -29,7 +29,7 @@ date: '2026-01-25 23:00:00'
 - migration 이후 Next.Js static asset CF
 - 프로덕션에서 운영중인 ELB, S3와 연결된 CF
 
-![cloudfront dashboard](/images/blog/optimizing-cloudfront/cloudfront-cloudwatch-dashboard.png)
+![cloudfront dashboard](/images/blog/optimizing-nextjs-cloudfront/cloudfront-cloudwatch-dashboard.png)
 
 위 사진에서 볼 수 있듯 Nuxt CF는 당연히 migration 이후 비용이 줄었고 (상단 2개 그래프), Next.js CF 그리고 ELB와 연결된 CF를 하나하나 파헤쳐보았다.
 
@@ -38,12 +38,12 @@ date: '2026-01-25 23:00:00'
 ### 1.1 원인 파악 - chunk 분석, network coverage 분석
 실제 서비스 상에서 요청하는 Requests와 Data Transfer가 어느 정도인지 파악하기 위해 `@next/bundle-analyzer`를 사용해 chunk 분석을 진행했다. 서비스의 특성 상 특정 페이지 (크리에이터 각각의 프로필 페이지)에 트래픽이 집중되기 때문에 해당 페이지만을 대상으로 분석했다.
 
-![chunk asis](/images/blog/optimizing-cloudfront/chunk-asis.png)
+![chunk asis](/images/blog/optimizing-nextjs-cloudfront/chunk-asis.png)
 - gzip 기준 194.71kb
 - admin, design-editor 와 같이 필요 없는 chunk도 함께 포함
 
 chunk와 함께 chrome devtools를 활용해 CF에서 받아오는 chunk 파일의 사이즈와 coverage 체크도 진행헀다.
-![network coverage asis](/images/blog/optimizing-cloudfront/network-coverage-asis.png)
+![network coverage asis](/images/blog/optimizing-nextjs-cloudfront/network-coverage-asis.png)
 - 전체 1.9MB 중 coverage 34%
 
 [Next.js는 기본적으로 라우트 기반으로 코드 스플리팅](https://nextjs.org/learn/dashboard-app/navigating-between-pages#automatic-code-splitting-and-prefetching)을 지원하는데, 왜 이런 현상(사용하지 않는 chunk 요청)이 발생하는 걸까?
@@ -126,7 +126,7 @@ async headers() {
 },
 ```
 <figure>
-  <img src="/images/blog/optimizing-cloudfront/cached-font.png" alt="cached font">
+  <img src="/images/blog/optimizing-nextjs-cloudfront/cached-font.png" alt="cached font">
   <figcaption>폰트 헤더에 캐싱이 적용된 모습</figcaption>
 </figure>
 
@@ -163,7 +163,7 @@ export function FontLoader({ fontKey }: FontLoaderProps) {
 
 ### 2.3 결과
 <figure>
-  <img src="/images/blog/optimizing-cloudfront/cloudfront-result.png" alt="cached font">
+  <img src="/images/blog/optimizing-nextjs-cloudfront/cloudfront-result.png" alt="cached font">
   <figcaption>CF requests, BytesDownloaded 개선 결과 (Cloudwatch)</figcaption>
 </figure>
 
