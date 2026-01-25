@@ -7,6 +7,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
+import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import remarkUnwrapImages from 'remark-unwrap-images'
@@ -46,6 +47,7 @@ const directoryToHtml = async (directory: string, id: string) => {
 
   const processedContent = await unified()
     .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkUnwrapImages)
     .use(remarkRehype, { allowDangerousHtml: true })
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
