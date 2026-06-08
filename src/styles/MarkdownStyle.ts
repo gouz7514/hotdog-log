@@ -150,6 +150,7 @@ const MarkdownStyle = css`
     font-size: 0.95rem;
     overflow-x: auto;
     display: block;
+    justify-items: center;
 
     th,
     td {
@@ -171,8 +172,8 @@ const MarkdownStyle = css`
   img {
     display: block;
     width: 100%;
-    max-width: 520px;
-    margin: 2rem auto 0;
+    max-width: 744px;
+    margin: 1.5rem auto 0;
 
     @media screen and (max-width: 600px) {
       max-width: calc(100% - 40px);
