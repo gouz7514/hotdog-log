@@ -38,9 +38,7 @@ const BadgeContent = styled.div`
   cursor: ${props => (props.onClick ? 'pointer' : 'default')};
 
   &.active {
-    filter: brightness(0.75);
-    transform: translateY(1px);
-    transition: all 0.3s ease-in-out;
+    filter: brightness(0.8);
   }
 
   .content {

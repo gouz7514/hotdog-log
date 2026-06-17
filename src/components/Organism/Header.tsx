@@ -13,7 +13,7 @@ export function Header() {
       </Link>
       <div className="d-flex align-items-center" style={{ gap: '16px' }}>
         <Link href="/posts">
-          <h4>TIL</h4>
+          <h4>BLOG</h4>
         </Link>
         <LanguageToggler />
         <DarkMode />
@@ -23,35 +23,26 @@ export function Header() {
 }
 
 const StickyHeader = styled.div`
-  --padding: 16px;
-  --logo-size: 32px;
-
   position: sticky;
   padding: 1rem;
   top: 0;
   width: 100%;
+  max-width: 50rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: var(--z-index-header);
   background-color: var(--color-background);
-
-  body[data-theme='dark'] & {
-    box-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
-  }
-
-  body[data-theme='light'] & {
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-  }
+  margin: auto;
 `
+
 const Logo = styled.div`
-  width: var(--logo-size);
-  height: var(--logo-size);
-  background-image: url('/images/logo-page.webp');
+  width: 40px;
+  height: 40px;
+  background-image: url('/images/hakjae.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
+  border-radius: 50%;
 `

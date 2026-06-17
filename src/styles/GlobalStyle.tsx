@@ -20,7 +20,6 @@ const style = css`
 
   body {
     ${lighTheme};
-    transition: all 0.3s ease-in-out;
   }
 
   body[data-theme='dark'] {

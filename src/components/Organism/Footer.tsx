@@ -5,10 +5,7 @@ import ThemeContext from '@/context/themeContext'
 import { theme } from '@/styles/theme'
 
 import { Icon } from '../Atom'
-import { IconGithub, IconGmail, IconLinkedIn, IconX } from '../Icon'
-
-
-
+import { IconGithub, IconGmail, IconLinkedIn } from '../Icon'
 
 export function Footer() {
   const { colorTheme } = useContext(ThemeContext)
@@ -20,17 +17,11 @@ export function Footer() {
         <a href="https://github.com/gouz7514" target="blank">
           <Icon icon={<IconGithub isDark={isDark} />} />
         </a>
-        <a
-          href="https://www.linkedin.com/in/hakjae"
-          target="blank"
-        >
+        <a href="https://www.linkedin.com/in/hakjae" target="blank">
           <Icon icon={<IconLinkedIn isDark={isDark} />} />
         </a>
         <a href="mailto:hakjae.dev@gmail.com" target="blank">
           <Icon icon={<IconGmail isDark={isDark} />} />
-        </a>
-        <a href="https://x.com/helloHakjae" target="blank">
-          <Icon width={24} height={24} icon={<IconX isDark={isDark} />} />
         </a>
       </ProfileLogo>
     </AppFooter>

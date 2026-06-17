@@ -1,64 +1,22 @@
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
 import Link from 'next/link'
-import { useContext, useState } from 'react'
 
-import { Icon } from '@/components/Atom'
-import { IconTags } from '@/components/Icon'
 import { Badge } from '@/components/Molecule'
-import { LottieAnimation } from '@/components/Organism'
-import ThemeContext from '@/context/themeContext'
-import { getAllPostData, getAllPostTags } from '@/lib/posts'
-import { theme } from '@/styles/theme'
+import { getAllPostData } from '@/lib/posts'
 import { Post } from '@/types/types'
-
-import AnimationStudy from '../../../public/lottie/lottie-study.json'
 
 const TWO_WEEKS = 14
 
-export default function Posts({
-  allPostsData,
-  allTags,
-}: {
-  allPostsData: Post[]
-  allTags: { [key: string]: number }
-}) {
-  const { colorTheme } = useContext(ThemeContext)
-  const isDark = colorTheme === theme.dark
-
-  const [selectedTag, setSelectedTag] = useState<string>('')
-
-  const onClickTag = (tag: string) => {
-    if (selectedTag === tag) return setSelectedTag('')
-    return setSelectedTag(tag)
-  }
-
-  const filteredPosts = allPostsData.filter((post: Post) => {
-    if (selectedTag === '') return allPostsData
-    return post.tags.includes(selectedTag)
-  })
-
+export default function Posts({ allPostsData }: { allPostsData: Post[] }) {
   return (
     <>
       <PostStyle className="container">
-        <div className="guide">
-          <LottieAnimation json={AnimationStudy} height={80} />
-        </div>
-        <div className="tags">
-          <Icon icon={<IconTags isDark={isDark} />} width={24} height={24} />
-          {Object.entries(allTags).map(([tag, count]) => (
-            <Badge
-              key={tag}
-              content={`${tag} (${count})`}
-              size="small"
-              onClick={() => onClickTag(tag)}
-              active={tag === selectedTag}
-            />
-          ))}
-        </div>
         <ul>
-          {filteredPosts.map(({ id, title, summary, tags, date }) => {
-            const isNew = dayjs(date).isAfter(dayjs().subtract(TWO_WEEKS, 'day'))
+          {allPostsData.map(({ id, title, summary, tags, date }) => {
+            const isNew = dayjs(date).isAfter(
+              dayjs().subtract(TWO_WEEKS, 'day'),
+            )
             return (
               <li key={id} className="post-item">
                 <Link href={`/posts/${id}`}>
@@ -66,7 +24,7 @@ export default function Posts({
                     <div className="post-date">
                       {dayjs(date).format('YYYY.MM.DD')}
                     </div>
-                    {isNew && <NewBadge>New</NewBadge>}
+                    {isNew && <NewTag>💡</NewTag>}
                   </div>
                   <div className="post-title">{title}</div>
                   <div className="post-summary">{summary}</div>
@@ -100,36 +58,15 @@ const PostStyle = styled.div`
     }
   }
 
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 12px;
-    background-color: var(--color-list-background);
-    border-radius: 12px;
-    padding: 12px 16px;
-  }
-
   .post-item {
     position: relative;
     width: 100%;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    background-color: var(--color-list-background);
     list-style: none;
-    margin-bottom: 12px;
-    padding: 12px 16px;
-    box-shadow:
-      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--color-blue);
 
     &:last-child {
       margin-bottom: 0;
-    }
-
-    &:hover {
-      filter: brightness(0.9);
     }
 
     .post-date {
@@ -186,23 +123,21 @@ const PostStyle = styled.div`
   }
 `
 
-const NewBadge = styled.div`
-  padding: 4px 8px 2px;
-  border-radius: 4px;
-  background-color: var(--color-yellow);
-  font-size: 0.8rem;
+const NewTag = styled.div`
+  position: absolute;
+  top: 16px;
+  right: 12px;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--color-yellow);
 `
 
 export async function getStaticProps({ locale }: { locale: string }) {
   const allPostsData = getAllPostData(locale as 'ko' | 'en')
-  const allTags = getAllPostTags(locale as 'ko' | 'en')
 
   return {
     props: {
       allPostsData,
-      allTags,
     },
   }
 }
