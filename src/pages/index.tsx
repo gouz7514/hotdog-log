@@ -49,11 +49,12 @@ export default function Home() {
         alt="profile"
         width={300}
         height={300}
+        quality={100}
+        unoptimized
         style={{
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          flex: 1,
         }}
       />
       <ProfileDescription>
@@ -81,10 +82,9 @@ const HomeStyle = styled.main`
   gap: 20px;
   max-width: 1200px;
   padding: 2rem;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
+  flex-direction: column;
+  width: 100%;
+  max-width: 50rem;
 `
 
 const ProfileDescription = styled.div`
