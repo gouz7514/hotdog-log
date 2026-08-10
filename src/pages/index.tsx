@@ -1,45 +1,46 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { overlay } from 'overlay-kit'
 
-import { Button, Modal, ModalProps } from '@/domain/global'
+import { Button } from '@/domain/global'
 import { t } from '@/lib/translations'
 
-function ResumeDialog({ isOpen, onClose }: ModalProps) {
-  const handleKoreanResume = () => {
-    window.open('/resume_ko.pdf', '_blank')
-  }
+// temporary deprecated
+// function ResumeDialog({ isOpen, onClose }: ModalProps) {
+//   const handleKoreanResume = () => {
+//     window.open('/resume_ko.pdf', '_blank')
+//   }
 
-  const handleEnglishResume = () => {
-    window.open('/resume.pdf', '_blank')
-  }
+//   const handleEnglishResume = () => {
+//     window.open('/resume.pdf', '_blank')
+//   }
 
-  return (
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <div
-        className="d-flex flex-column"
-        style={{ gap: '24px', padding: '16px' }}
-      >
-        <Button size="medium" variant="primary" onClick={handleKoreanResume}>
-          한국어 📄
-        </Button>
-        <Button size="medium" variant="secondary" onClick={handleEnglishResume}>
-          English 📄
-        </Button>
-      </div>
-    </Modal>
-  )
-}
+//   return (
+//     <Modal isOpen={isOpen} onClose={onClose}>
+//       <div
+//         className="d-flex flex-column"
+//         style={{ gap: '24px', padding: '16px' }}
+//       >
+//         <Button size="medium" variant="primary" onClick={handleKoreanResume}>
+//           한국어 📄
+//         </Button>
+//         <Button size="medium" variant="secondary" onClick={handleEnglishResume}>
+//           English 📄
+//         </Button>
+//       </div>
+//     </Modal>
+//   )
+// }
 
 export default function Home() {
   const router = useRouter()
   const locale = router.locale as 'ko' | 'en'
 
-  const onClickResumeButton = () => {
-    overlay.open(({ isOpen, close }) => (
-      <ResumeDialog isOpen={isOpen} onClose={close} />
-    ))
+  const onClickOpenResume = () => {
+    window.open('/resume_ko.pdf', '_blank')
+    // overlay.open(({ isOpen, close }) => (
+    //   <ResumeDialog isOpen={isOpen} onClose={close} />
+    // ))
   }
 
   return (
@@ -63,7 +64,7 @@ export default function Home() {
             <h4 className="text-bold">{t(locale, 'home.title')}</h4>
             <p>{t(locale, 'home.subtitle')}</p>
           </div>
-          <Button size="small" variant="primary" onClick={onClickResumeButton}>
+          <Button size="small" variant="primary" onClick={onClickOpenResume}>
             <span>{t(locale, 'home.learnMore')}</span>
           </Button>
         </div>
