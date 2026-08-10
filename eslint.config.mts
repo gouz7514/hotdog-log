@@ -14,6 +14,16 @@ const compat = new FlatCompat({
 })
 
 export default tseslint.config(
+  {
+    ignores: [
+      '.next/**',
+      'out/**',
+      'build/**',
+      'node_modules/**',
+      '.github/**',
+      'next-env.d.ts',
+    ],
+  },
   eslint.configs.recommended,
   tseslint.configs.recommended,
   {
