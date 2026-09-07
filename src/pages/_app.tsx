@@ -2,6 +2,7 @@ import { ThemeProvider } from '@emotion/react'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'
+import Script from 'next/script'
 import { OverlayProvider } from 'overlay-kit'
 import { useMemo } from 'react'
 import { RecoilEnv, RecoilRoot } from 'recoil'
@@ -57,6 +58,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image:height" content="630" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5299982245304789"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       <RecoilRoot>
         <ThemeContext.Provider value={contextValue}>
           <ThemeProvider theme={{ ...colorTheme }}>
