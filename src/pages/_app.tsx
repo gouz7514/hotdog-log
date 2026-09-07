@@ -42,6 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="title" content="Hakjae's Dev Blog" />
         <meta name="description" content="Inspire, Record, Code" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-adsense-account" content="ca-pub-5299982245304789" />
         <meta property="og:title" content="Hakjae's Dev Blog" key="og:title" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://hakjae.dev" key="og:url" />
