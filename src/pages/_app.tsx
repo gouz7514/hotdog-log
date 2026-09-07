@@ -2,6 +2,7 @@ import { ThemeProvider } from '@emotion/react'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { AnimatePresence } from 'framer-motion'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { OverlayProvider } from 'overlay-kit'
 import { useMemo } from 'react'
@@ -21,7 +22,10 @@ export interface ContextProps {
   toggleTheme: () => void
 }
 
+const BASE_URL = 'https://hakjae.dev'
+
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter()
   const { colorTheme, toggleTheme } = useDarkMode()
   RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false
 
@@ -29,6 +33,12 @@ export default function App({ Component, pageProps }: AppProps) {
     () => ({ colorTheme, toggleTheme }),
     [colorTheme, toggleTheme],
   )
+
+  const currentPath = router.asPath.split(/[?#]/)[0]
+  const pathname = currentPath === '/' ? '' : currentPath
+  const koUrl = `${BASE_URL}${pathname}`
+  const enUrl = `${BASE_URL}/en${pathname}`
+  const canonicalUrl = router.locale === 'en' ? enUrl : koUrl
 
   const getLayout =
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -57,6 +67,10 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <link rel="canonical" href={canonicalUrl} key="canonical" />
+        <link rel="alternate" hrefLang="ko" href={koUrl} />
+        <link rel="alternate" hrefLang="en" href={enUrl} />
+        <link rel="alternate" hrefLang="x-default" href={koUrl} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Script
