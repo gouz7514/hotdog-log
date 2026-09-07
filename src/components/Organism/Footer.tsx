@@ -1,13 +1,17 @@
 import styled from '@emotion/styled'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useContext } from 'react'
 
 import ThemeContext from '@/context/themeContext'
+import { t } from '@/lib/translations'
 import { theme } from '@/styles/theme'
 
 import { Icon } from '../Atom'
 import { IconGithub, IconGmail, IconLinkedIn } from '../Icon'
 
 export function Footer() {
+  const { locale } = useRouter()
   const { colorTheme } = useContext(ThemeContext)
   const isDark = colorTheme === theme.dark
 
@@ -24,6 +28,11 @@ export function Footer() {
           <Icon icon={<IconGmail isDark={isDark} />} />
         </a>
       </ProfileLogo>
+      <FooterLinks>
+        <Link href="/privacy">
+          {t(locale as 'ko' | 'en', 'footer.privacy')}
+        </Link>
+      </FooterLinks>
     </AppFooter>
   )
 }
@@ -42,4 +51,22 @@ const ProfileLogo = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
+`
+
+const FooterLinks = styled.div`
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.85rem;
+
+  a {
+    color: var(--color-text);
+    text-decoration: none;
+    filter: brightness(0.6);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `

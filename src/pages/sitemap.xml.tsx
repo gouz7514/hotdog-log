@@ -15,8 +15,8 @@ const generateSitemap = (posts: Post[]) => {
     <lastmod>2024-02-21</lastmod>
   </url>
   <url>
-    <loc>${`${BASE_URL}/intro`}</loc>
-    <lastmod>2024-07-23</lastmod>
+    <loc>${`${BASE_URL}/privacy`}</loc>
+    <lastmod>2026-09-07</lastmod>
   </url>
   ${posts
     .map((post: Post) => {

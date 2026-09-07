@@ -8,5 +8,8 @@
       "korean": "한국어 📄",
       "english": "English 📄"
     }
+  },
+  "footer": {
+    "privacy": "개인정보처리방침"
   }
 }
