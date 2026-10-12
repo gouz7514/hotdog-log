@@ -1,3 +1,5 @@
 export * from './DarkMode'
 export * from './LanguageToggler'
 export * from './LoadMoreList'
+export * from './Modal'
+export * from './PortfolioThumbnail'
