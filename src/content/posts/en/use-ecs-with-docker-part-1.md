@@ -170,7 +170,7 @@ Reference links (Thank you so much to all the experts!)
 
 Through these processes, we were able to successfully build server and nginx images and push them to ECR.
 
-In [Part 2](https://hakjae.dev/posts/use-ecs-with-docker-part-2), we'll create tasks and services using the generated images and proceed all the way to CodeDeploy!
+In [Part 2](https://hakjae.dev/en/blog/use-ecs-with-docker-part-2), we'll create tasks and services using the generated images and proceed all the way to CodeDeploy!
 
 ***
 

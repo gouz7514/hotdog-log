@@ -32,6 +32,6 @@ Enable **zero-downtime deployment** so users won't notice when deployments are i
 Ensure there are **no issues with existing external API usage**.
 
 The project lasted about 4 weeks and was divided into the following major phases:
-**[Part 1](https://hakjae.dev/posts/use-ecs-with-docker-part-1),** Use Docker to create Django server and nginx images and push them to ECR.
-**[Part 2](https://hakjae.dev/posts/use-ecs-with-docker-part-2),** Deploy using the built images through tasks, clusters, subnets, Route 53, etc.
-**[Part 3](https://hakjae.dev/posts/use-ecs-with-docker-part-3),** Enable deployment and modification without going through the AWS console using GitHub Actions for CI/CD and CDK for stack deployment.
+**[Part 1](https://hakjae.dev/en/blog/use-ecs-with-docker-part-1),** Use Docker to create Django server and nginx images and push them to ECR.
+**[Part 2](https://hakjae.dev/en/blog/use-ecs-with-docker-part-2),** Deploy using the built images through tasks, clusters, subnets, Route 53, etc.
+**[Part 3](https://hakjae.dev/en/blog/use-ecs-with-docker-part-3),** Enable deployment and modification without going through the AWS console using GitHub Actions for CI/CD and CDK for stack deployment.

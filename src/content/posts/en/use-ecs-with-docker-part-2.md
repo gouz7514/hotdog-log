@@ -5,7 +5,7 @@ tags: ['AWS', 'Docker']
 date: '2022-01-26 00:00:02'
 ---
 
-As explained in [Part 1](https://hakjae.dev/posts/use-ecs-with-docker-part-1), we decided to use AWS Fargate integrated with ECS.
+As explained in [Part 1](https://hakjae.dev/en/blog/use-ecs-with-docker-part-1), we decided to use AWS Fargate integrated with ECS.
 
 In Part 2, we'll create clusters and tasks, and proceed to configure Security Groups, Subnets, and more.
 

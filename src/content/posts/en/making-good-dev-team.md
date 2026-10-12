@@ -164,4 +164,4 @@ Like a fellow developer said that you can see the person through their writing, 
 - #3 [ABZ Team Blog](https://medium.com/ab-z)
 - #4 [Today's House - Engineering Team Culture](https://bucketplace-eng.oopy.io/culture)
 - #5 [Everything about Toss Frontend Chapter](https://tosspublic.notion.site/cc9367e44ff6424181899f3cf250f5d2#e6b1d26a88934da998176789ad030787)
-- #6 [Experience Faster Data Transfer Using Ping Request](https://hakjae.dev/posts/what-is-ping-request)
+- #6 [Experience Faster Data Transfer Using Ping Request](https://hakjae.dev/en/blog/what-is-ping-request)
