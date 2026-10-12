@@ -6,7 +6,24 @@ const translations = {
   en,
 }
 
-export type Locale = 'ko' | 'en'
+export const locales = ['ko', 'en'] as const
+export const defaultLocale = 'ko'
+
+export type Locale = (typeof locales)[number]
+
+export function isLocale(value: string): value is Locale {
+  return (locales as readonly string[]).includes(value)
+}
+
+export function toLocale(value: string): Locale {
+  return isLocale(value) ? value : defaultLocale
+}
+
+// 기본 언어(ko)는 접두사 없이, 그 외 언어는 /en 처럼 접두사를 붙인다
+export function localePath(locale: Locale, path: string) {
+  if (locale === defaultLocale) return path
+  return path === '/' ? `/${locale}` : `/${locale}${path}`
+}
 
 export function getTranslation(locale: Locale) {
   return translations[locale]

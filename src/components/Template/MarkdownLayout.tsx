@@ -1,14 +1,7 @@
-import styled from '@emotion/styled'
+import dayjs from 'dayjs'
 
 import { BackButton } from '@/components/Atom'
-import parseDate from '@/lib/util/date'
-import MarkdownStyle from '@/styles/MarkdownStyle'
-
-interface Heading {
-  level: number
-  text: string
-  id: string
-}
+import { Heading } from '@/types/types'
 
 interface MarkdownLayoutProps {
   title: string
@@ -17,18 +10,26 @@ interface MarkdownLayoutProps {
   headings?: Heading[]
 }
 
-// Table of Contents 컴포넌트
 function TableOfContents({ headings }: { headings: Heading[] }) {
-  if (!headings || headings.length === 0) return null
+  if (headings.length === 0) return null
 
   return (
-    <TocList>
+    <ul className="mb-8 leading-[1.4]">
       {headings.map((heading, index) => (
-        <TocItem key={index} level={heading.level}>
-          <TocLink href={`#${heading.id}`}>{heading.text}</TocLink>
-        </TocItem>
+        <li
+          key={index}
+          className="my-2 first:mt-0 last:mb-0"
+          style={{ paddingLeft: `${(heading.level - 1) * 0.5}rem` }}
+        >
+          <a
+            href={`#${heading.id}`}
+            className="text-[0.95rem] leading-[1.4] underline brightness-60 transition-all duration-200 hover:opacity-40"
+          >
+            {heading.text}
+          </a>
+        </li>
       ))}
-    </TocList>
+    </ul>
   )
 }
 
@@ -39,74 +40,23 @@ export function MarkdownLayout({
   headings,
 }: MarkdownLayoutProps) {
   return (
-    <MarkdownLayoutStyle className="container">
+    <div className="page-container">
       <BackButton />
-      <div className="markdown-info-header">
-        {date && <div className="markdown-date">{parseDate(date)}</div>}
+      <div className="mt-2 flex items-center justify-between">
+        {date && (
+          <div className="text-[0.9rem] font-normal brightness-60">
+            {dayjs(date).format('YYYY.MM.DD')}
+          </div>
+        )}
       </div>
-      <h2 className="markdown-title">{title}</h2>
+      <h2 className="mt-1">{title}</h2>
 
-      {/* 목차 표시 */}
       {headings && <TableOfContents headings={headings} />}
 
       <div
+        className="markdown-body"
         dangerouslySetInnerHTML={{ __html: innerHtml }}
-        css={MarkdownStyle}
       />
-    </MarkdownLayoutStyle>
+    </div>
   )
 }
-
-const MarkdownLayoutStyle = styled.div`
-  .markdown-date {
-    font-size: 0.9rem;
-    font-weight: 400;
-    filter: brightness(0.6);
-  }
-
-  .markdown-info-header {
-    margin-top: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .markdown-title {
-    margin-top: 4px;
-  }
-`
-
-const TocList = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  margin-bottom: 2rem;
-  line-height: 1.4;
-`
-
-const TocItem = styled.li<{ level: number }>`
-  margin: 0.5rem 0;
-  padding-left: ${props => (props.level - 1) * 0.5}rem;
-
-  &:first-of-type {
-    margin-top: 0;
-  }
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-`
-
-const TocLink = styled.a`
-  color: var(--color-text);
-  text-decoration: none;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  text-decoration: underline;
-  filter: brightness(0.6);
-  transition: all 0.2s ease;
-
-  &:hover {
-    opacity: 0.4;
-  }
-`

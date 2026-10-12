@@ -1,27 +1,20 @@
-import styled from '@emotion/styled'
-import { useRouter } from 'next/navigation'
-import { useContext } from 'react'
+'use client'
 
-import ThemeContext from '@/context/themeContext'
-import { theme } from '@/styles/theme'
+import { useRouter } from 'next/navigation'
 
 import { IconBack } from '../Icon'
 
-import { Icon } from './Icon'
-
-const StyleBackButton = styled.div`
-  cursor: pointer;
-  width: 30px;
-`
-
 export function BackButton() {
   const router = useRouter()
-  const { colorTheme } = useContext(ThemeContext)
-  const isDark = colorTheme === theme.dark
 
   return (
-    <StyleBackButton onClick={() => router.back()}>
-      <Icon icon={<IconBack isDark={isDark} />} />
-    </StyleBackButton>
+    <button
+      type="button"
+      aria-label="back"
+      className="w-[30px] cursor-pointer"
+      onClick={() => router.back()}
+    >
+      <IconBack className="size-[30px]" />
+    </button>
   )
 }

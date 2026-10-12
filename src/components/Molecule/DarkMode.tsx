@@ -1,61 +1,43 @@
-import styled from '@emotion/styled'
-import { useContext } from 'react'
-
-import ThemeContext from '@/context/themeContext'
-import { theme } from '@/styles/theme'
+'use client'
 
 export function DarkMode() {
-  const { colorTheme, toggleTheme } = useContext(ThemeContext)
+  const toggleTheme = () => {
+    const nextTheme =
+      document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'
+    document.documentElement.dataset.theme = nextTheme
+    window.localStorage.setItem('theme', nextTheme)
+  }
 
   return (
-    <DarkModeBtn
+    <button
+      type="button"
+      aria-label="toggle dark mode"
       onClick={toggleTheme}
-      className={colorTheme === theme.light ? 'light' : 'dark'}
-    />
+      className="flex size-8 cursor-pointer items-center justify-center"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="size-5 dark:hidden"
+      >
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+      </svg>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="hidden size-5 dark:block"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </button>
   )
 }
-
-const DarkModeBtn = styled.div`
-  width: 32px;
-  height: 32px;
-  background-size: 32px 32px;
-  background-repeat: no-repeat;
-  cursor: pointer;
-
-  &.light {
-    background-image: url('/icon/icon-sun.png');
-    animation: rotate 10s linear infinite;
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-  }
-
-  &.dark {
-    background-image: url('/icon/icon-moon.png');
-    animation: swing 5s linear infinite;
-
-    @keyframes swing {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      30% {
-        transform: rotate(-10deg);
-      }
-
-      70% {
-        transform: rotate(10deg);
-      }
-
-      100% {
-        transform: rotate(0deg);
-      }
-    }
-  }
-`
