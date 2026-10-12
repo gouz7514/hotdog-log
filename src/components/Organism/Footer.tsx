@@ -1,4 +1,4 @@
-import { IconGithub, IconGmail, IconLinkedIn } from '../Icon'
+import { IconGithub, IconGmail, IconInstagram, IconLinkedIn } from '../Icon'
 
 export function Footer() {
   return (
@@ -13,6 +13,13 @@ export function Footer() {
           rel="noopener"
         >
           <IconLinkedIn className="size-[30px]" />
+        </a>
+        <a
+          href="https://www.instagram.com/coffeerro"
+          target="_blank"
+          rel="noopener"
+        >
+          <IconInstagram className="size-[30px]" />
         </a>
         <a href="mailto:hakjae.dev@gmail.com">
           <IconGmail className="size-[30px]" />

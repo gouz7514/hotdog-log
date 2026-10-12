@@ -1,4 +1,5 @@
 export * from './IconBack'
 export * from './IconGithub'
 export * from './IconGmail'
+export * from './IconInstagram'
 export * from './IconLinkedin'
