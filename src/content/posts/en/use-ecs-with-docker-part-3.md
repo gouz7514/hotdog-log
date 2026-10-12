@@ -6,7 +6,7 @@ date: '2022-01-26 00:00:03'
 ---
 
 This post covers testing in the deployed server environment and server management through CDK.
-If you're curious about the previous content, please refer to [Part 1](https://hakjae.dev/posts/use-ecs-with-docker-part-1) and [Part 2](https://hakjae.dev/posts/use-ecs-with-docker-part-2)!
+If you're curious about the previous content, please refer to [Part 1](https://hakjae.dev/en/blog/use-ecs-with-docker-part-1) and [Part 2](https://hakjae.dev/en/blog/use-ecs-with-docker-part-2)!
 
 ***
 

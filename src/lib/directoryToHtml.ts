@@ -13,10 +13,13 @@ import remarkRehype from 'remark-rehype'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import { unified } from 'unified'
 
-interface Heading {
-  level: number
-  text: string
-  id: string
+import { Heading } from '@/types/types'
+
+interface Frontmatter {
+  title: string
+  summary: string
+  date?: string
+  tags?: string[]
 }
 
 // HTML에서 heading 정보를 추출하는 함수
@@ -40,7 +43,10 @@ function extractHeadingsFromHtml(html: string): Heading[] {
   return headings
 }
 
-const directoryToHtml = async (directory: string, id: string) => {
+const directoryToHtml = async <T = Frontmatter>(
+  directory: string,
+  id: string,
+) => {
   const fullPath = path.join(directory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)
@@ -76,7 +82,7 @@ const directoryToHtml = async (directory: string, id: string) => {
     id,
     contentHtml,
     headings, // 목차 데이터 추가
-    ...matterResult.data,
+    ...(matterResult.data as T),
   }
 }
 

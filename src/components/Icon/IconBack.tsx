@@ -1,8 +1,9 @@
-import { IconChildProps } from '@/types/types'
+import { IconProps } from '@/types/types'
 
-export function IconBack({ fill = '#000000', isDark = false }: IconChildProps) {
+export function IconBack({ className }: IconProps) {
   return (
     <svg
+      className={className}
       width="256"
       height="256"
       viewBox="0 0 768 768"
@@ -10,7 +11,7 @@ export function IconBack({ fill = '#000000', isDark = false }: IconChildProps) {
     >
       <path
         fill="none"
-        stroke={isDark ? '#ffffff' : fill}
+        stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="48"

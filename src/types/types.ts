@@ -1,23 +1,5 @@
-import { ReactNode } from 'react'
-
-export interface LayoutProps {
-  children: ReactNode
-}
-
-export interface ListProps {
-  children: ReactNode
-  className?: string
-}
-
 export interface IconProps {
-  icon: ReactNode
-  width?: number
-  height?: number
-}
-
-export interface IconChildProps {
-  fill?: string
-  isDark?: boolean
+  className?: string
 }
 
 export interface Post {
@@ -25,5 +7,25 @@ export interface Post {
   title: string
   summary: string
   tags: string[]
+  date: string
+}
+
+export interface Heading {
+  level: number
+  text: string
+  id: string
+}
+
+export const portfolioCategories = ['web', 'app', 'etc'] as const
+
+export type PortfolioCategory = (typeof portfolioCategories)[number]
+
+export interface PortfolioItem {
+  id: string
+  title: string
+  summary: string
+  category: PortfolioCategory
+  image?: string
+  links: Array<{ label: string; url: string }>
   date: string
 }

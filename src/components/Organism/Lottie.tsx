@@ -1,4 +1,5 @@
-import styled from '@emotion/styled'
+'use client'
+
 import dynamic from 'next/dynamic'
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
@@ -10,24 +11,8 @@ interface LottieProps {
 
 export function LottieAnimation({ json, height = 300 }: LottieProps) {
   return (
-    <LottieWrapper>
+    <div className="flex w-full flex-col items-center justify-center">
       <Lottie animationData={json} style={{ height }} />
-    </LottieWrapper>
+    </div>
   )
 }
-
-const LottieWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  .lottie-description {
-    text-align: center;
-  }
-
-  h3 {
-    word-break: keep-all;
-  }
-`

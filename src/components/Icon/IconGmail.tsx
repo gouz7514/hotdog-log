@@ -1,11 +1,9 @@
-import { IconChildProps } from '@/types/types'
+import { IconProps } from '@/types/types'
 
-export function IconGmail({
-  fill = '#000000',
-  isDark = false,
-}: IconChildProps) {
+export function IconGmail({ className }: IconProps) {
   return (
     <svg
+      className={className}
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
       width="512.000000pt"
@@ -15,7 +13,7 @@ export function IconGmail({
     >
       <g
         transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-        fill={isDark ? '#ffffff' : fill}
+        fill="currentColor"
         stroke="none"
       >
         <path

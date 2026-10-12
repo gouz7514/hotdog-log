@@ -1,48 +1,23 @@
-import styled from '@emotion/styled'
 import Link from 'next/link'
 
-import { LanguageToggler } from '@/domain/global/components'
+import { Locale, localePath } from '@/lib/translations'
 
-import { DarkMode } from '../Molecule'
+import { DarkMode, LanguageToggler } from '../Molecule'
 
-export function Header() {
-  return (
-    <StickyHeader>
-      <Link href="/">
-        <Logo className="icon-logo" />
-      </Link>
-      <div className="d-flex align-items-center" style={{ gap: '16px' }}>
-        <Link href="/posts">
-          <h4>BLOG</h4>
-        </Link>
-        <LanguageToggler />
-        <DarkMode />
-      </div>
-    </StickyHeader>
-  )
+interface HeaderProps {
+  locale: Locale
 }
 
-const StickyHeader = styled.div`
-  position: sticky;
-  padding: 1rem;
-  top: 0;
-  width: 100%;
-  max-width: 50rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: var(--z-index-header);
-  background-color: var(--color-background);
-  margin: auto;
-`
-
-const Logo = styled.div`
-  width: 40px;
-  height: 40px;
-  background-image: url('/images/hakjae.webp');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-  border-radius: 50%;
-`
+export function Header({ locale }: HeaderProps) {
+  return (
+    <header className="sticky top-0 z-10 m-auto flex w-full max-w-[50rem] items-center justify-between bg-background p-4">
+      <Link href={localePath(locale, '/')}>
+        <h4 className="text-[1.6rem]">HAKJAE</h4>
+      </Link>
+      <div className="flex items-center gap-4">
+        <LanguageToggler locale={locale} />
+        <DarkMode />
+      </div>
+    </header>
+  )
+}

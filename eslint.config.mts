@@ -1,19 +1,9 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
-
-import { FlatCompat } from '@eslint/eslintrc'
 import eslint from '@eslint/js'
-import importPlugin from 'eslint-plugin-import'
-import tseslint from 'typescript-eslint'
+import { defineConfig } from 'eslint/config'
+import nextVitals from 'eslint-config-next/core-web-vitals'
+import nextTs from 'eslint-config-next/typescript'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-})
-
-export default tseslint.config(
+export default defineConfig(
   {
     ignores: [
       '.next/**',
@@ -25,11 +15,9 @@ export default tseslint.config(
     ],
   },
   eslint.configs.recommended,
-  tseslint.configs.recommended,
+  ...nextVitals,
+  ...nextTs,
   {
-    plugins: {
-      import: importPlugin,
-    },
     rules: {
       'import/order': [
         'error',
@@ -53,7 +41,4 @@ export default tseslint.config(
       ],
     },
   },
-  ...compat.config({
-    extends: ['next', 'next/core-web-vitals', 'plugin:@next/next/recommended'],
-  }),
 )
